@@ -267,9 +267,42 @@ html, body {
   color: var(--sk-dark-soft);
 }
 
+[data-bs-theme="dark"] .activity-uniform-card .activity-card-title {
+  color: #F3F8FA !important;
+}
+
+[data-bs-theme="dark"] .activity-uniform-card .activity-card-desc {
+  color: #B2C4CC !important;
+}
+
 [data-bs-theme="dark"] .activity-uniform-card .activity-card-footer {
   border-top-color: rgba(255, 255, 255, 0.1);
-  color: #B2C4CC;
+  color: #B2C4CC !important;
+}
+
+[data-bs-theme="dark"] .activity-uniform-card .activity-badge.bg-info-subtle {
+  background-color: rgba(158, 211, 220, 0.18) !important;
+  color: #7FE5F5 !important;
+}
+
+[data-bs-theme="dark"] .activity-uniform-card .activity-badge.bg-warning-subtle {
+  background-color: rgba(254, 253, 153, 0.18) !important;
+  color: #FFE66D !important;
+}
+
+[data-bs-theme="dark"] .activity-uniform-card .activity-badge.bg-danger-subtle {
+  background-color: rgba(202, 97, 128, 0.22) !important;
+  color: #FFA3BA !important;
+}
+
+[data-bs-theme="dark"] .activity-uniform-card .activity-badge.bg-success-subtle {
+  background-color: rgba(46, 196, 182, 0.2) !important;
+  color: #64E5D4 !important;
+}
+
+[data-bs-theme="dark"] .activity-uniform-card .activity-badge.bg-primary-subtle {
+  background-color: rgba(158, 211, 220, 0.18) !important;
+  color: #7FE5F5 !important;
 }
 
 

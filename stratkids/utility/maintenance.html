@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Setting Up The Next Move | StratKids Maintenance</title>
+  <meta name="description" content="We are currently upgrading StratKids camp registration systems and parent portal servers. We will be back on the board shortly.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL NAVBAR
+       ========================================================================== -->
+    <nav class="navbar navbar-expand-lg stratkids-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../assets/icons/favicon.svg" alt="StratKids Logo" height="42" width="42" class="rounded-3 shadow-sm">
+        <div class="brand-text">
+          <span class="brand-title">Strat<span>Kids</span></span>
+          <span class="brand-tagline">Think. Play. Grow.</span>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="stratkidsNavContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-2 shadow-sm rounded-4">
+              <li><a class="dropdown-item fw-bold text-rose" href="../index.html">Home 1 (Camp Adventure)</a></li>
+              <li><a class="dropdown-item fw-bold" href="../home-2.html">Home 2 (Game Board Layout)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link " href="../about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link " href="../programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link " href="../schedule.html">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link " href="../pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link " href="../blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link " href="../contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link nav-dashboard-link" href="../parent-dashboard/dashboard.html" title="Parent Dashboard">Dashboard</a>
+          </li>
+        </ul>
+
+        <div class="nav-tools d-flex align-items-center gap-2">
+          <!-- Dark Mode Switcher Circle -->
+          <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <!-- RTL / LTR Toggle Circle -->
+          <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+
+          
+
+          <!-- Primary CTA Button (Identical across all pages) -->
+          <!-- Login Button in Navbar before CTA -->
+          <a href="../auth/login.html" class="btn-nav-login" title="Parent Portal Login">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+            <i class="bi bi-calendar2-check-fill"></i> Enroll Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       SECTION 1: MAINTENANCE HERO
+       ========================================================================== -->
+  <section class="py-5 bg-surface text-center position-relative overflow-hidden">
+    <div class="container py-lg-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <!-- Chess Pieces Arrangement Vector SVG -->
+          <div class="mb-4">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" class="mx-auto">
+              <rect x="10" y="10" width="100" height="100" rx="20" fill="#9ED3DC" opacity="0.3"/>
+              <!-- Knight Shape -->
+              <path d="M40 85 L75 85 L70 70 C70 60 76 50 68 40 C62 32 50 30 45 42 C40 45 35 55 42 65 L36 70 Z" fill="#26333A"/>
+              <!-- Rook Outline -->
+              <rect x="75" y="55" width="22" height="30" rx="3" fill="#CA6180"/>
+              <path d="M73 55 L73 48 L78 48 L78 52 L83 52 L83 48 L88 48 L88 52 L94 52 L94 48 L99 48 L99 55 Z" fill="#FEFD99"/>
+              <!-- Gear Accent -->
+              <circle cx="35" cy="35" r="10" fill="#FEFD99"/>
+              <path d="M35 22 L35 48 M22 35 L48 35" stroke="#CA6180" stroke-width="2.5"/>
+            </svg>
+          </div>
+
+          <span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-bold text-uppercase mb-2">Scheduled Maintenance</span>
+          <h1 class="display-4 fw-bold mb-3" style="font-family: var(--sk-font-heading); color: var(--sk-dark);">
+            WE&rsquo;RE SETTING UP THE NEXT MOVE.
+          </h1>
+          <p class="lead text-muted max-w-650 mx-auto mb-4">
+            Our campus IT team is currently performing scheduled server upgrades, database optimizations, and security patches to keep your child's records protected.
+          </p>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <button type="button" class="btn-strat-primary" onclick="window.location.reload();">
+              <i class="bi bi-arrow-clockwise me-1"></i> Check Server Status
+            </button>
+            <a href="../contact.html" class="btn-strat-secondary">
+              <i class="bi bi-telephone-fill me-1"></i> Contact Camp Office
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: UPGRADE PROGRESS STATUS BAR
+       ========================================================================== -->
+  <section class="py-5 bg-white border-top border-bottom">
+    <div class="container max-w-800 mx-auto">
+      <div class="p-4 p-md-5 rounded-5 border bg-surface shadow-sm">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="small fw-bold text-muted text-uppercase">System Upgrade Progress</span>
+          <span class="badge bg-success rounded-pill px-3 py-1">82% Completed</span>
+        </div>
+        <div class="progress mb-4" style="height: 12px; background: #E2ECF0;">
+          <div class="progress-bar rounded-pill" role="progressbar" style="width: 82%; background: linear-gradient(90deg, var(--sk-aqua) 0%, var(--sk-rose) 100%);" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <div class="row g-3 small">
+          <div class="col-md-4">
+            <div class="p-3 rounded-3 bg-white border">
+              <i class="bi bi-check-circle-fill text-success me-1"></i>
+              <strong>Camp Roster Sync</strong>
+              <small class="d-block text-muted">Complete (100%)</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3 bg-white border">
+              <i class="bi bi-check-circle-fill text-success me-1"></i>
+              <strong>Security Encryption</strong>
+              <small class="d-block text-muted">Complete (100%)</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3 bg-white border">
+              <i class="bi bi-arrow-repeat text-primary me-1"></i>
+              <strong>DGT Smart Board API</strong>
+              <small class="d-block text-muted">Finalizing (45%)</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: ESTIMATED RETURN TIMELINE
+       ========================================================================== -->
+  <section class="py-5 bg-surface">
+    <div class="container text-center max-w-600 mx-auto">
+      <div class="p-4 rounded-4 bg-white border shadow-sm">
+        <i class="bi bi-clock-history text-danger fs-1 d-block mb-2"></i>
+        <h2 class="h4 fw-bold text-dark mb-1" style="font-family: var(--sk-font-heading);">
+          Estimated Completion Time
+        </h2>
+        <div class="display-6 fw-bold text-rose my-2">04:30 AM PST</div>
+        <p class="small text-muted mb-0">
+          All systems, including the Parent Command Center, online enrollment wizard, and payment portals, are scheduled to be 100% operational before morning drop-off hours.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: CAMPUS EMERGENCY HOTLINE
+       ========================================================================== -->
+  <section class="py-5 bg-white border-top">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <span class="badge bg-danger rounded-pill px-3 py-1 mb-2 fw-bold">Live Support</span>
+          <h2 class="h3 fw-bold text-dark mb-3" style="font-family: var(--sk-font-heading);">
+            Need Immediate Assistance?
+          </h2>
+          <p class="text-muted small mb-3">
+            While our online portal undergoes maintenance, our physical camp dispatch desk, attendance staff, and camp nurses remain fully available via phone.
+          </p>
+          <div class="d-flex flex-column gap-2 small text-muted">
+            <div><i class="bi bi-telephone-fill text-danger me-2"></i><strong>Camp Dispatch Line:</strong> (555) 787-2854</div>
+            <div><i class="bi bi-envelope-fill text-primary me-2"></i><strong>Urgent Desk Email:</strong> support@stratkids.camp</div>
+            <div><i class="bi bi-clock-fill text-warning me-2"></i><strong>Physical Office:</strong> North Campus Reception, 07:30 AM &ndash; 06:00 PM</div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 bg-surface border text-center">
+            <h3 class="h6 fw-bold text-dark mb-2">For Enrolled Campers Tomorrow</h3>
+            <p class="small text-muted mb-3">
+              Morning check-in will proceed as normal at 08:45 AM. Physical paper attendance rosters and camper badges will be stationed at Curbside Gate 2.
+            </p>
+            <span class="badge bg-success rounded-pill px-3 py-2 fw-bold">
+              <i class="bi bi-check-lg text-success"></i> Camp Classes Run on Normal Schedule
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: MAINTENANCE FAQS FOR GUARDIANS
+       ========================================================================== -->
+  <section class="py-5 bg-surface border-top">
+    <div class="container max-w-800 mx-auto">
+      <div class="text-center mb-4">
+        <h2 class="h3 fw-bold text-dark" style="font-family: var(--sk-font-heading);">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-muted small">Answers regarding account safety and enrollments during maintenance.</p>
+      </div>
+
+      <div class="accordion" id="maintFaqAccordion">
+        <div class="accordion-item rounded-4 border mb-2 overflow-hidden">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#mFaq1">
+              Are my camper&rsquo;s health, allergy, and profile records secure?
+            </button>
+          </h3>
+          <div id="mFaq1" class="accordion-collapse collapse" data-bs-parent="#maintFaqAccordion">
+            <div class="accordion-body small text-muted">
+              Yes, absolutely. All camper medical records, emergency contacts, and personal data are encrypted and held in isolated compliance datastores unaffected by front-end maintenance.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded-4 border mb-2 overflow-hidden">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#mFaq2">
+              Will scheduled auto-pay installment charges be processed twice?
+            </button>
+          </h3>
+          <div id="mFaq2" class="accordion-collapse collapse" data-bs-parent="#maintFaqAccordion">
+            <div class="accordion-body small text-muted">
+              No. Auto-pay batching is temporarily paused until all database synchronizations complete, preventing any double-charges or receipt errors.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded-4 border overflow-hidden">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#mFaq3">
+              Can I still reserve a summer camp spot by phone?
+            </button>
+          </h3>
+          <div id="mFaq3" class="accordion-collapse collapse" data-bs-parent="#maintFaqAccordion">
+            <div class="accordion-body small text-muted">
+              Yes! Our telephone admissions coordinator can manually hold a camp week spot for your child at (555) 787-2854.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: SOCIAL CHANNELS & COMMUNITY UPDATES
+       ========================================================================== -->
+  <section class="py-5 bg-white border-top">
+    <div class="container text-center max-w-600 mx-auto">
+      <h2 class="h4 fw-bold text-dark mb-2" style="font-family: var(--sk-font-heading);">
+        Follow Real-Time Camp Updates
+      </h2>
+      <p class="text-muted small mb-4">
+        We post status notices and daily camp photo albums on our official community channels.
+      </p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#" class="btn btn-outline-dark rounded-pill px-4 py-2 small fw-bold">
+          <i class="bi bi-instagram me-1 text-danger"></i> @StratKidsCamp
+        </a>
+        <a href="#" class="btn btn-outline-dark rounded-pill px-4 py-2 small fw-bold">
+          <i class="bi bi-facebook me-1 text-primary"></i> Facebook Group
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 7: REFRESH & RETURN CALLOUT
+       ========================================================================== -->
+  <section class="py-5" style="background: linear-gradient(135deg, var(--sk-yellow) 0%, var(--sk-aqua) 100%);">
+    <div class="container text-center py-4">
+      <h2 class="display-6 fw-bold text-dark mb-2" style="font-family: var(--sk-font-heading);">
+        THANK YOU FOR YOUR PATIENCE
+      </h2>
+      <p class="lead text-dark opacity-75 max-w-600 mx-auto mb-4">
+        Great chess strategies take a little calculation time. We will be back on the board very soon!
+      </p>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <button type="button" class="btn-strat-primary" onclick="window.location.reload();">
+          <i class="bi bi-arrow-repeat me-1"></i> Refresh Status
+        </a>
+        <a href="../index.html" class="btn-strat-secondary">
+          Camp Homepage
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GLOBAL FOOTER
+       ========================================================================== -->
+  <footer class="stratkids-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="../index.html" class="d-inline-block mb-3">
+            <img src="../assets/icons/logo.svg" alt="StratKids Logo" height="42">
+          </a>
+          <p class="tagline mb-3">&ldquo;Think. Play. Grow.&rdquo;</p>
+          <p class="small text-muted mb-4">
+            A modern chess and strategy summer camp designed for young minds to build confidence, solve problems, compete, and have fun.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-sm btn-outline-dark rounded-circle" style="width:36px; height:36px;"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-dark rounded-circle" style="width:36px; height:36px;"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-dark rounded-circle" style="width:36px; height:36px;"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../programs.html">Programs</a></li>
+            <li><a href="../schedule.html">Schedule</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../camp-life.html">Camp Life</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Camp Information</h4>
+          <ul class="footer-links">
+            <li><a href="../programs.html">Age Groups (5&ndash;16)</a></li>
+            <li><a href="../schedule.html">Daily Activities</a></li>
+            <li><a href="../schedule.html">Camp Schedule</a></li>
+            <li><a href="../faqs.html">What to Bring</a></li>
+            <li><a href="../faqs.html">Camp FAQs</a></li>
+            <li><a href="../parent-dashboard/dashboard.html">Parent Portal</a></li>
+            <li><a href="../about.html">Safety & Policies</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="small text-muted mb-3">Get camp updates and chess tips for young minds.</p>          <form class="newsletter-form mb-4">
+            <div class="input-group mb-2">
+              <input type="email" class="form-control form-control-sm rounded-start-pill ps-3" placeholder="Your email address" required>
+              <button class="btn btn-strat-primary btn-sm rounded-end-pill px-3" type="submit">Join</button>
+            </div>
+          </form>
+          <span class="demo-banner mt-2">Demo Template</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <p class="mb-0">&copy; 2026 StratKids Summer Camp. All Rights Reserved. &ldquo;Think. Play. Grow.&rdquo; </p>
+        <div class="d-flex gap-3 small">
+          <a href="../faqs.html">Privacy Policy</a>
+          <a href="../faqs.html">Terms of Service</a>
+          <a href="../about.html">Safety Information</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/forms.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title id="pageTitle">Program Details | StratKids Summer Camp</title>
+  <meta id="metaDescription" name="description" content="Explore comprehensive chess, cognitive logic, and strategy summer camp program details at StratKids. Tailored for ages 5 to 16.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL NAVBAR
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg stratkids-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/icons/favicon.svg" alt="StratKids Logo" height="42" width="42" class="rounded-3 shadow-sm">
+        <div class="brand-text">
+          <span class="brand-title">Strat<span>Kids</span></span>
+          <span class="brand-tagline">Think. Play. Grow.</span>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="stratkidsNavContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-2 shadow-sm rounded-4">
+              <li><a class="dropdown-item fw-bold text-rose" href="index.html">Home 1 (Camp Adventure)</a></li>
+              <li><a class="dropdown-item fw-bold" href="home-2.html">Home 2 (Game Board Layout)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link nav-dashboard-link" href="parent-dashboard/dashboard.html" title="Parent Dashboard">Dashboard</a>
+          </li>
+        </ul>
+
+        <div class="nav-tools d-flex align-items-center gap-2">
+          <!-- Dark Mode Switcher Circle -->
+          <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <!-- RTL / LTR Toggle Circle -->
+          <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+
+          <!-- Login Button in Navbar before CTA -->
+          <a href="auth/login.html" class="btn-nav-login" title="Parent Portal Login">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+            <i class="bi bi-calendar2-check-fill"></i> Enroll Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       SECTION 1: HERO SECTION WITH MATCHING PROGRAM CARD IMAGE
+       ========================================================================== -->
+  <header class="section-py-sm hero-page-header hero-bg-program-details" id="programHeroSection">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb small mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item"><a href="programs.html" class="text-decoration-none">Programs</a></li>
+          <li class="breadcrumb-item active text-rose fw-bold" id="heroBreadcrumb" aria-current="page">Program Details</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-7">
+          <div class="d-flex flex-wrap gap-2 mb-3" id="heroBadgesContainer">
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold" id="heroAgeBadge">Ages 5–7</span>
+            <span class="badge bg-info text-dark px-3 py-2 rounded-pill fw-bold" id="heroLevelBadge">Beginner</span>
+            <span class="badge bg-success px-3 py-2 rounded-pill fw-bold" id="heroRatioBadge">1:6 Pod Ratio</span>
+          </div>
+
+          <h1 class="hero-title mb-3" id="heroProgramTitle">
+            Little Thinkers: <span class="highlight-rose">Discovery Pod</span>
+          </h1>
+          <p class="hero-lead mb-4" id="heroProgramLead">
+            An enchanting, story-driven introduction where chess pieces come alive as castle characters, dragons, and brave knights.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+            <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal" id="heroEnrollBtn">
+              <i class="bi bi-sparkles"></i> Enroll In This Program
+            </button>
+            <a href="schedule.html" class="btn-strat-secondary">
+              <i class="bi bi-calendar3"></i> Check Available Weeks
+            </a>
+          </div>
+
+          <!-- Quick Program Specs -->
+          <div class="row g-2 pt-3 border-top" style="border-color: var(--sk-border-color) !important;">
+            <div class="col-6 col-sm-3">
+              <span class="text-muted small d-block">Tuition</span>
+              <strong class="fs-5 text-dark" id="heroSpecTuition">$450</strong><small class="text-muted">/week</small>
+            </div>
+            <div class="col-6 col-sm-3">
+              <span class="text-muted small d-block">Daily Hours</span>
+              <strong class="text-dark" id="heroSpecSchedule">09:00 AM – 12:30 PM</strong>
+            </div>
+            <div class="col-6 col-sm-3">
+              <span class="text-muted small d-block">Class Cap</span>
+              <strong class="text-dark" id="heroSpecCap">Max 12 Campers</strong>
+            </div>
+            <div class="col-6 col-sm-3">
+              <span class="text-muted small d-block">Prerequisite</span>
+              <strong class="text-success" id="heroSpecPrereq">Zero Needed</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="position-relative hero-visual-frame" style="max-width: 440px; margin: 0 auto;">
+            <!-- Exact Hero Image Used in Program Cards -->
+            <div class="position-relative overflow-hidden shadow-lg border border-3 rounded-4" style="border-color: rgba(255, 255, 255, 0.4) !important; aspect-ratio: 16/10; max-height: 320px; width: 100%;">
+              <img id="heroProgramImg" src="assets/images/chess/pexels_8465434.jpg" alt="Little Thinkers Discovery Pod chess session" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              
+              <!-- Soft Bottom Gradient -->
+              <div class="position-absolute bottom-0 start-0 end-0 p-3" style="background: linear-gradient(180deg, transparent 0%, rgba(14, 23, 29, 0.85) 100%);">
+                <div class="d-flex align-items-center justify-content-between text-white">
+                  <span class="badge text-dark rounded-pill px-3 py-1 fw-bold" style="background: var(--sk-yellow);" id="heroImageAgeChip">Ages 5–7</span>
+                  <span class="badge bg-success rounded-pill px-3 py-1 fw-bold" id="heroImageRatioChip">1:6 Pod Ratio</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Micro-Badge -->
+            <div class="hero-floating-bubble-2" style="bottom: 10px; left: -10px;">
+              <div class="d-flex align-items-center gap-2">
+                <span class="badge-emblem badge-gold mb-0" style="width: 38px; height: 38px; font-size: 1.15rem;"><i class="bi bi-shield-check"></i></span>
+                <div>
+                  <strong class="d-block small text-dark" id="heroFloatingTitle">Screen-Free Strategy</strong>
+                  <small class="text-muted" id="heroFloatingSub">Tactile Wooden Sets</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       SECTION 2: CONTENT (EXPLANATION, TRAITS, DURATION, BENEFITS)
+       ========================================================================== -->
+
+  <!-- PART A: EXPLANATION OF PROGRAM -->
+  <section class="section-py bg-light" id="programExplanationSection">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="section-tag tag-rose mb-2">
+            <i class="bi bi-info-circle-fill"></i> Program Explanation
+          </div>
+          <h2 class="section-title text-start mb-3" id="explanationHeading">
+            Understanding The Little Thinkers Experience
+          </h2>
+          <div class="text-muted mb-4" id="explanationTextContainer">
+            <p id="explanationP1">
+              The Little Thinkers Discovery Pod is crafted specifically for kindergarten and early elementary children who are taking their very first steps onto the 64 squares. We translate complex rules into joyful physical movement, giant felt board games, and character-driven tales.
+            </p>
+            <p id="explanationP2">
+              Instead of memorizing notation, campers help the Hopping Knight rescue friends and watch Castle Rooks roll down open highways. Every 30-minute lesson is balanced with sensory tabletop logic games, tactile chess crafts, and energetic outdoor recess.
+            </p>
+          </div>
+
+          <div class="p-3 bg-body rounded-4 border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+            <h6 class="fw-bold mb-2 text-rose d-flex align-items-center gap-2">
+              <i class="bi bi-check2-circle"></i> Key Highlights of This Track
+            </h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 mb-0" id="explanationHighlightsList">
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> <span>Character-driven rules: Knight leaps, Rook walls, Bishop diagonals</span></li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> <span>Giant 3-foot tactile floor boards for physical spatial learning</span></li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> <span>Dedicated 1:6 coach ratio with early-childhood certified mentors</span></li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> <span>Daily milestone sticker ceremonies and non-elimination play</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 p-md-5 rounded-5 bg-body border shadow-sm" style="border-color: var(--sk-border-color) !important;">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <h4 class="h5 fw-bold mb-0 text-rose" id="specBoxTitle">Track Profile &amp; Pedagogy</h4>
+              <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold" id="specBoxAge">Ages 5–7</span>
+            </div>
+
+            <div class="d-flex flex-column gap-3 mb-4" id="specProfileList">
+              <div class="d-flex align-items-center justify-content-between pb-2 border-bottom">
+                <span class="text-muted"><i class="bi bi-people-fill text-primary me-2"></i>Coach to Camper Ratio</span>
+                <strong class="text-dark" id="profileRatio">1 Coach : 6 Campers</strong>
+              </div>
+              <div class="d-flex align-items-center justify-content-between pb-2 border-bottom">
+                <span class="text-muted"><i class="bi bi-bar-chart-steps text-info me-2"></i>Skill Level Target</span>
+                <strong class="text-dark" id="profileSkill">Beginner (Level 1)</strong>
+              </div>
+              <div class="d-flex align-items-center justify-content-between pb-2 border-bottom">
+                <span class="text-muted"><i class="bi bi-puzzle-fill text-warning me-2"></i>Complementary Games</span>
+                <strong class="text-dark" id="profileGames">Animal Upon Animal, Outfoxed</strong>
+              </div>
+              <div class="d-flex align-items-center justify-content-between pb-2 border-bottom">
+                <span class="text-muted"><i class="bi bi-trophy-fill text-success me-2"></i>Tournament Format</span>
+                <strong class="text-dark" id="profileTournament">Friendly Non-Elimination Showcase</strong>
+              </div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="text-muted"><i class="bi bi-award-fill text-danger me-2"></i>Weekly Certificate</span>
+                <strong class="text-dark" id="profileAward">StratKids Junior Knight Diplôme</strong>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-4 bg-light text-center border">
+              <span class="small text-muted d-block mb-1">Reserve early &bull; Limited to 12 campers per session</span>
+              <button type="button" class="btn-strat-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+                <i class="bi bi-calendar-check-fill me-1"></i> Register Camper Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART B: TRAITS OF PROGRAM -->
+  <section class="section-py chess-pattern-bg" id="programTraitsSection">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-aqua mb-2">
+          <i class="bi bi-stars"></i> Program Traits
+        </div>
+        <h2 class="section-title mb-2" id="traitsHeading">Core Traits of This Program</h2>
+        <p class="section-desc mx-auto" style="max-width: 680px;" id="traitsSubheading">
+          The defining pedagogical pillars that make this track uniquely engaging and impactful for this age group.
+        </p>
+      </div>
+
+      <div class="row g-4" id="traitsCardsContainer">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PART C: PROGRAM DURATION & SCHEDULE -->
+  <section class="section-py bg-light" id="programDurationSection">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-yellow mb-2">
+          <i class="bi bi-clock-history"></i> Program Duration &amp; Routine
+        </div>
+        <h2 class="section-title mb-2" id="durationHeading">Program Duration &amp; Schedule Breakdown</h2>
+        <p class="section-desc mx-auto" style="max-width: 680px;">
+          Carefully structured to balance rigorous intellectual puzzle-solving with physical games, social connection, and revitalizing recess.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Duration Overview Card -->
+        <div class="col-lg-4 col-md-5">
+          <div class="p-4 p-md-4 rounded-5 bg-body border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <span class="badge bg-rose-subtle text-rose px-3 py-1 rounded-pill fw-bold mb-3 d-inline-block">Duration Overview</span>
+            <h4 class="h5 fw-bold mb-3 text-dark" id="durationTitle">1-Week Summer Session</h4>
+            
+            <div class="d-flex flex-column gap-3 mb-4">
+              <div class="p-3 rounded-4 bg-light border">
+                <span class="small text-muted d-block">Session Days</span>
+                <strong class="fs-6 text-dark" id="durationDays">Monday through Friday</strong>
+              </div>
+              <div class="p-3 rounded-4 bg-light border">
+                <span class="small text-muted d-block">Daily Operating Hours</span>
+                <strong class="fs-6 text-dark" id="durationHours">09:00 AM – 12:30 PM</strong>
+              </div>
+              <div class="p-3 rounded-4 bg-light border">
+                <span class="small text-muted d-block">Total Instructional Hours</span>
+                <strong class="fs-6 text-dark" id="durationTotal">17.5 Hours of Guided Chess &amp; Strategy</strong>
+              </div>
+              <div class="p-3 rounded-4 bg-light border">
+                <span class="small text-muted d-block">Extended Care Available</span>
+                <strong class="fs-6 text-success" id="durationCare">Early Drop-off (8:15 AM) &amp; Late Pick-up (5:15 PM)</strong>
+              </div>
+            </div>
+
+            <a href="schedule.html" class="btn-strat-secondary w-100 text-center">
+              <i class="bi bi-calendar3 me-1"></i> View Full Summer Calendar
+            </a>
+          </div>
+        </div>
+
+        <!-- Daily Routine Timeline -->
+        <div class="col-lg-8 col-md-7">
+          <div class="p-4 p-md-5 rounded-5 bg-body border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <h4 class="h5 fw-bold mb-0 text-dark">Daily Camp Routine</h4>
+              <span class="badge bg-secondary rounded-pill px-3 py-1" id="routineBadge">Sample Daily Flow</span>
+            </div>
+
+            <div class="d-flex flex-column gap-3" id="dailyRoutineTimeline">
+              <!-- Injected via JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART D: BENEFITS OF PROGRAM -->
+  <section class="section-py chess-pattern-bg" id="programBenefitsSection">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-pink mb-2">
+          <i class="bi bi-trophy-fill"></i> Camp Benefits
+        </div>
+        <h2 class="section-title mb-2" id="benefitsHeading">Measurable Benefits for Your Child</h2>
+        <p class="section-desc mx-auto" style="max-width: 680px;" id="benefitsSubheading">
+          Skills, confidence, and cognitive habits developed through this program that stay with your camper for life.
+        </p>
+      </div>
+
+      <div class="row g-4" id="benefitsCardsContainer">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: PROGRAM FAQ
+       ========================================================================== -->
+  <section class="section-py bg-light" id="programFaqSection">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-rose mb-2">
+          <i class="bi bi-question-circle-fill"></i> Camp Questions
+        </div>
+        <h2 class="section-title mb-2" id="faqHeading">Frequently Asked Questions</h2>
+        <p class="section-desc mx-auto" style="max-width: 680px;">
+          Common questions parents ask about prerequisites, gear, snack breaks, and grouping.
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion stratkids-accordion" id="programDetailsAccordion">
+            <!-- Injected via JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: ENROLLMENT CTA
+       ========================================================================== -->
+  <section class="section-py chess-pattern-bg" id="programCtaSection">
+    <div class="container">
+      <div class="p-5 rounded-5 text-center shadow-lg text-white cta-banner-rose" style="background: linear-gradient(135deg, var(--sk-rose) 0%, #8C2E49 100%); color: #fff;">
+        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3" id="ctaBadge">
+          Summer 2026 Registration Open &bull; Few Pods Left
+        </span>
+        <h2 class="display-6 fw-bold mb-3 text-white" id="ctaTitle">
+          Ready to Enroll in Little Thinkers: Discovery Pod?
+        </h2>
+        <p class="fs-5 text-white-50 mb-4 mx-auto" style="max-width: 650px;" id="ctaLead">
+          Give your child a joyful summer adventure filled with strategy games, creative puzzles, and lifelong thinking confidence.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal" id="ctaEnrollBtn">
+            <i class="bi bi-lightning-charge-fill"></i> Reserve Camper Spot Now
+          </button>
+          <a href="pricing.html" class="btn-strat-secondary">
+            <i class="bi bi-tag-fill me-1"></i> View Tuition &amp; Sibling Deals
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GLOBAL FOOTER
+       ========================================================================== -->
+  <footer class="stratkids-footer position-relative">
+    <div class="container position-relative" style="z-index: 2;">
+      <!-- Main Footer Columns -->
+      <div class="row g-4 g-lg-5">
+        <!-- Col 1: Brand & Professional Accreditation Matrix -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand-box mb-3">
+            <a href="index.html" class="d-inline-flex align-items-center gap-3 text-decoration-none">
+              <img src="assets/icons/favicon.svg" alt="StratKids Logo" height="46" width="46" class="rounded-3 shadow-sm">
+              <div class="brand-text">
+                <div class="footer-brand-title">
+                  Strat<span>Kids</span>
+                </div>
+                <div class="footer-brand-sub">THINK. PLAY. GROW.</div>
+              </div>
+            </a>
+          </div>
+
+          <p class="footer-brand-desc">
+            An accredited modern chess &amp; cognitive strategy summer academy empowering young thinkers ages 5&ndash;16 with Grandmaster calculation, spatial logic, and lifelong strategic confidence.
+          </p>
+
+          <!-- Professional Accreditation Matrix -->
+          <div class="footer-trust-matrix">
+            <div class="footer-trust-pill">
+              <i class="bi bi-patch-check-fill text-warning"></i>
+              <span><strong>FIDE Master</strong> Curriculum</span>
+            </div>
+            <div class="footer-trust-pill">
+              <i class="bi bi-shield-check text-success"></i>
+              <span><strong>SafeSport</strong> Certified Staff</span>
+            </div>
+            <div class="footer-trust-pill">
+              <i class="bi bi-people-fill text-info"></i>
+              <span><strong>1:6 Ratio</strong> Dedicated Mentorship</span>
+            </div>
+          </div>
+
+          <!-- Social Channels -->
+          <div class="d-flex align-items-center gap-2 mt-3">
+            <span class="small text-white-50 me-1 fw-bold text-uppercase" style="font-size: 0.68rem; letter-spacing: 1px;">Connect:</span>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="contact.html" class="footer-social-btn" aria-label="Parent Community"><i class="bi bi-chat-heart-fill"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Camp Programs & Tracks -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-col-title">
+            <span class="footer-title-dot dot-aqua"></span> Camp Tracks
+          </h5>
+          <ul class="footer-links-list">
+            <li><a href="program-details.html?id=little-thinkers-discovery"><i class="bi bi-chevron-right small text-aqua"></i> Little Thinkers (5–7y)</a></li>
+            <li><a href="program-details.html?id=smart-players-tactics"><i class="bi bi-chevron-right small text-aqua"></i> Smart Players (8–10y)</a></li>
+            <li><a href="program-details.html?id=strategic-minds-tactics"><i class="bi bi-chevron-right small text-aqua"></i> Strategic Minds (11–13y)</a></li>
+            <li><a href="program-details.html?id=future-masters-tournament"><i class="bi bi-chevron-right small text-aqua"></i> Future Masters (14–16y)</a></li>
+            <li><a href="schedule.html"><i class="bi bi-chevron-right small text-aqua"></i> Daily Camp Routine</a></li>
+            <li><a href="faqs.html"><i class="bi bi-chevron-right small text-aqua"></i> Packing List &amp; FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: For Parents & Portal -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-col-title">
+            <span class="footer-title-dot dot-yellow"></span> For Families
+          </h5>
+          <ul class="footer-links-list">
+            <li><a href="parent-dashboard/dashboard.html"><i class="bi bi-chevron-right small text-warning"></i> Parent Dashboard</a></li>
+            <li><a href="parent-dashboard/skill-progress.html"><i class="bi bi-chevron-right small text-warning"></i> Skill Progress Pass</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right small text-warning"></i> Tuition &amp; Sibling Deals</a></li>
+            <li><a href="camp-life.html"><i class="bi bi-chevron-right small text-warning"></i> Camp Life &amp; Activities</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right small text-warning"></i> Camp Safety &amp; Health</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Direct Campus Contact -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-col-title">
+            <span class="footer-title-dot dot-rose"></span> Tactics Dispatch
+          </h5>
+          <p class="small text-white-50 mb-3">
+            Subscribe for free weekly tactics puzzles, grandmaster advice for kids, and priority summer registration openings.
+          </p>
+
+          <form class="newsletter-form mb-4">
+            <div class="footer-newsletter-box">
+              <input type="email" class="footer-input" placeholder="Parent email address..." required aria-label="Parent email address">
+              <button class="footer-subscribe-btn" type="submit" aria-label="Subscribe">
+                <span>Join</span> <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Direct Campus Contacts -->
+          <div class="d-flex flex-column gap-2 pt-2 border-top border-secondary border-opacity-25">
+            <div class="d-flex align-items-center gap-2 small text-white-50">
+              <i class="bi bi-geo-alt-fill text-warning"></i>
+              <span>742 Evergreen Campus, Grand Ave, Suite 300</span>
+            </div>
+            <div class="d-flex align-items-center gap-2 small text-white-50">
+              <i class="bi bi-telephone-fill text-info"></i>
+              <a href="tel:5557872854" class="text-white text-decoration-none fw-bold">(555) 787-2854</a>
+              <span class="text-white-50">(Mon–Fri 8am–5pm)</span>
+            </div>
+            <div class="d-flex align-items-center gap-2 small text-white-50">
+              <i class="bi bi-envelope-fill text-rose"></i>
+              <a href="mailto:camp@stratkids.edu" class="text-white text-decoration-none">camp@stratkids.edu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div class="d-flex align-items-center gap-2">
+          <p class="mb-0 text-white-50">
+            &copy; 2026 StratKids Summer Camp. All rights reserved. &ldquo;Think. Play. Grow.&rdquo;
+          </p>
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-3 small">
+          <a href="faqs.html">Privacy Policy</a>
+          <span class="text-white-50">&bull;</span>
+          <a href="faqs.html">Terms of Service</a>
+          <span class="text-white-50">&bull;</span>
+          <a href="about.html">Safety Protocols</a>
+          <span class="text-white-50">&bull;</span>
+          <span class="badge rounded-pill px-3 py-1 bg-white bg-opacity-10 text-white border border-white border-opacity-10">
+            <i class="bi bi-circle-fill text-success me-1" style="font-size: 0.5rem;"></i> Summer 2026 Live
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top-btn" aria-label="Back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Global Enrollment Modal -->
+  <div class="modal fade" id="enrollmentModal" tabindex="-1" aria-labelledby="enrollmentModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-5 border-0 shadow-lg overflow-hidden">
+        <div class="modal-header text-white p-4" style="background: linear-gradient(135deg, var(--sk-rose) 0%, #8C2E49 100%);">
+          <h4 class="modal-title h5 mb-0" id="enrollmentModalTitle" style="font-family: var(--sk-font-heading);">
+            Camp Registration Wizard
+          </h4>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5">
+          <div class="quick-enroll-container">
+            <h5 class="fw-bold mb-1" style="color: var(--sk-rose); font-family: var(--sk-font-heading);">
+              Camper Information &amp; Priority Registration
+            </h5>
+            <p class="small text-muted mb-4">Choose your track and camper details for instant registration.</p>
+            <form class="quick-enroll-form" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-bold small">Camper Full Name *</label>
+                  <input type="text" class="form-control rounded-3 quick-camper-name" placeholder="e.g. Leo Vance" required pattern="^[A-Za-z\s\.\'\-]+$" title="Camper name must contain letters only (no numbers)">
+                  <div class="invalid-feedback">Please enter camper's name (letters only, no numbers).</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold small">Age Track *</label>
+                  <select class="form-select rounded-3 quick-camper-track" id="modalTrackSelect">
+                    <option value="5-7">Little Thinkers (Ages 5–7)</option>
+                    <option value="8-10" selected>Smart Players (Ages 8–10)</option>
+                    <option value="11-13">Strategic Minds (Ages 11–13)</option>
+                    <option value="14-16">Future Masters (Ages 14–16)</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold small">Parent Name *</label>
+                  <input type="text" class="form-control rounded-3 quick-parent-name" placeholder="Sarah Vance" required pattern="^[A-Za-z\s\.\'\-]+$" title="Parent name must contain letters only (no numbers)">
+                  <div class="invalid-feedback">Please enter parent name (letters only, no numbers).</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold small">Parent Email *</label>
+                  <input type="email" class="form-control rounded-3 quick-parent-email" placeholder="sarah@example.com" required>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="col-md-12">
+                  <label class="form-label fw-bold small">Preferred Camp Week *</label>
+                  <select class="form-select rounded-3 quick-camp-week">
+                    <option selected>Week 1: June 15 – June 19 (Open)</option>
+                    <option>Week 2: June 22 – June 26 (Open)</option>
+                    <option>Week 3: June 29 – July 03 (Popular)</option>
+                    <option>Week 4: July 06 – July 10 (Few Spots Left)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn-strat-primary">
+                  <i class="bi bi-check-circle-fill me-1"></i> Submit Registration
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PROGRAM DETAILS DYNAMIC CONTENT ENGINE (Vanilla JavaScript)
+       ========================================================================== -->
+  <script>
+    const stratkidsProgramsData = {
+      'little-thinkers-discovery': {
+        id: 'little-thinkers-discovery',
+        name: 'Little Thinkers: Discovery Pod',
+        heroTaglinePrefix: 'Little Thinkers: ',
+        heroTaglineHighlight: 'Discovery Pod',
+        lead: 'An enchanting, story-driven introduction where chess pieces come alive as castle characters, dragons, and brave knights.',
+        ageRange: 'Ages 5–7',
+        ageValue: '5-7',
+        level: 'Beginner',
+        ratio: '1:6 Pod Ratio',
+        tuition: '$450',
+        schedule: '09:00 AM – 12:30 PM',
+        cap: 'Max 12 Campers',
+        prereq: 'Zero Needed',
+        // EXACT image from program card
+        image: 'assets/images/chess/pexels_8465434.jpg',
+        imageAlt: 'Little Thinkers Discovery Pod chess coach and young students at chessboard',
+        floatingTitle: 'Screen-Free Strategy',
+        floatingSub: 'Tactile Wooden Sets',
+        explanationHeading: 'Understanding The Little Thinkers: Discovery Pod',
+        explanationP1: 'The Little Thinkers Discovery Pod is crafted specifically for kindergarten and early elementary children who are taking their very first steps onto the 64 squares. We translate complex rules into joyful physical movement, giant felt board games, and character-driven tales.',
+        explanationP2: 'Instead of memorizing notation, campers help the Hopping Knight rescue friends and watch Castle Rooks roll down open highways. Every 30-minute lesson is balanced with sensory tabletop logic games (Animal Upon Animal, Outfoxed), tactile chess crafts, and energetic outdoor recess to keep young attention spans fully engaged and smiling.',
+        highlights: [
+          'Story-driven rules: Knight leaps, Rook walls, Bishop diagonals',
+          'Giant 3-foot tactile floor boards for physical spatial learning',
+          'Dedicated 1:6 coach ratio with early-childhood certified mentors',
+          'Daily milestone sticker ceremonies and non-elimination play'
+        ],
+        specProfile: {
+          ratio: '1 Coach : 6 Campers',
+          skill: 'Beginner (Level 1)',
+          games: 'Animal Upon Animal, Outfoxed',
+          tournament: 'Friendly Non-Elimination Showcase',
+          award: 'StratKids Junior Knight Diplôme'
+        },
+        traits: [
+          {
+            icon: 'bi-magic',
+            color: 'rose',
+            title: 'Story-Powered Pedagogy',
+            desc: 'Every chess piece is an animated character with backstories and missions, making rule retention effortless.'
+          },
+          {
+            icon: 'bi-people-fill',
+            color: 'aqua',
+            title: 'Ultra-Low 1:6 Pod Ratio',
+            desc: 'Dedicated early-childhood coaches stay with their pod all week to provide warm, individualized guidance.'
+          },
+          {
+            icon: 'bi-grid-3x3-gap-fill',
+            color: 'yellow',
+            title: 'Tactile & Giant Floor Mats',
+            desc: 'Campers physically step onto life-sized floor boards to embody coordinates, diagonals, and piece mobility.'
+          },
+          {
+            icon: 'bi-heart-fill',
+            color: 'pink',
+            title: 'Positive Social Sportsmanship',
+            desc: 'Daily emphasis on the StratKids Handshake, encouraging opponents, and having fun through every move.'
+          }
+        ],
+        duration: {
+          title: '1-Week Half-Day Immersion',
+          days: 'Monday through Friday',
+          hours: '09:00 AM – 12:30 PM (Half-Day)',
+          total: '17.5 Total Hours of Guided Play & Learning',
+          care: 'Early drop-off at 8:15 AM & optional lunch pick-up at 1:15 PM'
+        },
+        routine: [
+          { time: '09:00 AM', badge: 'bg-warning text-dark', title: 'Morning Circle & Character Tale', desc: 'Campers gather on the cozy rug for the daily piece character adventure.' },
+          { time: '09:40 AM', badge: 'bg-info text-dark', title: 'Giant Floor Board Activity', desc: 'Active physical movement demonstrating legal jumps, diagonals, and shields.' },
+          { time: '10:20 AM', badge: 'bg-danger', title: 'Healthy Snack & Sensory Games', desc: 'Organic fruit snack followed by playful tabletop logic games like Animal Upon Animal.' },
+          { time: '11:00 AM', badge: 'bg-success', title: 'Paired Wooden Board Sparring', desc: 'Friendly buddy challenges with personalized coach tips and sticker awards.' },
+          { time: '11:45 AM', badge: 'bg-primary', title: 'Outdoor Parachute & Lawn Recess', desc: 'Fresh air games on the private turf lawn: capture-the-king and relay races.' },
+          { time: '12:15 PM', badge: 'bg-secondary', title: 'Sticker Celebration & Dismissal', desc: 'Celebrating daily milestones with parents at secure PIN pick-up.' }
+        ],
+        benefits: [
+          {
+            icon: 'bi-bullseye',
+            color: 'aqua',
+            title: 'Focus & Self-Regulation',
+            desc: 'Hands resting gently on laps while evaluating their turn builds foundational impulse control.'
+          },
+          {
+            icon: 'bi-bounding-box-circles',
+            color: 'gold',
+            title: 'Spatial & Geometry Skills',
+            desc: 'Campers effortlessly master grid coordinates, horizontal ranks, vertical files, and diagonals.'
+          },
+          {
+            icon: 'bi-chat-heart',
+            color: 'rose',
+            title: 'Social Confidence',
+            desc: 'Sharing strategies with peers and navigating friendly competition builds conversational ease.'
+          },
+          {
+            icon: 'bi-award',
+            color: 'pink',
+            title: 'Growth Mindset',
+            desc: 'Learning that every mistake is simply a clue on how to improve on the next move.'
+          }
+        ],
+        faqs: [
+          {
+            q: 'Does my 5-year-old need to know how to play chess beforehand?',
+            a: 'Not at all! This program starts completely from square one: setting up the board, naming the pieces, and understanding how each piece moves through fun stories.'
+          },
+          {
+            q: 'What is the camper-to-coach ratio in this pod?',
+            a: 'We strictly maintain a 1:6 ratio (one certified early-childhood coach for every six campers) to guarantee safety, attention, and gentle encouragement.'
+          },
+          {
+            q: 'Can parents opt for lunch supervision?',
+            a: 'Yes, parents can choose extended lunch pick-up at 1:15 PM, where campers enjoy supervised social eating and light story time.'
+          },
+          {
+            q: 'What items should my camper bring each morning?',
+            a: 'A refillable water bottle, a peanut-free snack, comfortable sneakers for outdoor lawn games, and sun protection. All chess sets and materials are provided.'
+          }
+        ],
+        ctaBadge: 'Summer 2026 Spots Filling Rapidly',
+        ctaTitle: 'Ready to Enroll in Little Thinkers: Discovery Pod?',
+        ctaLead: 'Give your 5 to 7 year old a joyful summer adventure filled with strategy games, creative puzzles, and new friends.'
+      },
+
+      'little-thinkers-explorer': {
+        id: 'little-thinkers-explorer',
+        name: 'Little Thinkers: Full Day Explorer',
+        heroTaglinePrefix: 'Little Thinkers: ',
+        heroTaglineHighlight: 'Full Day Explorer',
+        lead: 'Comprehensive full-day strategy adventure pairing morning foundational chess with afternoon tactical scavenger hunts and creative maker labs.',
+        ageRange: 'Ages 5–7',
+        ageValue: '5-7',
+        level: 'Foundation',
+        ratio: '1:6 Pod Ratio',
+        tuition: '$580',
+        schedule: '09:00 AM – 04:30 PM',
+        cap: 'Max 12 Campers',
+        prereq: 'Basic Piece Moves or Discovery Pod',
+        // EXACT image from program card
+        image: 'assets/images/chess/pexels_8465448.jpg',
+        imageAlt: 'Little Thinkers Full Day Explorer young students learning chess strategy',
+        floatingTitle: 'Full-Day Care Included',
+        floatingSub: 'Catered Lunch & Crafts',
+        explanationHeading: 'Understanding The Little Thinkers: Full Day Explorer',
+        explanationP1: 'Designed for energetic young minds ready for a full day of stimulating discovery. Morning sessions solidify piece mobility, simple checkmate patterns (like the Rook Roller), and board control with our expert early childhood mentors.',
+        explanationP2: 'After a nutritious lunch and revitalizing outdoor play, afternoons transition into our creative Strategy Maker Lab—where campers design their own wooden chess pieces, solve escape-room style logic riddles, and play cooperative team strategy games.',
+        highlights: [
+          'Full-day enrichment from 9:00 AM to 4:30 PM with supervised lunch and rest periods',
+          'Morning chess fundamentals followed by afternoon tactical scavenger hunts',
+          'Hands-on Maker Lab: crafting custom chess pieces and illustrated strategy journals',
+          'Cooperative tabletop games emphasizing peer teamwork and spatial coordination'
+        ],
+        specProfile: {
+          ratio: '1 Coach : 6 Campers',
+          skill: 'Foundation (Level 2)',
+          games: 'Outfoxed, Catan Junior, Blokus Jr',
+          tournament: 'Daily Afternoon Mini-Challenges',
+          award: 'StratKids Grand Explorer Ribbon & Board'
+        },
+        traits: [
+          {
+            icon: 'bi-sun-fill',
+            color: 'yellow',
+            title: 'Full-Day Comprehensive Care',
+            desc: 'Seamless 9:00 AM to 4:30 PM schedule with nutritious snacks, supervised lunch, and balanced rest.'
+          },
+          {
+            icon: 'bi-compass-fill',
+            color: 'aqua',
+            title: 'Campus Tactical Scavenger Hunts',
+            desc: 'Puzzles hidden throughout our secure campus where campers team up to unlock strategy mystery clues.'
+          },
+          {
+            icon: 'bi-palette-fill',
+            color: 'rose',
+            title: 'Strategy Maker Lab',
+            desc: 'Campers sculpt their own clay pawns, design custom travel boards, and create tactical storybooks.'
+          },
+          {
+            icon: 'bi-people-fill',
+            color: 'pink',
+            title: 'Cooperative Team Challenges',
+            desc: 'Cooperative strategy board games teaching communication, consensus-building, and shared success.'
+          }
+        ],
+        duration: {
+          title: '1-Week Full-Day Camp Experience',
+          days: 'Monday through Friday',
+          hours: '09:00 AM – 04:30 PM (Full-Day)',
+          total: '37.5 Comprehensive Enrichment Hours',
+          care: 'Extended care options: Early drop-off at 8:15 AM & late pick-up until 5:15 PM'
+        },
+        routine: [
+          { time: '09:00 AM', badge: 'bg-warning text-dark', title: 'Morning Strategy Warmup', desc: 'Tactical riddle of the day and interactive review on the demo magnetic board.' },
+          { time: '09:45 AM', badge: 'bg-info text-dark', title: 'Checkmate Pattern Workshop', desc: 'Step-by-step masterclass on Rook Rollers, Queen traps, and back-rank shields.' },
+          { time: '10:45 AM', badge: 'bg-danger', title: 'Lawn Recess & Fruit Snack', desc: 'Supervised outdoor relays, obstacle courses, and healthy organic snacks.' },
+          { time: '11:30 AM', badge: 'bg-success', title: 'Coach-Guided Sparring Rounds', desc: 'Campers play structured games with live coaching prompts and notation badges.' },
+          { time: '12:30 PM', badge: 'bg-secondary', title: 'Lunch & Shaded Storybook Chill', desc: 'Relaxing shaded lunch followed by quiet strategy books and resting time.' },
+          { time: '01:30 PM', badge: 'bg-primary', title: 'Strategy Maker Lab & Crafts', desc: 'Building custom travel chessboards and sculpting unique mascot pieces.' },
+          { time: '02:45 PM', badge: 'bg-info text-dark', title: 'Tactical Scavenger Hunt', desc: 'Outdoor team quest solving chess riddles hidden across campus.' },
+          { time: '03:45 PM', badge: 'bg-warning text-dark', title: 'Afternoon Arena & Daily Awards', desc: 'Fun mini-arena games followed by daily medal presentations and dismissal.' }
+        ],
+        benefits: [
+          {
+            icon: 'bi-hourglass-split',
+            color: 'rose',
+            title: 'Sustained Mental Stamina',
+            desc: 'Expands attention span naturally across alternating mental, physical, and artistic activities.'
+          },
+          {
+            icon: 'bi-lightbulb',
+            color: 'gold',
+            title: 'Creative Problem Solving',
+            desc: 'Encourages experimenting with novel paths and viewing board challenges from multiple angles.'
+          },
+          {
+            icon: 'bi-person-hearts',
+            color: 'aqua',
+            title: 'Deep Camp Friendships',
+            desc: 'Full-day shared experiences build enduring bonds with curious, strategy-loving peers.'
+          },
+          {
+            icon: 'bi-shield-check',
+            color: 'pink',
+            title: 'Independence & Self-Care',
+            desc: 'Fosters personal responsibility for game materials, scorebooks, and daily schedules.'
+          }
+        ],
+        faqs: [
+          {
+            q: 'Is a full day too long for a 6-year-old camper?',
+            a: 'Not at all! We carefully alternate 30-minute mental focus blocks with physical games, crafts, and rest breaks so children stay energized and joyful.'
+          },
+          {
+            q: 'Are lunches provided or brought from home?',
+            a: 'Campers may bring a nut-free lunch, or parents can subscribe to our nutritious catered meal program featuring fresh, organic kid-approved options.'
+          },
+          {
+            q: 'How are campers grouped in the afternoon labs?',
+            a: 'Campers stay within their tight-knit 6-child pod with their dedicated coach to maintain emotional security and familiar mentorship.'
+          },
+          {
+            q: 'What should my child wear?',
+            a: 'Comfortable play clothing and closed-toe athletic sneakers suitable for outdoor turf activities and artistic crafting.'
+          }
+        ],
+        ctaBadge: 'Popular Full-Day Option',
+        ctaTitle: 'Enroll in Little Thinkers: Full Day Explorer',
+        ctaLead: 'A rich, engaging full-day experience combining chess fundamentals with creative maker projects and outdoor sports.'
+      },
+
+      'smart-players-tactics': {
+        id: 'smart-players-tactics',
+        name: 'Smart Players: Tactical Foundations',
+        heroTaglinePrefix: 'Smart Players: ',
+        heroTaglineHighlight: 'Tactical Foundations',
+        lead: 'Master essential tactical strikes—forks, pins, skewers, and discoveries—while building rock-solid opening principles and endgame fundamentals.',
+        ageRange: 'Ages 8–10',
+        ageValue: '8-10',
+        level: 'Foundation',
+        ratio: '1:8 Coach Ratio',
+        tuition: '$550',
+        schedule: '09:00 AM – 04:30 PM',
+        cap: 'Max 16 Campers',
+        prereq: 'Knows Piece Moves & Checkmate',
+        // EXACT image from program card
+        image: 'assets/images/chess/pexels_8471881.jpg',
+        imageAlt: 'Smart Players Tactical Foundations young camper focused on moving a chess piece',
+        floatingTitle: 'Weekly Grand Prix',
+        floatingSub: 'Rated Friday Tournament',
+        explanationHeading: 'Understanding Smart Players: Tactical Foundations',
+        explanationP1: 'At ages 8 to 10, young minds undergo a dramatic leap in logical reasoning. The Tactical Foundations camp channels that natural curiosity into sharp board vision. Campers learn how to look 2–3 moves ahead, identify undefended pieces, execute double attacks (forks), and pin opposing pieces against the enemy King.',
+        explanationP2: 'Days balance high-energy masterclasses, pair work with digital tournament clocks, daily puzzle-rush competitions, and our thrilling Friday Grand Prix—a supportive, non-elimination tournament where every camper earns a personalized rating report and medal.',
+        highlights: [
+          'The 5 Core Tactical Motifs: Forks, Pins, Skewers, Discovered Attacks, Deflection',
+          'Introduction to digital tournament clocks and algebraic scorebook notation',
+          'Post-game notation debriefs with coaches highlighting Brilliant Moves',
+          'Friday Grand Prix Swiss-system tournament with medals and trophies'
+        ],
+        specProfile: {
+          ratio: '1 Coach : 8 Campers',
+          skill: 'Foundation (Level 2)',
+          games: 'Bughouse, Quoridor, Blokus',
+          tournament: 'Friday Grand Prix (5-Round Swiss)',
+          award: 'StratKids Grand Prix Trophy & Medal'
+        },
+        traits: [
+          {
+            icon: 'bi-crosshair',
+            color: 'rose',
+            title: 'The 5 Tactical Motifs',
+            desc: 'Systematic drill sheets mastering forks, pins, skewers, deflection, and back-rank checkmates.'
+          },
+          {
+            icon: 'bi-alarm-fill',
+            color: 'yellow',
+            title: 'Digital Clocks & Time Management',
+            desc: 'Friendly exposure to digital game timers (Rapid 15+10) to cultivate calm, decisive decision making.'
+          },
+          {
+            icon: 'bi-journal-code',
+            color: 'aqua',
+            title: 'Game Notation & Analysis',
+            desc: 'Every camper writes moves in their custom scorebook and receives 1-on-1 coach annotation feedback.'
+          },
+          {
+            icon: 'bi-trophy-fill',
+            color: 'pink',
+            title: 'Friday Grand Prix Tournament',
+            desc: 'A non-elimination 5-round Swiss tournament celebrating courage, fair play, and tactical breakthroughs.'
+          }
+        ],
+        duration: {
+          title: '1-Week Full-Day Tactics Academy',
+          days: 'Monday through Friday',
+          hours: '09:00 AM – 04:30 PM (Full-Day)',
+          total: '37.5 Hours of Tactical Immersion',
+          care: 'Extended care: Early drop-off 8:15 AM & late pick-up until 5:15 PM'
+        },
+        routine: [
+          { time: '09:00 AM', badge: 'bg-warning text-dark', title: 'Puzzle Rush Sprint', desc: 'High-energy 15-minute puzzle challenges building rapid pattern recognition.' },
+          { time: '09:40 AM', badge: 'bg-info text-dark', title: 'Tactical Motif Masterclass', desc: 'Coach demonstration on the wall board: pinning, spearing, and double attacks.' },
+          { time: '10:45 AM', badge: 'bg-danger', title: 'Outdoor Sports & Turf Relays', desc: 'Dodgeball, soccer relays, and ultimate frisbee to refresh the mind.' },
+          { time: '11:30 AM', badge: 'bg-success', title: 'Digital Clock Match Play', desc: 'Pair sparring with algebraic notation and real-time coach feedback.' },
+          { time: '12:30 PM', badge: 'bg-secondary', title: 'Lunch & Multi-Game Arena', desc: 'Supervised lunch followed by strategy games like Quoridor and Blokus.' },
+          { time: '01:30 PM', badge: 'bg-primary', title: 'King & Pawn Endgame Clinic', desc: 'Mastering pawn promotion races, the square rule, and King opposition.' },
+          { time: '02:30 PM', badge: 'bg-info text-dark', title: 'Team Bughouse Tournament', desc: 'Fast-paced two-player team chess testing spatial speed and camaraderie.' },
+          { time: '03:30 PM', badge: 'bg-warning text-dark', title: 'Daily Grand Prix Round', desc: 'Official camp tournament round followed by scoresheet grading and dismissal.' }
+        ],
+        benefits: [
+          {
+            icon: 'bi-eye-fill',
+            color: 'aqua',
+            title: 'Calculated Foresight',
+            desc: 'Campers practice looking 3 steps ahead before committing to a decision, curbing impulsivity.'
+          },
+          {
+            icon: 'bi-cpu-fill',
+            color: 'rose',
+            title: 'Deductive Logic',
+            desc: 'Analyzing threats and unmasking weaknesses directly translates to stronger math and science skills.'
+          },
+          {
+            icon: 'bi-lightning-charge-fill',
+            color: 'gold',
+            title: 'Calm Under Time Pressure',
+            desc: 'Managing minutes on the digital clock teaches emotional composure in high-stakes situations.'
+          },
+          {
+            icon: 'bi-shield-check',
+            color: 'pink',
+            title: 'Respectful Sportsmanship',
+            desc: 'Learning to shake hands, congratulate victors, and analyze lost games with curiosity instead of tears.'
+          }
+        ],
+        faqs: [
+          {
+            q: 'Does my 8-year-old need previous tournament experience?',
+            a: 'No prior tournament play is needed! As long as your child knows legal piece movements and checkmate, our coaches will guide them seamlessly.'
+          },
+          {
+            q: 'How does the Friday Grand Prix tournament work?',
+            a: 'It uses the Swiss pairing system where no player is ever eliminated. Everyone plays 5 rounds against peers with similar scores, ensuring close, rewarding matches.'
+          },
+          {
+            q: 'Do campers learn how to write chess notation?',
+            a: 'Yes! Every camper receives a custom StratKids scorebook and is taught standard algebraic notation (e.g. e4, Nf3, O-O) step by step.'
+          },
+          {
+            q: 'What if my child is shy or anxious about competitive games?',
+            a: 'Our camp culture emphasizes celebration over cutthroat winning. Coaches actively praise effort, creative ideas, and sportsmanship above results.'
+          }
+        ],
+        ctaBadge: 'Our Most Popular Summer Track',
+        ctaTitle: 'Enroll in Smart Players: Tactical Foundations',
+        ctaLead: 'Empower your 8 to 10 year old with tactical sharp-shooting, clock confidence, and lifelong logical habits.'
+      },
+
+      'smart-players-strategist': {
+        id: 'smart-players-strategist',
+        name: 'Smart Players: Board Strategist',
+        heroTaglinePrefix: 'Smart Players: ',
+        heroTaglineHighlight: 'Board Strategist',
+        lead: 'Bridge tactics with positional vision—pawn structures, outposts, King safety, and strategic tabletop games like Blokus, Quoridor, and Hive.',
+        ageRange: 'Ages 8–10',
+        ageValue: '8-10',
+        level: 'Intermediate',
+        ratio: '1:8 Coach Ratio',
+        tuition: '$560',
+        schedule: '09:00 AM – 04:30 PM',
+        cap: 'Max 16 Campers',
+        prereq: 'Tactics Familiarity or Completed Foundations',
+        // EXACT image from program card
+        image: 'assets/images/chess/pexels_8466168.jpg',
+        imageAlt: 'Smart Players Board Strategist chess instructor guiding campers through tactics',
+        floatingTitle: 'Multi-Game Arena',
+        floatingSub: 'Quoridor, Blokus, Hive',
+        explanationHeading: 'Understanding Smart Players: Board Strategist',
+        explanationP1: 'Tactics win games, but strategy creates the opportunities for tactics to appear. In Board Strategist, intermediate 8-to-10 year olds move beyond one-move threats into deep positional strategy: understanding open files, outposts for Knights, good vs bad Bishops, and pawn chain targets.',
+        explanationP2: 'To cross-train tactical neural pathways, afternoons feature our celebrated "Multi-Game Strategy Arena"—incorporating abstract German strategy games like Quoridor (corridor navigation), Blokus (spatial territory control), and Hive (insect movement logistics).',
+        highlights: [
+          'Positional Strategy: Piece harmony, center domination, pawn outposts, and weak squares',
+          'Multi-Board Strategy Arena: Cross-training logic through Euro-style abstract board games',
+          'Candidate Move Formulation: Methodical 3-step thinking routine (Threats, Targets, Candidates)',
+          'Master Game Showcases: Analyzing legendary battles by Morphy, Capablanca, and Fischer'
+        ],
+        specProfile: {
+          ratio: '1 Coach : 8 Campers',
+          skill: 'Intermediate (Level 3)',
+          games: 'Quoridor, Hive, Blokus, Onitama',
+          tournament: 'StratKids Board Strategist Cup',
+          award: 'Strategist Master Certificate & Medal'
+        },
+        traits: [
+          {
+            icon: 'bi-diagram-3-fill',
+            color: 'rose',
+            title: 'Positional Vision & Pawn Chains',
+            desc: 'Learning how pawn structures dictate piece placement, open highways, and King safety.'
+          },
+          {
+            icon: 'bi-dice-5-fill',
+            color: 'aqua',
+            title: 'Multi-Game Strategy Arena',
+            desc: 'Cross-training logical agility with Quoridor, Blokus, and Hive to build versatile strategic instincts.'
+          },
+          {
+            icon: 'bi-search',
+            color: 'yellow',
+            title: 'Candidate Move Method',
+            desc: 'Teaching a disciplined mental checklist to eliminate blunders before touching any piece.'
+          },
+          {
+            icon: 'bi-person-video3',
+            color: 'pink',
+            title: '1-on-1 Game Post-Mortem',
+            desc: 'Campers sit with coaches to analyze their games move by move on dedicated demonstration boards.'
+          }
+        ],
+        duration: {
+          title: '1-Week Full-Day Strategy Immersion',
+          days: 'Monday through Friday',
+          hours: '09:00 AM – 04:30 PM (Full-Day)',
+          total: '37.5 Hours of Advanced Positional Training',
+          care: 'Extended care: Early drop-off 8:15 AM & late pick-up until 5:15 PM'
+        },
+        routine: [
+          { time: '09:00 AM', badge: 'bg-warning text-dark', title: 'Grandmaster Classic Showcase', desc: 'Analyzing timeless masterpieces by Capablanca and Fischer on the big board.' },
+          { time: '09:45 AM', badge: 'bg-info text-dark', title: 'Positional Concepts Workshop', desc: 'Deep dive into outposts, backward pawns, and Bishop pair advantages.' },
+          { time: '10:45 AM', badge: 'bg-danger', title: 'Athletic Recess & Lawn Challenges', desc: 'Lawn sports, capture the flag, and refreshing shaded fruit breaks.' },
+          { time: '11:30 AM', badge: 'bg-success', title: 'Themed Opening Sparring', desc: 'Campers play structured games starting from key opening pawn configurations.' },
+          { time: '12:30 PM', badge: 'bg-secondary', title: 'Lunch & Relaxed Social Play', desc: 'Supervised lunch with open-ended board gaming and puzzles.' },
+          { time: '01:30 PM', badge: 'bg-primary', title: 'Multi-Game Strategy Arena', desc: 'Quoridor, Blokus, Hive, and Onitama spatial reasoning tournaments.' },
+          { time: '02:45 PM', badge: 'bg-info text-dark', title: 'Blindfold Visualization Drills', desc: 'Visualizing coordinates and piece movements mentally without looking at the board.' },
+          { time: '03:45 PM', badge: 'bg-warning text-dark', title: 'Camp Grand Prix & Coach Analysis', desc: 'Daily rated round with immediate coach post-mortem notes and dismissal.' }
+        ],
+        benefits: [
+          {
+            icon: 'bi-signpost-split-fill',
+            color: 'rose',
+            title: 'Long-Range Planning',
+            desc: 'Formulating multi-step campaigns rather than reacting impulsively to single-turn threats.'
+          },
+          {
+            icon: 'bi-grid-1x2-fill',
+            color: 'gold',
+            title: 'Flexible Spatial Geometry',
+            desc: 'Cross-training across multiple abstract games builds agile, non-linear reasoning.'
+          },
+          {
+            icon: 'bi-shield-shaded',
+            color: 'aqua',
+            title: 'Proactive Defensive Sense',
+            desc: 'Identifying opponent intentions early and neutralizing threats before they strike.'
+          },
+          {
+            icon: 'bi-chat-quote-fill',
+            color: 'pink',
+            title: 'Articulate Game Review',
+            desc: 'Learning to verbally explain reasons behind moves during coach and peer debriefs.'
+          }
+        ],
+        faqs: [
+          {
+            q: 'How do games like Quoridor, Blokus, and Hive help chess ability?',
+            a: 'These games test spatial geometry, containment, and resource management without memorized opening lines, training pure creative strategic calculation.'
+          },
+          {
+            q: 'What rating level is recommended for this track?',
+            a: 'Recommended for unrated campers who have played at least 50 games at home or online, or players with USCF/Chess.com ratings between 600 and 1000.'
+          },
+          {
+            q: 'Do coaches play against the campers?',
+            a: 'Yes! Coaches regularly host 1-vs-8 simultaneous exhibitions (simuls) where campers test their defensive planning directly against masters.'
+          },
+          {
+            q: 'What equipment is provided?',
+            a: 'All weighted wooden tournament sets, digital clocks, scorebooks, and tabletop board games are fully provided by StratKids.'
+          }
+        ],
+        ctaBadge: 'Deepen Positional Mastery',
+        ctaTitle: 'Enroll in Smart Players: Board Strategist',
+        ctaLead: 'Transform quick tactical strikes into deep, multi-phase positional plans that control the board.'
+      },
+
+      'strategic-minds-tactics': {
+        id: 'strategic-minds-tactics',
+        name: 'Strategic Minds: Tactics Lab',
+        heroTaglinePrefix: 'Strategic Minds: ',
+        heroTaglineHighlight: 'Tactics Lab',
+        lead: 'High-level candidate move evaluation, deep middle-game planning, Lucena & Philidor Rook endgames, and electronic tournament clock preparation.',
+        ageRange: 'Ages 11–13',
+        ageValue: '11-13',
+        level: 'Intermediate',
+        ratio: '1:8 Coach Ratio',
+        tuition: '$575',
+        schedule: '09:00 AM – 04:30 PM',
+        cap: 'Max 16 Campers',
+        prereq: 'Comfortable with Notation & Rapid Clocks',
+        // EXACT image from program card
+        image: 'assets/images/chess/pexels_5960157.jpg',
+        imageAlt: 'Strategic Minds Tactics Lab precision chess move on tournament board',
+        floatingTitle: 'Scholastic Tournament Ready',
+        floatingSub: 'DGT Electronic Clocks',
+        explanationHeading: 'Understanding Strategic Minds: Tactics Lab',
+        explanationP1: 'Middle school is the prime age to unlock rigorous analytical depth. The Strategic Minds Tactics Lab transforms instinctive play into structured calculation. Campers master the tree of analysis: evaluating forcing moves (checks, captures, threats), eliminating candidate errors, and calculating 4–5 plies deep.',
+        explanationP2: 'Special focus is placed on Rook and pawn endgames—the most common and critical phase in competitive chess. Campers also learn game clock psychological tactics, handling time crunches, and preparing psychologically for scholastic state and national championships.',
+        highlights: [
+          'Tree of Calculation Labs: GM Alexander Kotov candidate move methodology',
+          'Essential Endgame Repertoire: Absolute mastery of Lucena, Philidor, and triangulation',
+          'Electronic Clock Mastery: Training with DGT digital clocks across Rapid (15+10) & Blitz (5+3)',
+          'Custom Opening Blueprints: Repertoire trees for White (1.e4 or 1.d4) and Black setups'
+        ],
+        specProfile: {
+          ratio: '1 Coach : 8 Campers',
+          skill: 'Intermediate+ (Level 3)',
+          games: 'FIDE Rapid, Bughouse, Blitz Arena',
+          tournament: 'StratKids Middle School Championship',
+          award: 'Tactics Lab Tournament Trophy'
+        },
+        traits: [
+          {
+            icon: 'bi-tree-fill',
+            color: 'rose',
+            title: 'Tree of Calculation',
+            desc: 'Systematic candidate move trees evaluating forcing candidate variations without blunder.'
+          },
+          {
+            icon: 'bi-shield-slash-fill',
+            color: 'aqua',
+            title: 'Theoretical Rook Endgames',
+            desc: 'Mastering the Lucena building-a-bridge method, Philidor third-rank defense, and cutoffs.'
+          },
+          {
+            icon: 'bi-stopwatch-fill',
+            color: 'yellow',
+            title: 'DGT Tournament Clocks',
+            desc: 'Daily practice under tournament time controls with delay and increment parameters.'
+          },
+          {
+            icon: 'bi-book-half',
+            color: 'pink',
+            title: 'Opening Repertoire Trees',
+            desc: 'Building personalized opening trees that fit each camper\'s unique strategic style.'
+          }
+        ],
+        duration: {
+          title: '1-Week Intensive Competitive Camp',
+          days: 'Monday through Friday',
+          hours: '09:00 AM – 04:30 PM (Full-Day)',
+          total: '37.5 Hours of Middle School Strategy Training',
+          care: 'Extended care: Early drop-off 8:15 AM & late pick-up until 5:15 PM'
+        },
+        routine: [
+          { time: '09:00 AM', badge: 'bg-warning text-dark', title: 'Calculation Diagnostic', desc: '5 complex tactical middle-game puzzles evaluating depth and visualization accuracy.' },
+          { time: '09:45 AM', badge: 'bg-info text-dark', title: 'Master Lecture & King Attack', desc: 'Piece sacrifices, Greek Gift motifs, and breaking through defensive pawn shelters.' },
+          { time: '10:45 AM', badge: 'bg-danger', title: 'Outdoor Conditioning Relays', desc: 'High-energy turf soccer, dodgeball, and fitness breaks to maintain mental stamina.' },
+          { time: '11:30 AM', badge: 'bg-success', title: 'FIDE-Format Classical Round', desc: 'Rated format match play (G/25 + 5s) with full scoresheet notation.' },
+          { time: '12:45 PM', badge: 'bg-secondary', title: 'Lunch & Grandmaster Analysis', desc: 'Nutritious lunch and masterclass video breakdown of World Championship games.' },
+          { time: '01:30 PM', badge: 'bg-primary', title: 'Rook & Pawn Endgame Clinic', desc: 'Hands-on practical execution of Lucena, Philidor, and King opposition maneuvers.' },
+          { time: '02:45 PM', badge: 'bg-info text-dark', title: 'Rapid Clock Blitz Arena', desc: '5-minute blitz challenges developing lightning instincts and tactical reflexes.' },
+          { time: '03:45 PM', badge: 'bg-warning text-dark', title: 'Coach Scoresheet Post-Mortem', desc: 'Detailed 1-on-1 coach annotation of the day\'s games and dismissal.' }
+        ],
+        benefits: [
+          {
+            icon: 'bi-calculator-fill',
+            color: 'aqua',
+            title: 'Analytical Precision',
+            desc: 'Eliminates careless blunders through disciplined candidate verification routines.'
+          },
+          {
+            icon: 'bi-lightning-fill',
+            color: 'gold',
+            title: 'High-Stakes Mental Composure',
+            desc: 'Thrives in intense, ticking clock scenarios without cognitive panic or anxiety.'
+          },
+          {
+            icon: 'bi-braces',
+            color: 'rose',
+            title: 'Systematic Deductive Logic',
+            desc: 'Thinking processes translate directly to advanced algebra, geometry proofs, and coding.'
+          },
+          {
+            icon: 'bi-trophy',
+            color: 'pink',
+            title: 'Scholastic Tournament Readiness',
+            desc: 'Complete psychological and tactical prep for USCF, state, and national tournaments.'
+          }
+        ],
+        faqs: [
+          {
+            q: 'Is this track suitable for state championship preparation?',
+            a: 'Yes, absolutely. Many campers enroll specifically to prepare for State Championships, SuperNationals, and school team competitions.'
+          },
+          {
+            q: 'Are professional digital tournament clocks provided?',
+            a: 'Yes! Every board is paired with professional DGT digital clocks configured with delay and increment settings matching scholastic standards.'
+          },
+          {
+            q: 'Do campers receive personalized feedback on their game notation?',
+            a: 'Yes. Daily notation debriefs are mandatory. Coaches review every scoresheet with both players to identify tactical turning points.'
+          },
+          {
+            q: 'What rating is ideal for this camp?',
+            a: 'Appropriate for middle schoolers with ratings between 800 and 1300 USCF / Chess.com, or ambitious unrated club players.'
+          }
+        ],
+        ctaBadge: 'Prepare for State & National Events',
+        ctaTitle: 'Enroll in Strategic Minds: Tactics Lab',
+        ctaLead: 'Unlock master-level calculation, rock-solid endgame technique, and tournament composure.'
+      },
+
+      'future-masters-tournament': {
+        id: 'future-masters-tournament',
+        name: 'Future Masters: Tournament Prep',
+        heroTaglinePrefix: 'Future Masters: ',
+        heroTaglineHighlight: 'Tournament Prep',
+        lead: 'Elite masterclass mentoring with titled FIDE Masters: deep engine database analysis, opening repertoire tailoring, sports psychology, and junior mentorship coaching.',
+        ageRange: 'Ages 14–16',
+        ageValue: '14-16',
+        level: 'Advanced',
+        ratio: '1:6 FIDE Mentorship',
+        tuition: '$620',
+        schedule: '09:00 AM – 04:30 PM',
+        cap: 'Max 12 Campers',
+        prereq: 'USCF/Chess.com 1100+ or Assessment',
+        // EXACT image from program card
+        image: 'assets/images/chess/pexels_957312.jpg',
+        imageAlt: 'Future Masters Tournament Prep tournament checkmate and advanced endgame mastery',
+        floatingTitle: 'FIDE Master Mentorship',
+        floatingSub: 'Stockfish Engine Labs',
+        explanationHeading: 'Understanding Future Masters: Tournament Prep',
+        explanationP1: 'The Future Masters track is our pinnacle program for ambitious teens aiming for National Master and FIDE titles. Mentored directly by titled FIDE Masters and Grandmaster guest lecturers, this program treats young athletes as true intellectual competitors.',
+        explanationP2: 'Curriculum covers modern opening preparation using ChessBase and Stockfish engine evaluation, mastering unbalanced endgames (Queen vs Rook, opposite-color Bishops), sports psychology routines, and physical endurance for 4-hour tournament games. Campers also develop leadership by mentoring younger camp pods.',
+        highlights: [
+          'Direct FIDE Master Coaching: Taught exclusively by certified masters and guest clinicians',
+          'Modern Engine & Database Prep: Professional use of ChessBase, Stockfish 16, and opening trees',
+          'Competitive Sports Psychology: Pre-game focus rituals, tilt prevention, and stamina management',
+          'Junior Leadership Credential: Teens lead afternoon simultaneous mini-clinics for younger campers'
+        ],
+        specProfile: {
+          ratio: '1 FIDE Master : 6 Campers',
+          skill: 'Advanced (Level 4)',
+          games: 'Classical G/45+10, Rapid, Blindfold',
+          tournament: 'StratKids Masters Invitational',
+          award: 'FIDE Mentorship Diploma & Trophy'
+        },
+        traits: [
+          {
+            icon: 'bi-award-fill',
+            color: 'rose',
+            title: 'Direct FIDE Master Mentorship',
+            desc: 'Learn directly from titled FIDE Masters and Grandmasters with decades of elite tournament experience.'
+          },
+          {
+            icon: 'bi-laptop-fill',
+            color: 'aqua',
+            title: 'ChessBase & Engine Analysis',
+            desc: 'Professional training in modern database preparation, engine evaluation, and novel opening lines.'
+          },
+          {
+            icon: 'bi-heart-pulse-fill',
+            color: 'yellow',
+            title: 'Tournament Sports Psychology',
+            desc: 'Developing mental endurance, emotional resilience after losses, and razor-sharp focus.'
+          },
+          {
+            icon: 'bi-stars',
+            color: 'pink',
+            title: 'Junior Leadership & Service',
+            desc: 'Teen campers mentor younger pods and earn 10 verified community leadership service hours.'
+          }
+        ],
+        duration: {
+          title: '1-Week Elite Masterclass Intensive',
+          days: 'Monday through Friday',
+          hours: '09:00 AM – 04:30 PM (Full-Day)',
+          total: '37.5 Hours of Master-Level Mentorship',
+          care: 'Extended study hall and self-directed database labs until 5:15 PM'
+        },
+        routine: [
+          { time: '09:00 AM', badge: 'bg-warning text-dark', title: 'Elite Masterclass Lecture', desc: 'Complex positional imbalances, piece sacrifices, and modern grandmaster novelties.' },
+          { time: '10:00 AM', badge: 'bg-info text-dark', title: 'Database & Engine Clinic', desc: 'Deep ChessBase analysis, building custom repertoire trees with Stockfish 16.' },
+          { time: '11:00 AM', badge: 'bg-danger', title: 'Athletic Conditioning & Endurance', desc: 'Cardiovascular training and mental relaxation exercises tailored for long tournament games.' },
+          { time: '11:45 AM', badge: 'bg-success', title: 'Classical Tournament Match (G/45+10s)', desc: 'Official rated format game with professional tournament clocks and notation.' },
+          { time: '01:15 PM', badge: 'bg-secondary', title: 'Gourmet Lunch & Game Debrief', desc: 'Nutritious lunch and discussion of strategic turning points from the morning matches.' },
+          { time: '02:00 PM', badge: 'bg-primary', title: 'FIDE Master 1-on-1 Post-Mortem', desc: 'Deep individual game analysis with the master mentor dissecting tactical errors.' },
+          { time: '03:00 PM', badge: 'bg-info text-dark', title: 'Complex Endgame Lab', desc: 'Theoretical mastery of Queen vs Rook, opposite-color Bishops, and fortress breakthroughs.' },
+          { time: '03:45 PM', badge: 'bg-warning text-dark', title: 'Junior Mentorship & Blitz Arena', desc: 'Teens host mini-clinics for younger campers or compete in master blitz matches.' }
+        ],
+        benefits: [
+          {
+            icon: 'bi-speedometer2',
+            color: 'rose',
+            title: 'Deep Calculation Depth',
+            desc: 'Calculating complex tactical variations 6–8 moves deep with speed and unwavering precision.'
+          },
+          {
+            icon: 'bi-gem',
+            color: 'aqua',
+            title: 'Elite Competitive Mindset',
+            desc: 'Managing pre-game nerves, maintaining objective composure, and bouncing back from defeats.'
+          },
+          {
+            icon: 'bi-patch-check-fill',
+            color: 'gold',
+            title: 'College Resume Credential',
+            desc: 'Earn an official verified StratKids Leadership & Community Service Certificate (10 hours).'
+          },
+          {
+            icon: 'bi-graph-up-arrow',
+            color: 'pink',
+            title: 'Accelerated Rating Gains',
+            desc: 'Campers typically gain 150–250+ rating points in the 3 months following this intensive academy.'
+          }
+        ],
+        faqs: [
+          {
+            q: 'What rating level is required for Future Masters?',
+            a: 'A minimum rating of approximately 1100 USCF / 1300 Chess.com is recommended. If your teen is unrated but has serious competitive drive, contact us for a placement evaluation.'
+          },
+          {
+            q: 'Do campers need their own laptops for database sessions?',
+            a: 'Laptops with ChessBase and Stockfish are provided in our Tech Lab, but campers are welcome to bring their personal laptops to export their databases.'
+          },
+          {
+            q: 'Are high school community service hours granted for mentorship?',
+            a: 'Yes! Campers who complete the junior mentorship sessions receive an official verified StratKids Community Leadership Certificate (10 verified hours).'
+          },
+          {
+            q: 'Who are the coaches for this program?',
+            a: 'Taught exclusively by titled FIDE Masters (FM), International Masters (IM), and experienced scholastic Grandmaster guest lecturers.'
+          }
+        ],
+        ctaBadge: 'Elite Teen Strategy Academy',
+        ctaTitle: 'Enroll in Future Masters: Tournament Prep',
+        ctaLead: 'Join an elite cohort of teen competitors and study directly with titled FIDE Masters to reach your championship potential.'
+      }
+    };
+
+    function renderProgram(programId) {
+      const data = stratkidsProgramsData[programId] || stratkidsProgramsData['little-thinkers-discovery'];
+
+      // 1. Page Title & Meta
+      document.title = data.name + ' | StratKids Summer Camp';
+      const pageTitleEl = document.getElementById('pageTitle');
+      if (pageTitleEl) pageTitleEl.textContent = data.name + ' | StratKids Summer Camp';
+      const metaDesc = document.getElementById('metaDescription');
+      if (metaDesc) metaDesc.setAttribute('content', data.lead);
+
+      // 2. Breadcrumb
+      const heroBreadcrumb = document.getElementById('heroBreadcrumb');
+      if (heroBreadcrumb) heroBreadcrumb.textContent = data.name;
+
+      // 3. Hero Badges
+      const heroAgeBadge = document.getElementById('heroAgeBadge');
+      if (heroAgeBadge) heroAgeBadge.textContent = data.ageRange;
+      const heroLevelBadge = document.getElementById('heroLevelBadge');
+      if (heroLevelBadge) heroLevelBadge.textContent = data.level;
+      const heroRatioBadge = document.getElementById('heroRatioBadge');
+      if (heroRatioBadge) heroRatioBadge.textContent = data.ratio;
+
+      // 4. Hero Title & Lead
+      const heroTitle = document.getElementById('heroProgramTitle');
+      if (heroTitle) {
+        heroTitle.innerHTML = data.heroTaglinePrefix + '<span class="highlight-rose">' + data.heroTaglineHighlight + '</span>';
+      }
+      const heroLead = document.getElementById('heroProgramLead');
+      if (heroLead) heroLead.textContent = data.lead;
+
+      // 5. Hero Specs
+      const heroTuition = document.getElementById('heroSpecTuition');
+      if (heroTuition) heroTuition.textContent = data.tuition;
+      const heroSchedule = document.getElementById('heroSpecSchedule');
+      if (heroSchedule) heroSchedule.textContent = data.schedule;
+      const heroCap = document.getElementById('heroSpecCap');
+      if (heroCap) heroCap.textContent = data.cap;
+      const heroPrereq = document.getElementById('heroSpecPrereq');
+      if (heroPrereq) heroPrereq.textContent = data.prereq;
+
+      // 6. Hero Image (EXACT match to program card)
+      const heroImg = document.getElementById('heroProgramImg');
+      if (heroImg) {
+        heroImg.src = data.image;
+        heroImg.alt = data.imageAlt;
+      }
+      const heroImgAgeChip = document.getElementById('heroImageAgeChip');
+      if (heroImgAgeChip) heroImgAgeChip.textContent = data.ageRange;
+      const heroImgRatioChip = document.getElementById('heroImageRatioChip');
+      if (heroImgRatioChip) heroImgRatioChip.textContent = data.ratio;
+      const heroFloatTitle = document.getElementById('heroFloatingTitle');
+      if (heroFloatTitle) heroFloatTitle.textContent = data.floatingTitle;
+      const heroFloatSub = document.getElementById('heroFloatingSub');
+      if (heroFloatSub) heroFloatSub.textContent = data.floatingSub;
+
+      // 7. Explanation Section
+      const expHeading = document.getElementById('explanationHeading');
+      if (expHeading) expHeading.textContent = data.explanationHeading;
+      const expP1 = document.getElementById('explanationP1');
+      if (expP1) expP1.textContent = data.explanationP1;
+      const expP2 = document.getElementById('explanationP2');
+      if (expP2) expP2.textContent = data.explanationP2;
+
+      const highlightsList = document.getElementById('explanationHighlightsList');
+      if (highlightsList) {
+        highlightsList.innerHTML = data.highlights.map(function(item) {
+          return '<li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> <span>' + item + '</span></li>';
+        }).join('');
+      }
+
+      // Spec Profile
+      const specBoxAge = document.getElementById('specBoxAge');
+      if (specBoxAge) specBoxAge.textContent = data.ageRange;
+      const profileRatio = document.getElementById('profileRatio');
+      if (profileRatio) profileRatio.textContent = data.specProfile.ratio;
+      const profileSkill = document.getElementById('profileSkill');
+      if (profileSkill) profileSkill.textContent = data.specProfile.skill;
+      const profileGames = document.getElementById('profileGames');
+      if (profileGames) profileGames.textContent = data.specProfile.games;
+      const profileTourn = document.getElementById('profileTournament');
+      if (profileTourn) profileTourn.textContent = data.specProfile.tournament;
+      const profileAward = document.getElementById('profileAward');
+      if (profileAward) profileAward.textContent = data.specProfile.award;
+
+      // 8. Traits Cards
+      const traitsHeading = document.getElementById('traitsHeading');
+      if (traitsHeading) traitsHeading.textContent = 'Distinct Traits of ' + data.name;
+      const traitsContainer = document.getElementById('traitsCardsContainer');
+      if (traitsContainer) {
+        traitsContainer.innerHTML = data.traits.map(function(trait) {
+          return `
+            <div class="col-lg-3 col-md-6">
+              <div class="bento-card p-4 h-100">
+                <span class="badge-emblem badge-${trait.color} mb-3" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                  <i class="bi ${trait.icon}"></i>
+                </span>
+                <h5 class="fw-bold mb-2">${trait.title}</h5>
+                <p class="small text-muted mb-0">${trait.desc}</p>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 9. Duration & Schedule
+      const durationTitle = document.getElementById('durationTitle');
+      if (durationTitle) durationTitle.textContent = data.duration.title;
+      const durationDays = document.getElementById('durationDays');
+      if (durationDays) durationDays.textContent = data.duration.days;
+      const durationHours = document.getElementById('durationHours');
+      if (durationHours) durationHours.textContent = data.duration.hours;
+      const durationTotal = document.getElementById('durationTotal');
+      if (durationTotal) durationTotal.textContent = data.duration.total;
+      const durationCare = document.getElementById('durationCare');
+      if (durationCare) durationCare.textContent = data.duration.care;
+
+      const timelineContainer = document.getElementById('dailyRoutineTimeline');
+      if (timelineContainer) {
+        timelineContainer.innerHTML = data.routine.map(function(slot) {
+          return `
+            <div class="d-flex align-items-center gap-3 py-2 border-bottom">
+              <span class="badge ${slot.badge} px-3 py-2 rounded-pill fw-bold" style="min-width: 95px; text-align: center;">${slot.time}</span>
+              <div>
+                <strong class="d-block text-dark">${slot.title}</strong>
+                <small class="text-muted">${slot.desc}</small>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 10. Benefits Section
+      const benefitsHeading = document.getElementById('benefitsHeading');
+      if (benefitsHeading) benefitsHeading.textContent = 'Core Benefits of ' + data.name;
+      const benefitsContainer = document.getElementById('benefitsCardsContainer');
+      if (benefitsContainer) {
+        benefitsContainer.innerHTML = data.benefits.map(function(b) {
+          return `
+            <div class="col-lg-3 col-md-6">
+              <div class="bento-card p-4 h-100">
+                <span class="badge-emblem badge-${b.color} mb-3" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                  <i class="bi ${b.icon}"></i>
+                </span>
+                <h5 class="fw-bold mb-2">${b.title}</h5>
+                <p class="small text-muted mb-0">${b.desc}</p>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 11. FAQ Accordion
+      const faqHeading = document.getElementById('faqHeading');
+      if (faqHeading) faqHeading.textContent = 'Frequently Asked Questions: ' + data.name;
+      const accordionContainer = document.getElementById('programDetailsAccordion');
+      if (accordionContainer) {
+        accordionContainer.innerHTML = data.faqs.map(function(item, idx) {
+          const collapseId = 'progFaqCollapse' + idx;
+          const isFirst = idx === 0;
+          return `
+            <div class="accordion-item border rounded-4 mb-3 overflow-hidden shadow-sm" style="border-color: var(--sk-border-color) !important;">
+              <h2 class="accordion-header" id="heading${idx}">
+                <button class="accordion-button fw-bold ${isFirst ? '' : 'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="${isFirst ? 'true' : 'false'}" aria-controls="${collapseId}">
+                  ${item.q}
+                </button>
+              </h2>
+              <div id="${collapseId}" class="accordion-collapse collapse ${isFirst ? 'show' : ''}" aria-labelledby="heading${idx}" data-bs-parent="#programDetailsAccordion">
+                <div class="accordion-body text-muted">
+                  ${item.a}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 12. CTA Section
+      const ctaBadge = document.getElementById('ctaBadge');
+      if (ctaBadge) ctaBadge.textContent = data.ctaBadge;
+      const ctaTitle = document.getElementById('ctaTitle');
+      if (ctaTitle) ctaTitle.textContent = data.ctaTitle;
+      const ctaLead = document.getElementById('ctaLead');
+      if (ctaLead) ctaLead.textContent = data.ctaLead;
+
+      // 13. Pre-select modal track dropdown
+      const modalSelect = document.getElementById('modalTrackSelect');
+      if (modalSelect && data.ageValue) {
+        modalSelect.value = data.ageValue;
+      }
+
+      // 14. Update active switcher button
+      const switchBtns = document.querySelectorAll('.program-switch-btn');
+      switchBtns.forEach(function(btn) {
+        if (btn.getAttribute('data-program-id') === data.id) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      let programId = urlParams.get('id');
+      if (!programId || !stratkidsProgramsData[programId]) {
+        programId = 'little-thinkers-discovery';
+      }
+      renderProgram(programId);
+
+      // Handle Switcher Click
+      const switchBtns = document.querySelectorAll('.program-switch-btn');
+      switchBtns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('data-program-id');
+          if (targetId && stratkidsProgramsData[targetId]) {
+            renderProgram(targetId);
+            const newUrl = window.location.pathname + '?id=' + encodeURIComponent(targetId);
+            window.history.pushState({ programId: targetId }, '', newUrl);
+            
+            // Smooth scroll gently to top of program hero
+            const heroSection = document.getElementById('programHeroSection');
+            if (heroSection) {
+              heroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      });
+
+      // Handle Browser Back / Forward buttons
+      window.addEventListener('popstate', function() {
+        const currentParams = new URLSearchParams(window.location.search);
+        let id = currentParams.get('id') || 'little-thinkers-discovery';
+        renderProgram(id);
+      });
+    });
+  </script>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

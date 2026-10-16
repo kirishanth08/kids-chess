@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Camp Tuition &amp; Pricing | StratKids Summer Camp 2026</title>
+  <meta name="description" content="Transparent summer camp tuition, early-bird savings, and sibling discount calculator for StratKids Chess & Strategy Camp 2026.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL NAVBAR
+       ========================================================================== -->
+    <nav class="navbar navbar-expand-lg stratkids-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/icons/favicon.svg" alt="StratKids Logo" height="42" width="42" class="rounded-3 shadow-sm">
+        <div class="brand-text">
+          <span class="brand-title">Strat<span>Kids</span></span>
+          <span class="brand-tagline">Think. Play. Grow.</span>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="stratkidsNavContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-2 shadow-sm rounded-4">
+              <li><a class="dropdown-item fw-bold text-rose" href="index.html">Home 1 (Camp Adventure)</a></li>
+              <li><a class="dropdown-item fw-bold" href="home-2.html">Home 2 (Game Board Layout)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link " href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link " href="schedule.html">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link nav-dashboard-link" href="parent-dashboard/dashboard.html" title="Parent Dashboard">Dashboard</a>
+          </li>
+        </ul>
+
+        <div class="nav-tools d-flex align-items-center gap-2">
+          <!-- Dark Mode Switcher Circle -->
+          <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <!-- RTL / LTR Toggle Circle -->
+          <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+
+          
+
+          <!-- Primary CTA Button (Identical across all pages) -->
+          <!-- Login Button in Navbar before CTA -->
+          <a href="auth/login.html" class="btn-nav-login" title="Parent Portal Login">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+            <i class="bi bi-calendar2-check-fill"></i> Enroll Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       SECTION 1: HERO & NOTICE
+       ========================================================================== -->
+  <header class="section-py-sm hero-page-header hero-bg-pricing">
+    <div class="container py-4 text-center">
+      <div class="section-tag tag-rose mb-2">
+        <i class="bi bi-piggy-bank-fill"></i> Summer 2026 Tuition
+      </div>
+      <h1 class="hero-title mb-3">
+        Simple, Transparent <span class="highlight-rose">Camp Tuition.</span>
+      </h1>
+      <p class="hero-lead mx-auto mb-4" style="max-width: 680px;">
+        All-inclusive summer camp fees with zero hidden registration surcharges. Every plan includes tournament equipment, personalized tactics workbooks, organic snacks, and Friday medal celebrations.
+      </p>
+
+      <div class="demo-banner mb-3 mx-auto" style="max-width: 580px;">
+        <i class="bi bi-info-circle-fill me-1"></i>
+        <span>Pricing shown is sample template content and should be replaced with actual camp pricing.</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       SECTION 2: CAMP PLANS GRID (WEEKLY, FULL SUMMER, ADVANCED TRACK)
+       ========================================================================== -->
+  <section class="section-py bg-light">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <!-- Plan 1: Weekly Camp Pass -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="pricing-card w-100">
+            <div class="pricing-header">
+              <h4 class="h5 fw-bold mb-1">Weekly Camp Pass</h4>
+              <p class="small text-muted mb-0">Flexible single-week enrollment for any age group.</p>
+            </div>
+            
+            <div class="pricing-price-box">
+              <div class="d-flex align-items-baseline gap-1 mb-2">
+                <span class="pricing-amount">$450</span>
+                <span class="text-muted fw-bold">/ week</span>
+              </div>
+              <div>
+                <span class="badge bg-light text-dark border align-self-start">Early Bird: $395 before May 1</span>
+              </div>
+            </div>
+
+            <ul class="pricing-feature-list">
+              <li><i class="bi bi-check-circle-fill"></i> 5 Full Days (Mon&ndash;Fri, 09:00&ndash;04:30)</li>
+              <li><i class="bi bi-check-circle-fill"></i> 1:6 Dedicated Coach Ratio</li>
+              <li><i class="bi bi-check-circle-fill"></i> Full Chess &amp; Strategy Tabletop Access</li>
+              <li><i class="bi bi-check-circle-fill"></i> StratKids Tournament Vinyl Board to keep</li>
+              <li><i class="bi bi-check-circle-fill"></i> Friday Grand Prix Medal &amp; Certificate</li>
+              <li><i class="bi bi-check-circle-fill"></i> Daily Organic Fruit Snacks &amp; Drinks</li>
+              <li><i class="bi bi-check-circle-fill"></i> Pre-Camp Skill Level Assessment</li>
+            </ul>
+
+            <div class="pricing-cta-box mt-auto">
+              <button type="button" class="btn-strat-secondary w-100" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+                Select Weekly Pass
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 2: Multi-Week / Full Summer Pass (Featured) -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="pricing-card featured-track w-100">
+            <span class="pricing-badge-popular">BEST SUMMER VALUE</span>
+            <div class="pricing-header">
+              <h4 class="h5 fw-bold mb-1">4-Week Summer Bundle</h4>
+              <p class="small text-muted mb-0">Continuous progression across multiple curriculum themes.</p>
+            </div>
+            
+            <div class="pricing-price-box">
+              <div class="d-flex align-items-baseline gap-1 mb-2">
+                <span class="pricing-amount" style="color: var(--sk-rose);">$1,580</span>
+                <span class="text-muted fw-bold">/ 4 weeks</span>
+              </div>
+              <div>
+                <span class="badge bg-warning text-dark align-self-start">Save $220 vs Single Weeks</span>
+              </div>
+            </div>
+
+            <ul class="pricing-feature-list">
+              <li><i class="bi bi-check-circle-fill"></i> 4 Full Camp Weeks (20 Total Camp Days)</li>
+              <li><i class="bi bi-check-circle-fill"></i> Priority Track &amp; Coach Selection</li>
+              <li><i class="bi bi-check-circle-fill"></i> Full Deluxe Set, Carry Bag &amp; Clock</li>
+              <li><i class="bi bi-check-circle-fill"></i> 4 Thematic Tactics Workbook Sets</li>
+              <li><i class="bi bi-check-circle-fill"></i> Guaranteed Grand Championship Entry</li>
+              <li><i class="bi bi-check-circle-fill"></i> 1-on-1 Grandmaster Video Strategy Review</li>
+              <li><i class="bi bi-check-circle-fill"></i> Free Extended Care Add-On (Save $160)</li>
+            </ul>
+
+            <div class="pricing-cta-box mt-auto">
+              <button type="button" class="btn-strat-primary w-100" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+                <i class="bi bi-stars"></i> Secure 4-Week Pass
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 3: Advanced Tournament Master Track -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="pricing-card w-100">
+            <div class="pricing-header">
+              <h4 class="h5 fw-bold mb-1">Advanced Master Track</h4>
+              <p class="small text-muted mb-0">Intensive training for rated youth competitors.</p>
+            </div>
+            
+            <div class="pricing-price-box">
+              <div class="d-flex align-items-baseline gap-1 mb-2">
+                <span class="pricing-amount">$650</span>
+                <span class="text-muted fw-bold">/ week</span>
+              </div>
+              <div>
+                <span class="badge bg-light text-dark border align-self-start">FIDE &amp; USCF Rated Prep</span>
+              </div>
+            </div>
+
+            <ul class="pricing-feature-list">
+              <li><i class="bi bi-check-circle-fill"></i> 5 Intensive Days (Mon&ndash;Fri, 09:00&ndash;04:30)</li>
+              <li><i class="bi bi-check-circle-fill"></i> 1:4 Elite Coach-to-Camper Pod</li>
+              <li><i class="bi bi-check-circle-fill"></i> DGT Electronic Clock Training</li>
+              <li><i class="bi bi-check-circle-fill"></i> Personalized Opening Repertoire binder</li>
+              <li><i class="bi bi-check-circle-fill"></i> Computer Engine Post-Game Analysis</li>
+              <li><i class="bi bi-check-circle-fill"></i> Sports Psychology &amp; Endurance Drills</li>
+              <li><i class="bi bi-check-circle-fill"></i> Official FIDE &amp; USCF Tournament Prep</li>
+            </ul>
+
+            <div class="pricing-cta-box mt-auto">
+              <button type="button" class="btn-strat-secondary w-100" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+                Select Master Track
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: INTERACTIVE TUITION & DISCOUNT CALCULATOR
+       ========================================================================== -->
+  <section class="section-py chess-pattern-bg">
+    <div class="container">
+      <div class="p-4 p-lg-5 rounded-5 bg-white border shadow-sm" style="border-color: var(--sk-border-color) !important;">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <div class="section-tag tag-yellow mb-2">
+              <i class="bi bi-sliders"></i> Dynamic Tuition Estimator
+            </div>
+            <h3 class="display-6 fw-bold mb-3">Calculate Your Family's Summer Plan</h3>
+            <p class="text-muted mb-4">
+              Drag the slider to select your desired weeks. Automatic multi-week bundle discounts (up to $90/week off) and sibling credits apply instantly.
+            </p>
+
+            <!-- Weeks Range Slider -->
+            <div class="p-4 rounded-4 bg-light border mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <label for="calcWeeksRange" class="fw-bold text-dark mb-0">Number of Camp Weeks:</label>
+                <span class="badge bg-dark text-white px-3 py-2 rounded-pill fs-6 fw-bold" id="calcWeeksVal">2 Weeks</span>
+              </div>
+              <input type="range" class="form-range" id="calcWeeksRange" min="1" max="8" value="2" step="1">
+              <div class="d-flex justify-content-between small text-muted mt-1">
+                <span>1 Week (Flex)</span>
+                <span>4 Weeks (Pro Bundle)</span>
+                <span>8 Weeks (Full Summer)</span>
+              </div>
+            </div>
+
+            <!-- Toggles for Options -->
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div class="form-check p-3 rounded-4 bg-light border d-flex align-items-center gap-2">
+                  <input class="form-check-input ms-0 mt-0" type="checkbox" id="calcSiblingToggle" checked>
+                  <label class="form-check-label small fw-bold text-dark" for="calcSiblingToggle">
+                    15% Sibling Discount
+                  </label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-check p-3 rounded-4 bg-light border d-flex align-items-center gap-2">
+                  <input class="form-check-input ms-0 mt-0" type="checkbox" id="calcLunchToggle" checked>
+                  <label class="form-check-label small fw-bold text-dark" for="calcLunchToggle">
+                    Include Organic Catered Lunch (+$65/wk)
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="p-4 p-md-5 rounded-5 border text-center shadow-lg position-relative overflow-hidden" style="background: radial-gradient(circle at 80% 20%, #BDE4EC 0%, var(--sk-aqua) 50%, #89C7D2 100%);">
+              <div class="badge bg-white text-dark px-3 py-1 rounded-pill fw-bold mb-3 shadow-sm">
+                <i class="bi bi-sparkles text-warning"></i> Real-Time Calculation
+              </div>
+              <div class="text-uppercase small fw-bold tracking-wider" style="color: #174E58; letter-spacing: 1px;">Estimated Family Total</div>
+              <div class="display-3 fw-bold mb-1 text-dark" id="calcTotalOutput">$927</div>
+              <div class="badge bg-white bg-opacity-75 text-dark fw-bold mb-3 px-3 py-1 rounded-pill" id="calcPerWeekOutput">$464/wk</div>
+              
+              <p class="small mb-4" style="color: #1A3840;">
+                <i class="bi bi-shield-check text-success me-1"></i> 100% refundable up to 14 days prior to camp start.
+              </p>
+              
+              <button type="button" class="btn-strat-primary w-100 shadow-sm" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+                <i class="bi bi-calendar2-check-fill"></i> Lock In Summer Rate
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: WHAT IS INCLUDED (ALL-INCLUSIVE PROMISE)
+       ========================================================================== -->
+  <section class="section-py bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-rose">
+          <i class="bi bi-gift-fill"></i> The StratKids Difference
+        </div>
+        <h2 class="section-title">Zero Hidden Fees. Ever.</h2>
+        <p class="section-desc">
+          Unlike ordinary summer clubs that charge extra for tournament access, tactical books, or equipment, everything below is 100% included with camper tuition.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="bento-card p-4 h-100">
+            <div class="sk-card-top-icon icon-rose mb-3">
+              <i class="bi bi-box-seam-fill"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Tournament Chessboard &amp; Bag</h5>
+            <p class="small text-muted mb-0">Every camper receives and keeps their official tournament roll-up vinyl board, 34 triple-weighted pieces, and canvas carry tote.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="bento-card p-4 h-100">
+            <div class="sk-card-top-icon icon-yellow mb-3">
+              <i class="bi bi-journal-bookmark-fill"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Tactics Quest Workbook</h5>
+            <p class="small text-muted mb-0">Custom-published full-color strategy book with over 120 curated puzzles, opening principles, and personal coach notes.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="bento-card p-4 h-100">
+            <div class="sk-card-top-icon icon-aqua mb-3">
+              <i class="bi bi-trophy-fill"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Friday Grand Prix &amp; Medals</h5>
+            <p class="small text-muted mb-0">Full entry into our celebratory Friday Swiss festival, engraved StratKids metal championship medallion, and certificate.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="bento-card p-4 h-100">
+            <div class="sk-card-top-icon icon-pink mb-3">
+              <i class="bi bi-clock-history"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Digital Clock Training</h5>
+            <p class="small text-muted mb-0">Hands-on experience with certified DGT digital game clocks to build time management and focused composure under pressure.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="bento-card p-4 h-100">
+            <div class="sk-card-top-icon icon-rose mb-3">
+              <i class="bi bi-apple"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Fresh Daily Snacks &amp; Drinks</h5>
+            <p class="small text-muted mb-0">Morning and afternoon 100% nut-free organic fruit platters, whole-grain snacks, and electrolyte hydration stations throughout the day.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="bento-card p-4 h-100">
+            <div class="sk-card-top-icon icon-yellow mb-3">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Parent Portal Access</h5>
+            <p class="small text-muted mb-0">Live daily coach progress logs, photo highlights, check-in timestamps, and downloaded skill progression milestones.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: PAYMENT POLICIES & REFUND GUARANTEE
+       ========================================================================== -->
+  <section class="section-py chess-pattern-bg">
+    <div class="container">
+      <div class="p-4 p-lg-5 rounded-5 border bg-white shadow-sm" style="border-color: var(--sk-border-color) !important;">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <span class="badge bg-success-subtle text-success border border-success px-3 py-2 rounded-pill fw-bold mb-3">Parent Peace of Mind</span>
+            <h2 class="display-6 fw-bold mb-3">Risk-Free Camp Guarantee</h2>
+            <p class="lead text-muted mb-4">
+              We know summer family plans can shift. StratKids offers the most flexible cancellation and transfer policies in youth enrichment.
+            </p>
+            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+              <li class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-success fs-4 mt-1"></i>
+                <div>
+                  <strong>100% Full Refund:</strong> Cancel up to 14 days before your camp start date with zero penalties or processing deductions.
+                </div>
+              </li>
+              <li class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-success fs-4 mt-1"></i>
+                <div>
+                  <strong>Free Week Swapping:</strong> Need to change weeks due to vacation? Switch your reserved week anytime without penalty based on seat availability.
+                </div>
+              </li>
+              <li class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-success fs-4 mt-1"></i>
+                <div>
+                  <strong>Split Installment Option:</strong> Pay 50% deposit at enrollment and the remaining balance two weeks before camp begins.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-5 text-center">
+            <div class="p-4 p-md-5 rounded-5 shadow-sm" style="background: radial-gradient(circle at 70% 30%, #FEDBE4 0%, var(--sk-pink) 60%, #EAA2B3 100%);">
+              <div class="badge-emblem badge-rose mb-3 mx-auto" style="width: 68px; height: 68px; font-size: 1.75rem;">
+                <i class="bi bi-shield-fill-check"></i>
+              </div>
+              <h4 class="h5 mb-2 text-dark fw-bold">Flexible Split Payments</h4>
+              <p class="small text-dark-soft mb-4">Choose the 2-part installment plan during checkout inside our secure Parent Portal.</p>
+              <a href="parent-dashboard/payments.html" class="btn-strat-secondary w-100">
+                <i class="bi bi-wallet2"></i> View Payment Portal Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: FREQUENTLY ASKED FINANCIAL QUESTIONS
+       ========================================================================== -->
+  <section class="section-py bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-aqua">
+          <i class="bi bi-question-circle"></i> Pricing Clarifications
+        </div>
+        <h2 class="section-title">Tuition FAQs</h2>
+        <p class="section-desc">
+          Quick answers to common questions about discounts, camp fees, and payment arrangements.
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion stratkids-accordion" id="pricingFaqAccordion">
+            <div class="accordion-item mb-3 border rounded-4 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#pfaq1">
+                  How does the Sibling Discount work?
+                </button>
+              </h2>
+              <div id="pfaq1" class="accordion-collapse collapse show" data-bs-parent="#pricingFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  The first child enrolls at standard/early-bird tuition, and every subsequent sibling automatically receives a 15% discount across all weeks attended. Sibling discounts can be combined with early-bird savings!
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded-4 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#pfaq2">
+                  Can I use Dependent Care FSA or HSA accounts?
+                </button>
+              </h2>
+              <div id="pfaq2" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  Yes! StratKids operates as an accredited day camp with our registered Federal Tax ID (EIN). Our receipts inside the Parent Portal provide all necessary documentation for FSA reimbursement.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item mb-3 border rounded-4 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#pfaq3">
+                  Are partial day options available at a reduced rate?
+                </button>
+              </h2>
+              <div id="pfaq3" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  Yes, for Little Thinkers (ages 5&ndash;7), we offer morning half-day sessions (09:00 AM &ndash; 12:30 PM) for $450/week, designed specifically for younger campers who may tire during full-day schedules.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 7: ENROLLMENT CTA
+       ========================================================================== -->
+  <section class="section-py chess-pattern-bg">
+    <div class="container">
+      <div class="p-5 rounded-5 text-center text-white cta-banner-rose" style="background: linear-gradient(135deg, var(--sk-rose) 0%, #8C2E49 100%); color: #fff;">
+        <h2 class="display-6 fw-bold mb-3 text-white">Enroll Now With Zero Upfront Risk</h2>
+        <p class="fs-5 text-white-50 mb-4 mx-auto" style="max-width: 650px;">
+          Lock in your early-bird pricing today. 100% refund guaranteed if plans change before June 1.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+            <i class="bi bi-lightning-charge-fill"></i> Enroll Camper Online
+          </button>
+          <a href="contact.html" class="btn-strat-secondary">
+            <i class="bi bi-telephone"></i> Speak to Admissions
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GLOBAL FOOTER (Redesigned Modern Interactive Experience)
+       ========================================================================== -->
+  <footer class="stratkids-footer position-relative">
+    <div class="container position-relative" style="z-index: 2;">
+      <!-- Main Footer Columns -->
+      <div class="row g-4 g-lg-5">
+        <!-- Col 1: Brand & Professional Accreditation Matrix -->
+        <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand-box mb-3">
+            <a href="index.html" class="d-inline-flex align-items-center gap-3 text-decoration-none">
+              <img src="assets/icons/favicon.svg" alt="StratKids Logo" height="46" width="46" class="rounded-3 shadow-sm">
+              <div class="brand-text">
+                <div class="footer-brand-title">
+                  Strat<span>Kids</span>
+                </div>
+                <div class="footer-brand-sub">THINK. PLAY. GROW.</div>
+              </div>
+            </a>
+          </div>
+
+          <p class="footer-brand-desc">
+            An accredited modern chess &amp; cognitive strategy summer academy empowering young thinkers ages 5&ndash;16 with Grandmaster calculation, spatial logic, and lifelong strategic confidence.
+          </p>
+
+          <!-- Professional Accreditation Matrix -->
+          <div class="footer-trust-matrix">
+            <div class="footer-trust-pill">
+              <i class="bi bi-patch-check-fill text-warning"></i>
+              <span><strong>FIDE Master</strong> Curriculum</span>
+            </div>
+            <div class="footer-trust-pill">
+              <i class="bi bi-shield-check text-success"></i>
+              <span><strong>SafeSport</strong> Certified Staff</span>
+            </div>
+            <div class="footer-trust-pill">
+              <i class="bi bi-people-fill text-info"></i>
+              <span><strong>1:6 Ratio</strong> Dedicated Mentorship</span>
+            </div>
+          </div>
+
+          <!-- Social Channels -->
+          <div class="d-flex align-items-center gap-2 mt-3">
+            <span class="small text-white-50 me-1 fw-bold text-uppercase" style="font-size: 0.68rem; letter-spacing: 1px;">Connect:</span>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="contact.html" class="footer-social-btn" aria-label="Parent Community"><i class="bi bi-chat-heart-fill"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Camp Programs & Tracks -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-col-title">
+            <span class="footer-title-dot dot-aqua"></span> Camp Tracks
+          </h5>
+          <ul class="footer-links-list">
+            <li><a href="programs.html"><i class="bi bi-chevron-right small text-aqua"></i> Little Pawns (5&ndash;7y)</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right small text-aqua"></i> Tactics Knights (8&ndash;10y)</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right small text-aqua"></i> Strategic Minds (11&ndash;13y)</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right small text-aqua"></i> Future Masters (14&ndash;16y)</a></li>
+            <li><a href="schedule.html"><i class="bi bi-chevron-right small text-aqua"></i> Daily Camp Routine</a></li>
+            <li><a href="faqs.html"><i class="bi bi-chevron-right small text-aqua"></i> Packing List &amp; FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: For Parents & Portal -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-col-title">
+            <span class="footer-title-dot dot-yellow"></span> For Families
+          </h5>
+          <ul class="footer-links-list">
+            <li><a href="parent-dashboard/dashboard.html"><i class="bi bi-chevron-right small text-warning"></i> Parent Dashboard</a></li>
+            <li><a href="parent-dashboard/skill-progress.html"><i class="bi bi-chevron-right small text-warning"></i> Skill Progress Pass</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right small text-warning"></i> Tuition &amp; Sibling Deals</a></li>
+            <li><a href="camp-life.html"><i class="bi bi-chevron-right small text-warning"></i> Camp Life &amp; Activities</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right small text-warning"></i> Camp Safety &amp; Health</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Direct Campus Contact -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-col-title">
+            <span class="footer-title-dot dot-rose"></span> Tactics Dispatch
+          </h5>
+          <p class="small text-white-50 mb-3">
+            Subscribe for free weekly tactics puzzles, grandmaster advice for kids, and priority summer registration openings.
+          </p>
+
+          <form class="newsletter-form mb-4">
+            <div class="footer-newsletter-box">
+              <input type="email" class="footer-input" placeholder="Parent email address..." required aria-label="Parent email address">
+              <button class="footer-subscribe-btn" type="submit" aria-label="Subscribe">
+                <span>Join</span> <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Direct Campus Contacts -->
+          <div class="d-flex flex-column gap-2 pt-2 border-top border-secondary border-opacity-25">
+            <div class="d-flex align-items-center gap-2 small text-white-50">
+              <i class="bi bi-geo-alt-fill text-warning"></i>
+              <span>742 Evergreen Campus, Grand Ave, Suite 300</span>
+            </div>
+            <div class="d-flex align-items-center gap-2 small text-white-50">
+              <i class="bi bi-telephone-fill text-info"></i>
+              <a href="tel:5557872854" class="text-white text-decoration-none fw-bold">(555) 787-2854</a>
+              <span class="text-white-50">(Mon&ndash;Fri 8am&ndash;5pm)</span>
+            </div>
+            <div class="d-flex align-items-center gap-2 small text-white-50">
+              <i class="bi bi-envelope-fill text-rose"></i>
+              <a href="mailto:camp@stratkids.edu" class="text-white text-decoration-none">camp@stratkids.edu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div class="d-flex align-items-center gap-2">
+          <p class="mb-0 text-white-50">
+            &copy; 2026 StratKids Summer Camp. All rights reserved. &ldquo;Think. Play. Grow.&rdquo;
+          </p>
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-3 small">
+          <a href="faqs.html">Privacy Policy</a>
+          <span class="text-white-50">&bull;</span>
+          <a href="faqs.html">Terms of Service</a>
+          <span class="text-white-50">&bull;</span>
+          <a href="about.html">Safety Protocols</a>
+          <span class="text-white-50">&bull;</span>
+          <span class="badge rounded-pill px-3 py-1 bg-white bg-opacity-10 text-white border border-white border-opacity-10">
+            <i class="bi bi-circle-fill text-success me-1" style="font-size: 0.5rem;"></i> Summer 2026 Live
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top-btn" aria-label="Back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+    <!-- Global Enrollment Modal Included -->
+  <div class="modal fade" id="enrollmentModal" tabindex="-1" aria-labelledby="enrollmentModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-5 border-0 shadow-lg overflow-hidden">
+        <div class="modal-header text-white p-4" style="background: linear-gradient(135deg, var(--sk-rose) 0%, #8C2E49 100%);">
+          <h4 class="modal-title h5 mb-0" id="enrollmentModalTitle" style="font-family: var(--sk-font-heading);">
+            Camp Registration Wizard
+          </h4>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5">
+          <div class="quick-enroll-container">
+            <h5 class="fw-bold mb-1" style="color: var(--sk-rose); font-family: var(--sk-font-heading);">
+              Camper Information & Priority Registration
+            </h5>
+            <p class="small text-muted mb-4">Choose your track and camper details for instant registration.</p>
+            <form class="quick-enroll-form" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-bold small">Camper Full Name *</label>
+                  <input type="text" class="form-control rounded-3 quick-camper-name" placeholder="e.g. Leo Vance" required pattern="^[A-Za-z\s\.\'\-]+$" title="Camper name must contain letters only (no numbers)">
+                  <div class="invalid-feedback">Please enter camper's name (letters only, no numbers).</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold small">Age Track *</label>
+                  <select class="form-select rounded-3 quick-camper-track">
+                    <option value="5-7">Little Thinkers (Ages 5&ndash;7)</option>
+                    <option value="8-10" selected>Smart Players (Ages 8&ndash;10)</option>
+                    <option value="11-13">Strategic Minds (Ages 11&ndash;13)</option>
+                    <option value="14-16">Future Masters (Ages 14&ndash;16)</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold small">Parent Name *</label>
+                  <input type="text" class="form-control rounded-3 quick-parent-name" placeholder="Sarah Vance" required pattern="^[A-Za-z\s\.\'\-]+$" title="Parent name must contain letters only (no numbers)">
+                  <div class="invalid-feedback">Please enter parent name (letters only, no numbers).</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold small">Parent Email *</label>
+                  <input type="email" class="form-control rounded-3 quick-parent-email" placeholder="sarah@example.com" required>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="col-md-12">
+                  <label class="form-label fw-bold small">Preferred Camp Week *</label>
+                  <select class="form-select rounded-3 quick-camp-week">
+                    <option selected>Week 1: June 15 &ndash; June 19 (Open)</option>
+                    <option>Week 2: June 22 &ndash; June 26 (Open)</option>
+                    <option>Week 3: June 29 &ndash; July 03 (Popular)</option>
+                    <option>Week 4: July 06 &ndash; July 10 (Few Spots Left)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn-strat-primary">
+                  <i class="bi bi-check-circle-fill me-1"></i> Submit Registration
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script>
+    // Live mini-calculator logic for Pricing Page
+    document.addEventListener('DOMContentLoaded', function(){
+      const ch = document.getElementById('calcChildren');
+      const wk = document.getElementById('calcWeeks');
+      const eb = document.getElementById('calcEarlyBird');
+      const res = document.getElementById('calcResultDisplay');
+      function calc(){
+        if(!ch || !wk || !res) return;
+        const kids = parseInt(ch.value, 10) || 1;
+        const weeks = parseInt(wk.value, 10) || 1;
+        let basePerWeek = 450;
+        if(eb && eb.checked) basePerWeek -= 55;
+        let total = 0;
+        for(let i = 1; i <= kids; i++){
+          let kidRate = basePerWeek;
+          if(i === 2) kidRate = Math.round(kidRate * 0.85); // 15% off sibling
+          if(i >= 3) kidRate = Math.round(kidRate * 0.80); // 20% off 3rd
+          total += (kidRate * weeks);
+        }
+        res.textContent = '$' + total.toLocaleString();
+      }
+      if(ch) ch.addEventListener('change', calc);
+      if(wk) wk.addEventListener('change', calc);
+      if(eb) eb.addEventListener('change', calc);
+      calc();
+    });
+  </script>
+</body>
+</html>
+
+

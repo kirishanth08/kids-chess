@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Billing & Payments | StratKids Parent Portal</title>
+  <meta name="description" content="View camp tuition breakdown, track installment schedules, download tax-deductible receipts, and simulate secure payments.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SECTION 1: DASHBOARD HEADER
+       ========================================================================== -->
+  <header class="stratkids-navbar py-2 border-bottom sticky-top">
+    <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+                <a class="navbar-brand py-0" href="../index.html">
+          <img src="../assets/icons/favicon.svg" alt="StratKids Logo" height="38" width="38" class="rounded-3 shadow-sm">
+          <div class="brand-text d-none d-sm-flex">
+            <span class="brand-title" style="font-size: 1.35rem;">Strat<span>Kids</span></span>
+            <span class="brand-tagline" style="font-size: 0.58rem;">Think. Play. Grow.</span>
+          </div>
+        </a>
+        <span class="badge bg-danger rounded-pill fw-bold text-uppercase d-none d-md-inline-block px-3 py-1">
+          Parent Command Center
+        </span>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
+        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR"><i class="bi bi-arrow-left-right"></i></button>
+        <a href="dashboard.html" class="btn btn-outline-dark rounded-pill px-3 py-1 small fw-bold">Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div class="dash-user-card">
+        <img src="../assets/images/guardian_sarah_vance.jpg" alt="Sarah Vance" class="dash-avatar-img">
+        <div>
+          <strong class="d-block text-dark">Sarah Vance</strong>
+          <small class="text-muted">Guardian &bull; 2 Campers</small>
+        </div>
+      </div>
+
+      <ul class="dash-nav-list">
+        <li class="dash-nav-item"><a href="dashboard.html"><i class="bi bi-grid-fill"></i> Overview</a></li>
+        <li class="dash-nav-item"><a href="children.html"><i class="bi bi-people-fill"></i> My Children</a></li>
+        <li class="dash-nav-item"><a href="child-profile.html"><i class="bi bi-person-badge-fill"></i> Child Profile</a></li>
+        <li class="dash-nav-item"><a href="enrollments.html"><i class="bi bi-calendar-check-fill"></i> Enrollments</a></li>
+        <li class="dash-nav-item"><a href="skill-progress.html"><i class="bi bi-ladder"></i> Skill Progress</a></li>
+        <li class="dash-nav-item"><a href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a></li>
+        <li class="dash-nav-item active"><a href="payments.html"><i class="bi bi-wallet2"></i> Payments</a></li>
+        <li class="dash-nav-item"><a href="certificates.html"><i class="bi bi-award-fill"></i> Certificates</a></li>
+        <li class="dash-nav-item"><a href="messages.html"><i class="bi bi-chat-dots-fill"></i> Messages</a></li>
+        <li class="dash-nav-item"><a href="profile.html"><i class="bi bi-gear-fill"></i> Profile</a></li>
+        <li class="dash-nav-item mt-4"><a href="../auth/login.html" class="text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-main-area">
+      <!-- ==========================================================================
+           SECTION 2: FINANCIAL OVERVIEW HERO & ACTIONS
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-5 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">Account Ledger</span>
+            <h1 class="h3 fw-bold mb-2" style="font-family: var(--sk-font-heading); color: var(--sk-dark);">
+              Tuition & Camp Payments
+            </h1>
+            <p class="text-muted mb-3">
+              Transparent, automated billing for all registered campers. Review paid invoices, track installment milestones, and simulate online card payments.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-strat-primary" data-bs-toggle="modal" data-bs-target="#paymentDemoModal">
+                <i class="bi bi-credit-card me-1"></i> Make Payment (Demo)
+              </button>
+              <button type="button" class="btn btn-strat-secondary" id="btnDownloadTaxStatement">
+                <i class="bi bi-file-earmark-text me-1"></i> Download Tax Statement
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="p-4 rounded-4 bg-light border text-center">
+              <span class="small text-muted d-block text-uppercase fw-bold mb-1">Total Summer Outstanding</span>
+              <div class="display-6 fw-bold text-rose mb-1">$280.00</div>
+              <p class="small text-muted mb-2">Final installment scheduled for June 20, 2026</p>
+              <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1">
+                <i class="bi bi-shield-check me-1"></i>Auto-Pay Configured
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 3: METRIC SUMMARY CARDS
+           ========================================================================== -->
+      <div class="row g-4 mb-4">
+        <div class="col-md-6 col-xl-3">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-top: 4px solid var(--sk-aqua) !important;">
+            <small class="text-muted d-block text-uppercase fw-bold mb-1">Total Camp Tuition</small>
+            <h3 class="h3 fw-bold text-dark mb-1">$1,030.00</h3>
+            <span class="small text-muted">2 Campers &bull; 2 Weeks</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-top: 4px solid var(--sk-rose) !important;">
+            <small class="text-muted d-block text-uppercase fw-bold mb-1">Amount Paid to Date</small>
+            <h3 class="h3 fw-bold text-dark mb-1">$750.00</h3>
+            <span class="small text-success fw-bold"><i class="bi bi-check-circle me-1"></i>72.8% Cleared</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-top: 4px solid var(--sk-yellow) !important;">
+            <small class="text-muted d-block text-uppercase fw-bold mb-1">Discounts & Credits</small>
+            <h3 class="h3 fw-bold text-dark mb-1">-$187.00</h3>
+            <span class="small text-muted">Sibling (15%) + Early Bird</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-top: 4px solid var(--sk-pink) !important;">
+            <small class="text-muted d-block text-uppercase fw-bold mb-1">Remaining Installment</small>
+            <h3 class="h3 fw-bold text-rose mb-1">$280.00</h3>
+            <span class="small text-muted">Due June 20, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 4: ACTIVE INVOICE & CAMPER TUITION BREAKDOWN
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <h2 class="h5 fw-bold mb-3 text-dark">
+          <i class="bi bi-receipt-cutoff text-primary me-2"></i>Camper Tuition Breakdown
+        </h2>
+        <div class="row g-4">
+          <!-- Camper 1: Leo Vance -->
+          <div class="col-md-6">
+            <div class="p-3 rounded-4 border bg-light h-100">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <strong class="text-dark">Leo Vance (Age 7)</strong>
+                <span class="badge bg-success rounded-pill">Paid in Full</span>
+              </div>
+              <p class="small text-muted mb-2">Program: Little Thinkers (Half-Day &bull; Week 2)</p>
+              <div class="d-flex justify-content-between small text-muted mb-1">
+                <span>Tuition Base:</span>
+                <span>$450.00</span>
+              </div>
+              <div class="d-flex justify-content-between small text-muted mb-1">
+                <span>Early Bird Credit:</span>
+                <span class="text-success">-$50.00</span>
+              </div>
+              <div class="d-flex justify-content-between small text-muted mb-1">
+                <span>Materials & Shirt Kit:</span>
+                <span class="text-muted">$0.00 (Included)</span>
+              </div>
+              <hr class="my-2">
+              <div class="d-flex justify-content-between small fw-bold text-dark">
+                <span>Total Net Paid:</span>
+                <span class="text-success">$400.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Camper 2: Maya Vance -->
+          <div class="col-md-6">
+            <div class="p-3 rounded-4 border bg-light h-100">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <strong class="text-dark">Maya Vance (Age 11)</strong>
+                <span class="badge bg-warning text-dark rounded-pill">Installment 2 Pending</span>
+              </div>
+              <p class="small text-muted mb-2">Program: Strategic Minds (Full-Day &bull; Week 3)</p>
+              <div class="d-flex justify-content-between small text-muted mb-1">
+                <span>Tuition Base:</span>
+                <span>$580.00</span>
+              </div>
+              <div class="d-flex justify-content-between small text-muted mb-1">
+                <span>Sibling Discount (15%):</span>
+                <span class="text-success">-$87.00</span>
+              </div>
+              <div class="d-flex justify-content-between small text-muted mb-1">
+                <span>Early Bird Credit:</span>
+                <span class="text-success">-$50.00</span>
+              </div>
+              <div class="d-flex justify-content-between small text-muted mb-1">
+                <span>First Installment Paid:</span>
+                <span class="text-dark">-$163.00</span>
+              </div>
+              <hr class="my-2">
+              <div class="d-flex justify-content-between small fw-bold text-dark">
+                <span>Balance Due (June 20):</span>
+                <span class="text-rose">$280.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 5: PAYMENT TRANSACTION LEDGER TABLE
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h5 fw-bold mb-0 text-dark">
+            <i class="bi bi-clock-history text-muted me-2"></i>Transaction Ledger & Receipts
+          </h2>
+          <span class="small text-muted">Refreshed Today</span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th scope="col" class="small text-uppercase">Date</th>
+                <th scope="col" class="small text-uppercase">Reference ID</th>
+                <th scope="col" class="small text-uppercase">Camper / Description</th>
+                <th scope="col" class="small text-uppercase">Payment Method</th>
+                <th scope="col" class="small text-uppercase">Amount</th>
+                <th scope="col" class="small text-uppercase">Status</th>
+                <th scope="col" class="small text-uppercase text-end">Receipt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>May 10, 2026</td>
+                <td><code>TXN-STRAT-89104</code></td>
+                <td>Leo Vance &bull; Full Tuition (Week 2)</td>
+                <td>Visa ending in &bull;&bull;4102</td>
+                <td><strong>$400.00</strong></td>
+                <td><span class="badge bg-success-subtle text-success border border-success-subtle">Paid</span></td>
+                <td class="text-end">
+                  <button type="button" class="btn btn-sm btn-outline-dark rounded-pill btn-download-receipt" data-txn="TXN-STRAT-89104">
+                    <i class="bi bi-download"></i> PDF
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>May 10, 2026</td>
+                <td><code>TXN-STRAT-89105</code></td>
+                <td>Maya Vance &bull; Installment 1 of 2</td>
+                <td>Visa ending in &bull;&bull;4102</td>
+                <td><strong>$350.00</strong></td>
+                <td><span class="badge bg-success-subtle text-success border border-success-subtle">Paid</span></td>
+                <td class="text-end">
+                  <button type="button" class="btn btn-sm btn-outline-dark rounded-pill btn-download-receipt" data-txn="TXN-STRAT-89105">
+                    <i class="bi bi-download"></i> PDF
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>June 20, 2026</td>
+                <td><code>INV-AUTO-99201</code></td>
+                <td>Maya Vance &bull; Final Balance Installment</td>
+                <td>Auto-Debit (Visa &bull;&bull;4102)</td>
+                <td><strong>$280.00</strong></td>
+                <td><span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle">Scheduled</span></td>
+                <td class="text-end">
+                  <span class="small text-muted">Pending</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 6: TAX & CHILDCARE CREDIT ASSISTANCE (FSA / HSA)
+           ========================================================================== -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <h3 class="h6 fw-bold text-dark mb-2">
+              <i class="bi bi-shield-lock-fill text-success me-2"></i>FSA & Childcare Tax Eligibility
+            </h3>
+            <p class="small text-muted mb-3">
+              StratKids summer day camp programs qualify under many Dependent Care Flexible Spending Accounts (DCFSA) and Child Care Tax Credit guidelines.
+            </p>
+            <div class="p-3 rounded-3 bg-light border small">
+              <div class="d-flex justify-content-between mb-1">
+                <span>Camp Organization EIN:</span>
+                <strong>82-9481023</strong>
+              </div>
+              <div class="d-flex justify-content-between mb-1">
+                <span>Facility License #:</span>
+                <strong>CA-YOUTH-REC-4891</strong>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Tax Year:</span>
+                <strong>2026 Qualified Summer Care</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <h3 class="h6 fw-bold text-dark mb-2">
+              <i class="bi bi-credit-card-2-front text-primary me-2"></i>Stored Payment Method
+            </h3>
+            <p class="small text-muted mb-3">Manage auto-pay settings and billing notifications securely.</p>
+            <div class="d-flex align-items-center justify-content-between p-3 rounded-3 border bg-light mb-3">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-credit-card fs-3 text-dark"></i>
+                <div>
+                  <strong class="d-block small text-dark" id="activeCardDisplay">Visa ending in &bull;&bull;4102</strong>
+                  <span class="small text-muted" id="activeCardExpiryDisplay">Expires 08/2028 &bull; Default Payment</span>
+                </div>
+              </div>
+              <span class="badge bg-success rounded-pill">Active</span>
+            </div>
+            <button type="button" class="btn btn-outline-dark btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#updateCardModal">
+              Update Payment Card
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 7: BILLING SUPPORT CALLOUT
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-5 border text-center" style="background: linear-gradient(135deg, var(--sk-aqua) 0%, var(--sk-yellow) 100%);">
+        <h2 class="h4 fw-bold text-dark mb-2" style="font-family: var(--sk-font-heading);">
+          Have Billing Questions or Need an Itemized Receipt?
+        </h2>
+        <p class="text-dark opacity-75 max-w-600 mx-auto mb-4 small">
+          Our parent finance coordinator is happy to assist with employer reimbursement documentation, split payments between guardians, or plan modifications.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-2">
+          <a href="messages.html" class="btn btn-strat-primary">
+            <i class="bi bi-chat-quote-fill me-1"></i> Message Finance Desk
+          </a>
+          <a href="../pricing.html" class="btn btn-strat-secondary">
+            <i class="bi bi-tag-fill me-1"></i> Camp Tuition Breakdown
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Make Payment Demo Modal -->
+  <div class="modal fade" id="paymentDemoModal" tabindex="-1" aria-labelledby="paymentDemoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-dark" id="paymentDemoModalLabel">Make Camp Payment (Frontend Demo)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="alert alert-info py-2 small mb-3">
+            <i class="bi bi-info-circle me-1"></i> <strong>Demo Notice:</strong> No real money will be charged. This demonstrates the parent payment workflow.
+          </div>
+          <form id="demoPaymentForm">
+            <div class="mb-3">
+              <label class="form-label small fw-bold">Select Installment / Invoice</label>
+              <select class="form-select rounded-3" required>
+                <option value="280">Maya Vance &bull; Final Installment ($280.00)</option>
+                <option value="custom">Other / Custom Advance Amount</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-bold">Payment Amount ($)</label>
+              <input type="number" id="payAmount" class="form-control rounded-3" value="280" min="1" step="1" inputmode="numeric" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-bold">Card Number</label>
+              <input type="text" id="payCardNumber" class="form-control rounded-3" value="4532 8821 9901 4102" pattern="[\d\s]{13,19}" inputmode="numeric" title="Card number must contain digits only (no letters or words)" required>
+              <div class="invalid-feedback">Card number must contain digits only (no words or letters).</div>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label class="form-label small fw-bold">Expiry</label>
+                <input type="text" id="payExpiry" class="form-control rounded-3" value="08/28" placeholder="MM/YY" pattern="\d{2}/\d{2}" inputmode="numeric" required>
+              </div>
+              <div class="col-6">
+                <label class="form-label small fw-bold">CVC</label>
+                <input type="text" id="payCVC" class="form-control rounded-3" value="842" pattern="\d{3,4}" inputmode="numeric" maxlength="4" title="CVC must be digits only" required>
+                <div class="invalid-feedback">CVC must be digits only.</div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-outline-secondary rounded-pill px-3 py-1" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-strat-primary">Simulate Payment</button>
+            </div>
+          </form>
+          <div id="paymentModalResult"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UPDATE CARD MODAL -->
+  <div class="modal fade" id="updateCardModal" tabindex="-1" aria-labelledby="updateCardModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-5 border-0 shadow-lg p-4">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="updateCardModalLabel" style="font-family: var(--sk-font-heading); color: var(--sk-rose);">
+            Update Default Payment Card
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="updateCardForm" class="row g-3">
+            <div class="col-12">
+              <label class="form-label small fw-bold">Cardholder Name *</label>
+              <input type="text" id="cardHolderName" class="form-control rounded-3" value="Sarah Vance" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label small fw-bold">Card Number *</label>
+              <input type="text" id="newCardNumber" class="form-control rounded-3" placeholder="•••• •••• •••• 9981" required maxlength="19">
+            </div>
+            <div class="col-6">
+              <label class="form-label small fw-bold">Expiration Date *</label>
+              <input type="text" id="newCardExpiry" class="form-control rounded-3" placeholder="MM/YY" required maxlength="5">
+            </div>
+            <div class="col-6">
+              <label class="form-label small fw-bold">Security CVC *</label>
+              <input type="password" id="newCardCVC" class="form-control rounded-3" placeholder="•••" required maxlength="4">
+            </div>
+            <div class="col-12 d-flex justify-content-end gap-2 mt-4">
+              <button type="button" class="btn btn-outline-secondary rounded-pill px-3 py-1" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-strat-primary">Save New Card</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+
+

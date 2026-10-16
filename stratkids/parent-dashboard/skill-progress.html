@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Skill Progress Tracker | StratKids Parent Portal</title>
+  <meta name="description" content="Interactive 5-level chess progression system, tactical milestone badges, weekly coach evaluations, and home strategy practice modules.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SECTION 1: DASHBOARD HEADER
+       ========================================================================== -->
+  <header class="stratkids-navbar py-2 border-bottom sticky-top">
+    <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+                <a class="navbar-brand py-0" href="../index.html">
+          <img src="../assets/icons/favicon.svg" alt="StratKids Logo" height="38" width="38" class="rounded-3 shadow-sm">
+          <div class="brand-text d-none d-sm-flex">
+            <span class="brand-title" style="font-size: 1.35rem;">Strat<span>Kids</span></span>
+            <span class="brand-tagline" style="font-size: 0.58rem;">Think. Play. Grow.</span>
+          </div>
+        </a>
+        <span class="badge bg-danger rounded-pill fw-bold text-uppercase d-none d-md-inline-block px-3 py-1">
+          Parent Command Center
+        </span>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
+        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR"><i class="bi bi-arrow-left-right"></i></button>
+        <a href="dashboard.html" class="btn btn-outline-dark rounded-pill px-3 py-1 small fw-bold">
+          Dashboard
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div class="dash-user-card">
+        <img src="../assets/images/guardian_sarah_vance.jpg" alt="Sarah Vance" class="dash-avatar-img">
+        <div>
+          <strong class="d-block text-dark">Sarah Vance</strong>
+          <small class="text-muted">Guardian &bull; 2 Campers</small>
+        </div>
+      </div>
+
+      <ul class="dash-nav-list">
+        <li class="dash-nav-item"><a href="dashboard.html"><i class="bi bi-grid-fill"></i> Overview</a></li>
+        <li class="dash-nav-item"><a href="children.html"><i class="bi bi-people-fill"></i> My Children</a></li>
+        <li class="dash-nav-item"><a href="child-profile.html"><i class="bi bi-person-badge-fill"></i> Child Profile</a></li>
+        <li class="dash-nav-item"><a href="enrollments.html"><i class="bi bi-calendar-check-fill"></i> Enrollments</a></li>
+        <li class="dash-nav-item active"><a href="skill-progress.html"><i class="bi bi-ladder"></i> Skill Progress</a></li>
+        <li class="dash-nav-item"><a href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a></li>
+        <li class="dash-nav-item"><a href="payments.html"><i class="bi bi-wallet2"></i> Payments</a></li>
+        <li class="dash-nav-item"><a href="certificates.html"><i class="bi bi-award-fill"></i> Certificates</a></li>
+        <li class="dash-nav-item"><a href="messages.html"><i class="bi bi-chat-dots-fill"></i> Messages</a></li>
+        <li class="dash-nav-item"><a href="profile.html"><i class="bi bi-gear-fill"></i> Profile</a></li>
+        <li class="dash-nav-item mt-4"><a href="../auth/login.html" class="text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-main-area">
+      <!-- ==========================================================================
+           SECTION 2: CAMPER SWITCHER & PROGRESSION HERO
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-5 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">5-Tier Learning Ladder</span>
+            <h1 class="h3 fw-bold mb-2" style="font-family: var(--sk-font-heading); color: var(--sk-dark);">
+              Strategic Skill Progression
+            </h1>
+            <p class="text-muted mb-3">
+              Real-time tactical advancement tracking without rigid percentiles. Click each step along the pathway below to view mastered competencies and upcoming milestones.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-strat-primary" id="btnExportProgressPdf">
+                <i class="bi bi-download me-1"></i> Export Progress PDF
+              </button>
+              <a href="certificates.html" class="btn btn-strat-secondary">
+                <i class="bi bi-award me-1"></i> View Certificates
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="p-3 rounded-4 bg-light border">
+              <span class="small fw-bold text-muted text-uppercase d-block mb-2">Select Active Camper</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="btn child-select-pill active flex-grow-1 text-start" data-child="leo">
+                  <strong class="d-block small">Leo Vance (7)</strong>
+                  <span class="small text-muted">Foundation Level</span>
+                </button>
+                <button type="button" class="btn child-select-pill flex-grow-1 text-start" data-child="maya">
+                  <strong class="d-block small">Maya Vance (11)</strong>
+                  <span class="small text-muted">Intermediate Level</span>
+                </button>
+              </div>
+              <div class="mt-3 p-2 bg-white rounded-3 border">
+                <div class="d-flex justify-content-between small text-muted mb-1">
+                  <span>Current Active Track:</span>
+                  <strong class="text-rose data-child-skill">Foundation (Level 2)</strong>
+                </div>
+                <div class="d-flex justify-content-between small text-muted">
+                  <span>Next Training Round:</span>
+                  <strong class="text-dark data-child-next-time">Tomorrow, 09:00 AM</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 3: INTERACTIVE 5-LEVEL MILESTONE TRACK
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="h5 fw-bold mb-0 text-dark">
+            <i class="bi bi-trophy-fill text-warning me-2"></i>Camp Milestone Pathway
+          </h2>
+          <span class="small text-muted">Click a level tier to inspect specific skills</span>
+        </div>
+
+        <!-- Custom Step Track (Pure CSS/JS) -->
+        <div class="milestone-track-container mb-4 px-2">
+          <!-- Background Track Line -->
+          <div class="milestone-track-bg">
+            <div class="level-milestone-track-progress" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+
+          <!-- Step Buttons -->
+          <div class="d-flex justify-content-between position-relative" style="z-index: 2;">
+            <div class="milestone-step text-center cursor-pointer" data-level="beginner" style="cursor: pointer;">
+              <div class="rounded-circle bg-white border border-3 d-flex align-items-center justify-content-center mx-auto shadow-sm" style="width: 38px; height: 38px; border-color: var(--sk-aqua) !important; color: #16606C;">
+                <i class="bi bi-check-lg fw-bold"></i>
+              </div>
+              <span class="d-block small fw-bold mt-2 text-dark">L1: Beginner</span>
+              <span class="badge bg-success-subtle text-success small">Done</span>
+            </div>
+
+            <div class="milestone-step text-center cursor-pointer" data-level="foundation" style="cursor: pointer;">
+              <div class="rounded-circle bg-white border border-3 d-flex align-items-center justify-content-center mx-auto shadow-sm" style="width: 38px; height: 38px; border-color: var(--sk-aqua) !important; color: #16606C;">
+                <i class="bi bi-check-lg fw-bold"></i>
+              </div>
+              <span class="d-block small fw-bold mt-2 text-dark">L2: Foundation</span>
+              <span class="badge bg-success-subtle text-success small">Done</span>
+            </div>
+
+            <div class="milestone-step active text-center cursor-pointer" data-level="intermediate" style="cursor: pointer;">
+              <div class="rounded-circle bg-white border border-3 d-flex align-items-center justify-content-center mx-auto shadow-sm" style="width: 38px; height: 38px; border-color: var(--sk-rose) !important; color: var(--sk-rose);">
+                <i class="bi bi-circle-fill" style="font-size: 0.6rem;"></i>
+              </div>
+              <span class="d-block small fw-bold mt-2 text-rose">L3: Intermediate</span>
+              <span class="badge bg-danger text-white small">Active</span>
+            </div>
+
+            <div class="milestone-step text-center cursor-pointer" data-level="advanced" style="cursor: pointer;">
+              <div class="rounded-circle bg-white border border-3 d-flex align-items-center justify-content-center mx-auto shadow-sm" style="width: 38px; height: 38px; border-color: #CBD5E1 !important; color: #94A3B8;">
+                <i class="bi bi-lock-fill" style="font-size: 0.75rem;"></i>
+              </div>
+              <span class="d-block small fw-bold mt-2 text-muted">L4: Advanced</span>
+              <span class="badge bg-light text-muted border small">Upcoming</span>
+            </div>
+
+            <div class="milestone-step text-center cursor-pointer" data-level="strategist" style="cursor: pointer;">
+              <div class="rounded-circle bg-white border border-3 d-flex align-items-center justify-content-center mx-auto shadow-sm" style="width: 38px; height: 38px; border-color: #CBD5E1 !important; color: #94A3B8;">
+                <i class="bi bi-star-fill" style="font-size: 0.75rem;"></i>
+              </div>
+              <span class="d-block small fw-bold mt-2 text-muted">L5: Strategist</span>
+              <span class="badge bg-light text-muted border small">Cap Track</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 4: ACTIVE LEVEL DEEP-DIVE & DYNAMIC CHECKLIST
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span id="activeLevelBadge" class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold fs-6">
+                <i class="bi bi-award-fill me-1"></i> Strategy Bishop
+              </span>
+              <span class="badge bg-light text-dark border">Curriculum Details</span>
+            </div>
+            <h3 id="activeLevelTitle" class="h4 fw-bold text-dark mb-2" style="font-family: var(--sk-font-heading);">
+              Level 3: Intermediate (Current Active)
+            </h3>
+            <p id="activeLevelDesc" class="text-muted small mb-3">
+              Actively training in 2-to-3 move tactical motifs, pawn structures, and positional outposts under time control.
+            </p>
+
+            <div class="p-3 rounded-3 bg-light border mb-3">
+              <div class="d-flex justify-content-between small fw-bold text-muted mb-1">
+                <span>Tier Mastery Rate:</span>
+                <span id="activeLevelProgressText" class="text-dark">68% Completed (In Progress)</span>
+              </div>
+              <div class="progress" style="height: 10px; background-color: #E2E8F0;">
+                <div id="activeLevelProgressBar" class="progress-bar rounded-pill" role="progressbar" style="width: 68%; background-color: var(--sk-rose);" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-strat-primary btn-sm" id="btnRequestMilestoneCheck">
+                <i class="bi bi-chat-quote me-1"></i> Request Milestone Check
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card border rounded-4 shadow-sm p-3 bg-white">
+              <h4 class="h6 fw-bold text-dark mb-3">
+                <i class="bi bi-list-check text-primary me-2"></i>Core Competency Checkpoints
+              </h4>
+              <ul id="activeLevelSkillList" class="list-group list-group-flush small">
+                <!-- Dynamic content from skills.js -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 5: TACTICAL ACHIEVEMENT BADGES GRID
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h5 fw-bold mb-0 text-dark">
+            <i class="bi bi-patch-check-fill text-danger me-2"></i>Camper Achievement Badges
+          </h2>
+          <span class="badge bg-warning text-dark rounded-pill">6 of 8 Unlocked</span>
+        </div>
+        <p class="small text-muted mb-4">Badges celebrate sportsmanlike character, tactical perseverance, and friendly team collaboration.</p>
+
+        <div class="row g-3 text-center">
+          <div class="col-6 col-md-3">
+            <div class="p-3 rounded-4 border h-100 bg-white" style="border-color: var(--sk-aqua) !important;">
+              <div class="dash-avatar-circle mx-auto mb-2" style="background: var(--sk-aqua); color: #145964; width: 50px; height: 50px; font-size: 1.5rem;"><i class="bi bi-person-badge"></i></div>
+              <strong class="d-block small text-dark">First Checkmate</strong>
+              <small class="text-success fw-bold"><i class="bi bi-check-lg text-success"></i> Unlocked W1</small>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="p-3 rounded-4 border h-100 bg-white" style="border-color: var(--sk-yellow) !important;">
+              <div class="dash-avatar-circle mx-auto mb-2" style="background: var(--sk-yellow); color: #8A7A00; width: 50px; height: 50px; font-size: 1.5rem;"><i class="bi bi-lightbulb-fill text-warning"></i>©</div>
+              <strong class="d-block small text-dark">Puzzle Solver 50</strong>
+              <small class="text-success fw-bold"><i class="bi bi-check-lg text-success"></i> Unlocked W2</small>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="p-3 rounded-4 border h-100 bg-white" style="border-color: var(--sk-pink) !important;">
+              <div class="dash-avatar-circle mx-auto mb-2" style="background: var(--sk-pink); color: #9C3854; width: 50px; height: 50px; font-size: 1.5rem;"><i class="bi bi-star-fill text-warning"></i></div>
+              <strong class="d-block small text-dark">Strategy Star</strong>
+              <small class="text-success fw-bold"><i class="bi bi-check-lg text-success"></i> Unlocked W2</small>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="p-3 rounded-4 border h-100 bg-white" style="border-color: var(--sk-rose) !important;">
+              <div class="dash-avatar-circle mx-auto mb-2" style="background: var(--sk-rose); color: #fff; width: 50px; height: 50px; font-size: 1.5rem;"><i class="bi bi-bullseye text-danger"></i></div>
+              <strong class="d-block small text-dark">Focus Champion</strong>
+              <small class="text-success fw-bold"><i class="bi bi-check-lg text-success"></i> Unlocked W2</small>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="p-3 rounded-4 border h-100 bg-white" style="border-color: var(--sk-aqua) !important;">
+              <div class="dash-avatar-circle mx-auto mb-2" style="background: var(--sk-aqua); color: #145964; width: 50px; height: 50px; font-size: 1.5rem;"><i class="bi bi-hand-thumbs-up-fill text-success"></i></div>
+              <strong class="d-block small text-dark">Team Player</strong>
+              <small class="text-success fw-bold"><i class="bi bi-check-lg text-success"></i> Unlocked W2</small>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="p-3 rounded-4 border h-100 bg-white" style="border-color: var(--sk-yellow) !important;">
+              <div class="dash-avatar-circle mx-auto mb-2" style="background: var(--sk-yellow); color: #8A7A00; width: 50px; height: 50px; font-size: 1.5rem;"><i class="fas fa-book-open"></i></div>
+              <strong class="d-block small text-dark">Opening Explorer</strong>
+              <small class="text-success fw-bold"><i class="bi bi-check-lg text-success"></i> Unlocked W3</small>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="p-3 rounded-4 border h-100 bg-light opacity-75">
+              <div class="dash-avatar-circle mx-auto mb-2" style="background: #E2E8F0; color: #64748B; width: 50px; height: 50px; font-size: 1.5rem;"><i class="bi bi-trophy-fill text-warning"></i></div>
+              <strong class="d-block small text-muted">Tournament Ready</strong>
+              <small class="text-muted">In Progress (2/3)</small>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="p-3 rounded-4 border h-100 bg-light opacity-75">
+              <div class="dash-avatar-circle mx-auto mb-2" style="background: #E2E8F0; color: #64748B; width: 50px; height: 50px; font-size: 1.5rem;"><i class="bi bi-lightbulb-fill text-warning"></i></div>
+              <strong class="d-block small text-muted">Tactical Thinker</strong>
+              <small class="text-muted">Locked (Level 4)</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 6: COACH SCOUTING REPORT & TACTICAL OBSERVATIONS
+           ========================================================================== -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold" style="width: 48px; height: 48px; background: var(--sk-rose);">
+                ER
+              </div>
+              <div>
+                <strong class="d-block text-dark">Coach Elena Rostova, FIDE Master</strong>
+                <small class="text-muted">Lead Strategy Mentor &bull; Scouting Report</small>
+              </div>
+            </div>
+            <div class="p-3 rounded-3 bg-light border mb-3">
+              <p class="small text-muted mb-0 italic">
+                &ldquo;Leo has demonstrated incredible patience this week with his pawn structure. Rather than rushing pieces forward, he took two full minutes to evaluate the knight fork on d5 during yesterday's team simulation. Truly impressive focus!&rdquo;
+              </p>
+            </div>
+            <div class="d-flex justify-content-between small text-muted">
+              <span>Next Targeted Focus:</span>
+              <strong class="text-dark">King & Rook Clean Endgame Conversion</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <h3 class="h6 fw-bold text-dark mb-3">
+              <i class="bi bi-house-door-fill text-primary me-2"></i>Recommended Home Chess Practice (15 Mins)
+            </h3>
+            <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-0">
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-dice-5 text-rose fs-6 mt-1"></i>
+                <span><strong>Pawn Wars Mini-Game:</strong> Place 8 pawns each on ranks 2 and 7. The first player to safely queen a pawn wins! Great for calculating breakthrough moves.</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-stopwatch text-rose fs-6 mt-1"></i>
+                <span><strong>The 2-Minute Candidate Move Rule:</strong> Before touching a piece, have your child vocalize two candidate moves and what their opponent might reply.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 7: LEVEL GRADUATION ROADMAP & CERTIFICATE UNLOCK CTA
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-5 border text-center" style="background: linear-gradient(135deg, var(--sk-yellow) 0%, var(--sk-aqua) 100%);">
+        <h2 class="h4 fw-bold text-dark mb-2" style="font-family: var(--sk-font-heading);">
+          Ready to Unlock the Level 3 Intermediate Certificate?
+        </h2>
+        <p class="text-dark opacity-75 max-w-600 mx-auto mb-4 small">
+          Upon completing the final 2 tactics puzzles and participating in Friday's friendly round-robin, your camper's digital certificate and physical medal will be awarded.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-2">
+          <a href="certificates.html" class="btn btn-strat-primary">
+            <i class="bi bi-award-fill me-1"></i> View Certificates Gallery
+          </a>
+          <a href="daily-schedule.html" class="btn btn-strat-secondary">
+            <i class="bi bi-clock-history me-1"></i> Check Friday Tournament Time
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/skills.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+
+

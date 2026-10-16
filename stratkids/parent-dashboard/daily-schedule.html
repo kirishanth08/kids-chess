@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Daily Camp Schedule | StratKids Parent Portal</title>
+  <meta name="description" content="Real-time daily camp timeline, live status indicators, drop-off countdown, nutritional allergen menu, and secure dismissal PIN.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SECTION 1: DASHBOARD HEADER
+       ========================================================================== -->
+  <header class="stratkids-navbar py-2 border-bottom sticky-top">
+    <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+                <a class="navbar-brand py-0" href="../index.html">
+          <img src="../assets/icons/favicon.svg" alt="StratKids Logo" height="38" width="38" class="rounded-3 shadow-sm">
+          <div class="brand-text d-none d-sm-flex">
+            <span class="brand-title" style="font-size: 1.35rem;">Strat<span>Kids</span></span>
+            <span class="brand-tagline" style="font-size: 0.58rem;">Think. Play. Grow.</span>
+          </div>
+        </a>
+        <span class="badge bg-danger rounded-pill fw-bold text-uppercase d-none d-md-inline-block px-3 py-1">
+          Parent Command Center
+        </span>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
+        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR"><i class="bi bi-arrow-left-right"></i></button>
+        <a href="dashboard.html" class="btn btn-outline-dark rounded-pill px-3 py-1 small fw-bold">Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div class="dash-user-card">
+        <img src="../assets/images/guardian_sarah_vance.jpg" alt="Sarah Vance" class="dash-avatar-img">
+        <div>
+          <strong class="d-block text-dark">Sarah Vance</strong>
+          <small class="text-muted">Guardian &bull; 2 Campers</small>
+        </div>
+      </div>
+
+      <ul class="dash-nav-list">
+        <li class="dash-nav-item"><a href="dashboard.html"><i class="bi bi-grid-fill"></i> Overview</a></li>
+        <li class="dash-nav-item"><a href="children.html"><i class="bi bi-people-fill"></i> My Children</a></li>
+        <li class="dash-nav-item"><a href="child-profile.html"><i class="bi bi-person-badge-fill"></i> Child Profile</a></li>
+        <li class="dash-nav-item"><a href="enrollments.html"><i class="bi bi-calendar-check-fill"></i> Enrollments</a></li>
+        <li class="dash-nav-item"><a href="skill-progress.html"><i class="bi bi-ladder"></i> Skill Progress</a></li>
+        <li class="dash-nav-item active"><a href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a></li>
+        <li class="dash-nav-item"><a href="payments.html"><i class="bi bi-wallet2"></i> Payments</a></li>
+        <li class="dash-nav-item"><a href="certificates.html"><i class="bi bi-award-fill"></i> Certificates</a></li>
+        <li class="dash-nav-item"><a href="messages.html"><i class="bi bi-chat-dots-fill"></i> Messages</a></li>
+        <li class="dash-nav-item"><a href="profile.html"><i class="bi bi-gear-fill"></i> Profile</a></li>
+        <li class="dash-nav-item mt-4"><a href="../auth/login.html" class="text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-main-area">
+      <!-- ==========================================================================
+           SECTION 2: CAMPER & DATE SELECTOR HERO
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-5 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">Live Camp Day Roster</span>
+            <h1 class="h3 fw-bold mb-2" style="font-family: var(--sk-font-heading); color: var(--sk-dark);">
+              Today at StratKids Camp
+            </h1>
+            <p class="text-muted mb-3">
+              Follow your camper's exact daily itinerary in real time. Sessions alternate between focused chess theory, tactical puzzle solving, collaborative team play, and outdoor recess.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-strat-primary" id="btnSyncCalendar">
+                <i class="bi bi-calendar-plus me-1"></i> Add to Phone Calendar
+              </button>
+              <a href="../schedule.html" class="btn btn-strat-secondary">
+                <i class="bi bi-calendar3 me-1"></i> 8-Week Master Schedule
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="p-3 rounded-4 bg-light border">
+              <span class="small fw-bold text-muted text-uppercase d-block mb-2">Select Active Camper</span>
+              <div class="d-flex gap-2 mb-3">
+                <button type="button" class="btn child-select-pill active flex-grow-1 text-start" data-child="leo">
+                  <strong class="d-block small">Leo Vance (7)</strong>
+                  <span class="small text-muted">Little Thinkers (Half Day)</span>
+                </button>
+                <button type="button" class="btn child-select-pill flex-grow-1 text-start" data-child="maya">
+                  <strong class="d-block small">Maya Vance (11)</strong>
+                  <span class="small text-muted">Strategic Minds (Full Day)</span>
+                </button>
+              </div>
+              <div class="d-flex align-items-center justify-content-between p-2 bg-white rounded-3 border">
+                <span class="small text-muted"><i class="bi bi-geo-alt text-danger me-1"></i>Assigned Studio:</span>
+                <strong class="small text-dark">Pawns Studio A &bull; North Hall</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 3: LIVE STATUS & DROP-OFF COUNTDOWN WIDGET
+           ========================================================================== -->
+      <div class="row g-4 mb-4">
+        <div class="col-md-6 col-xl-3">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-left: 5px solid var(--sk-aqua) !important;">
+            <small class="text-muted d-block text-uppercase fw-bold mb-1">Morning Arrival Window</small>
+            <h3 class="h4 fw-bold text-dark mb-0">08:45 &ndash; 09:00 AM</h3>
+            <span class="small text-success fw-bold"><i class="bi bi-check-circle me-1"></i>Curbside Check-in Open</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-left: 5px solid var(--sk-rose) !important;">
+            <small class="text-muted d-block text-uppercase fw-bold mb-1">Current Camp Activity</small>
+            <h3 class="h4 fw-bold text-rose mb-0">Tactical Puzzles</h3>
+            <span class="small text-muted">10:30 AM &ndash; 11:30 AM Room A</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-left: 5px solid var(--sk-yellow) !important;">
+            <small class="text-muted d-block text-uppercase fw-bold mb-1">Half-Day Dismissal (Leo)</small>
+            <h3 class="h4 fw-bold text-dark mb-0">12:30 PM</h3>
+            <span class="small text-muted"><i class="bi bi-shield-lock me-1 text-primary"></i>PIN #4829 Required</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-left: 5px solid var(--sk-pink) !important;">
+            <small class="text-muted d-block text-uppercase fw-bold mb-1">Full-Day Dismissal (Maya)</small>
+            <h3 class="h4 fw-bold text-dark mb-0">04:30 PM</h3>
+            <span class="small text-muted"><i class="bi bi-bus-front me-1 text-primary"></i>Late Pick-up until 5:15 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 4: HOURLY CAMP TIMETABLE WITH STATUS INDICATORS
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="h5 fw-bold mb-0 text-dark">
+            <i class="bi bi-stopwatch text-danger me-2"></i>Daily Activity Sequence
+          </h2>
+          <span class="small text-muted">Status: <span class="badge bg-success rounded-pill"><i class="bi bi-check-lg text-success"></i> On Schedule</span></span>
+        </div>
+
+        <div class="timeline-container px-2">
+          <!-- 09:00 -->
+          <div class="d-flex gap-3 mb-4 position-relative">
+            <div class="text-center" style="min-width: 80px;">
+              <span class="badge bg-secondary rounded-pill px-2 py-1">09:00 AM</span>
+            </div>
+            <div class="p-3 rounded-4 border bg-light w-100">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <strong class="text-dark">Welcome Circle & Morning Tactical Warm-Up</strong>
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1"><i class="bi bi-check2 me-1"></i>Completed</span>
+              </div>
+              <p class="small text-muted mb-0">Camp cheer, daily strategy riddle on the big interactive board, and physical stretching games.</p>
+            </div>
+          </div>
+
+          <!-- 09:30 -->
+          <div class="d-flex gap-3 mb-4 position-relative">
+            <div class="text-center" style="min-width: 80px;">
+              <span class="badge bg-secondary rounded-pill px-2 py-1">09:30 AM</span>
+            </div>
+            <div class="p-3 rounded-4 border bg-light w-100">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <strong class="text-dark">Chess Master Lesson: Central Outposts & Forks</strong>
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1"><i class="bi bi-check2 me-1"></i>Completed</span>
+              </div>
+              <p class="small text-muted mb-0">Coach-led master demonstration on the demonstration board. Campers practice knight forks with demonstration partners.</p>
+            </div>
+          </div>
+
+          <!-- 10:30 (CURRENT) -->
+          <div class="d-flex gap-3 mb-4 position-relative">
+            <div class="text-center" style="min-width: 80px;">
+              <span class="badge bg-danger rounded-pill px-2 py-1 animate-pulse">10:30 AM</span>
+            </div>
+            <div class="p-3 rounded-4 border w-100" style="background: rgba(202, 97, 128, 0.08); border-color: var(--sk-rose) !important;">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <strong class="text-rose">Tactical Puzzle Gauntlet & Blindfold Mini-Board</strong>
+                <span class="badge bg-danger px-2 py-1 rounded-pill"><i class="bi bi-broadcast me-1"></i>Happening Now</span>
+              </div>
+              <p class="small text-dark mb-0">Hands-on problem solving in workbook level 2. Campers solve 10 progressive tactical positions in pairs.</p>
+            </div>
+          </div>
+
+          <!-- 11:30 -->
+          <div class="d-flex gap-3 mb-4 position-relative">
+            <div class="text-center" style="min-width: 80px;">
+              <span class="badge bg-secondary rounded-pill px-2 py-1">11:30 AM</span>
+            </div>
+            <div class="p-3 rounded-4 border bg-white w-100">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <strong class="text-dark">Nut-Free Organic Snack & Social Courtyard Break</strong>
+                <span class="badge bg-light text-muted border px-2 py-1"><i class="bi bi-circle me-1"></i> Upcoming</span>
+              </div>
+              <p class="small text-muted mb-0">Fresh apple slices, whole grain pretzel twists, and cold spring water in the shaded outdoor gazebo.</p>
+            </div>
+          </div>
+
+          <!-- 12:00 -->
+          <div class="d-flex gap-3 mb-4 position-relative">
+            <div class="text-center" style="min-width: 80px;">
+              <span class="badge bg-secondary rounded-pill px-2 py-1">12:00 PM</span>
+            </div>
+            <div class="p-3 rounded-4 border bg-white w-100">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <strong class="text-dark">Team Strategy Board Challenge (Catan Jr / Blokus)</strong>
+                <span class="badge bg-light text-muted border px-2 py-1"><i class="bi bi-circle me-1"></i> Upcoming</span>
+              </div>
+              <p class="small text-muted mb-0">Collaborative spatial strategy board games building spatial awareness and negotiation skills.</p>
+              <div class="small text-primary mt-2"><strong>Note:</strong> Leo Vance departs at 12:30 PM (Half-Day Pickup window).</div>
+            </div>
+          </div>
+
+          <!-- 02:00 -->
+          <div class="d-flex gap-3 mb-4 position-relative">
+            <div class="text-center" style="min-width: 80px;">
+              <span class="badge bg-secondary rounded-pill px-2 py-1">02:00 PM</span>
+            </div>
+            <div class="p-3 rounded-4 border bg-white w-100">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <strong class="text-dark">Tournament Simulation Round (DGT Clocks)</strong>
+                <span class="badge bg-light text-muted border px-2 py-1"><i class="bi bi-circle me-1"></i> Upcoming (Full Day)</span>
+              </div>
+              <p class="small text-muted mb-0">Rated match training with digital timers, scoresheet notation practice, and post-game coach analysis.</p>
+            </div>
+          </div>
+
+          <!-- 03:30 -->
+          <div class="d-flex gap-3 mb-4 position-relative">
+            <div class="text-center" style="min-width: 80px;">
+              <span class="badge bg-secondary rounded-pill px-2 py-1">03:30 PM</span>
+            </div>
+            <div class="p-3 rounded-4 border bg-white w-100">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <strong class="text-dark">Outdoor Giant Chess & Strategy Obstacle Course</strong>
+                <span class="badge bg-light text-muted border px-2 py-1"><i class="bi bi-circle me-1"></i> Upcoming (Full Day)</span>
+              </div>
+              <p class="small text-muted mb-0">Active lawn games with life-sized chess pieces, team coordination relays, and sun-safe recreation.</p>
+            </div>
+          </div>
+
+          <!-- 04:30 -->
+          <div class="d-flex gap-3 position-relative">
+            <div class="text-center" style="min-width: 80px;">
+              <span class="badge bg-secondary rounded-pill px-2 py-1">04:30 PM</span>
+            </div>
+            <div class="p-3 rounded-4 border bg-white w-100">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <strong class="text-dark">Daily Reflection, Badge Stamp & Dismissal</strong>
+                <span class="badge bg-light text-muted border px-2 py-1"><i class="bi bi-circle me-1"></i> Upcoming (Full Day)</span>
+              </div>
+              <p class="small text-muted mb-0">Campers review what they learned, collect daily star stamps in their strategy diaries, and pack camp gear.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 5: MEAL & ALLERGEN SAFETY BOARD
+           ========================================================================== -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="h6 fw-bold text-dark mb-0">
+                <i class="bi bi-cup-straw text-primary me-2"></i>Campus Nutrition & Allergen Protocol
+              </h3>
+              <span class="badge bg-success rounded-pill">100% Nut-Free</span>
+            </div>
+            <p class="small text-muted mb-3">All snacks provided on campus are strictly peanut-free, tree-nut-free, and prepared in a certified facility.</p>
+            <div class="d-flex flex-column gap-2 small">
+              <div class="d-flex justify-content-between p-2 rounded bg-light">
+                <span>Morning Snack (11:30 AM):</span>
+                <strong>Crisp Gala Apple Slices & Gluten-Free Crackers</strong>
+              </div>
+              <div class="d-flex justify-content-between p-2 rounded bg-light">
+                <span>Full-Day Lunch (12:45 PM):</span>
+                <strong>Organic Turkey/Cheddar Wrap + Carrots & Hummus</strong>
+              </div>
+              <div class="d-flex justify-content-between p-2 rounded bg-light">
+                <span>Camper Allergies on File:</span>
+                <strong class="text-danger">Leo: Mild Sesame &bull; Maya: None</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <h3 class="h6 fw-bold text-dark mb-3">
+              <i class="bi bi-backpack text-warning me-2"></i>Daily Camper Gear Checklist
+            </h3>
+            <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-0">
+              <li class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill text-success fs-6"></i>
+                <span>StratKids Refillable Water Bottle (Filtered filling stations across campus)</span>
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill text-success fs-6"></i>
+                <span>StratKids Daily Puzzle & Strategy Workbook (Provided in Day 1 Kit)</span>
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill text-success fs-6"></i>
+                <span>Comfortable sneakers for afternoon giant chessboard outdoor games</span>
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill text-success fs-6"></i>
+                <span>StratKids Lanyard & Camper Identification Badge (Required for check-in)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 6: DIGITAL DISMISSAL & SECURE PICKUP PIN
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border: 2px dashed var(--sk-aqua) !important;">
+        <div class="row align-items-center g-4">
+          <div class="col-md-8">
+            <span class="badge bg-danger rounded-pill px-3 py-1 mb-2">Campus Security Gate Access</span>
+            <h3 class="h5 fw-bold text-dark mb-1">Parent Dismissal Verification Code</h3>
+            <p class="small text-muted mb-0">
+              Please present this 4-digit security PIN or scan QR at the curbside dismissal zone. Only guardians listed in your profile will be authorized to receive campers.
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="p-3 rounded-4 bg-light border d-inline-block">
+              <span class="small text-muted d-block text-uppercase fw-bold">Today's Secure PIN</span>
+              <span class="display-6 fw-bold text-dark letter-spacing-2" style="letter-spacing: 4px;">4 8 2 9</span>
+              <small class="d-block text-success fw-bold mt-1"><i class="bi bi-check-lg text-success"></i> Valid until 05:30 PM</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 7: COACH DIRECT COMMUNICATION CTA
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-5 border text-center" style="background: linear-gradient(135deg, var(--sk-pink) 0%, var(--sk-aqua) 100%);">
+        <h2 class="h4 fw-bold text-dark mb-2" style="font-family: var(--sk-font-heading);">
+          Need to Update Today's Pickup Time or Medication Note?
+        </h2>
+        <p class="text-dark opacity-75 max-w-600 mx-auto mb-4 small">
+          Direct messages submitted before 12:00 PM are handed immediately to your camper's head room coach and camp nurse.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-2">
+          <a href="messages.html" class="btn btn-strat-primary">
+            <i class="bi bi-chat-dots-fill me-1"></i> Send Direct Note to Coach
+          </a>
+          <a href="../contact.html" class="btn btn-strat-secondary">
+            <i class="bi bi-telephone-fill me-1"></i> Call Camp Office
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+
+

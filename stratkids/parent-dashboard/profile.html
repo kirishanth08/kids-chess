@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Guardian Profile & Settings | StratKids Parent Portal</title>
+  <meta name="description" content="Manage parent contact details, authorized camper pickup guardians, communication preferences, and security passwords.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SECTION 1: DASHBOARD HEADER
+       ========================================================================== -->
+  <header class="stratkids-navbar py-2 border-bottom sticky-top">
+    <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+                <a class="navbar-brand py-0" href="../index.html">
+          <img src="../assets/icons/favicon.svg" alt="StratKids Logo" height="38" width="38" class="rounded-3 shadow-sm">
+          <div class="brand-text d-none d-sm-flex">
+            <span class="brand-title" style="font-size: 1.35rem;">Strat<span>Kids</span></span>
+            <span class="brand-tagline" style="font-size: 0.58rem;">Think. Play. Grow.</span>
+          </div>
+        </a>
+        <span class="badge bg-danger rounded-pill fw-bold text-uppercase d-none d-md-inline-block px-3 py-1">
+          Parent Command Center
+        </span>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
+        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR"><i class="bi bi-arrow-left-right"></i></button>
+        <a href="dashboard.html" class="btn btn-outline-dark rounded-pill px-3 py-1 small fw-bold">Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div class="dash-user-card">
+        <img src="../assets/images/guardian_sarah_vance.jpg" alt="Sarah Vance" class="dash-avatar-img">
+        <div>
+          <strong class="d-block text-dark">Sarah Vance</strong>
+          <small class="text-muted">Guardian &bull; 2 Campers</small>
+        </div>
+      </div>
+
+      <ul class="dash-nav-list">
+        <li class="dash-nav-item"><a href="dashboard.html"><i class="bi bi-grid-fill"></i> Overview</a></li>
+        <li class="dash-nav-item"><a href="children.html"><i class="bi bi-people-fill"></i> My Children</a></li>
+        <li class="dash-nav-item"><a href="child-profile.html"><i class="bi bi-person-badge-fill"></i> Child Profile</a></li>
+        <li class="dash-nav-item"><a href="enrollments.html"><i class="bi bi-calendar-check-fill"></i> Enrollments</a></li>
+        <li class="dash-nav-item"><a href="skill-progress.html"><i class="bi bi-ladder"></i> Skill Progress</a></li>
+        <li class="dash-nav-item"><a href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a></li>
+        <li class="dash-nav-item"><a href="payments.html"><i class="bi bi-wallet2"></i> Payments</a></li>
+        <li class="dash-nav-item"><a href="certificates.html"><i class="bi bi-award-fill"></i> Certificates</a></li>
+        <li class="dash-nav-item"><a href="messages.html"><i class="bi bi-chat-dots-fill"></i> Messages</a></li>
+        <li class="dash-nav-item active"><a href="profile.html"><i class="bi bi-gear-fill"></i> Profile</a></li>
+        <li class="dash-nav-item mt-4"><a href="../auth/login.html" class="text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-main-area">
+      <!-- ==========================================================================
+           SECTION 2: PROFILE HERO & ACCOUNT BADGE
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-5 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">Guardian Profile</span>
+            <h1 class="h3 fw-bold mb-2" style="font-family: var(--sk-font-heading); color: var(--sk-dark);">
+              Account Settings & Preferences
+            </h1>
+            <p class="text-muted mb-3">
+              Maintain current emergency contact numbers, configure pickup security authorization, and select your preferred camp notification frequency.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-strat-primary" onclick="document.getElementById('primaryGuardianForm').scrollIntoView({ behavior: 'smooth' });">
+                <i class="bi bi-pencil-square me-1"></i> Edit Contact Info
+              </button>
+              <a href="children.html" class="btn btn-strat-secondary">
+                <i class="bi bi-people me-1"></i> Manage Campers
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="p-3 rounded-4 bg-light border d-flex align-items-center gap-3">
+              <img src="../assets/images/guardian_sarah_vance.jpg" alt="Sarah Vance" class="dash-avatar-img shadow-sm" style="width: 70px; height: 70px; border-width: 3px;">
+              <div>
+                <strong class="d-block text-dark">Sarah Vance</strong>
+                <span class="small text-muted d-block">sarah.vance@example.com</span>
+                <span class="badge bg-success-subtle text-success border border-success-subtle small mt-1">
+                  <i class="bi bi-check-lg text-success"></i> Verified Primary Guardian
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 3: PRIMARY GUARDIAN CONTACT INFORMATION FORM
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="h5 fw-bold mb-0 text-dark">
+            <i class="bi bi-person-lines-fill text-primary me-2"></i>Primary Guardian Details
+          </h2>
+          <span class="small text-muted">Last updated May 12, 2026</span>
+        </div>
+
+        <div id="guardianAlert"></div>
+
+        <form id="primaryGuardianForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Full Legal Name</label>
+              <input type="text" id="guardianFullName" class="form-control rounded-3" value="Sarah Vance" required pattern="^[A-Za-z\s\.\'\-]+$" title="Legal name must contain letters only (no numbers)">
+              <div class="invalid-feedback">Name must contain letters only (no numbers).</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Relationship to Campers</label>
+              <select class="form-select rounded-3">
+                <option value="mother" selected>Mother / Legal Guardian</option>
+                <option value="father">Father / Legal Guardian</option>
+                <option value="grandparent">Grandparent</option>
+                <option value="other">Other Authorized Guardian</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Primary Email Address</label>
+              <input type="email" id="guardianEmail" class="form-control rounded-3" value="sarah.vance@example.com" required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Cell Phone (For SMS Alerts)</label>
+              <input type="tel" id="guardianPhone" class="form-control rounded-3" value="(555) 392-8819" required pattern="^[\d\+\-\s\(\)\.]{7,20}$" inputmode="tel" title="Phone must contain digits only (no letters or words)">
+              <div class="invalid-feedback">Phone must contain digits only (no letters).</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label small fw-bold">Home Residential Address</label>
+              <input type="text" class="form-control rounded-3" value="742 Evergreen Terrace, Springfield, CA 90210" required>
+            </div>
+            <div class="col-12 text-end">
+              <button type="submit" class="btn btn-strat-primary">
+                <i class="bi bi-check2-circle me-1"></i> Save Changes
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 4: AUTHORIZED PICKUP DELEGATES & EMERGENCY CONTACTS
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h5 fw-bold mb-0 text-dark">
+            <i class="bi bi-shield-check text-success me-2"></i>Authorized Dismissal & Emergency Pickup List
+          </h2>
+          <button type="button" class="btn btn-sm btn-outline-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#addDelegateModal">
+            <i class="bi bi-plus-lg me-1"></i> Add Contact
+          </button>
+        </div>
+        <p class="small text-muted mb-4">Anyone arriving to collect campers at curbside must match these photo-verified delegates and know your 4-digit PIN.</p>
+
+        <div class="row g-3" id="delegatesListContainer">
+          <!-- Delegate 1 -->
+          <div class="col-md-6">
+            <div class="p-3 rounded-4 border bg-light h-100">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <strong class="text-dark small">David Vance (Father)</strong>
+                <span class="badge bg-success rounded-pill">Authorized</span>
+              </div>
+              <div class="small text-muted">Phone: (555) 392-8820 &bull; Secondary Contact</div>
+              <div class="small text-muted">Status: Photo ID on file with campus desk</div>
+            </div>
+          </div>
+
+          <!-- Delegate 2 -->
+          <div class="col-md-6">
+            <div class="p-3 rounded-4 border bg-light h-100">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <strong class="text-dark small">Eleanor Vance (Grandmother)</strong>
+                <span class="badge bg-success rounded-pill">Authorized</span>
+              </div>
+              <div class="small text-muted">Phone: (555) 441-9012 &bull; Emergency Backup</div>
+              <div class="small text-muted">Status: Photo ID on file with campus desk</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 5: COMMUNICATION & ALERT PREFERENCES
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <h2 class="h5 fw-bold mb-3 text-dark">
+          <i class="bi bi-bell-fill text-warning me-2"></i>Communication & Daily Digest Preferences
+        </h2>
+        <div class="d-flex flex-column gap-3">
+          <div class="d-flex align-items-center justify-content-between p-3 rounded-3 border bg-light">
+            <div>
+              <strong class="d-block small text-dark">Instant SMS Arrival & Dismissal Notifications</strong>
+              <small class="text-muted">Receive a real-time text message as soon as your camper checks into the studio room.</small>
+            </div>
+            <div class="form-check form-switch fs-5">
+              <input class="form-check-input" type="checkbox" role="switch" checked>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between p-3 rounded-3 border bg-light">
+            <div>
+              <strong class="d-block small text-dark">Daily Coach Scouting Notes & Photo Digest</strong>
+              <small class="text-muted">Receive an afternoon recap email with tactical puzzle highlights and photo moments.</small>
+            </div>
+            <div class="form-check form-switch fs-5">
+              <input class="form-check-input" type="checkbox" role="switch" checked>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between p-3 rounded-3 border bg-light">
+            <div>
+              <strong class="d-block small text-dark">StratKids Monthly Chess Strategy & Puzzle Newsletter</strong>
+              <small class="text-muted">Free master tactics exercises, home board games recommendations, and grandmaster stories.</small>
+            </div>
+            <div class="form-check form-switch fs-5">
+              <input class="form-check-input" type="checkbox" role="switch" checked>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 6: SECURITY & PASSWORD UPDATE FORM
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <h2 class="h5 fw-bold mb-3 text-dark">
+          <i class="bi bi-key-fill text-danger me-2"></i>Security & Account Password
+        </h2>
+        <div id="passwordAlert"></div>
+        <form id="passwordUpdateForm">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label small fw-bold">Current Password</label>
+              <input type="password" id="currentPassword" class="form-control rounded-3" value="••••••••" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small fw-bold">New Secure Password</label>
+              <input type="password" id="newPassword" class="form-control rounded-3" placeholder="Min. 8 characters" required minlength="8">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small fw-bold">Confirm New Password</label>
+              <input type="password" id="confirmPassword" class="form-control rounded-3" placeholder="Re-type password" required minlength="8">
+            </div>
+            <div class="col-12 text-end">
+              <button type="submit" class="btn btn-outline-dark rounded-pill px-4">
+                Update Password
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 7: DATA PRIVACY & COMPLIANCE PROMISE
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-5 border text-center" style="background: linear-gradient(135deg, var(--sk-yellow) 0%, var(--sk-aqua) 100%);">
+        <h2 class="h4 fw-bold text-dark mb-2" style="font-family: var(--sk-font-heading);">
+          Our Strict COPPA & Student Data Privacy Pledge
+        </h2>
+        <p class="text-dark opacity-75 max-w-600 mx-auto mb-4 small">
+          We strictly adhere to the Children's Online Privacy Protection Act (COPPA). We never sell, lease, or share your family's personal or medical information with third parties.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-2">
+          <a href="../about.html" class="btn btn-strat-primary">
+            <i class="bi bi-shield-lock-fill me-1"></i> Read Privacy Policy
+          </a>
+          <a href="dashboard.html" class="btn btn-strat-secondary">
+            <i class="bi bi-speedometer2 me-1"></i> Return to Dashboard
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ADD DELEGATE MODAL -->
+  <div class="modal fade" id="addDelegateModal" tabindex="-1" aria-labelledby="addDelegateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-5 border-0 shadow-lg p-4">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="addDelegateModalLabel" style="font-family: var(--sk-font-heading); color: var(--sk-rose);">
+            Add Authorized Pickup Delegate
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-muted mb-3">Delegates must present government-issued photo ID matching this name at curbside checkout.</p>
+          <form id="addDelegateForm" class="row g-3">
+            <div class="col-12">
+              <label class="form-label small fw-bold">Full Legal Name *</label>
+              <input type="text" id="delegateFullName" class="form-control rounded-3" placeholder="e.g. Margaret Vance" required pattern="^[A-Za-z\s\.\'\-]+$" title="Letters only">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Relationship to Campers *</label>
+              <input type="text" id="delegateRelation" class="form-control rounded-3" placeholder="e.g. Aunt, Babysitter" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold">Contact Phone Number *</label>
+              <input type="tel" id="delegatePhone" class="form-control rounded-3" placeholder="(555) 000-0000" required>
+            </div>
+            <div class="col-12 d-flex justify-content-end gap-2 mt-4">
+              <button type="button" class="btn btn-outline-secondary rounded-pill px-3 py-1" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-strat-primary">Add Authorized Delegate</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+
+

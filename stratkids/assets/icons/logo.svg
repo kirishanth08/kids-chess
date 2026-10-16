@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none">
+  <!-- StratKids Friendly Chess Knight + Crown Mark -->
+  <g transform="translate(6, 4)">
+    <!-- Base Glow / Board Square -->
+    <rect x="0" y="4" width="48" height="48" rx="14" fill="#9ED3DC" fill-opacity="0.35"/>
+    <rect x="2" y="6" width="44" height="44" rx="12" stroke="#CA6180" stroke-width="2.5" stroke-dasharray="4 2"/>
+    
+    <!-- Strategic Movement Arc -->
+    <path d="M12 40 C 14 26, 26 18, 38 20" stroke="#FEFD99" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Stylized Modern Friendly Knight Silhouette -->
+    <path d="M17 42 C17 38 18 34 21 31 C22 28 20 25 18 24 C16 23 16 20 18 19 C20 18 24 19 26 21 C28 17 31 16 35 18 C38 20 39 24 38 27 C36 31 35 34 36 42 Z" 
+          fill="#CA6180"/>
+          
+    <!-- Friendly Eye / Star Accent -->
+    <circle cx="23" cy="22" r="2.2" fill="#FEFD99"/>
+    
+    <!-- Knight Crown / Strategic Star -->
+    <path d="M31 11 L33 15 L37 14 L34 18 L36 22 L31 20 L27 22 L29 18 L26 14 L30 15 Z" fill="#FEFD99" stroke="#26333A" stroke-width="1"/>
+    
+    <!-- Base Plate -->
+    <rect x="14" y="42" width="24" height="5" rx="2.5" fill="#26333A"/>
+  </g>
+
+  <!-- Typography: StratKids -->
+  <text x="68" y="36" font-family="'Baloo 2', cursive, sans-serif" font-size="28" font-weight="800" fill="#26333A" letter-spacing="-0.5">
+    Strat<tspan fill="#CA6180">Kids</tspan>
+  </text>
+  
+  <!-- Brand Tagline: Think. Play. Grow. -->
+  <text x="70" y="49" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#CA6180" letter-spacing="2">
+    THINK. PLAY. GROW.
+  </text>
+  
+  <!-- Mini Strategy Star Sparkle -->
+  <circle cx="258" cy="22" r="3" fill="#FEFD99"/>
+  <path d="M258 16 L258 28 M252 22 L264 22" stroke="#CA6180" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

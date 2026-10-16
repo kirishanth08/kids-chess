@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Camp Certificates & Awards | StratKids Parent Portal</title>
+  <meta name="description" content="View verified StratKids summer camp certificates, tactical achievement honors, printable digital diplomas, and tournament recognition awards.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SECTION 1: DASHBOARD HEADER
+       ========================================================================== -->
+  <header class="stratkids-navbar py-2 border-bottom sticky-top">
+    <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+                <a class="navbar-brand py-0" href="../index.html">
+          <img src="../assets/icons/favicon.svg" alt="StratKids Logo" height="38" width="38" class="rounded-3 shadow-sm">
+          <div class="brand-text d-none d-sm-flex">
+            <span class="brand-title" style="font-size: 1.35rem;">Strat<span>Kids</span></span>
+            <span class="brand-tagline" style="font-size: 0.58rem;">Think. Play. Grow.</span>
+          </div>
+        </a>
+        <span class="badge bg-danger rounded-pill fw-bold text-uppercase d-none d-md-inline-block px-3 py-1">
+          Parent Command Center
+        </span>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
+        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR"><i class="bi bi-arrow-left-right"></i></button>
+        <a href="dashboard.html" class="btn btn-outline-dark rounded-pill px-3 py-1 small fw-bold">Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div class="dash-user-card">
+        <img src="../assets/images/guardian_sarah_vance.jpg" alt="Sarah Vance" class="dash-avatar-img">
+        <div>
+          <strong class="d-block text-dark">Sarah Vance</strong>
+          <small class="text-muted">Guardian &bull; 2 Campers</small>
+        </div>
+      </div>
+
+      <ul class="dash-nav-list">
+        <li class="dash-nav-item"><a href="dashboard.html"><i class="bi bi-grid-fill"></i> Overview</a></li>
+        <li class="dash-nav-item"><a href="children.html"><i class="bi bi-people-fill"></i> My Children</a></li>
+        <li class="dash-nav-item"><a href="child-profile.html"><i class="bi bi-person-badge-fill"></i> Child Profile</a></li>
+        <li class="dash-nav-item"><a href="enrollments.html"><i class="bi bi-calendar-check-fill"></i> Enrollments</a></li>
+        <li class="dash-nav-item"><a href="skill-progress.html"><i class="bi bi-ladder"></i> Skill Progress</a></li>
+        <li class="dash-nav-item"><a href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a></li>
+        <li class="dash-nav-item"><a href="payments.html"><i class="bi bi-wallet2"></i> Payments</a></li>
+        <li class="dash-nav-item active"><a href="certificates.html"><i class="bi bi-award-fill"></i> Certificates</a></li>
+        <li class="dash-nav-item"><a href="messages.html"><i class="bi bi-chat-dots-fill"></i> Messages</a></li>
+        <li class="dash-nav-item"><a href="profile.html"><i class="bi bi-gear-fill"></i> Profile</a></li>
+        <li class="dash-nav-item mt-4"><a href="../auth/login.html" class="text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-main-area">
+      <!-- ==========================================================================
+           SECTION 2: CERTIFICATE HERO & RECOGNITION SUMMARY
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-5 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold text-uppercase mb-2">Honors & Credentials</span>
+            <h1 class="h3 fw-bold mb-2" style="font-family: var(--sk-font-heading); color: var(--sk-dark);">
+              Camper Diplomas & Awards
+            </h1>
+            <p class="text-muted mb-3">
+              Celebrate your child's dedication, tactical triumphs, and camp achievements. All certificates are cryptographically verified and suitable for high-resolution framing.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-strat-primary" data-bs-toggle="modal" data-bs-target="#certPreviewModal">
+                <i class="bi bi-eye me-1"></i> Preview Latest Diploma
+              </button>
+              <button type="button" class="btn btn-strat-secondary" id="btnDownloadAllCertificates">
+                <i class="bi bi-file-earmark-zip me-1"></i> Download All Certificates (ZIP)
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="p-4 rounded-4 bg-light border text-center">
+              <div class="display-5 text-warning mb-2"><i class="bi bi-trophy-fill text-warning"></i></div>
+              <strong class="d-block text-dark mb-1">StratKids Hall of Achievement</strong>
+              <p class="small text-muted mb-2">2 Verified Diplomas &bull; 6 Skill Badges Earned</p>
+              <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1">
+                <i class="bi bi-patch-check-fill me-1"></i>Official FIDE Coach Seal
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 3: EARNED CERTIFICATES SHOWCASE
+           ========================================================================== -->
+      <div class="mb-4">
+        <h2 class="h5 fw-bold mb-3 text-dark">
+          <i class="bi bi-award-fill text-danger me-2"></i>Official Camp Completion Diplomas
+        </h2>
+        <div class="row g-4">
+          <!-- Cert 1: Maya Vance -->
+          <div class="col-md-6">
+            <div class="card h-100 rounded-4 border-0 shadow-sm overflow-hidden bg-white" style="border: 2px solid var(--sk-aqua) !important;">
+              <div class="p-4 border-bottom" style="background: linear-gradient(135deg, rgba(158,211,220,0.3) 0%, rgba(254,253,153,0.3) 100%);">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge bg-dark rounded-pill">Summer 2025 Honors</span>
+                  <span class="badge bg-success rounded-pill"><i class="bi bi-check-lg me-1"></i>Verified</span>
+                </div>
+                <h3 class="h5 fw-bold text-dark mb-1">Certificate of Strategy Excellence</h3>
+                <small class="text-muted">Awarded to: <strong>Maya Vance</strong></small>
+              </div>
+              <div class="p-4">
+                <p class="small text-muted mb-3">
+                  In recognition of mastering tactical pin & skewer mechanics, demonstrated sportsmanship, and placing 3rd in the Camp Rapid Swiss Championship.
+                </p>
+                <div class="row g-2 small text-muted mb-3">
+                  <div class="col-6"><strong>Program:</strong> Smart Players Bootcamp</div>
+                  <div class="col-6"><strong>Date:</strong> July 18, 2025</div>
+                  <div class="col-6"><strong>Lead Mentor:</strong> Marcus Chen</div>
+                  <div class="col-6"><strong>Credential ID:</strong> SK-2025-CERT-884</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button type="button" class="btn btn-strat-primary btn-sm" data-bs-toggle="modal" data-bs-target="#certPreviewModal">
+                    <i class="bi bi-eye me-1"></i> View Diploma
+                  </button>
+                  <button type="button" class="btn btn-outline-dark btn-sm rounded-pill" id="btnDownloadCertMaya">
+                    <i class="bi bi-download me-1"></i> Download PDF
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 2: Leo Vance (Preview Upcoming / Foundation) -->
+          <div class="col-md-6">
+            <div class="card h-100 rounded-4 border-0 shadow-sm overflow-hidden bg-white" style="border: 2px solid var(--sk-pink) !important;">
+              <div class="p-4 border-bottom" style="background: linear-gradient(135deg, rgba(252,183,199,0.3) 0%, rgba(158,211,220,0.3) 100%);">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge bg-primary rounded-pill">Summer 2026 Active Track</span>
+                  <span class="badge bg-warning text-dark rounded-pill">Final Day Award</span>
+                </div>
+                <h3 class="h5 fw-bold text-dark mb-1">Little Thinkers Chess Explorer Diploma</h3>
+                <small class="text-muted">Eligible Camper: <strong>Leo Vance</strong></small>
+              </div>
+              <div class="p-4">
+                <p class="small text-muted mb-3">
+                  Scheduled for official presentation at Friday's Camp Graduation Ceremony upon completing the pawn structure challenges and friendly team matches.
+                </p>
+                <div class="row g-2 small text-muted mb-3">
+                  <div class="col-6"><strong>Program:</strong> Little Thinkers Track</div>
+                  <div class="col-6"><strong>Award Date:</strong> June 26, 2026</div>
+                  <div class="col-6"><strong>Lead Mentor:</strong> Sophia Al-Mansoor</div>
+                  <div class="col-6"><strong>Status:</strong> 90% Milestones Completed</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button type="button" class="btn btn-strat-primary btn-sm" id="btnPreviewCertLeo">
+                    <i class="bi bi-file-earmark-text me-1"></i> Preview Draft
+                  </button>
+                  <a href="skill-progress.html" class="btn btn-outline-dark btn-sm rounded-pill">
+                    View Remaining Milestones
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 4: CAMP BADGE WALL OF FAME
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <h2 class="h5 fw-bold mb-3 text-dark">
+          <i class="bi bi-stars text-warning me-2"></i>Camp Character & Strategy Honors
+        </h2>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="p-3 rounded-4 border bg-light h-100 d-flex align-items-center gap-3">
+              <div class="rounded-circle d-flex align-items-center justify-content-center fs-3" style="width: 50px; height: 50px; background: var(--sk-yellow); color: #7B6B00;">
+                <i class="bi bi-award-fill text-warning"></i>
+              </div>
+              <div>
+                <strong class="d-block small text-dark">Fair Play Sportsmanship Pin</strong>
+                <span class="small text-muted">Awarded for respectful handshake and gracious teamwork.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="p-3 rounded-4 border bg-light h-100 d-flex align-items-center gap-3">
+              <div class="rounded-circle d-flex align-items-center justify-content-center fs-3" style="width: 50px; height: 50px; background: var(--sk-aqua); color: #165E6B;">
+                <i class="bi bi-lightning-charge-fill text-warning"></i>
+              </div>
+              <div>
+                <strong class="d-block small text-dark">Rapid Tactician Medal</strong>
+                <span class="small text-muted">Solved 25 tactical puzzles in under 15 minutes during Camp Blitz.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="p-3 rounded-4 border bg-light h-100 d-flex align-items-center gap-3">
+              <div class="rounded-circle d-flex align-items-center justify-content-center fs-4" style="width: 50px; height: 50px; background: var(--sk-pink); color: #9C3854;">
+                <i class="fas fa-shield-halved"></i>
+              </div>
+              <div>
+                <strong class="d-block small text-dark">King's Defender Ribbon</strong>
+                <span class="small text-muted">Successfully defended against 3 queen attacks during endgame lab.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 5: TOURNAMENT STANDINGS & PERFORMANCE RECORD
+           ========================================================================== -->
+      <div class="p-4 rounded-4 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h5 fw-bold mb-0 text-dark">
+            <i class="bi bi-graph-up-arrow text-success me-2"></i>Camp Tournament Records & Internal Rating
+          </h2>
+          <span class="badge bg-secondary rounded-pill">Camp Internal Rating Ladder</span>
+        </div>
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <p class="small text-muted mb-3">
+              StratKids uses a safe, child-friendly internal rating system designed to celebrate growth rather than pressure youngsters. Points are earned through puzzle participation, match play, and teamwork.
+            </p>
+            <div class="p-3 rounded-3 bg-light border small">
+              <div class="d-flex justify-content-between mb-2">
+                <span>Maya Vance (Camp Rating):</span>
+                <strong class="text-rose">820 SKP (Tactical Division)</strong>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Matches Won / Drawn / Learned:</span>
+                <strong>7 / 2 / 3</strong>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Recent Tournament Result:</span>
+                <span class="text-success fw-bold">3rd Place Bronze Medal (Summer 2025)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="p-4 rounded-4 text-center border" style="background: rgba(158, 211, 220, 0.15);">
+              <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold mb-2">Upcoming Championship</span>
+              <h3 class="h6 fw-bold text-dark">StratKids Summer Open 2026</h3>
+              <p class="small text-muted mb-3">Friday, July 03, 2026 &bull; 02:00 PM in Grandmaster Hall B</p>
+              <a href="daily-schedule.html" class="btn btn-strat-primary btn-sm">
+                View Tournament Schedule
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 6: AUTHENTICITY & PRINTING INSTRUCTIONS
+           ========================================================================== -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <h3 class="h6 fw-bold text-dark mb-2">
+              <i class="bi bi-qr-code text-primary me-2"></i>Cryptographic Verification QR
+            </h3>
+            <p class="small text-muted mb-0">
+              Each StratKids digital certificate features a unique QR code. When scanned by schools, chess clubs, or scouting programs, it links directly to our tamper-proof verification ledger showing completed curricula.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <h3 class="h6 fw-bold text-dark mb-2">
+              <i class="bi bi-printer text-dark me-2"></i>Printing & Framing Tips
+            </h3>
+            <p class="small text-muted mb-0">
+              For best results, print the PDF version on 110lb cardstock or heavy parchment paper using color letter (8.5" x 11") settings. Standard 8x10 certificate frames fit perfectly!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 7: NEXT LEVEL CHALLENGE CTA
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-5 border text-center" style="background: linear-gradient(135deg, var(--sk-yellow) 0%, var(--sk-pink) 100%);">
+        <h2 class="h4 fw-bold text-dark mb-2" style="font-family: var(--sk-font-heading);">
+          Ready to Earn the Next StratKids Master Badge?
+        </h2>
+        <p class="text-dark opacity-75 max-w-600 mx-auto mb-4 small">
+          Explore upcoming advanced tracks, masterclass workshops, and weekend tournaments to continue your camper's strategic journey.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-2">
+          <a href="../programs.html" class="btn btn-strat-primary">
+            <i class="bi bi-compass me-1"></i> Explore Advanced Programs
+          </a>
+          <a href="skill-progress.html" class="btn btn-strat-secondary">
+            <i class="bi bi-ladder me-1"></i> Skill Progress Ladder
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Interactive Certificate Preview Modal -->
+  <div class="modal fade" id="certPreviewModal" tabindex="-1" aria-labelledby="certPreviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-5 border-0 shadow">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-dark" id="certPreviewModalLabel">
+            <i class="bi bi-award-fill text-warning me-2"></i>Official Diploma Preview
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5 text-center">
+          <!-- Diploma Frame (Pure HTML/CSS) -->
+          <div class="p-4 p-md-5 rounded-4 border border-4 bg-white shadow-sm position-relative" style="border-color: #D4AF37 !important; background: radial-gradient(circle, #FFFDF5 0%, #FAF6E6 100%);">
+            <img src="../assets/icons/logo.svg" alt="StratKids Logo" height="45" class="mb-3">
+            <div class="text-uppercase small letter-spacing-2 fw-bold text-muted mb-1" style="letter-spacing: 3px;">StratKids Chess & Strategy Camp</div>
+            <h3 class="display-6 fw-bold mb-3" style="font-family: 'Cinzel', serif, Georgia; color: #2A363B;">Certificate of Strategy Excellence</h3>
+            <p class="small text-muted mb-1">This official camp honor is proudly presented to</p>
+            <h2 class="display-5 fw-bold text-rose mb-3" style="font-family: var(--sk-font-heading);">Maya Vance</h2>
+            <p class="text-muted small max-w-500 mx-auto mb-4">
+              for successfully completing the <strong>Smart Players Tactical Bootcamp</strong>, demonstrating outstanding analytical calculation, sportsmanship, and tactical problem-solving.
+            </p>
+
+            <div class="row align-items-center justify-content-between pt-4 border-top mt-4 text-start">
+              <div class="col-4 text-center">
+                <div class="fw-bold small text-dark border-bottom pb-1">Elena Rostova, FM</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Head Strategy Coach</small>
+              </div>
+              <div class="col-4 text-center">
+                <div class="rounded-circle d-inline-flex align-items-center justify-content-center text-warning" style="width: 55px; height: 55px; border: 3px double #D4AF37; font-size: 1.5rem;">
+                  <i class="bi bi-star-fill text-warning"></i>
+                </div>
+                <small class="d-block text-muted" style="font-size: 0.65rem;">Official Camp Seal</small>
+              </div>
+              <div class="col-4 text-center">
+                <div class="fw-bold small text-dark border-bottom pb-1">Marcus Chen</div>
+                <small class="text-muted" style="font-size: 0.72rem;">Camp Director</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center gap-2 mt-4">
+            <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Close Preview</button>
+            <button type="button" class="btn btn-strat-primary" id="btnPrintCertificate">
+              <i class="bi bi-printer me-1"></i> Print Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+
+

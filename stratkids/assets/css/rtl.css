@@ -1,0 +1,415 @@
+/* ==========================================================================
+   STRATKIDS - Right-To-Left (RTL) Stylesheet
+   Activated when [dir="rtl"] is set on html or body
+   Comprehensive BiDi, punctuation, spacing, and component mirroring
+   ========================================================================== */
+
+/* 1. BASE DIRECTION & ALIGNMENT
+   ========================================================================== */
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+/* 2. PUNCTUATION & SYMBOL BIDIRECTIONAL FIX
+   Ensures neutral punctuation marks (?, ., !, :, -, brackets) stay at the
+   grammatical end of sentences in RTL mode rather than jumping to the front.
+   ========================================================================== */
+[dir="rtl"] body,
+[dir="rtl"] p,
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6,
+[dir="rtl"] span:not(.badge-icon):not(.bi):not(.dot),
+[dir="rtl"] a,
+[dir="rtl"] li,
+[dir="rtl"] button,
+[dir="rtl"] label,
+[dir="rtl"] .badge,
+[dir="rtl"] .lead,
+[dir="rtl"] blockquote,
+[dir="rtl"] .accordion-button,
+[dir="rtl"] .accordion-body,
+[dir="rtl"] .nav-link,
+[dir="rtl"] .dropdown-item,
+[dir="rtl"] .footer-nav-link,
+[dir="rtl"] .section-desc,
+[dir="rtl"] .section-title,
+[dir="rtl"] .hero-title,
+[dir="rtl"] .hero-lead,
+[dir="rtl"] .sk-card h3,
+[dir="rtl"] .sk-card h4,
+[dir="rtl"] .sk-card h5,
+[dir="rtl"] .sk-card p {
+  unicode-bidi: plaintext;
+  text-align: right;
+}
+
+/* Preserve Centered Text Sections */
+[dir="rtl"] .text-center,
+[dir="rtl"] .text-center *,
+[dir="rtl"] .text-center p,
+[dir="rtl"] .text-center h1,
+[dir="rtl"] .text-center h2,
+[dir="rtl"] .text-center h3,
+[dir="rtl"] .text-center h4,
+[dir="rtl"] .text-center h5,
+[dir="rtl"] .text-center h6,
+[dir="rtl"] .text-center .section-title,
+[dir="rtl"] .text-center .section-desc,
+[dir="rtl"] .text-center .badge,
+[dir="rtl"] [style*="text-align: center"],
+[dir="rtl"] [style*="text-align:center"] {
+  text-align: center !important;
+}
+
+/* Text alignment utility flips */
+[dir="rtl"] .text-start {
+  text-align: right !important;
+}
+[dir="rtl"] .text-end {
+  text-align: left !important;
+}
+[dir="rtl"] .text-md-start {
+  text-align: right !important;
+}
+[dir="rtl"] .text-md-end {
+  text-align: left !important;
+}
+[dir="rtl"] .text-lg-start {
+  text-align: right !important;
+}
+[dir="rtl"] .text-lg-end {
+  text-align: left !important;
+}
+
+/* 3. FLIPPED SPACING UTILITIES (BOOTSTRAP RTL PADDING & MARGIN OVERRIDES)
+   ========================================================================== */
+[dir="rtl"] .ps-0 { padding-right: 0 !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-1 { padding-right: 0.25rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-2 { padding-right: 0.5rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-3 { padding-right: 1rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-4 { padding-right: 1.5rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-5 { padding-right: 3rem !important; padding-left: 0 !important; }
+
+[dir="rtl"] .pe-0 { padding-left: 0 !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-1 { padding-left: 0.25rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-2 { padding-left: 0.5rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-3 { padding-left: 1rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-4 { padding-left: 1.5rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-5 { padding-left: 3rem !important; padding-right: 0 !important; }
+
+[dir="rtl"] .ms-0 { margin-right: 0 !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-3 { margin-right: 1rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-4 { margin-right: 1.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-5 { margin-right: 3rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-auto { margin-right: auto !important; margin-left: 0 !important; }
+
+[dir="rtl"] .me-0 { margin-left: 0 !important; margin-right: 0 !important; }
+[dir="rtl"] .me-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-4 { margin-left: 1.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-5 { margin-left: 3rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-auto { margin-left: auto !important; margin-right: 0 !important; }
+
+/* Responsive utility flips */
+@media (min-width: 768px) {
+  [dir="rtl"] .ms-md-auto { margin-right: auto !important; margin-left: 0 !important; }
+  [dir="rtl"] .me-md-auto { margin-left: auto !important; margin-right: 0 !important; }
+}
+@media (min-width: 992px) {
+  [dir="rtl"] .ms-lg-auto { margin-right: auto !important; margin-left: 0 !important; }
+  [dir="rtl"] .me-lg-auto { margin-left: auto !important; margin-right: 0 !important; }
+}
+
+/* 4. BORDERS & CORNER RADII FLIPS
+   ========================================================================== */
+[dir="rtl"] .border-start {
+  border-left: none !important;
+  border-right: 1px solid var(--sk-border-color) !important;
+}
+[dir="rtl"] .border-end {
+  border-right: none !important;
+  border-left: 1px solid var(--sk-border-color) !important;
+}
+
+[dir="rtl"] .rounded-start {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: var(--bs-border-radius) !important;
+  border-bottom-right-radius: var(--bs-border-radius) !important;
+}
+[dir="rtl"] .rounded-end {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: var(--bs-border-radius) !important;
+  border-bottom-left-radius: var(--bs-border-radius) !important;
+}
+[dir="rtl"] .rounded-start-pill {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 9999px !important;
+  border-bottom-right-radius: 9999px !important;
+}
+[dir="rtl"] .rounded-end-pill {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 9999px !important;
+  border-bottom-left-radius: 9999px !important;
+}
+
+/* 5. NAVBAR & BRANDING
+   ========================================================================== */
+[dir="rtl"] .brand-title {
+  text-align: right;
+}
+[dir="rtl"] .navbar-brand {
+  margin-right: 0;
+  margin-left: 1.5rem;
+}
+[dir="rtl"] .navbar-nav {
+  padding-right: 0;
+}
+[dir="rtl"] .nav-link {
+  text-align: right;
+}
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+  left: auto;
+  right: 0;
+}
+[dir="rtl"] .dropdown-menu-end {
+  right: auto !important;
+  left: 0 !important;
+}
+[dir="rtl"] .dropdown-item {
+  text-align: right;
+}
+[dir="rtl"] .nav-item .dropdown-toggle::after {
+  margin-left: 0;
+  margin-right: 0.4em;
+}
+
+/* 6. ICONS & DIRECTIONAL ARROWS
+   ========================================================================== */
+[dir="rtl"] i.bi-arrow-right,
+[dir="rtl"] i.bi-chevron-right,
+[dir="rtl"] i.bi-arrow-up-right,
+[dir="rtl"] i.bi-caret-right-fill {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+[dir="rtl"] i.bi-arrow-left,
+[dir="rtl"] i.bi-chevron-left {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+[dir="rtl"] .btn-strat-primary i,
+[dir="rtl"] .btn-strat-secondary i,
+[dir="rtl"] .btn-strat-outline i,
+[dir="rtl"] .btn-nav-login i {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .btn-strat-primary::after,
+[dir="rtl"] .btn-strat-secondary::after {
+  left: auto;
+  right: -120%;
+  transition: right 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+[dir="rtl"] .btn-strat-primary:hover::after,
+[dir="rtl"] .btn-strat-secondary:hover::after {
+  right: 120%;
+}
+
+/* Section tags */
+[dir="rtl"] .section-tag i {
+  margin-left: 0.45rem;
+  margin-right: 0;
+}
+
+/* Hero floating bubbles */
+[dir="rtl"] .hero-floating-bubble-1 {
+  right: auto;
+  left: -20px;
+}
+[dir="rtl"] .hero-floating-bubble-2 {
+  left: auto;
+  right: -20px;
+}
+
+/* 7. ACCORDION & MODALS
+   ========================================================================== */
+[dir="rtl"] .accordion-button {
+  text-align: right;
+}
+[dir="rtl"] .accordion-button::after {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+[dir="rtl"] .modal-header .btn-close {
+  margin: -0.5rem auto -0.5rem -0.5rem !important;
+}
+
+/* 8. LISTS, CHECKMARKS & CARDS
+   ========================================================================== */
+[dir="rtl"] .list-unstyled {
+  padding-right: 0;
+  padding-left: 0;
+}
+[dir="rtl"] .pricing-feature-list {
+  padding-right: 0;
+  padding-left: 0;
+}
+[dir="rtl"] .pricing-feature-list li {
+  text-align: right;
+}
+[dir="rtl"] .pricing-feature-list li i {
+  margin-left: 0.65rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .feature-check-list {
+  padding-right: 0;
+  padding-left: 0;
+}
+[dir="rtl"] .feature-check-list li i {
+  margin-left: 0.65rem;
+  margin-right: 0;
+}
+
+/* 9. FORMS, INPUTS & CHECKS
+   ========================================================================== */
+[dir="rtl"] .form-control,
+[dir="rtl"] .form-select,
+[dir="rtl"] textarea {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] input[type="url"],
+[dir="rtl"] input[type="number"] {
+  direction: ltr;
+  text-align: right;
+}
+[dir="rtl"] input[type="email"]::placeholder,
+[dir="rtl"] input[type="tel"]::placeholder {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .form-check {
+  padding-right: 1.85em;
+  padding-left: 0;
+  text-align: right;
+}
+[dir="rtl"] .form-check .form-check-input {
+  float: right;
+  margin-right: -1.85em;
+  margin-left: 0;
+}
+[dir="rtl"] .form-switch {
+  padding-right: 2.6em;
+  padding-left: 0;
+}
+[dir="rtl"] .form-switch .form-check-input {
+  margin-right: -2.6em;
+  margin-left: 0;
+  background-position: right center;
+}
+[dir="rtl"] .form-switch .form-check-input:checked {
+  background-position: left center;
+}
+
+/* 10. NEWSLETTER PILL COMPONENT (RTL)
+   ========================================================================== */
+[dir="rtl"] .newsletter-pill-container,
+[dir="rtl"] .newsletter-form .input-group {
+  padding: 4px 18px 4px 6px !important;
+  flex-direction: row;
+}
+
+[dir="rtl"] .newsletter-pill-input,
+[dir="rtl"] .newsletter-form .input-group > .form-control {
+  text-align: right !important;
+  direction: rtl;
+}
+
+[dir="rtl"] .footer-newsletter-box {
+  flex-direction: row;
+}
+[dir="rtl"] .footer-input {
+  text-align: right;
+  direction: rtl;
+}
+[dir="rtl"] .footer-title-dot {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+/* 11. TIMELINES & STEP CARDS
+   ========================================================================== */
+[dir="rtl"] .stratkids-timeline::before {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
+}
+[dir="rtl"] .timeline-node {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
+}
+@media (max-width: 991.98px) {
+  [dir="rtl"] .stratkids-timeline::before {
+    right: 24px;
+    left: auto;
+    transform: none;
+  }
+  [dir="rtl"] .timeline-node {
+    right: 24px;
+    left: auto;
+    transform: translateX(50%);
+  }
+  [dir="rtl"] .timeline-card-wrapper {
+    padding-right: 55px !important;
+    padding-left: 0 !important;
+    text-align: right !important;
+  }
+}
+
+/* 12. DASHBOARD SIDEBAR & NAV
+   ========================================================================== */
+[dir="rtl"] .dashboard-sidebar {
+  border-right: none;
+  border-left: 2px solid var(--sk-border-color);
+}
+[dir="rtl"] .dash-nav-item a i {
+  margin-left: 0.6rem;
+  margin-right: 0;
+}
+
+/* 13. FOOTER & BACK-TO-TOP
+   ========================================================================== */
+[dir="rtl"] .footer-heading::after {
+  left: auto;
+  right: 0;
+}
+[dir="rtl"] .stratkids-footer a:hover {
+  padding-left: 0;
+  padding-right: 4px;
+}
+
+[dir="rtl"] .back-to-top-btn {
+  right: auto;
+  left: 30px;
+}
+@media (max-width: 480px) {
+  [dir="rtl"] .back-to-top-btn {
+    left: 20px;
+  }
+}

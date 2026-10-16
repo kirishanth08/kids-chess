@@ -1,0 +1,269 @@
+/* ==========================================================================
+   STRATKIDS - Responsive Optimization Stylesheet
+   Supports 320px up to 1920px+ with zero horizontal overflow
+   ========================================================================== */
+
+/* Global horizontal overflow prevention */
+html, body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Large Desktop (1440px - 1920px+) */
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+/* Tablet to Desktop Transition (992px - 1280px) */
+@media (min-width: 992px) and (max-width: 1280px) {
+  .stratkids-navbar .nav-link {
+    font-size: 0.88rem !important;
+    padding: 0.32rem 0.42rem !important;
+  }
+  .stratkids-navbar .navbar-nav {
+    gap: 0.05rem !important;
+  }
+  .nav-tools {
+    gap: 0.45rem !important;
+  }
+  .tool-toggle-btn,
+  .rtl-badge-btn {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    font-size: 1rem !important;
+  }
+  .btn-strat-primary {
+    padding: 0.55rem 1.15rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .dashboard-sidebar {
+    width: 250px;
+  }
+  .hero-title {
+    font-size: 2.85rem;
+  }
+}
+
+/* Mobile & Tablet Breakpoint (max 991.98px) */
+@media (max-width: 991.98px) {
+  .section-py {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  /* StratKids Navbar Mobile Drawer */
+  .navbar-collapse {
+    background: var(--sk-surface-card);
+    border: 2px solid var(--sk-border-color);
+    border-radius: var(--sk-radius-lg);
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: var(--sk-shadow-lg);
+  }
+
+  .nav-tools {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--sk-border-color);
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  /* Timeline mobile linear fallback */
+  .stratkids-timeline::before {
+    left: 24px;
+    transform: none;
+  }
+  .timeline-node {
+    left: 24px;
+    transform: translateX(-50%);
+  }
+  .timeline-card-wrapper {
+    padding-left: 55px !important;
+    text-align: left !important;
+  }
+
+  /* Level Milestone Track horizontal scroll on tablets/mobiles */
+  .level-milestone-track {
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .level-milestone-track::before,
+  .level-milestone-track-progress {
+    display: none;
+  }
+
+  /* Parent Dashboard Mobile Layout */
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+  .dashboard-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid var(--sk-border-color);
+    padding: 1.5rem 1rem;
+  }
+  .dash-nav-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .dash-nav-item a {
+    white-space: nowrap;
+    padding: 0.5rem 0.85rem;
+  }
+  .dashboard-main-area {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-floating-bubble-1,
+  .hero-floating-bubble-2 {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  .footer-cta-box {
+    margin-top: -3rem;
+    padding: 2rem 1.25rem;
+    text-align: center;
+  }
+
+  /* Filter pill navigation responsive wrapping */
+  .filter-pill-nav {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Tablets and Large Phones (max 767.98px) */
+@media (max-width: 767.98px) {
+  .hero-title {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+  .hero-lead {
+    font-size: 1.05rem;
+  }
+  .section-title {
+    font-size: 1.85rem;
+  }
+  .pricing-card.featured-track {
+    transform: none !important;
+  }
+  .pricing-amount {
+    font-size: 2.5rem;
+  }
+  .board-grid-preview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Hero containers responsive padding */
+  .hero-page-header .container,
+  .hero-section-main .container,
+  .gameboard-hero .container {
+    padding: 1.75rem 1.25rem !important;
+    border-radius: 20px !important;
+  }
+
+  /* Ensure tables scroll smoothly without blowing layout */
+  .table-responsive,
+  table {
+    max-width: 100%;
+  }
+}
+
+/* Small Phones (320px - 480px) */
+@media (max-width: 480px) {
+  .brand-title {
+    font-size: 1.35rem;
+  }
+  .brand-tagline {
+    font-size: 0.6rem;
+  }
+  
+  /* CTA Buttons: Only full-width when part of a block CTA group, NOT inside newsletter or badge rows */
+  .hero-cta-group .btn-strat-primary,
+  .hero-cta-group .btn-strat-secondary,
+  .footer-cta-box .btn-strat-primary,
+  .footer-cta-box .btn-strat-secondary,
+  .btn-mobile-full {
+    width: 100% !important;
+  }
+  
+  .btn-strat-primary,
+  .btn-strat-secondary {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .sk-card {
+    padding: 1.25rem 1rem;
+  }
+  
+  .timeline-card-wrapper {
+    padding-left: 45px !important;
+  }
+  .timeline-node {
+    left: 15px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  .stratkids-timeline::before {
+    left: 15px;
+  }
+  
+  .dash-child-toggle-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .back-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
+
+  /* Newsletter Pill on narrow mobile screens (320px - 400px) */
+  .newsletter-pill-container,
+  .newsletter-form .input-group {
+    padding: 3px 4px 3px 12px !important;
+  }
+  .newsletter-pill-input,
+  .newsletter-form .input-group > .form-control {
+    font-size: 0.88rem !important;
+    padding: 0.5rem 0.4rem !important;
+  }
+  .newsletter-pill-btn,
+  .newsletter-form .input-group > .btn {
+    padding: 0.55rem 1.1rem !important;
+    font-size: 0.88rem !important;
+  }
+
+  /* Display headings scale gracefully on 320px */
+  .display-4 {
+    font-size: 2.2rem !important;
+  }
+  .display-5 {
+    font-size: 1.85rem !important;
+  }
+  .display-6 {
+    font-size: 1.55rem !important;
+  }
+}

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Child Profile | StratKids Parent Portal</title>
+  <meta name="description" content="View comprehensive camper profile details, attendance records, tactical milestones, and medical information for Leo Vance.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SECTION 1: DASHBOARD HEADER
+       ========================================================================== -->
+  <header class="stratkids-navbar py-2 border-bottom sticky-top">
+    <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+                <a class="navbar-brand py-0" href="../index.html">
+          <img src="../assets/icons/favicon.svg" alt="StratKids Logo" height="38" width="38" class="rounded-3 shadow-sm">
+          <div class="brand-text d-none d-sm-flex">
+            <span class="brand-title" style="font-size: 1.35rem;">Strat<span>Kids</span></span>
+            <span class="brand-tagline" style="font-size: 0.58rem;">Think. Play. Grow.</span>
+          </div>
+        </a>
+        <span class="badge bg-danger rounded-pill fw-bold text-uppercase d-none d-md-inline-block px-3 py-1">
+          Parent Command Center
+        </span>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
+        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR"><i class="bi bi-arrow-left-right"></i></button>
+        <a href="children.html" class="btn btn-outline-dark rounded-pill px-3 py-1 small fw-bold">
+          <i class="bi bi-arrow-left"></i> All Campers
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div class="dash-user-card">
+        <img src="../assets/images/guardian_sarah_vance.jpg" alt="Sarah Vance" class="dash-avatar-img">
+        <div>
+          <strong class="d-block text-dark">Sarah Vance</strong>
+          <small class="text-muted">Guardian &bull; 2 Campers</small>
+        </div>
+      </div>
+
+      <ul class="dash-nav-list">
+        <li class="dash-nav-item"><a href="dashboard.html"><i class="bi bi-grid-fill"></i> Overview</a></li>
+        <li class="dash-nav-item"><a href="children.html"><i class="bi bi-people-fill"></i> My Children</a></li>
+        <li class="dash-nav-item active"><a href="child-profile.html"><i class="bi bi-person-badge-fill"></i> Child Profile</a></li>
+        <li class="dash-nav-item"><a href="enrollments.html"><i class="bi bi-calendar-check-fill"></i> Enrollments</a></li>
+        <li class="dash-nav-item"><a href="skill-progress.html"><i class="bi bi-ladder"></i> Skill Progress</a></li>
+        <li class="dash-nav-item"><a href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a></li>
+        <li class="dash-nav-item"><a href="payments.html"><i class="bi bi-wallet2"></i> Payments</a></li>
+        <li class="dash-nav-item"><a href="certificates.html"><i class="bi bi-award-fill"></i> Certificates</a></li>
+        <li class="dash-nav-item"><a href="messages.html"><i class="bi bi-chat-dots-fill"></i> Messages</a></li>
+        <li class="dash-nav-item"><a href="profile.html"><i class="bi bi-gear-fill"></i> Profile</a></li>
+        <li class="dash-nav-item mt-4"><a href="../auth/login.html" class="text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-main-area">
+      <!-- ==========================================================================
+           SECTION 2: CAMPER PROFILE HERO
+           ========================================================================== -->
+      <div class="p-4 p-md-5 rounded-5 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="row align-items-center g-4">
+          <div class="col-md-3 text-center">
+            <div class="dash-avatar-circle mx-auto mb-2" style="width: 100px; height: 100px; font-size: 2.5rem; background: var(--sk-aqua); color: #1A606C;">
+              L
+            </div>
+            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold">Age 7 &bull; Camper</span>
+          </div>
+
+          <div class="col-md-6">
+            <h1 class="h3 fw-bold mb-1" style="font-family: var(--sk-font-heading); color: var(--sk-dark);">
+              Leo Vance
+            </h1>
+            <p class="text-muted small mb-3">
+              Enrolled in: <strong class="text-rose">Little Thinkers (Week 2 &bull; June 22&ndash;26)</strong>
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-light text-dark border p-2 rounded-3"><i class="bi bi-person-check text-success"></i> Coach Sarah Jenkins</span>
+              <span class="badge bg-light text-dark border p-2 rounded-3"><i class="bi bi-shield-check text-info"></i> Security PIN: 8841</span>
+              <span class="badge bg-light text-dark border p-2 rounded-3"><i class="bi bi-trophy text-warning"></i> Level 2: Foundation</span>
+            </div>
+          </div>
+
+          <div class="col-md-3 text-md-end">
+            <button type="button" class="btn-strat-secondary" data-bs-toggle="modal" data-bs-target="#editChildModal">
+              <i class="bi bi-pencil-square"></i> Edit Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 3: TACTICAL READINESS & MILESTONES CHECKLIST
+           ========================================================================== -->
+      <div class="p-4 rounded-5 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <h5 class="fw-bold mb-3" style="color: var(--sk-rose);">Tactical Learning Milestones</h5>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded-4 border">
+              <span><i class="bi bi-check-circle-fill text-success me-2"></i> Board Coordinates (A1&ndash;H8)</span>
+              <span class="badge bg-success">Mastered</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded-4 border">
+              <span><i class="bi bi-check-circle-fill text-success me-2"></i> Piece Values (Pawn to Queen)</span>
+              <span class="badge bg-success">Mastered</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded-4 border">
+              <span><i class="bi bi-check-circle-fill text-success me-2"></i> King Castling Shield</span>
+              <span class="badge bg-success">Mastered</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded-4 border">
+              <span><i class="bi bi-arrow-repeat text-warning me-2"></i> Knight Fork Tactics</span>
+              <span class="badge bg-warning text-dark">In Practice (3/5)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 4: RECENT ATTENDANCE & CAMP ACTIVITY LOG
+           ========================================================================== -->
+      <div class="p-4 rounded-5 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <h5 class="fw-bold mb-3">Attendance &amp; Check-In History</h5>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0 small">
+            <thead class="table-light">
+              <tr>
+                <th>Date</th>
+                <th>Check-In</th>
+                <th>Check-Out</th>
+                <th>Authorized Pickup</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Monday, June 22</strong></td>
+                <td>08:52 AM</td>
+                <td>04:28 PM</td>
+                <td>Sarah Vance (PIN: 8841)</td>
+                <td><span class="badge bg-success">Attended</span></td>
+              </tr>
+              <tr>
+                <td><strong>Tuesday, June 23</strong></td>
+                <td>08:50 AM</td>
+                <td>04:30 PM</td>
+                <td>David Vance (PIN: 8841)</td>
+                <td><span class="badge bg-success">Attended</span></td>
+              </tr>
+              <tr>
+                <td><strong>Wednesday, June 24</strong></td>
+                <td>08:55 AM</td>
+                <td>04:31 PM</td>
+                <td>Sarah Vance (PIN: 8841)</td>
+                <td><span class="badge bg-success">Attended</span></td>
+              </tr>
+              <tr>
+                <td><strong>Thursday, June 25</strong></td>
+                <td>08:48 AM</td>
+                <td>04:29 PM</td>
+                <td>Sarah Vance (PIN: 8841)</td>
+                <td><span class="badge bg-success">Attended</span></td>
+              </tr>
+              <tr>
+                <td><strong>Friday, June 26</strong></td>
+                <td>08:50 AM</td>
+                <td>&mdash;</td>
+                <td>Parent Gala (03:30 PM)</td>
+                <td><span class="badge bg-warning text-dark">Scheduled</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 5: MEDICAL & EMERGENCY INFORMATION
+           ========================================================================== -->
+      <div class="row g-4 mb-4">
+        <div class="col-md-6">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100">
+            <h6 class="fw-bold mb-3 text-danger"><i class="bi bi-heart-pulse-fill me-1"></i> Medical &amp; Allergy Directives</h6>
+            <p class="small text-muted mb-2"><strong>Allergies:</strong> Severe Peanut Allergy. EpiPen auto-injector submitted to Camp Nurse on Day 1.</p>
+            <p class="small text-muted mb-2"><strong>Medications:</strong> None required during camp hours.</p>
+            <p class="small text-muted mb-0"><strong>Primary Pediatrician:</strong> Dr. Robert Sterling &bull; (555) 234-5678</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="p-4 rounded-4 bg-white border shadow-sm h-100">
+            <h6 class="fw-bold mb-3 text-primary"><i class="bi bi-shield-fill-check me-1"></i> Emergency Guardian Contacts</h6>
+            <p class="small text-muted mb-2"><strong>Mother:</strong> Sarah Vance &bull; +1 (555) 019-2831</p>
+            <p class="small text-muted mb-2"><strong>Father:</strong> David Vance &bull; +1 (555) 019-2832</p>
+            <p class="small text-muted mb-0"><strong>Grandmother:</strong> Margaret Vance &bull; +1 (555) 019-9944</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 6: ASSIGNED EQUIPMENT & MERCHANDISE
+           ========================================================================== -->
+      <div class="p-4 rounded-5 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <h5 class="fw-bold mb-3">Camp Welcome Kit &amp; Equipment</h5>
+        <div class="row g-3 small">
+          <div class="col-md-3 col-6">
+            <div class="p-3 bg-light rounded-3 border text-center">
+              <strong class="d-block">Tournament Chess Set</strong>
+              <span class="badge bg-success mt-1">Issued (Set #8841)</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="p-3 bg-light rounded-3 border text-center">
+              <strong class="d-block">Camper T-Shirt</strong>
+              <span class="badge bg-success mt-1">Size: Youth S (Sky Aqua)</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="p-3 bg-light rounded-3 border text-center">
+              <strong class="d-block">Tactics Lab Workbook</strong>
+              <span class="badge bg-success mt-1">Little Thinkers Vol 1</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="p-3 bg-light rounded-3 border text-center">
+              <strong class="d-block">Friday Medal Ceremony</strong>
+              <span class="badge bg-warning text-dark mt-1">Award Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 7: ACTION BUTTONS
+           ========================================================================== -->
+      <div class="p-4 rounded-5 border text-center" style="background: radial-gradient(circle, var(--sk-aqua) 0%, #87C5D0 100%);">
+        <h5 class="fw-bold mb-1 text-dark">Need to Change Camp Weeks or Update Allergies?</h5>
+        <p class="small text-dark-soft mb-3">Our admissions coordinators update records instantly with no fees.</p>
+        <div class="d-flex justify-content-center gap-2">
+          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#editChildModal">
+            <i class="bi bi-pencil"></i> Update Camper Details
+          </button>
+          <a href="messages.html" class="btn-strat-secondary">
+            <i class="bi bi-chat"></i> Message Camp Nurse
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- EDIT CHILD MODAL -->
+  <div class="modal fade" id="editChildModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-5 border-0 shadow-lg p-4">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" style="color: var(--sk-rose);">Edit Camper Profile: Leo Vance</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="editChildAlert"></div>
+          <form id="editChildForm" class="row g-3" novalidate>
+            <div class="col-12">
+              <label class="form-label fw-bold small">Preferred Nickname</label>
+              <input type="text" id="preferredNickname" class="form-control rounded-3" value="Leo" pattern="^[A-Za-z\s\.\'\-]+$" title="Nickname must contain letters only (no numbers)">
+              <div class="invalid-feedback">Nickname must contain letters only (no numbers).</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label fw-bold small">Dietary / Allergy Update</label>
+              <input type="text" class="form-control rounded-3" value="Severe Peanut Allergy (EpiPen on file)">
+            </div>
+            <div class="col-12 text-end mt-4">
+              <button type="button" class="btn btn-secondary rounded-pill me-2" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn-strat-primary">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+
+

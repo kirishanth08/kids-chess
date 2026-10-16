@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>A New Move is Coming | StratKids Summer Camp</title>
+  <meta name="description" content="Prepare for the next evolution of children's chess and strategic thinking summer camps. Opening registration soon for Summer 2026.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL NAVBAR
+       ========================================================================== -->
+    <nav class="navbar navbar-expand-lg stratkids-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../assets/icons/favicon.svg" alt="StratKids Logo" height="42" width="42" class="rounded-3 shadow-sm">
+        <div class="brand-text">
+          <span class="brand-title">Strat<span>Kids</span></span>
+          <span class="brand-tagline">Think. Play. Grow.</span>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="stratkidsNavContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-2 shadow-sm rounded-4">
+              <li><a class="dropdown-item fw-bold text-rose" href="../index.html">Home 1 (Camp Adventure)</a></li>
+              <li><a class="dropdown-item fw-bold" href="../home-2.html">Home 2 (Game Board Layout)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link " href="../about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link " href="../programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link " href="../schedule.html">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link " href="../pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link " href="../blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link " href="../contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link nav-dashboard-link" href="../parent-dashboard/dashboard.html" title="Parent Dashboard">Dashboard</a>
+          </li>
+        </ul>
+
+        <div class="nav-tools d-flex align-items-center gap-2">
+          <!-- Dark Mode Switcher Circle -->
+          <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <!-- RTL / LTR Toggle Circle -->
+          <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+
+          
+
+          <!-- Primary CTA Button (Identical across all pages) -->
+          <!-- Login Button in Navbar before CTA -->
+          <a href="../auth/login.html" class="btn-nav-login" title="Parent Portal Login">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+            <i class="bi bi-calendar2-check-fill"></i> Enroll Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       SECTION 1: COMING SOON HERO & LIVE COUNTDOWN
+       ========================================================================== -->
+  <section class="py-5 text-center position-relative overflow-hidden" style="background: radial-gradient(circle at 50% 30%, rgba(158, 211, 220, 0.4) 0%, rgba(254, 253, 153, 0.2) 60%, transparent 100%);">
+    <div class="container py-lg-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <!-- Stylized Chess Crown Vector -->
+          <div class="mb-3">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" class="mx-auto">
+              <rect x="10" y="10" width="80" height="80" rx="20" fill="#CA6180" opacity="0.15"/>
+              <path d="M30 65 L70 65 L65 52 L35 52 Z" fill="#CA6180"/>
+              <path d="M32 52 L26 34 L40 42 L50 24 L60 42 L74 34 L68 52 Z" fill="#FEFD99" stroke="#26333A" stroke-width="2.5"/>
+              <circle cx="26" cy="32" r="4" fill="#CA6180"/>
+              <circle cx="50" cy="22" r="4" fill="#CA6180"/>
+              <circle cx="74" cy="32" r="4" fill="#CA6180"/>
+            </svg>
+          </div>
+
+          <span class="badge bg-danger rounded-pill px-3 py-1 fw-bold text-uppercase mb-2">Summer 2026 Expansion</span>
+          <h1 class="display-4 fw-bold mb-3" style="font-family: var(--sk-font-heading); color: var(--sk-dark);">
+            A NEW MOVE IS COMING.
+          </h1>
+          <p class="lead text-muted max-w-650 mx-auto mb-4">
+            We are putting the finishing touches on our brand-new campus addition, interactive electronic sensor boards, and expanded youth strategy curriculum.
+          </p>
+
+          <!-- Live JS Countdown Component -->
+          <div class="d-flex justify-content-center gap-2 gap-md-3 mb-4">
+            <div class="p-3 rounded-4 bg-white border shadow-sm text-center" style="min-width: 80px;">
+              <span id="cntDays" class="display-6 fw-bold text-rose d-block">42</span>
+              <small class="text-muted text-uppercase fw-bold" style="font-size: 0.65rem;">Days</small>
+            </div>
+            <div class="p-3 rounded-4 bg-white border shadow-sm text-center" style="min-width: 80px;">
+              <span id="cntHours" class="display-6 fw-bold text-dark d-block">14</span>
+              <small class="text-muted text-uppercase fw-bold" style="font-size: 0.65rem;">Hours</small>
+            </div>
+            <div class="p-3 rounded-4 bg-white border shadow-sm text-center" style="min-width: 80px;">
+              <span id="cntMins" class="display-6 fw-bold text-dark d-block">28</span>
+              <small class="text-muted text-uppercase fw-bold" style="font-size: 0.65rem;">Minutes</small>
+            </div>
+            <div class="p-3 rounded-4 bg-white border shadow-sm text-center" style="min-width: 80px;">
+              <span id="cntSecs" class="display-6 fw-bold text-dark d-block">45</span>
+              <small class="text-muted text-uppercase fw-bold" style="font-size: 0.65rem;">Seconds</small>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <a href="#notifySection" class="btn-strat-primary">
+              <i class="bi bi-bell-fill me-1"></i> Get Notified on Launch
+            </a>
+            <a href="../index.html" class="btn-strat-secondary">
+              <i class="bi bi-arrow-left me-1"></i> Return to Camp Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: SNEAK PEEK CAMP INNOVATIONS
+       ========================================================================== -->
+  <section class="py-5 bg-white border-top border-bottom">
+    <div class="container">
+      <div class="text-center max-w-600 mx-auto mb-5">
+        <h2 class="h3 fw-bold text-dark" style="font-family: var(--sk-font-heading);">
+          What&rsquo;s New for Summer 2026?
+        </h2>
+        <p class="text-muted small">A quick glimpse into our upcoming upgrades designed to delight campers and reassure parents.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border bg-surface h-100 text-center hover-lift" style="border-top: 4px solid var(--sk-aqua) !important;">
+            <div class="dash-avatar-circle mx-auto mb-3" style="background: var(--sk-aqua); color: #165865; width: 50px; height: 50px; font-size: 1.5rem;"><i class="bi bi-lightning-charge-fill text-warning"></i></div>
+            <h3 class="h6 fw-bold text-dark mb-1">DGT Smart Boards</h3>
+            <p class="small text-muted mb-0">Live computer screen broadcasting of camp tournament matches so parents can watch live.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border bg-surface h-100 text-center hover-lift" style="border-top: 4px solid var(--sk-yellow) !important;">
+            <div class="dash-avatar-circle mx-auto mb-3" style="background: var(--sk-yellow); color: #7B6B00; width: 50px; height: 50px; font-size: 1.5rem;"><i class="bi bi-building"></i></div>
+            <h3 class="h6 fw-bold text-dark mb-1">Giant Lawn Chess Arena</h3>
+            <p class="small text-muted mb-0">All-weather outdoor shaded turf with 3-foot tall lightweight kings, rooks, and knights.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border bg-surface h-100 text-center hover-lift" style="border-top: 4px solid var(--sk-pink) !important;">
+            <div class="dash-avatar-circle mx-auto mb-3" style="background: var(--sk-pink); color: #9C3854; width: 50px; height: 50px; font-size: 1.5rem;"><i class="bi bi-emoji-smile"></i>–</div>
+            <h3 class="h6 fw-bold text-dark mb-1">Robot Strategy Lab</h3>
+            <p class="small text-muted mb-0">Hands-on algorithmic maze games connecting chess calculation with logic programming.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border bg-surface h-100 text-center hover-lift" style="border-top: 4px solid var(--sk-rose) !important;">
+            <div class="dash-avatar-circle mx-auto mb-3" style="background: var(--sk-rose); color: #fff; width: 50px; height: 50px; font-size: 1.5rem;"><i class="bi bi-star-fill text-warning"></i></div>
+            <h3 class="h6 fw-bold text-dark mb-1">Grandmaster Workshops</h3>
+            <p class="small text-muted mb-0">Weekly guest masterclasses with titled international masters and child educators.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: EARLY-BIRD NOTIFICATION SIGNUP FORM
+       ========================================================================== -->
+  <section id="notifySection" class="py-5 bg-surface">
+    <div class="container">
+      <div class="p-4 p-md-5 rounded-5 border bg-white shadow-sm max-w-700 mx-auto text-center" style="border-color: var(--sk-border-color) !important;">
+        <span class="badge bg-danger rounded-pill px-3 py-1 mb-2">Priority Access</span>
+        <h2 class="h3 fw-bold text-dark mb-2" style="font-family: var(--sk-font-heading);">
+          Be the First to Know When Doors Open
+        </h2>
+        <p class="text-muted small mb-4">
+          Subscribers receive 48-hour priority registration window and a complimentary $50 early-bird sibling credit code.
+        </p>
+        <div id="comingSoonAlert"></div>
+        <form id="comingSoonNotifyForm">
+          <div class="row g-2 justify-content-center">
+            <div class="col-md-7">
+              <input type="email" class="form-control form-control-lg rounded-pill px-4 fs-6" placeholder="Enter your email address" required>
+            </div>
+            <div class="col-md-4">
+              <button type="submit" class="btn btn-strat-primary btn-lg w-100 fs-6">
+                Notify Me
+              </button>
+            </div>
+          </div>
+        </form>
+        <small class="text-muted d-block mt-3" style="font-size: 0.75rem;">
+          <i class="bi bi-shield-check text-success me-1"></i>We respect your privacy. No spam, ever.
+        </small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: CAMP AGE DIVISIONS PREVIEW
+       ========================================================================== -->
+  <section class="py-5 bg-white border-top">
+    <div class="container">
+      <div class="text-center max-w-600 mx-auto mb-4">
+        <h2 class="h3 fw-bold text-dark" style="font-family: var(--sk-font-heading);">
+          Summer Camp Tracks for Every Stage
+        </h2>
+        <p class="text-muted small">Discover how we tailor strategic challenges to every developmental level.</p>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-3">
+          <div class="p-3 rounded-4 border bg-surface">
+            <strong class="d-block text-dark">Little Thinkers (5&ndash;7)</strong>
+            <span class="small text-muted">Piece stories, coordinate hunts, spatial games.</span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 rounded-4 border bg-surface">
+            <strong class="d-block text-dark">Smart Players (8&ndash;10)</strong>
+            <span class="small text-muted">Tactical forks, pins, endgame basics, team puzzles.</span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 rounded-4 border bg-surface">
+            <strong class="d-block text-dark">Strategic Minds (11&ndash;13)</strong>
+            <span class="small text-muted">Positional analysis, rapid clocks, Swiss tourneys.</span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3 rounded-4 border bg-surface">
+            <strong class="d-block text-dark">Future Masters (14&ndash;16)</strong>
+            <span class="small text-muted">Master preparation, leadership, game notation.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: CAMPUS & VENUE HIGHLIGHTS
+       ========================================================================== -->
+  <section class="py-5 bg-surface border-top">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <span class="badge bg-warning text-dark px-3 py-1 rounded-pill mb-2 fw-bold">Campus Tour</span>
+          <h2 class="h3 fw-bold text-dark mb-3" style="font-family: var(--sk-font-heading);">
+            A World-Class Learning Environment
+          </h2>
+          <p class="text-muted small mb-3">
+            Located in North Campus Innovation Hall, our dedicated camp facility features ergonomic youth seating, smart interactive digital boards, shaded courtyard dining, and secured access controls.
+          </p>
+          <div class="row g-2 small text-muted">
+            <div class="col-6"><i class="bi bi-shield-lock-fill text-success me-1"></i>Single Secured Check-in Gate</div>
+            <div class="col-6"><i class="bi bi-snow text-primary me-1"></i>Air-Conditioned Studios</div>
+            <div class="col-6"><i class="bi bi-heart-pulse-fill text-danger me-1"></i>Full-time Camp Nurse</div>
+            <div class="col-6"><i class="bi bi-tree-fill text-success me-1"></i>Private Outdoor Courtyard</div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4 bg-white border shadow-sm">
+            <h3 class="h6 fw-bold text-dark mb-2">Campus Location</h3>
+            <p class="small text-muted mb-3">240 Grandmaster Way, North Campus Innovation Hall, Springfield, CA</p>
+            <div class="p-3 rounded-3 bg-light border text-center small text-muted">
+              <i class="bi bi-map-fill text-primary fs-3 d-block mb-1"></i>
+              Curbside drop-off lane open every morning from 08:30 AM to 09:00 AM.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: COACH SPOTLIGHT PREVIEW
+       ========================================================================== -->
+  <section class="py-5 bg-white border-top">
+    <div class="container text-center max-w-700 mx-auto">
+      <span class="badge bg-info text-dark rounded-pill px-3 py-1 mb-2 fw-bold">Accredited Mentors</span>
+      <h2 class="h3 fw-bold text-dark mb-2" style="font-family: var(--sk-font-heading);">
+        Led by Certified Child Chess Educators
+      </h2>
+      <p class="text-muted small mb-4">
+        Our mentors include FIDE Masters, national youth chess champions, and certified childhood education specialists with full background clearances.
+      </p>
+      <a href="../about.html" class="btn btn-strat-secondary">About StratKids</a>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 7: RETURN CTA
+       ========================================================================== -->
+  <section class="py-5" style="background: linear-gradient(135deg, var(--sk-aqua) 0%, var(--sk-pink) 100%);">
+    <div class="container text-center py-4">
+      <h2 class="display-6 fw-bold text-dark mb-2" style="font-family: var(--sk-font-heading);">
+        READY TO PLAN YOUR CHILD&rsquo;S SUMMER?
+      </h2>
+      <p class="lead text-dark opacity-75 max-w-600 mx-auto mb-4">
+        While we prepare the next move, you can browse current program details and camp schedules.
+      </p>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <a href="../index.html" class="btn-strat-primary">Explore Camp Home</a>
+        <a href="../programs.html" class="btn-strat-secondary">View All Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GLOBAL FOOTER
+       ========================================================================== -->
+  <footer class="stratkids-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="../index.html" class="d-inline-block mb-3">
+            <img src="../assets/icons/logo.svg" alt="StratKids Logo" height="42">
+          </a>
+          <p class="tagline mb-3">&ldquo;Think. Play. Grow.&rdquo;</p>
+          <p class="small text-muted mb-4">
+            A modern chess and strategy summer camp designed for young minds to build confidence, solve problems, compete, and have fun.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-sm btn-outline-dark rounded-circle" style="width:36px; height:36px;"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-dark rounded-circle" style="width:36px; height:36px;"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-dark rounded-circle" style="width:36px; height:36px;"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../programs.html">Programs</a></li>
+            <li><a href="../schedule.html">Schedule</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../camp-life.html">Camp Life</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Camp Information</h4>
+          <ul class="footer-links">
+            <li><a href="../programs.html">Age Groups (5&ndash;16)</a></li>
+            <li><a href="../schedule.html">Daily Activities</a></li>
+            <li><a href="../schedule.html">Camp Schedule</a></li>
+            <li><a href="../faqs.html">What to Bring</a></li>
+            <li><a href="../faqs.html">Camp FAQs</a></li>
+            <li><a href="../parent-dashboard/dashboard.html">Parent Portal</a></li>
+            <li><a href="../about.html">Safety & Policies</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="small text-muted mb-3">Get camp updates and chess tips for young minds.</p>
+          <form class="newsletter-form mb-4">
+            <div class="input-group mb-2">
+              <input type="email" class="form-control form-control-sm rounded-start-pill ps-3" placeholder="Your email address" required>
+              <button class="btn btn-strat-primary btn-sm rounded-end-pill px-3" type="submit">Join</button>
+            </div>
+          </form>
+          <span class="demo-banner mt-2">Demo Template</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <p class="mb-0">&copy; 2026 StratKids Summer Camp. All Rights Reserved. &ldquo;Think. Play. Grow.&rdquo; </p>
+        <div class="d-flex gap-3 small">
+          <a href="../faqs.html">Privacy Policy</a>
+          <a href="../faqs.html">Terms of Service</a>
+          <a href="../about.html">Safety Information</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/forms.js"></script>
+
+  <!-- Live Countdown Timer Script -->
+  <script>
+    (function(){
+      let totalSeconds = 42 * 86400 + 14 * 3600 + 28 * 60 + 45;
+      const dEl = document.getElementById('cntDays');
+      const hEl = document.getElementById('cntHours');
+      const mEl = document.getElementById('cntMins');
+      const sEl = document.getElementById('cntSecs');
+
+      setInterval(function(){
+        if(totalSeconds > 0) {
+          totalSeconds--;
+          const days = Math.floor(totalSeconds / 86400);
+          const hours = Math.floor((totalSeconds % 86400) / 3600);
+          const minutes = Math.floor((totalSeconds % 3600) / 60);
+          const seconds = totalSeconds % 60;
+          if(dEl) dEl.textContent = days;
+          if(hEl) hEl.textContent = String(hours).padStart(2, '0');
+          if(mEl) mEl.textContent = String(minutes).padStart(2, '0');
+          if(sEl) sEl.textContent = String(seconds).padStart(2, '0');
+        }
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>
+
+

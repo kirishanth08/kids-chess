@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>StratKids | Kids Chess &amp; Strategy Summer Camp | Think. Play. Grow.</title>
+  <meta name="description" content="StratKids is a premier modern chess and strategy summer camp for children ages 5&ndash;16. Build confidence, master tactical thinking, solve puzzles, and make lifelong friends.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <!-- FOUC Prevention Script -->
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL NAVBAR
+       ========================================================================== -->
+    <nav class="navbar navbar-expand-lg stratkids-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/icons/favicon.svg" alt="StratKids Logo" height="42" width="42" class="rounded-3 shadow-sm">
+        <div class="brand-text">
+          <span class="brand-title">Strat<span>Kids</span></span>
+          <span class="brand-tagline">Think. Play. Grow.</span>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="stratkidsNavContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-2 shadow-sm rounded-4">
+              <li><a class="dropdown-item fw-bold text-rose" href="index.html">Home 1 (Camp Adventure)</a></li>
+              <li><a class="dropdown-item fw-bold" href="home-2.html">Home 2 (Game Board Layout)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link " href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link " href="schedule.html">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link " href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link nav-dashboard-link" href="parent-dashboard/dashboard.html" title="Parent Dashboard">Dashboard</a>
+          </li>
+        </ul>
+
+        <div class="nav-tools d-flex align-items-center gap-2">
+          <!-- Dark Mode Switcher Circle -->
+          <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <!-- RTL / LTR Toggle Circle -->
+          <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+
+          
+
+          <!-- Primary CTA Button (Identical across all pages) -->
+          <!-- Login Button in Navbar before CTA -->
+          <a href="auth/login.html" class="btn-nav-login" title="Parent Portal Login">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+            <i class="bi bi-calendar2-check-fill"></i> Enroll Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       SECTION 1: HERO SECTION WITH INTERACTIVE TACTICAL PUZZLE WIDGET
+       ========================================================================== -->
+  <header class="hero-section-main">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="section-tag tag-rose">
+            <i class="bi bi-trophy-fill text-warning"></i> Summer 2026 Registration Open
+          </div>
+          <h1 class="hero-title">
+            Where Smart Moves Become <span class="highlight-rose">Big Adventures.</span>
+          </h1>
+          <p class="hero-lead">
+            StratKids merges master chess coaching, tabletop strategy games, outdoor sports, and character-building fun to help children think ahead, solve complex puzzles, and build unshakeable confidence.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+            <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+              <i class="bi bi-rocket-takeoff-fill"></i> Enroll Now
+            </button>
+            <a href="programs.html" class="btn-strat-secondary">
+              <i class="bi bi-compass-fill"></i> Explore Programs
+            </a>
+          </div>
+
+          <!-- Hero Trust Stats -->
+          <div class="hero-stats-strip">
+            <div class="hero-stat-pill">
+              <div class="hero-stat-icon icon-rose">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <div>
+                <div class="h4 mb-0 fw-bold stat-count" data-target="1250" style="color: var(--sk-rose);">1,250+</div>
+                <small class="fw-bold text-muted">Happy Campers</small>
+              </div>
+            </div>
+            <div class="hero-stat-pill">
+              <div class="hero-stat-icon icon-aqua">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <div>
+                <div class="h4 mb-0 fw-bold lens-tag-aqua">1:6</div>
+                <small class="fw-bold text-muted">Coach-Student Ratio</small>
+              </div>
+            </div>
+            <div class="hero-stat-pill">
+              <div class="hero-stat-icon icon-yellow">
+                <i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <div>
+                <div class="h4 mb-0 fw-bold lens-tag-yellow">4.9 / 5.0</div>
+                <small class="fw-bold text-muted">Parent Rating</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-visual-frame position-relative">
+            <!-- Main Hero Visual Box with Real Camper Image -->
+            <div class="hero-main-img-box position-relative overflow-hidden rounded-5 shadow-lg border border-3" style="border-color: var(--sk-white) !important; min-height: 420px;">
+              <img src="assets/images/camper_hero.jpg" alt="Children playing chess happily at StratKids Summer Camp" class="img-fluid w-100 h-100" style="object-fit: cover; min-height: 420px;">
+              
+              <!-- Soft Gradient Overlay at base -->
+              <div class="position-absolute bottom-0 start-0 end-0 p-4" style="background: linear-gradient(180deg, transparent 0%, rgba(38, 51, 58, 0.8) 100%);">
+                <div class="d-flex align-items-center justify-content-between text-white">
+                  <div>
+                    <span class="badge text-dark rounded-pill px-3 py-1 fw-bold mb-1" style="background: var(--sk-yellow);">Summer 2026</span>
+                    <div class="fw-bold fs-6">Tactical Labs &bull; Outdoor Relays &bull; Strategy Arenas</div>
+                  </div>
+                  <span class="badge bg-danger rounded-pill px-3 py-2 fw-bold">June 15 &ndash; Aug 7</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Micro-Badges -->
+            <div class="hero-floating-bubble-1">
+              <i class="bi bi-patch-check-fill text-success fs-5"></i>
+              <span>Accredited &amp; First-Aid Certified</span>
+            </div>
+
+            <!-- Floating Badge: 100% Screen-Free -->
+            <div class="position-absolute top-0 end-0 translate-middle-y bg-white rounded-pill px-3 py-2 shadow-sm border d-flex align-items-center gap-2" style="border-color: var(--sk-pink) !important; z-index: 2; margin-top: 15px; margin-right: -15px;">
+              <i class="bi bi-shield-heart-fill text-danger fs-5"></i>
+              <span class="fw-bold small text-dark">100% Screen-Free Strategy</span>
+            </div>
+
+            <!-- Floating Camper Pod Live Card -->
+            <div class="position-absolute bottom-0 end-0 translate-middle-y bg-white p-3 rounded-4 shadow-lg border" style="max-width: 270px; z-index: 3; margin-bottom: -15px; margin-right: 15px; border-color: var(--sk-yellow) !important; border-width: 2px;">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge-emblem badge-rose" style="width: 34px; height: 34px; font-size: 0.95rem;"><i class="bi bi-fire text-white"></i></span>
+                <div>
+                  <strong class="d-block text-dark small" style="line-height: 1.2;">Tactics Arena Active</strong>
+                  <small class="text-success fw-bold"><i class="bi bi-circle-fill text-success" style="font-size: 0.5rem;"></i> 18 Pods In Session</small>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between small text-muted">
+                <span>Pod Ratio:</span>
+                <strong class="text-dark">1 Coach : 6 Campers</strong>
+              </div>
+              <div class="progress mt-2" style="height: 6px;">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 88%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Wave Divider: Transition to Section 2 -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 48" preserveAspectRatio="none">
+      <path d="M0,0 C300,40 800,10 1200,35 L1200,48 L0,48 Z" class="wave-fill-alt"></path>
+    </svg>
+  </div>
+
+  <!-- ==========================================================================
+       SECTION 2: INTERACTIVE TACTICAL LAB & CAMPER DISCOVERY ARENA
+       ========================================================================== -->
+  <section class="section-py chess-pattern-bg" id="tactics-arena">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-yellow">
+          <i class="bi bi-controller"></i> Interactive Tactics Arena
+        </div>
+        <h2 class="section-title">Take the Camper Challenge: Solve Today's Tactical Mission</h2>
+        <p class="section-desc">
+          Every morning at StratKids begins with a 15-minute tactical brain teaser. Test your candidate moves on our live interactive board and explore how our campers level up their calculation skills daily!
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Left: Interactive Tactical Chess Puzzle Widget -->
+        <div class="col-lg-6">
+          <div class="tactical-puzzle-widget h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="puzzle-header">
+                <div>
+                  <span class="puzzle-tag"><i class="bi bi-lightning-charge-fill text-warning"></i> Daily Tactics Mission</span>
+                  <div class="fw-bold text-dark mt-1" style="font-size: 1.1rem;">White to Move &bull; Mate in 1</div>
+                </div>
+                <span class="badge bg-danger rounded-pill px-3 py-2 fw-bold">+50 XP</span>
+              </div>
+
+              <!-- Interactive 4x4 Mini Tactical Board -->
+              <div class="mini-chessboard">
+                <div class="mini-square sq-light"></div>
+                <div class="mini-square sq-dark"></div>
+                <div class="mini-square sq-light"></div>
+                <div class="mini-square sq-dark" data-sq="h7">&#9813;</div>
+                
+                <div class="mini-square sq-dark"></div>
+                <div class="mini-square sq-light">&#9816;</div>
+                <div class="mini-square sq-dark"></div>
+                <div class="mini-square sq-light" data-sq="h8">&#9818;</div>
+                
+                <div class="mini-square sq-light">&#9820;</div>
+                <div class="mini-square sq-dark"></div>
+                <div class="mini-square sq-light"></div>
+                <div class="mini-square sq-dark"></div>
+                
+                <div class="mini-square sq-dark"></div>
+                <div class="mini-square sq-light"></div>
+                <div class="mini-square sq-dark">&#9812;</div>
+                <div class="mini-square sq-light"></div>
+              </div>
+
+              <div class="small fw-bold text-center text-muted mb-2">Click your candidate move:</div>
+              <div class="puzzle-choices-container">
+                <button type="button" class="puzzle-choice-btn" data-correct="false" data-hint="1. Nf7+ forks, but Black captures with the Rook! Look for direct checkmate.">
+                  A) 1. Nf7+ (Knight Fork)
+                </button>
+                <button type="button" class="puzzle-choice-btn" data-correct="true" data-target-sq="h7">
+                  B) 1. Qxh7# (Checkmate!)
+                </button>
+                <button type="button" class="puzzle-choice-btn" data-correct="false" data-hint="1. Re1 is a quiet move, but gives Black time to defend!">
+                  C) 1. Re1 (Rook Lift)
+                </button>
+                <button type="button" class="puzzle-choice-btn" data-correct="false" data-hint="1. Kh1 moves the king safely, but misses the winning tactical strike!">
+                  D) 1. Kh1 (King Step)
+                </button>
+              </div>
+
+              <div class="puzzle-feedback-msg feedback-idle">
+                <i class="bi bi-hand-index-thumb-fill me-2 text-primary"></i> Test your chess eye &mdash; click a candidate move above!
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top d-flex flex-wrap align-items-center justify-content-between gap-2">
+              <span class="small text-muted"><i class="bi bi-check-circle-fill text-success me-1"></i> Campers solve 15+ puzzles each morning</span>
+              <a href="programs.html" class="small fw-bold text-rose text-decoration-none">View Morning Tactics Lab &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Companion Small Contents -->
+        <div class="col-lg-6 d-flex flex-column gap-3">
+          <!-- 1. Interactive Camp Track / Pod Selector -->
+          <div class="interactive-pod-finder p-4 rounded-4 bg-white border shadow-sm" style="border-color: var(--sk-aqua) !important; border-width: 2px;">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="badge text-dark rounded-pill px-3 py-1 fw-bold" style="background: var(--sk-aqua);">
+                <i class="bi bi-compass"></i> Camper Track Finder
+              </span>
+              <span class="small fw-bold text-muted">Select Age:</span>
+            </div>
+
+            <!-- Pod Selector Tabs -->
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <button type="button" class="pod-tab-btn" data-pod="pawns">Little Pawns (5&ndash;7y)</button>
+              <button type="button" class="pod-tab-btn active" data-pod="knights">Tactics Knights (8&ndash;10y)</button>
+              <button type="button" class="pod-tab-btn" data-pod="kings">Grandmaster Minds (11&ndash;14y)</button>
+            </div>
+
+            <!-- Dynamic Pod Details Box -->
+            <div class="p-3 rounded-3 bg-light border">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <h4 class="h6 fw-bold mb-0 text-dark pod-target-title">Tactics Knights Arena</h4>
+                <span class="badge bg-warning text-dark rounded-pill px-2 py-1 small pod-target-badge">Intermediate Tactics</span>
+              </div>
+              <div class="text-rose fw-bold small mb-2 pod-target-age">Ages 8&ndash;10 &bull; <span class="pod-target-ratio">1:6 Pod Ratio</span></div>
+              <p class="small text-muted mb-3 pod-target-focus">
+                Forks, skewers, pin tactics, speed calculation drills, time management &amp; tabletop strategy relays.
+              </p>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="small fw-bold text-success"><i class="bi bi-shield-check"></i> Master-Led Pod</span>
+                <a href="programs.html" class="btn btn-sm btn-strat-primary rounded-pill px-3">Explore Track</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Daily Strategy Brain Teaser & Grandmaster Fact -->
+          <div class="p-3 rounded-4 bg-white border shadow-sm d-flex align-items-center gap-3" style="border-color: var(--sk-yellow) !important; border-width: 2px;">
+            <div class="badge-emblem badge-gold flex-shrink-0" style="width: 52px; height: 52px; font-size: 1.5rem;">
+              <i class="bi bi-lightbulb-fill text-warning"></i>
+            </div>
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <strong class="text-dark small">Strategy Fact of the Day</strong>
+                <span class="badge bg-secondary-subtle text-secondary rounded-pill" style="font-size: 0.7rem;">Camp Life</span>
+              </div>
+              <p class="small text-muted mb-0">
+                Children who spend 20 minutes calculating candidate moves daily improve reading stamina and test problem-solving speeds by up to <strong>34%</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. Camper Quest XP & Badge System Preview -->
+          <div class="p-3 rounded-4 bg-white border shadow-sm" style="border-color: var(--sk-pink) !important; border-width: 2px;">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <div class="d-flex align-items-center gap-2">
+                <span class="badge-emblem badge-rose" style="width: 32px; height: 32px; font-size: 0.85rem;"><i class="bi bi-award-fill text-white"></i></span>
+                <strong class="text-dark small">Camper Quest Progression</strong>
+              </div>
+              <span class="badge bg-info text-dark rounded-pill px-2 py-1" style="font-size: 0.75rem;">Level 2 Explorer</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between small text-muted mb-1">
+              <span>XP to Level 3 (Tactics Champion):</span>
+              <strong class="text-rose">420 / 500 XP</strong>
+            </div>
+            <div class="progress mb-2" style="height: 8px;">
+              <div class="progress-bar" role="progressbar" style="width: 84%; background: linear-gradient(90deg, var(--sk-aqua), var(--sk-rose));"></div>
+            </div>
+            <div class="d-flex align-items-center gap-2 small">
+              <span class="badge bg-light text-dark border"><i class="bi bi-puzzle text-warning me-1"></i> 12 Puzzles</span>
+              <span class="badge bg-light text-dark border"><i class="bi bi-clock-history text-info me-1"></i> 4 Blitz Games</span>
+              <span class="badge bg-light text-dark border"><i class="bi bi-people text-success me-1"></i> Pod Team Player</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: WHAT MAKES STRATKIDS DIFFERENT? (MODERN BENTO GRID + DUAL LENS)
+       ========================================================================== -->
+  <section class="section-py bg-light">
+    <div class="container">
+      <div class="text-center mb-4">
+        <div class="section-tag tag-aqua">
+          <i class="bi bi-stars"></i> The StratKids Advantage
+        </div>
+        <h2 class="section-title">What Makes StratKids Different?</h2>
+        <p class="section-desc">
+          We go beyond rote memorization. Our evidence-based strategy curriculum bridges chessboard tactics with real-world cognitive growth, emotional resilience, and lifelong friendships.
+        </p>
+
+        <!-- Perspective Lens Switcher -->
+        <div class="perspective-lens-box mt-3">
+          <button type="button" class="lens-btn active" data-lens="parent">
+            <i class="bi bi-shield-check"></i> Parent Peace of Mind
+          </button>
+          <button type="button" class="lens-btn" data-lens="camper">
+            <i class="bi bi-controller"></i> Camper Fun &amp; Quests
+          </button>
+        </div>
+      </div>
+
+      <!-- Modern Bento Grid Matrix -->
+      <div class="sk-bento-grid">
+        <!-- Bento 1: Strategic Thinking (Span 4) -->
+        <div class="bento-col-4">
+          <div class="bento-card bento-featured">
+            <div class="sk-card-top-icon icon-rose">
+              <i class="bi bi-cpu-fill"></i>
+            </div>
+            <span class="badge text-white rounded-pill px-3 py-1 fw-bold mb-2 align-self-start" style="background-color: var(--sk-rose);">Core Pillar 1</span>
+            <h4 class="h5 fw-bold">Strategic Foresight &amp; Calculation</h4>
+            <p class="small text-muted mb-3">
+              Children learn to evaluate board positions, calculate candidate moves ahead, and formulate structured game plans rather than reacting on hasty impulse.
+            </p>
+            <div class="lens-view-parent">
+              <div class="d-flex align-items-center gap-2 text-rose fw-bold small mt-auto">
+                <i class="bi bi-check2-circle"></i> Cognitive planning &amp; impulse control
+              </div>
+            </div>
+            <div class="lens-view-camper d-none">
+              <div class="d-flex align-items-center gap-2 text-rose fw-bold small mt-auto">
+                <i class="bi bi-lightning-charge-fill"></i> See 3 moves ahead and trap pieces!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 2: Problem Solving (Span 4) -->
+        <div class="bento-col-4">
+          <div class="bento-card bento-warm">
+            <div class="sk-card-top-icon icon-yellow">
+              <i class="bi bi-puzzle-fill"></i>
+            </div>
+            <span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-bold mb-2 align-self-start">Core Pillar 2</span>
+            <h4 class="h5 fw-bold">Pattern Recognition &amp; Problem Solving</h4>
+            <p class="small text-muted mb-3">
+              Daily tactics puzzles teach young minds to break complex, unfamiliar dilemmas into clear, manageable steps under gentle, encouraging mentorship.
+            </p>
+            <div class="lens-view-parent">
+              <div class="d-flex align-items-center gap-2 lens-tag-yellow fw-bold small mt-auto">
+                <i class="bi bi-check2-circle"></i> Structured deductive reasoning skills
+              </div>
+            </div>
+            <div class="lens-view-camper d-none">
+              <div class="d-flex align-items-center gap-2 lens-tag-yellow fw-bold small mt-auto">
+                <i class="bi bi-trophy-fill"></i> Crack speed tactical puzzles daily!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 3: Confidence & Grit (Span 4) -->
+        <div class="bento-col-4">
+          <div class="bento-card">
+            <div class="sk-card-top-icon icon-aqua">
+              <i class="bi bi-shield-shaded"></i>
+            </div>
+            <span class="badge text-dark rounded-pill px-3 py-1 fw-bold mb-2 align-self-start" style="background-color: var(--sk-aqua) !important;">Core Pillar 3</span>
+            <h4 class="h5 fw-bold">Quiet Confidence &amp; Emotional Resilience</h4>
+            <p class="small text-muted mb-3">
+              Making independent moves builds authentic self-assurance. Campers discover that thoughtful mistakes are simply valuable clues toward eventual checkmate.
+            </p>
+            <div class="lens-view-parent">
+              <div class="d-flex align-items-center gap-2 lens-tag-aqua fw-bold small mt-auto">
+                <i class="bi bi-check2-circle"></i> Growth mindset &amp; sportsmanship
+              </div>
+            </div>
+            <div class="lens-view-camper d-none">
+              <div class="d-flex align-items-center gap-2 lens-tag-aqua fw-bold small mt-auto">
+                <i class="bi bi-star-fill"></i> Earn mastery badges and level up!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 4: Screen-Free Deep Focus (Span 6) -->
+        <div class="bento-col-6">
+          <div class="bento-card bento-rose-accent">
+            <div class="sk-card-top-icon icon-pink">
+              <i class="bi bi-bullseye"></i>
+            </div>
+            <h4 class="h5 fw-bold">Screen-Free Deep Focus &amp; Deliberate Patience</h4>
+            <p class="text-muted mb-3">
+              In an era dominated by hyper-fast phone notifications, chessboard challenges cultivate the rare superpower of prolonged attention, patience, and deliberate reflection in an engaging, tactile format.
+            </p>
+            <div class="p-3 bg-white rounded-3 border d-flex align-items-center justify-content-between mt-auto">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-hourglass-split text-rose fs-4"></i>
+                <small class="fw-bold text-dark">Average camper focus stretches from 12 mins to 45+ mins by Week 2</small>
+              </div>
+              <span class="badge bg-success rounded-pill px-3 py-2 fw-bold">100% Screen-Free</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 5: Teamwork & Friendships (Span 6) -->
+        <div class="bento-col-6">
+          <div class="bento-card bento-featured">
+            <div class="sk-card-top-icon icon-aqua">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <h4 class="h5 fw-bold">Camaraderie, Team Play &amp; Lifelong Friendships</h4>
+            <p class="text-muted mb-3">
+              Pair-play, tabletop strategy relays, and shared debriefs teach kids to respect opponents, collaborate warmly, and celebrate each other's breakthroughs in an encouraging, non-toxic environment.
+            </p>
+            <div class="p-3 bg-white rounded-3 border d-flex align-items-center justify-content-between mt-auto">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-trophy-fill text-warning fs-4"></i>
+                <small class="fw-bold text-dark">Every camper leaves with positive mentor feedback, new best friends &amp; medals</small>
+              </div>
+              <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fw-bold">Friday Grand Prix</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: AGE-GROUP PROGRAM PREVIEW
+       ========================================================================== -->
+  <section class="section-py chess-pattern-bg">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-yellow">
+          <i class="bi bi-diagram-3-fill"></i> Tailored Learning Paths
+        </div>
+        <h2 class="section-title">Find the Right Program for Your Child</h2>
+        <p class="section-desc">
+          Every child's developmental stage is unique. Our 4 specialized age groups provide tailored coaching, game formats, and difficulty levels so every camper thrives.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Group 1: 5-7 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="program-card">
+            <div class="program-card-img">
+              <img src="assets/images/chess/pexels_8465434.jpg" alt="Little Thinkers Program Ages 5 to 7">
+              <span class="program-age-chip">Ages 5&ndash;7</span>
+            </div>
+            <div class="program-card-body">
+              <h4 class="h5 mb-2 fw-bold">Little Thinkers</h4>
+              <p class="small text-muted mb-3">Playful stories, giant floor boards, piece movements, colorful sticker puzzles, and friendly mini-games.</p>
+              <div class="program-meta-list">
+                <span class="program-meta-item"><i class="bi bi-bar-chart-fill"></i> Beginner</span>
+                <span class="program-meta-item"><i class="bi bi-clock-fill"></i> 09:00&ndash;12:30</span>
+              </div>
+              <div class="mt-auto">
+                <a href="program-details.html?id=little-thinkers-discovery" class="btn-strat-secondary w-100">
+                  <i class="bi bi-arrow-right"></i> View Program
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 2: 8-10 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="program-card">
+            <div class="program-card-img">
+              <img src="assets/images/chess/pexels_8471881.jpg" alt="Smart Players Program Ages 8 to 10">
+              <span class="program-age-chip">Ages 8&ndash;10</span>
+            </div>
+            <div class="program-card-body">
+              <h4 class="h5 mb-2 fw-bold">Smart Players</h4>
+              <p class="small text-muted mb-3">Tactical motifs (forks, pins, skewers), opening center principles, rapid decision-making, and board games.</p>
+              <div class="program-meta-list">
+                <span class="program-meta-item"><i class="bi bi-bar-chart-fill"></i> Foundation</span>
+                <span class="program-meta-item"><i class="bi bi-clock-fill"></i> Full Day</span>
+              </div>
+              <div class="mt-auto">
+                <a href="program-details.html?id=smart-players-tactics" class="btn-strat-secondary w-100">
+                  <i class="bi bi-arrow-right"></i> View Program
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 3: 11-13 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="program-card">
+            <div class="program-card-img">
+              <img src="assets/images/chess/pexels_5960157.jpg" alt="Strategic Minds Program Ages 11 to 13">
+              <span class="program-age-chip">Ages 11&ndash;13</span>
+            </div>
+            <div class="program-card-body">
+              <h4 class="h5 mb-2 fw-bold">Strategic Minds</h4>
+              <p class="small text-muted mb-3">Deep calculation, candidate move evaluation, endgame conversions, and competitive Swiss tournaments.</p>
+              <div class="program-meta-list">
+                <span class="program-meta-item"><i class="bi bi-bar-chart-fill"></i> Intermediate</span>
+                <span class="program-meta-item"><i class="bi bi-clock-fill"></i> Full Day</span>
+              </div>
+              <div class="mt-auto">
+                <a href="program-details.html?id=strategic-minds-tactics" class="btn-strat-secondary w-100">
+                  <i class="bi bi-arrow-right"></i> View Program
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 4: 14-16 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="program-card">
+            <div class="program-card-img">
+              <img src="assets/images/chess/pexels_957312.jpg" alt="Future Masters Program Ages 14 to 16">
+              <span class="program-age-chip">Ages 14&ndash;16</span>
+            </div>
+            <div class="program-card-body">
+              <h4 class="h5 mb-2 fw-bold">Future Masters</h4>
+              <p class="small text-muted mb-3">Master-level opening repertoires, digital clock rapid prep, tournament psychological coaching, leadership.</p>
+              <div class="program-meta-list">
+                <span class="program-meta-item"><i class="bi bi-bar-chart-fill"></i> Advanced</span>
+                <span class="program-meta-item"><i class="bi bi-clock-fill"></i> Full Day</span>
+              </div>
+              <div class="mt-auto">
+                <a href="program-details.html?id=future-masters-tournament" class="btn-strat-secondary w-100">
+                  <i class="bi bi-arrow-right"></i> View Program
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: MORE THAN CHESS (PLAYFUL ACTIVITIES)
+       ========================================================================== -->
+  <section class="section-py bg-light">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-8">
+          <div class="section-tag tag-pink">
+            <i class="bi bi-joystick"></i> Well-Rounded Summer Camp
+          </div>
+          <h2 class="section-title">More Than Chess: A Complete Adventure</h2>
+          <p class="section-desc text-start ms-0">
+            Chess is our foundation, but camp life is filled with high-energy board games, physical strategy obstacle courses, outdoor lawn breaks, and team challenges.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="camp-life.html" class="btn-strat-secondary">
+            <i class="bi bi-images"></i> Discover Camp Life
+          </a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1. Chess Masterclasses -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-uniform-card" style="--card-accent: var(--sk-aqua);">
+            <div>
+              <div class="activity-card-header">
+                <span class="activity-badge badge bg-info-subtle text-info">Morning Core</span>
+                <div class="activity-icon-emblem icon-aqua"><i class="bi bi-mortarboard-fill"></i></div>
+              </div>
+              <h4 class="activity-card-title">Chess Masterclasses</h4>
+              <p class="activity-card-desc">Interactive master board demonstrations, opening motifs, and guided tactical drills taught by FIDE certified camp coaches.</p>
+            </div>
+            <div class="activity-card-footer">
+              <i class="bi bi-person-video3 text-info"></i>
+              <span>1:6 Coach Ratio &bull; FIDE Mentors</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Modern Strategy Games -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-uniform-card" style="--card-accent: var(--sk-yellow);">
+            <div>
+              <div class="activity-card-header">
+                <span class="activity-badge badge bg-warning-subtle text-warning">Strategy Lab</span>
+                <div class="activity-icon-emblem icon-yellow"><i class="bi bi-dice-5-fill"></i></div>
+              </div>
+              <h4 class="activity-card-title">Modern Strategy Games</h4>
+              <p class="activity-card-desc">Award-winning strategy tabletop games (Catan Junior, Hive, Blokus, Quoridor) enhancing spatial planning and resource foresight.</p>
+            </div>
+            <div class="activity-card-footer">
+              <i class="bi bi-boxes text-warning"></i>
+              <span>Spatial &amp; Resource Logic</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Speed Puzzle Relays -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-uniform-card" style="--card-accent: var(--sk-rose);">
+            <div>
+              <div class="activity-card-header">
+                <span class="activity-badge badge bg-danger-subtle text-danger">Team Co-Op</span>
+                <div class="activity-icon-emblem icon-rose"><i class="bi bi-puzzle-fill"></i></div>
+              </div>
+              <h4 class="activity-card-title">Speed Puzzle Relays</h4>
+              <p class="activity-card-desc">Energetic team races where pairs dash up to solve tactics boards together, cheering their teammates on with spirited sportsmanship.</p>
+            </div>
+            <div class="activity-card-footer">
+              <i class="bi bi-lightning-charge-fill text-danger"></i>
+              <span>High-Energy Tactical Teamwork</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Outdoor Lawn Games -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-uniform-card" style="--card-accent: var(--sk-aqua);">
+            <div>
+              <div class="activity-card-header">
+                <span class="activity-badge badge bg-success-subtle text-success">Active Play</span>
+                <div class="activity-icon-emblem icon-aqua"><i class="bi bi-sun-fill text-warning"></i></div>
+              </div>
+              <h4 class="activity-card-title">Outdoor Lawn Games</h4>
+              <p class="activity-card-desc">Daily fresh-air breaks with capture-the-flag, frisbee strategy, and tag games to balance mental concentration with healthy physical fun.</p>
+            </div>
+            <div class="activity-card-footer">
+              <i class="bi bi-tree-fill text-success"></i>
+              <span>Fresh Air &amp; Physical Stamina</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Friday Grand Prix -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-uniform-card" style="--card-accent: var(--sk-yellow);">
+            <div>
+              <div class="activity-card-header">
+                <span class="activity-badge badge bg-warning-subtle text-warning">Weekly Finale</span>
+                <div class="activity-icon-emblem icon-yellow"><i class="bi bi-trophy-fill text-warning"></i></div>
+              </div>
+              <h4 class="activity-card-title">Friday Grand Prix</h4>
+              <p class="activity-card-desc">Every Friday features an encouraging, non-elimination camp tournament where every single camper takes home a medal and certificate.</p>
+            </div>
+            <div class="activity-card-footer">
+              <i class="bi bi-award-fill text-warning"></i>
+              <span>100% Medals &amp; Certificates</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Creative Board Design -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-uniform-card" style="--card-accent: var(--sk-pink);">
+            <div>
+              <div class="activity-card-header">
+                <span class="activity-badge badge bg-primary-subtle text-primary">Arts &amp; Crafts</span>
+                <div class="activity-icon-emblem icon-pink"><i class="bi bi-palette-fill"></i></div>
+              </div>
+              <h4 class="activity-card-title">Creative Board Design</h4>
+              <p class="activity-card-desc">Hands-on craft sessions where children customize their own tournament chess set, paint themed pieces, and design game maps.</p>
+            </div>
+            <div class="activity-card-footer">
+              <i class="bi bi-brush-fill text-primary"></i>
+              <span>Custom Wooden Set to Keep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: A DAY AT STRATKIDS (CAMP TIMELINE)
+       ========================================================================== -->
+  <section class="section-py">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-rose">
+          <i class="bi bi-clock-history"></i> Daily Camp Routine
+        </div>
+        <h2 class="section-title">A Day at StratKids</h2>
+        <p class="section-desc">
+          Structured, energetic, and engaging. Designed to balance focused strategic learning with outdoor play, socialization, and rewarding puzzle challenges.
+        </p>
+      </div>
+
+      <div class="stratkids-timeline">
+        <!-- Item 1 -->
+        <div class="timeline-item row align-items-center">
+          <div class="col-lg-5 text-lg-end timeline-card-wrapper order-2 order-lg-1">
+            <div class="timeline-card">
+              <span class="timeline-time-badge"><i class="bi bi-sun"></i> 09:00 &ndash; 09:30 AM</span>
+              <h4 class="h5 fw-bold">Welcome &amp; Mind Warm-Up</h4>
+              <p class="small text-muted mb-0">Campers arrive, check in with mentors, and start the day with light mini-chess puzzles, riddles, and group warm-up games.</p>
+            </div>
+          </div>
+          <div class="col-lg-2 text-center order-1 order-lg-2">
+            <div class="timeline-node"><i class="bi bi-door-open-fill"></i></div>
+          </div>
+          <div class="col-lg-5 order-3 d-none d-lg-block"></div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="timeline-item row align-items-center">
+          <div class="col-lg-5 d-none d-lg-block order-1"></div>
+          <div class="col-lg-2 text-center order-2">
+            <div class="timeline-node"><i class="bi bi-book-half"></i></div>
+          </div>
+          <div class="col-lg-5 timeline-card-wrapper order-3">
+            <div class="timeline-card">
+              <span class="timeline-time-badge"><i class="bi bi-mortarboard-fill"></i> 09:30 &ndash; 11:00 AM</span>
+              <h4 class="h5 fw-bold">Chess Fundamentals &amp; Master Lesson</h4>
+              <p class="small text-muted mb-0">Coach-led master demonstration board lesson. Campers practice forks, pins, skewers, and opening defense in small skill pods.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="timeline-item row align-items-center">
+          <div class="col-lg-5 text-lg-end timeline-card-wrapper order-2 order-lg-1">
+            <div class="timeline-card">
+              <span class="timeline-time-badge"><i class="bi bi-dice-5-fill"></i> 11:00 &ndash; 12:00 PM</span>
+              <h4 class="h5 fw-bold">Strategy Board Game Challenge</h4>
+              <p class="small text-muted mb-0">Transition to tactical tabletop games such as Blokus, Hive, and Quoridor to apply spatial thinking in different rule sets.</p>
+            </div>
+          </div>
+          <div class="col-lg-2 text-center order-1 order-lg-2">
+            <div class="timeline-node"><i class="bi bi-grid-3x3-gap-fill"></i></div>
+          </div>
+          <div class="col-lg-5 order-3 d-none d-lg-block"></div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="timeline-item row align-items-center">
+          <div class="col-lg-5 d-none d-lg-block order-1"></div>
+          <div class="col-lg-2 text-center order-2">
+            <div class="timeline-node"><i class="bi bi-cup-hot-fill"></i></div>
+          </div>
+          <div class="col-lg-5 timeline-card-wrapper order-3">
+            <div class="timeline-card">
+              <span class="timeline-time-badge"><i class="bi bi-tree-fill"></i> 12:00 &ndash; 01:30 PM</span>
+              <h4 class="h5 fw-bold">Healthy Lunch &amp; Outdoor Play</h4>
+              <p class="small text-muted mb-0">Nutritious lunch break followed by supervised outdoor games, lawn sports, and casual social bonding in the park sunshine.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="timeline-item row align-items-center">
+          <div class="col-lg-5 text-lg-end timeline-card-wrapper order-2 order-lg-1">
+            <div class="timeline-card">
+              <span class="timeline-time-badge"><i class="bi bi-stopwatch-fill"></i> 01:30 &ndash; 03:00 PM</span>
+              <h4 class="h5 fw-bold">Friendly Camp Tournament Practice</h4>
+              <p class="small text-muted mb-0">Campers play rated practice games using digital clocks. Coaches provide constructive live analysis and encouraging feedback.</p>
+            </div>
+          </div>
+          <div class="col-lg-2 text-center order-1 order-lg-2">
+            <div class="timeline-node"><i class="bi bi-trophy-fill"></i></div>
+          </div>
+          <div class="col-lg-5 order-3 d-none d-lg-block"></div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="timeline-item row align-items-center">
+          <div class="col-lg-5 d-none d-lg-block order-1"></div>
+          <div class="col-lg-2 text-center order-2">
+            <div class="timeline-node"><i class="bi bi-award-fill"></i></div>
+          </div>
+          <div class="col-lg-5 timeline-card-wrapper order-3">
+            <div class="timeline-card">
+              <span class="timeline-time-badge"><i class="bi bi-star-fill"></i> 03:00 &ndash; 04:30 PM</span>
+              <h4 class="h5 fw-bold">Puzzle Relay, Wrap-Up &amp; Daily Badges</h4>
+              <p class="small text-muted mb-0">High-energy team puzzle race, daily badge ceremony celebrating sportsmanship and creative moves, followed by parent pickup.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       SECTION 7: PARENT TESTIMONIALS & FINAL CALL TO ACTION
+       ========================================================================== -->
+  <section class="section-py chess-pattern-bg">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-rose">
+          <i class="bi bi-chat-heart-fill"></i> Camp Stories
+        </div>
+        <h2 class="section-title">Loved by Young Campers, Trusted by Parents</h2>
+        <p class="section-desc">
+          Hear from parents who watched their children develop patience, focus, critical thinking, and infectious enthusiasm for chess.
+        </p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <!-- Testimonial 1 -->
+        <div class="col-md-4">
+          <div class="sk-card">
+            <div class="d-flex align-items-center gap-1 text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="fst-italic mb-3">
+              &ldquo;My 8-year-old son Lucas used to give up easily whenever a puzzle was hard. After two weeks at StratKids, he now takes a deep breath, smiles, and says, &lsquo;Let&rsquo;s find the candidate moves!&rsquo; The mentors are phenomenal.&rdquo;
+            </p>
+            <div class="mt-auto d-flex align-items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80" alt="Melissa Turner" class="rounded-circle border border-2 border-white shadow-sm flex-shrink-0" style="width: 48px; height: 48px; object-fit: cover;">
+              <div>
+                <h6 class="mb-0 fw-bold">Melissa Turner</h6>
+                <small class="text-muted">Parent of Lucas, Age 8 (Smart Players)</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="col-md-4">
+          <div class="sk-card">
+            <div class="d-flex align-items-center gap-1 text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="fst-italic mb-3">
+              &ldquo;The balance between chess thinking and active summer games is brilliant. My daughter came home brimming with excitement every single afternoon showing us the tactics she learned.&rdquo;
+            </p>
+            <div class="mt-auto d-flex align-items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&h=120&q=80" alt="David Chen" class="rounded-circle border border-2 border-white shadow-sm flex-shrink-0" style="width: 48px; height: 48px; object-fit: cover;">
+              <div>
+                <h6 class="mb-0 fw-bold">David Chen</h6>
+                <small class="text-muted">Parent of Sophie, Age 6 (Little Thinkers)</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="col-md-4">
+          <div class="sk-card">
+            <div class="d-flex align-items-center gap-1 text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="fst-italic mb-3">
+              &ldquo;StratKids provided the perfect intellectual boost during summer vacation. The Friday tournament format was encouraging and celebratory. My twins can&rsquo;t wait to return next year!&rdquo;
+            </p>
+            <div class="mt-auto d-flex align-items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=120&h=120&q=80" alt="Ananya Rao" class="rounded-circle border border-2 border-white shadow-sm flex-shrink-0" style="width: 48px; height: 48px; object-fit: cover;">
+              <div>
+                <h6 class="mb-0 fw-bold">Ananya Rao</h6>
+                <small class="text-muted">Parent of Rohan &amp; Tara, Age 12</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GLOBAL FOOTER (Redesigned Modern Interactive Experience)
+       ========================================================================== -->
+  <footer class="stratkids-footer position-relative">
+    <div class="container position-relative" style="z-index: 2;">
+      <!-- Main Footer Columns -->
+      <div class="row g-4 g-lg-5">
+        <!-- Col 1: Brand & Professional Accreditation Matrix -->
+        <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand-box mb-3">
+            <a href="index.html" class="d-inline-flex align-items-center gap-3 text-decoration-none">
+              <img src="assets/icons/favicon.svg" alt="StratKids Logo" height="46" width="46" class="rounded-3 shadow-sm">
+              <div class="brand-text">
+                <div class="footer-brand-title">
+                  Strat<span>Kids</span>
+                </div>
+                <div class="footer-brand-sub">THINK. PLAY. GROW.</div>
+              </div>
+            </a>
+          </div>
+
+          <p class="footer-brand-desc">
+            An accredited modern chess &amp; cognitive strategy summer academy empowering young thinkers ages 5&ndash;16 with Grandmaster calculation, spatial logic, and lifelong strategic confidence.
+          </p>
+
+          <!-- Professional Accreditation Matrix -->
+          <div class="footer-trust-matrix">
+            <div class="footer-trust-pill">
+              <i class="bi bi-patch-check-fill text-warning"></i>
+              <span><strong>FIDE Master</strong> Curriculum</span>
+            </div>
+            <div class="footer-trust-pill">
+              <i class="bi bi-shield-check text-success"></i>
+              <span><strong>SafeSport</strong> Certified Staff</span>
+            </div>
+            <div class="footer-trust-pill">
+              <i class="bi bi-people-fill text-info"></i>
+              <span><strong>1:6 Ratio</strong> Dedicated Mentorship</span>
+            </div>
+          </div>
+
+          <!-- Social Channels -->
+          <div class="d-flex align-items-center gap-2 mt-3">
+            <span class="small text-white-50 me-1 fw-bold text-uppercase" style="font-size: 0.68rem; letter-spacing: 1px;">Connect:</span>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="contact.html" class="footer-social-btn" aria-label="Parent Community"><i class="bi bi-chat-heart-fill"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Camp Programs & Tracks -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-col-title">
+            <span class="footer-title-dot dot-aqua"></span> Camp Tracks
+          </h5>
+          <ul class="footer-links-list">
+            <li><a href="programs.html"><i class="bi bi-chevron-right small text-aqua"></i> Little Pawns (5&ndash;7y)</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right small text-aqua"></i> Tactics Knights (8&ndash;10y)</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right small text-aqua"></i> Strategic Minds (11&ndash;13y)</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right small text-aqua"></i> Future Masters (14&ndash;16y)</a></li>
+            <li><a href="schedule.html"><i class="bi bi-chevron-right small text-aqua"></i> Daily Camp Routine</a></li>
+            <li><a href="faqs.html"><i class="bi bi-chevron-right small text-aqua"></i> Packing List &amp; FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: For Parents & Portal -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-col-title">
+            <span class="footer-title-dot dot-yellow"></span> For Families
+          </h5>
+          <ul class="footer-links-list">
+            <li><a href="parent-dashboard/dashboard.html"><i class="bi bi-chevron-right small text-warning"></i> Parent Dashboard</a></li>
+            <li><a href="parent-dashboard/skill-progress.html"><i class="bi bi-chevron-right small text-warning"></i> Skill Progress Pass</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right small text-warning"></i> Tuition &amp; Sibling Deals</a></li>
+            <li><a href="camp-life.html"><i class="bi bi-chevron-right small text-warning"></i> Camp Life &amp; Activities</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right small text-warning"></i> Camp Safety &amp; Health</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Direct Campus Contact -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-col-title">
+            <span class="footer-title-dot dot-rose"></span> Tactics Dispatch
+          </h5>
+          <p class="small text-white-50 mb-3">
+            Subscribe for free weekly tactics puzzles, grandmaster advice for kids, and priority summer registration openings.
+          </p>
+
+          <form class="newsletter-form mb-4">
+            <div class="footer-newsletter-box">
+              <input type="email" class="footer-input" placeholder="Parent email address..." required aria-label="Parent email address">
+              <button class="footer-subscribe-btn" type="submit" aria-label="Subscribe">
+                <span>Join</span> <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Direct Campus Contacts -->
+          <div class="d-flex flex-column gap-2 pt-2 border-top border-secondary border-opacity-25">
+            <div class="d-flex align-items-center gap-2 small text-white-50">
+              <i class="bi bi-geo-alt-fill text-warning"></i>
+              <span>742 Evergreen Campus, Grand Ave, Suite 300</span>
+            </div>
+            <div class="d-flex align-items-center gap-2 small text-white-50">
+              <i class="bi bi-telephone-fill text-info"></i>
+              <a href="tel:5557872854" class="text-white text-decoration-none fw-bold">(555) 787-2854</a>
+              <span class="text-white-50">(Mon&ndash;Fri 8am&ndash;5pm)</span>
+            </div>
+            <div class="d-flex align-items-center gap-2 small text-white-50">
+              <i class="bi bi-envelope-fill text-rose"></i>
+              <a href="mailto:camp@stratkids.edu" class="text-white text-decoration-none">camp@stratkids.edu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div class="d-flex align-items-center gap-2">
+          <p class="mb-0 text-white-50">
+            &copy; 2026 StratKids Summer Camp. All rights reserved. &ldquo;Think. Play. Grow.&rdquo;
+          </p>
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-3 small">
+          <a href="faqs.html">Privacy Policy</a>
+          <span class="text-white-50">&bull;</span>
+          <a href="faqs.html">Terms of Service</a>
+          <span class="text-white-50">&bull;</span>
+          <a href="about.html">Safety Protocols</a>
+          <span class="text-white-50">&bull;</span>
+          <span class="badge rounded-pill px-3 py-1 bg-white bg-opacity-10 text-white border border-white border-opacity-10">
+            <i class="bi bi-circle-fill text-success me-1" style="font-size: 0.5rem;"></i> Summer 2026 Live
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top-btn" aria-label="Back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- ==========================================================================
+       GLOBAL ENROLLMENT MODAL (Frontend Demo Interactive Wizard)
+       ========================================================================== -->
+  <div class="modal fade" id="enrollmentModal" tabindex="-1" aria-labelledby="enrollmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-5 border-0 shadow-lg overflow-hidden">
+        <div class="modal-header text-white p-4" style="background: linear-gradient(135deg, var(--sk-rose) 0%, #8C2E49 100%);">
+          <div>
+            <div class="badge bg-warning text-dark fw-bold mb-1">Interactive Demo</div>
+            <h4 class="modal-title h5 mb-0" id="enrollmentModalLabel" style="font-family: var(--sk-font-heading);">
+              StratKids Camp Enrollment Wizard
+            </h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body p-4 p-md-5">
+          <!-- Step 1: Camper & Parent Details -->
+          <div id="enrollStep1">
+            <h5 class="fw-bold mb-1" style="font-family: var(--sk-font-heading); color: var(--sk-rose);">
+              Step 1: Camper &amp; Guardian Information
+            </h5>
+            <p class="small text-muted mb-4">Tell us about your young strategist.</p>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-bold small">Camper Full Name *</label>
+                <input type="text" id="enrollChildName" class="form-control rounded-3" placeholder="e.g. Leo Vance" required pattern="^[A-Za-z\s\.\'\-]+$" title="Camper name must contain letters only (no numbers)">
+                <div class="invalid-feedback">Please enter camper's name (letters only, no numbers).</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold small">Camper Age *</label>
+                <select id="enrollChildAge" class="form-select rounded-3">
+                  <option value="6">6 Years Old</option>
+                  <option value="7" selected>7 Years Old</option>
+                  <option value="8">8 Years Old</option>
+                  <option value="9">9 Years Old</option>
+                  <option value="10">10 Years Old</option>
+                  <option value="11">11 Years Old</option>
+                  <option value="12">12 Years Old</option>
+                  <option value="13">13 Years Old</option>
+                  <option value="14">14 Years Old</option>
+                  <option value="15">15 Years Old</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold small">Parent/Guardian Name *</label>
+                <input type="text" id="enrollParentName" class="form-control rounded-3" placeholder="e.g. Sarah Vance" required pattern="^[A-Za-z\s\.\'\-]+$" title="Parent name must contain letters only (no numbers)">
+                <div class="invalid-feedback">Please enter parent name (letters only, no numbers).</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold small">Parent Email *</label>
+                <input type="email" id="enrollParentEmail" class="form-control rounded-3" placeholder="sarah.vance@example.com" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+              <button type="button" id="enrollNextBtn1" class="btn-strat-primary">
+                Next: Select Program <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Program Choice & Discounts -->
+          <div id="enrollStep2" class="d-none">
+            <h5 class="fw-bold mb-1" style="font-family: var(--sk-font-heading); color: var(--sk-rose);">
+              Step 2: Choose Camp Track &amp; Week
+            </h5>
+            <p class="small text-muted mb-4">Select age track, camp dates, and discounts.</p>
+
+            <div class="row g-3">
+              <div class="col-md-12">
+                <label class="form-label fw-bold small">Camp Program Track *</label>
+                <select id="enrollProgramChoice" class="form-select rounded-3">
+                  <option value="little-thinkers">Little Thinkers (Ages 5&ndash;7) &mdash; $450/week</option>
+                  <option value="smart-players" selected>Smart Players (Ages 8&ndash;10) &mdash; $520/week</option>
+                  <option value="strategic-minds">Strategic Minds (Ages 11&ndash;13) &mdash; $580/week</option>
+                  <option value="future-masters">Future Masters (Ages 14&ndash;16) &mdash; $650/week</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-bold small">Select Camp Week *</label>
+                <select class="form-select rounded-3">
+                  <option>Week 1: June 15 &ndash; June 19</option>
+                  <option selected>Week 2: June 22 &ndash; June 26</option>
+                  <option>Week 3: June 29 &ndash; July 03</option>
+                  <option>Week 4: July 06 &ndash; July 10</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-bold small">Camp Schedule Option *</label>
+                <select class="form-select rounded-3">
+                  <option selected>Full Day Camp (09:00 AM &ndash; 04:30 PM)</option>
+                  <option>Morning Half Day (09:00 AM &ndash; 12:30 PM)</option>
+                  <option>Extended Day with Aftercare (until 06:00 PM)</option>
+                </select>
+              </div>
+
+              <div class="col-12 mt-3">
+                <div class="p-3 bg-light rounded-3 border">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="enrollEarlyBirdOption" checked>
+                    <label class="form-check-label small fw-bold" for="enrollEarlyBirdOption">
+                      Apply Early-Bird Discount (Save up to $75 before May 1)
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="enrollSiblingDiscount">
+                    <label class="form-check-label small fw-bold" for="enrollSiblingDiscount">
+                      Sibling Enrollment (15% Multi-child discount)
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" id="enrollPrevBtn2" class="btn-strat-secondary">
+                <i class="bi bi-arrow-left"></i> Back
+              </button>
+              <button type="button" id="enrollNextBtn2" class="btn-strat-primary">
+                Review &amp; Summary <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Review & Summary -->
+          <div id="enrollStep3" class="d-none">
+            <h5 class="fw-bold mb-1" style="font-family: var(--sk-font-heading); color: var(--sk-rose);">
+              Step 3: Review &amp; Confirm Enrollment
+            </h5>
+            <p class="small text-muted mb-4">Verify your details before completing simulation.</p>
+
+            <div class="p-3 rounded-4 bg-light mb-4 border">
+              <div class="d-flex justify-content-between py-2 border-bottom">
+                <span class="text-muted">Camper:</span>
+                <strong id="summaryChildName">Leo Vance</strong>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom">
+                <span class="text-muted">Program:</span>
+                <strong id="summaryProgramName">Smart Players</strong>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom">
+                <span class="text-muted">Tuition:</span>
+                <span id="summaryTuition">$460</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom">
+                <span class="text-muted">Discount Applied:</span>
+                <span id="summaryDiscount" class="text-success">$0</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 fs-5">
+                <strong>Estimated Total:</strong>
+                <strong id="summaryTotal" style="color: var(--sk-rose);">$460</strong>
+              </div>
+            </div>
+
+            <div class="alert alert-info py-2 small d-flex align-items-center gap-2">
+              <i class="bi bi-info-circle-fill"></i>
+              <span>No payment is processed now. This is a frontend demo confirmation.</span>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" id="enrollPrevBtn3" class="btn-strat-secondary">
+                <i class="bi bi-arrow-left"></i> Back
+              </button>
+              <button type="button" id="enrollSubmitBtn" class="btn-strat-primary">
+                <i class="bi bi-check-circle-fill"></i> Complete Enrollment
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/enrollment.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>
+
+

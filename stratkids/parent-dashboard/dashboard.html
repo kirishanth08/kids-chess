@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>My StratKids | Parent Command Center</title>
+  <meta name="description" content="Parent Portal for StratKids Summer Camp: manage camper profiles, track skill milestones, view daily timetables, and message camp coaches.">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- StratKids Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SECTION 1: DASHBOARD HEADER & CHILD TOGGLE BAR
+       ========================================================================== -->
+  <header class="stratkids-navbar py-2 border-bottom sticky-top">
+    <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+                <a class="navbar-brand py-0" href="../index.html">
+          <img src="../assets/icons/favicon.svg" alt="StratKids Logo" height="38" width="38" class="rounded-3 shadow-sm">
+          <div class="brand-text d-none d-sm-flex">
+            <span class="brand-title" style="font-size: 1.35rem;">Strat<span>Kids</span></span>
+            <span class="brand-tagline" style="font-size: 0.58rem;">Think. Play. Grow.</span>
+          </div>
+        </a>
+        <span class="badge bg-danger rounded-pill fw-bold text-uppercase d-none d-md-inline-block px-3 py-1">
+          Parent Command Center
+        </span>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <!-- Child Switcher (Leo Vance vs Maya Vance) -->
+        <div class="d-flex align-items-center bg-light p-1 rounded-pill border">
+          <button type="button" class="child-select-pill active" data-child="leo">
+            <span class="badge rounded-circle p-1" style="background: var(--sk-aqua); color: #1A606C;">L</span>
+            <span>Leo (7)</span>
+          </button>
+          <button type="button" class="child-select-pill" data-child="maya">
+            <span class="badge rounded-circle p-1 text-white" style="background: var(--sk-rose);">M</span>
+            <span>Maya (11)</span>
+          </button>
+        </div>
+
+        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
+        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR"><i class="bi bi-arrow-left-right"></i></button>
+        <a href="../index.html" class="btn btn-outline-dark rounded-pill px-3 py-1 small fw-bold">
+          <i class="bi bi-box-arrow-left"></i> Public Site
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN DASHBOARD LAYOUT (SIDEBAR + MAIN CONTENT)
+       ========================================================================== -->
+  <div class="dashboard-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <div class="dash-user-card">
+        <img src="../assets/images/guardian_sarah_vance.jpg" alt="Sarah Vance" class="dash-avatar-img">
+        <div>
+          <strong class="d-block text-dark">Sarah Vance</strong>
+          <small class="text-muted">Guardian &bull; 2 Campers</small>
+        </div>
+      </div>
+
+      <ul class="dash-nav-list">
+        <li class="dash-nav-item active"><a href="dashboard.html"><i class="bi bi-grid-fill"></i> Overview</a></li>
+        <li class="dash-nav-item"><a href="children.html"><i class="bi bi-people-fill"></i> My Children</a></li>
+        <li class="dash-nav-item"><a href="child-profile.html"><i class="bi bi-person-badge-fill"></i> Child Profile</a></li>
+        <li class="dash-nav-item"><a href="enrollments.html"><i class="bi bi-calendar-check-fill"></i> Enrollments</a></li>
+        <li class="dash-nav-item"><a href="skill-progress.html"><i class="bi bi-ladder"></i> Skill Progress</a></li>
+        <li class="dash-nav-item"><a href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a></li>
+        <li class="dash-nav-item"><a href="payments.html"><i class="bi bi-wallet2"></i> Payments</a></li>
+        <li class="dash-nav-item"><a href="certificates.html"><i class="bi bi-award-fill"></i> Certificates</a></li>
+        <li class="dash-nav-item"><a href="messages.html"><i class="bi bi-chat-dots-fill"></i> Messages</a></li>
+        <li class="dash-nav-item"><a href="profile.html"><i class="bi bi-gear-fill"></i> Profile</a></li>
+        <li class="dash-nav-item mt-4"><a href="../auth/login.html" class="text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main-area">
+      <!-- ==========================================================================
+           SECTION 2: WELCOME BANNER & ACTIVE SELECTION
+           ========================================================================== -->
+      <div class="p-4 rounded-4 mb-4 border" style="background: radial-gradient(circle at 80% 20%, rgba(158, 211, 220, 0.4) 0%, rgba(254, 253, 153, 0.3) 50%, var(--sk-surface-card) 90%); border-color: var(--sk-border-color) !important;">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold mb-2">Summer 2026 Active Camp</span>
+            <h1 class="h3 fw-bold mb-1" style="font-family: var(--sk-font-heading); color: var(--sk-dark);">
+              Welcome Back, Sarah!
+            </h1>
+            <p class="fs-5 text-muted mb-3">
+              Here is what is happening today in <span class="fw-bold text-rose data-child-name">Leo Vance</span>'s StratKids journey.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-white text-dark border p-2 rounded-3">
+                <i class="bi bi-mortarboard-fill text-rose"></i> <span class="data-child-program">Little Thinkers: Discovery Pod</span>
+              </span>
+              <span class="badge bg-white text-dark border p-2 rounded-3">
+                <i class="bi bi-calendar-event text-info"></i> <span class="data-child-week">Week 2 &bull; June 22 &ndash; June 26</span>
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#checkInPinModal">
+              <i class="bi bi-qr-code-scan"></i> Show Pickup PIN
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 3: 4 KEY METRIC STAT WIDGETS
+           ========================================================================== -->
+      <div class="row g-4 mb-4">
+        <!-- Widget 1: Active Enrollment -->
+        <div class="col-sm-6 col-xl-3">
+          <div class="dash-stat-widget">
+            <div class="dash-stat-icon icon-rose"><i class="bi bi-check2-circle"></i></div>
+            <div>
+              <small class="text-muted d-block fw-bold">Active Enrollment</small>
+              <h5 class="mb-0 fw-bold data-child-program" style="font-size: 0.95rem;">Little Thinkers</h5>
+              <span class="badge bg-success-subtle text-success small mt-1">Confirmed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget 2: Skill Level -->
+        <div class="col-sm-6 col-xl-3">
+          <div class="dash-stat-widget">
+            <div class="dash-stat-icon icon-yellow"><i class="bi bi-ladder"></i></div>
+            <div>
+              <small class="text-muted d-block fw-bold">Current Skill Level</small>
+              <h5 class="mb-0 fw-bold data-child-skill" style="font-size: 0.95rem;">Foundation (Level 2)</h5>
+              <span class="badge bg-info-subtle text-info small mt-1">On Track</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget 3: Next Camp Session -->
+        <div class="col-sm-6 col-xl-3">
+          <div class="dash-stat-widget">
+            <div class="dash-stat-icon icon-aqua"><i class="bi bi-clock-fill"></i></div>
+            <div>
+              <small class="text-muted d-block fw-bold">Next Camp Day</small>
+              <h5 class="mb-0 fw-bold data-child-next-time" style="font-size: 0.95rem;">Tomorrow, 09:00 AM</h5>
+              <span class="badge bg-warning-subtle text-warning small mt-1">Pod Alpha</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget 4: Next Challenge -->
+        <div class="col-sm-6 col-xl-3">
+          <div class="dash-stat-widget">
+            <div class="dash-stat-icon icon-pink"><i class="bi bi-bullseye"></i></div>
+            <div>
+              <small class="text-muted d-block fw-bold">Upcoming Activity</small>
+              <h5 class="mb-0 fw-bold data-child-next-act" style="font-size: 0.95rem;">Knight Outpost Challenge</h5>
+              <span class="badge bg-primary-subtle text-primary small mt-1">Tactics Lab</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 4: ACTIVE CAMPER PROGRESSION SNAPSHOT
+           ========================================================================== -->
+      <div class="p-4 rounded-5 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div>
+            <h5 class="fw-bold mb-0" style="color: var(--sk-rose);">Skill Mastery Progress: <span class="data-child-name">Leo Vance</span></h5>
+            <small class="text-muted">Real-time tactical advancement tracked by Coach Elena</small>
+          </div>
+          <a href="skill-progress.html" class="fw-bold text-rose small">View Full Skill Tree &rarr;</a>
+        </div>
+
+        <div class="d-flex justify-content-between small fw-bold mb-1">
+          <span>Overall Level Progression</span>
+          <span id="dashChildProgressText" class="text-rose">45% Complete</span>
+        </div>
+        <div class="custom-progress-track mb-3">
+          <div class="custom-progress-bar" id="dashChildProgressBar" style="width: 45%;"></div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="p-3 bg-light rounded-4 border">
+              <strong class="d-block small text-muted">Latest Achievement Unlocked:</strong>
+              <div class="fw-bold text-dark data-child-badge"><i class="bi bi-star-fill text-warning"></i> First Checkmate Badge</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-light rounded-4 border">
+              <strong class="d-block small text-muted">Next Milestone Ahead:</strong>
+              <div class="fw-bold text-dark"><i class="bi bi-trophy-fill text-warning me-1"></i> Tactical Knight Fork (3/5 Solved)</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-light rounded-4 border">
+              <strong class="d-block small text-muted">Friday Grand Prix Status:</strong>
+              <div class="fw-bold text-success">Seed Assigned &bull; Round 1 (Table 4)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 5: TODAY'S CAMP TIMELINE FOR SELECTED CHILD
+           ========================================================================== -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-7">
+          <div class="p-4 rounded-5 bg-white border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h5 class="fw-bold mb-0">Today's Camp Routine (Tuesday)</h5>
+              <a href="daily-schedule.html" class="small fw-bold text-rose">Full Schedule &rarr;</a>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 py-2 border-bottom">
+              <span class="badge bg-warning text-dark px-2 py-1 rounded-pill small">09:00 AM</span>
+              <div>
+                <strong class="d-block small">Welcome &amp; Knight Story Circle</strong>
+                <small class="text-muted">Classroom Alpha &bull; Coach Sarah</small>
+              </div>
+              <span class="badge bg-success ms-auto small">Completed</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 py-2 border-bottom">
+              <span class="badge bg-info text-dark px-2 py-1 rounded-pill small">10:00 AM</span>
+              <div>
+                <strong class="d-block small">Paired Wooden Board Tactical Drills</strong>
+                <small class="text-muted">Center pawns &amp; Knight moves</small>
+              </div>
+              <span class="badge bg-primary ms-auto small">In Session</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 py-2 border-bottom">
+              <span class="badge bg-danger px-2 py-1 rounded-pill small">11:15 AM</span>
+              <div>
+                <strong class="d-block small">Tabletop Strategy Hub (Hive Junior)</strong>
+                <small class="text-muted">Tabletop Arena</small>
+              </div>
+              <span class="badge bg-secondary ms-auto small">Upcoming</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 py-2 border-bottom">
+              <span class="badge bg-success px-2 py-1 rounded-pill small">12:30 PM</span>
+              <div>
+                <strong class="d-block small">Healthy Lunch &amp; Outdoor Lawn Recess</strong>
+                <small class="text-muted">Grassy athletic fields &bull; Leo's Half-Day Pickup</small>
+              </div>
+              <span class="badge bg-secondary ms-auto small">Upcoming</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 py-2 border-bottom">
+              <span class="badge bg-primary px-2 py-1 rounded-pill small">01:45 PM</span>
+              <div>
+                <strong class="d-block small">Tactical Endgame Lab &amp; Grand Prix Practice</strong>
+                <small class="text-muted">Study Hall B &bull; Coach Elena</small>
+              </div>
+              <span class="badge bg-secondary ms-auto small">Upcoming</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 py-2 border-bottom">
+              <span class="badge bg-warning text-dark px-2 py-1 rounded-pill small">03:00 PM</span>
+              <div>
+                <strong class="d-block small">Speed Chess Arena &amp; Giant Lawn Match</strong>
+                <small class="text-muted">Courtyard Board &bull; Team Tactics</small>
+              </div>
+              <span class="badge bg-secondary ms-auto small">Upcoming</span>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 py-2">
+              <span class="badge bg-info text-dark px-2 py-1 rounded-pill small">04:30 PM</span>
+              <div>
+                <strong class="d-block small">Camper Sign-Out &amp; Parent Pickup Window</strong>
+                <small class="text-muted">Curbside Alpha &bull; PIN Required</small>
+              </div>
+              <span class="badge bg-secondary ms-auto small">Upcoming</span>
+            </div>
+
+            <div class="mt-3 pt-3 border-top d-flex flex-wrap align-items-center justify-content-between gap-2 small text-muted">
+              <span><i class="bi bi-geo-alt-fill text-danger me-1"></i> Studio: <strong class="text-dark">Pawns Studio A</strong></span>
+              <span><i class="bi bi-shield-check text-success me-1"></i> Pickup PIN: <strong class="text-dark">#4829</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================================================================
+             SECTION 6: COACH NOTES & CANDID PHOTOS PREVIEW
+             ========================================================================== -->
+        <div class="col-lg-5">
+          <div class="p-4 rounded-5 bg-white border shadow-sm h-100" style="border-color: var(--sk-border-color) !important;">
+            <h5 class="fw-bold mb-3">Daily Mentor Note</h5>
+            <div class="p-3 bg-light rounded-4 border mb-3">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="bi bi-shield-check text-success"></i>
+                <strong class="small">Coach Elena (Lead Instructor)</strong>
+              </div>
+              <p class="small text-muted mb-0 fst-italic">
+                &ldquo;Leo had a tremendous breakthrough today! During our puzzle relay, he spotted a hidden diagonal threat and quietly coached his teammate through it. His focus and sportsmanship are blossoming wonderfully.&rdquo;
+              </p>
+            </div>
+
+            <h6 class="fw-bold small text-muted mb-2">Camp Photo of the Day</h6>
+            <div class="rounded-3 overflow-hidden border mb-2 position-relative" style="aspect-ratio: 16/9;">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Camper solving puzzle" class="w-100 h-100 object-fit-cover">
+              <span class="badge bg-dark bg-opacity-75 position-absolute bottom-0 start-0 m-2 small">Encrypted Private Feed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+           SECTION 7: QUICK SHORTCUTS & SUPPORT
+           ========================================================================== -->
+      <div class="p-4 rounded-5 border text-center" style="background: radial-gradient(circle, var(--sk-pink) 0%, #F7A9BC 100%);">
+        <h4 class="h5 fw-bold mb-2 text-dark">Need to Speak With Camp Directors?</h4>
+        <p class="small text-dark-soft mb-3">Our on-site camp coordinators are available via live message or direct phone line.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <a href="messages.html" class="btn-strat-primary">
+            <i class="bi bi-chat-dots-fill"></i> Send Coach Message
+          </a>
+          <a href="payments.html" class="btn-strat-secondary">
+            <i class="bi bi-receipt"></i> View Tuition Statement
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Pickup PIN Security Modal -->
+  <div class="modal fade" id="checkInPinModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-5 border-0 shadow-lg p-4 text-center">
+        <span class="badge-emblem badge-gold mb-3 mx-auto" style="width: 70px; height: 70px; font-size: 2rem;"><i class="bi bi-key-fill text-warning"></i></span>
+        <h4 class="fw-bold mb-1">Authorized Pickup PIN</h4>
+        <p class="small text-muted mb-3">Show this code or tell it to the counselor at the curbside checkout line.</p>
+        <div class="p-3 bg-light rounded-4 border mb-3">
+          <span class="display-4 fw-bold letter-spacing-2" style="color: var(--sk-rose); font-family: monospace;">8841</span>
+        </div>
+        <small class="text-muted d-block mb-3">Valid for: Sarah Vance (Guardian) &bull; Leo Vance &amp; Maya Vance</small>
+        <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+
+

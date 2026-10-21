@@ -32,7 +32,7 @@
   <!-- ==========================================================================
        GLOBAL NAVBAR
        ========================================================================== -->
-    <nav class="navbar navbar-expand-lg stratkids-navbar sticky-top">
+    <nav class="navbar navbar-expand-xl stratkids-navbar sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">
         <img src="assets/icons/favicon.svg" alt="StratKids Logo" height="42" width="42" class="rounded-3 shadow-sm">
@@ -169,32 +169,32 @@
               </div>
             </div>
 
-            <!-- Floating Micro-Badges -->
-            <div class="hero-floating-bubble-1">
+            <!-- Floating Micro-Badges: Separated cleanly to prevent overlapping -->
+            <div class="hero-floating-bubble-1" style="top: -16px; left: -10px; right: auto;">
               <i class="bi bi-patch-check-fill text-success fs-5"></i>
               <span>Accredited &amp; First-Aid Certified</span>
             </div>
 
-            <!-- Floating Badge: 100% Screen-Free -->
-            <div class="position-absolute top-0 end-0 translate-middle-y bg-white rounded-pill px-3 py-2 shadow-sm border d-flex align-items-center gap-2" style="border-color: var(--sk-pink) !important; z-index: 2; margin-top: 15px; margin-right: -15px;">
+            <!-- Floating Badge: 100% Screen-Free (Anchored top-right cleanly) -->
+            <div class="position-absolute bg-white rounded-pill px-3 py-2 shadow-sm border d-flex align-items-center gap-2 hero-badge-screenfree" style="top: -16px; right: -10px; border-color: var(--sk-pink) !important; z-index: 3;">
               <i class="bi bi-shield-heart-fill text-danger fs-5"></i>
               <span class="fw-bold small text-dark">100% Screen-Free Strategy</span>
             </div>
 
-            <!-- Floating Camper Pod Live Card -->
-            <div class="position-absolute bottom-0 end-0 translate-middle-y bg-white p-3 rounded-4 shadow-lg border" style="max-width: 270px; z-index: 3; margin-bottom: -15px; margin-right: 15px; border-color: var(--sk-yellow) !important; border-width: 2px;">
+            <!-- Floating Camper Pod Live Card (Anchored cleanly at bottom-right without colliding with banner) -->
+            <div class="position-absolute bg-white p-3 rounded-4 shadow-lg border hero-card-livepod" style="bottom: 16px; right: 16px; max-width: 260px; z-index: 4; border-color: var(--sk-yellow) !important; border-width: 2px;">
               <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge-emblem badge-rose" style="width: 34px; height: 34px; font-size: 0.95rem;"><i class="bi bi-fire text-white"></i></span>
+                <span class="badge-emblem badge-rose" style="width: 32px; height: 32px; font-size: 0.9rem;"><i class="bi bi-fire text-white"></i></span>
                 <div>
                   <strong class="d-block text-dark small" style="line-height: 1.2;">Tactics Arena Active</strong>
-                  <small class="text-success fw-bold"><i class="bi bi-circle-fill text-success" style="font-size: 0.5rem;"></i> 18 Pods In Session</small>
+                  <small class="text-success fw-bold" style="font-size: 0.72rem;"><i class="bi bi-circle-fill text-success" style="font-size: 0.45rem;"></i> 18 Pods In Session</small>
                 </div>
               </div>
-              <div class="d-flex justify-content-between small text-muted">
+              <div class="d-flex justify-content-between small text-muted" style="font-size: 0.76rem;">
                 <span>Pod Ratio:</span>
                 <strong class="text-dark">1 Coach : 6 Campers</strong>
               </div>
-              <div class="progress mt-2" style="height: 6px;">
+              <div class="progress mt-2" style="height: 5px;">
                 <div class="progress-bar bg-warning" role="progressbar" style="width: 88%"></div>
               </div>
             </div>
@@ -383,11 +383,11 @@
         </p>
 
         <!-- Perspective Lens Switcher -->
-        <div class="perspective-lens-box mt-3">
-          <button type="button" class="lens-btn active" data-lens="parent">
+        <div class="perspective-lens-box mt-3" id="perspectiveLensBox">
+          <button type="button" class="lens-btn active" data-lens="parent" id="lensBtnParent" aria-label="Parent Peace of Mind Mode">
             <i class="bi bi-shield-check"></i> Parent Peace of Mind
           </button>
-          <button type="button" class="lens-btn" data-lens="camper">
+          <button type="button" class="lens-btn" data-lens="camper" id="lensBtnCamper" aria-label="Camper Fun and Quests Mode">
             <i class="bi bi-controller"></i> Camper Fun &amp; Quests
           </button>
         </div>
@@ -397,23 +397,28 @@
       <div class="sk-bento-grid">
         <!-- Bento 1: Strategic Thinking (Span 4) -->
         <div class="bento-col-4">
-          <div class="bento-card bento-featured">
+          <div class="bento-card bento-featured h-100">
             <div class="sk-card-top-icon icon-rose">
               <i class="bi bi-cpu-fill"></i>
             </div>
-            <span class="badge text-white rounded-pill px-3 py-1 fw-bold mb-2 align-self-start" style="background-color: var(--sk-rose);">Core Pillar 1</span>
-            <h4 class="h5 fw-bold">Strategic Foresight &amp; Calculation</h4>
-            <p class="small text-muted mb-3">
-              Children learn to evaluate board positions, calculate candidate moves ahead, and formulate structured game plans rather than reacting on hasty impulse.
-            </p>
             <div class="lens-view-parent">
+              <span class="badge text-white rounded-pill px-3 py-1 fw-bold mb-2 align-self-start" style="background-color: var(--sk-rose);">Core Pillar 1</span>
+              <h4 class="h5 fw-bold">Strategic Foresight &amp; Calculation</h4>
+              <p class="small text-muted mb-3">
+                Children learn to evaluate board positions, calculate candidate moves ahead, and formulate structured game plans rather than reacting on hasty impulse.
+              </p>
               <div class="d-flex align-items-center gap-2 text-rose fw-bold small mt-auto">
                 <i class="bi bi-check2-circle"></i> Cognitive planning &amp; impulse control
               </div>
             </div>
             <div class="lens-view-camper d-none">
+              <span class="badge text-white rounded-pill px-3 py-1 fw-bold mb-2 align-self-start bg-danger">Quest 1: Secret Tactics</span>
+              <h4 class="h5 fw-bold">Sneaky Traps &amp; King Hunts</h4>
+              <p class="small text-muted mb-3">
+                Learn how Grandmasters set sneaky traps, trick opposing Queens into forks, and calculate three killer moves ahead to checkmate like a pro!
+              </p>
               <div class="d-flex align-items-center gap-2 text-rose fw-bold small mt-auto">
-                <i class="bi bi-lightning-charge-fill"></i> See 3 moves ahead and trap pieces!
+                <i class="bi bi-lightning-charge-fill"></i> Trap enemy pieces &amp; win master XP!
               </div>
             </div>
           </div>
@@ -421,21 +426,26 @@
 
         <!-- Bento 2: Problem Solving (Span 4) -->
         <div class="bento-col-4">
-          <div class="bento-card bento-warm">
+          <div class="bento-card bento-warm h-100">
             <div class="sk-card-top-icon icon-yellow">
               <i class="bi bi-puzzle-fill"></i>
             </div>
-            <span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-bold mb-2 align-self-start">Core Pillar 2</span>
-            <h4 class="h5 fw-bold">Pattern Recognition &amp; Problem Solving</h4>
-            <p class="small text-muted mb-3">
-              Daily tactics puzzles teach young minds to break complex, unfamiliar dilemmas into clear, manageable steps under gentle, encouraging mentorship.
-            </p>
             <div class="lens-view-parent">
+              <span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-bold mb-2 align-self-start">Core Pillar 2</span>
+              <h4 class="h5 fw-bold">Pattern Recognition &amp; Problem Solving</h4>
+              <p class="small text-muted mb-3">
+                Daily tactics puzzles teach young minds to break complex, unfamiliar dilemmas into clear, manageable steps under gentle, encouraging mentorship.
+              </p>
               <div class="d-flex align-items-center gap-2 lens-tag-yellow fw-bold small mt-auto">
                 <i class="bi bi-check2-circle"></i> Structured deductive reasoning skills
               </div>
             </div>
             <div class="lens-view-camper d-none">
+              <span class="badge bg-warning text-dark rounded-pill px-3 py-1 fw-bold mb-2 align-self-start">Quest 2: Daily Puzzles</span>
+              <h4 class="h5 fw-bold">Speed Puzzles &amp; Boss Battles</h4>
+              <p class="small text-muted mb-3">
+                Race the clock in daily puzzle relays, decode secret move combinations, and conquer the daily tactics boss to unlock legendary camper trophies!
+              </p>
               <div class="d-flex align-items-center gap-2 lens-tag-yellow fw-bold small mt-auto">
                 <i class="bi bi-trophy-fill"></i> Crack speed tactical puzzles daily!
               </div>
@@ -445,21 +455,26 @@
 
         <!-- Bento 3: Confidence & Grit (Span 4) -->
         <div class="bento-col-4">
-          <div class="bento-card">
+          <div class="bento-card h-100">
             <div class="sk-card-top-icon icon-aqua">
               <i class="bi bi-shield-shaded"></i>
             </div>
-            <span class="badge text-dark rounded-pill px-3 py-1 fw-bold mb-2 align-self-start" style="background-color: var(--sk-aqua) !important;">Core Pillar 3</span>
-            <h4 class="h5 fw-bold">Quiet Confidence &amp; Emotional Resilience</h4>
-            <p class="small text-muted mb-3">
-              Making independent moves builds authentic self-assurance. Campers discover that thoughtful mistakes are simply valuable clues toward eventual checkmate.
-            </p>
             <div class="lens-view-parent">
+              <span class="badge text-dark rounded-pill px-3 py-1 fw-bold mb-2 align-self-start" style="background-color: var(--sk-aqua) !important;">Core Pillar 3</span>
+              <h4 class="h5 fw-bold">Quiet Confidence &amp; Emotional Resilience</h4>
+              <p class="small text-muted mb-3">
+                Making independent moves builds authentic self-assurance. Campers discover that thoughtful mistakes are simply valuable clues toward eventual checkmate.
+              </p>
               <div class="d-flex align-items-center gap-2 lens-tag-aqua fw-bold small mt-auto">
                 <i class="bi bi-check2-circle"></i> Growth mindset &amp; sportsmanship
               </div>
             </div>
             <div class="lens-view-camper d-none">
+              <span class="badge text-dark rounded-pill px-3 py-1 fw-bold mb-2 align-self-start" style="background-color: var(--sk-aqua) !important;">Quest 3: Badges &amp; Rank</span>
+              <h4 class="h5 fw-bold">Collect Badges &amp; Level Up</h4>
+              <p class="small text-muted mb-3">
+                Earn real rank badges from Pawn Scout to Grandmaster Champion, collect custom ribbons, and celebrate high-fives after every match!
+              </p>
               <div class="d-flex align-items-center gap-2 lens-tag-aqua fw-bold small mt-auto">
                 <i class="bi bi-star-fill"></i> Earn mastery badges and level up!
               </div>
@@ -469,40 +484,70 @@
 
         <!-- Bento 4: Screen-Free Deep Focus (Span 6) -->
         <div class="bento-col-6">
-          <div class="bento-card bento-rose-accent">
+          <div class="bento-card bento-rose-accent h-100">
             <div class="sk-card-top-icon icon-pink">
               <i class="bi bi-bullseye"></i>
             </div>
-            <h4 class="h5 fw-bold">Screen-Free Deep Focus &amp; Deliberate Patience</h4>
-            <p class="text-muted mb-3">
-              In an era dominated by hyper-fast phone notifications, chessboard challenges cultivate the rare superpower of prolonged attention, patience, and deliberate reflection in an engaging, tactile format.
-            </p>
-            <div class="p-3 bg-white rounded-3 border d-flex align-items-center justify-content-between mt-auto">
-              <div class="d-flex align-items-center gap-2">
-                <i class="bi bi-hourglass-split text-rose fs-4"></i>
-                <small class="fw-bold text-dark">Average camper focus stretches from 12 mins to 45+ mins by Week 2</small>
+            <div class="lens-view-parent">
+              <h4 class="h5 fw-bold">Screen-Free Deep Focus &amp; Deliberate Patience</h4>
+              <p class="text-muted mb-3">
+                In an era dominated by hyper-fast phone notifications, chessboard challenges cultivate the rare superpower of prolonged attention, patience, and deliberate reflection in an engaging, tactile format.
+              </p>
+              <div class="p-3 bg-white rounded-3 border d-flex flex-wrap align-items-center justify-content-between gap-2 mt-auto">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-hourglass-split text-rose fs-4 flex-shrink-0"></i>
+                  <small class="fw-bold text-dark">Average camper focus stretches from 12 mins to 45+ mins by Week 2</small>
+                </div>
+                <span class="badge bg-success rounded-pill px-3 py-2 fw-bold">100% Screen-Free</span>
               </div>
-              <span class="badge bg-success rounded-pill px-3 py-2 fw-bold">100% Screen-Free</span>
+            </div>
+            <div class="lens-view-camper d-none">
+              <h4 class="h5 fw-bold">Real Giant Boards &amp; Tactile Battles</h4>
+              <p class="text-muted mb-3">
+                Zero boring phone screens! Experience the physical excitement of weighted tournament pieces, giant outdoor lawn chessboards, and rapid digital clock matches.
+              </p>
+              <div class="p-3 bg-white rounded-3 border d-flex flex-wrap align-items-center justify-content-between gap-2 mt-auto">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-controller text-danger fs-4 flex-shrink-0"></i>
+                  <small class="fw-bold text-dark">Giant pieces, tactile action &amp; live chess showdowns</small>
+                </div>
+                <span class="badge bg-primary rounded-pill px-3 py-2 fw-bold">Real Gameboards</span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Bento 5: Teamwork & Friendships (Span 6) -->
         <div class="bento-col-6">
-          <div class="bento-card bento-featured">
+          <div class="bento-card bento-featured h-100">
             <div class="sk-card-top-icon icon-aqua">
               <i class="bi bi-people-fill"></i>
             </div>
-            <h4 class="h5 fw-bold">Camaraderie, Team Play &amp; Lifelong Friendships</h4>
-            <p class="text-muted mb-3">
-              Pair-play, tabletop strategy relays, and shared debriefs teach kids to respect opponents, collaborate warmly, and celebrate each other's breakthroughs in an encouraging, non-toxic environment.
-            </p>
-            <div class="p-3 bg-white rounded-3 border d-flex align-items-center justify-content-between mt-auto">
-              <div class="d-flex align-items-center gap-2">
-                <i class="bi bi-trophy-fill text-warning fs-4"></i>
-                <small class="fw-bold text-dark">Every camper leaves with positive mentor feedback, new best friends &amp; medals</small>
+            <div class="lens-view-parent">
+              <h4 class="h5 fw-bold">Camaraderie, Team Play &amp; Lifelong Friendships</h4>
+              <p class="text-muted mb-3">
+                Pair-play, tabletop strategy relays, and shared debriefs teach kids to respect opponents, collaborate warmly, and celebrate each other's breakthroughs in an encouraging, non-toxic environment.
+              </p>
+              <div class="p-3 bg-white rounded-3 border d-flex flex-wrap align-items-center justify-content-between gap-2 mt-auto">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-trophy-fill text-warning fs-4 flex-shrink-0"></i>
+                  <small class="fw-bold text-dark">Every camper leaves with positive mentor feedback, new best friends &amp; medals</small>
+                </div>
+                <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fw-bold">Friday Grand Prix</span>
               </div>
-              <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fw-bold">Friday Grand Prix</span>
+            </div>
+            <div class="lens-view-camper d-none">
+              <h4 class="h5 fw-bold">Pod Relays &amp; Friday Grand Prix Festival</h4>
+              <p class="text-muted mb-3">
+                Team up with your pod friends for sunny lawn obstacle relays, strategy scavenger hunts, and the big Friday Grand Prix celebration with trophies, pizza &amp; awards!
+              </p>
+              <div class="p-3 bg-white rounded-3 border d-flex flex-wrap align-items-center justify-content-between gap-2 mt-auto">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-award-fill text-warning fs-4 flex-shrink-0"></i>
+                  <small class="fw-bold text-dark">Weekly medals, championship ribbons &amp; squad celebrations</small>
+                </div>
+                <span class="badge bg-danger rounded-pill px-3 py-2 fw-bold">Pod Cup Trophy</span>
+              </div>
             </div>
           </div>
         </div>
@@ -880,17 +925,17 @@
         </p>
       </div>
 
-      <div class="row g-4 mb-5">
+      <div class="row g-4 mb-5 justify-content-center" id="campStoriesRow">
         <!-- Testimonial 1 -->
-        <div class="col-md-4">
-          <div class="sk-card">
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="sk-card h-100">
             <div class="d-flex align-items-center gap-1 text-warning mb-3">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
             <p class="fst-italic mb-3">
               &ldquo;My 8-year-old son Lucas used to give up easily whenever a puzzle was hard. After two weeks at StratKids, he now takes a deep breath, smiles, and says, &lsquo;Let&rsquo;s find the candidate moves!&rsquo; The mentors are phenomenal.&rdquo;
             </p>
-            <div class="mt-auto d-flex align-items-center gap-3">
+            <div class="mt-auto d-flex align-items-center gap-3 pt-2 border-top">
               <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80" alt="Melissa Turner" class="rounded-circle border border-2 border-white shadow-sm flex-shrink-0" style="width: 48px; height: 48px; object-fit: cover;">
               <div>
                 <h6 class="mb-0 fw-bold">Melissa Turner</h6>
@@ -901,15 +946,15 @@
         </div>
 
         <!-- Testimonial 2 -->
-        <div class="col-md-4">
-          <div class="sk-card">
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="sk-card h-100">
             <div class="d-flex align-items-center gap-1 text-warning mb-3">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
             <p class="fst-italic mb-3">
               &ldquo;The balance between chess thinking and active summer games is brilliant. My daughter came home brimming with excitement every single afternoon showing us the tactics she learned.&rdquo;
             </p>
-            <div class="mt-auto d-flex align-items-center gap-3">
+            <div class="mt-auto d-flex align-items-center gap-3 pt-2 border-top">
               <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&h=120&q=80" alt="David Chen" class="rounded-circle border border-2 border-white shadow-sm flex-shrink-0" style="width: 48px; height: 48px; object-fit: cover;">
               <div>
                 <h6 class="mb-0 fw-bold">David Chen</h6>
@@ -920,15 +965,15 @@
         </div>
 
         <!-- Testimonial 3 -->
-        <div class="col-md-4">
-          <div class="sk-card">
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="sk-card h-100">
             <div class="d-flex align-items-center gap-1 text-warning mb-3">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
             <p class="fst-italic mb-3">
               &ldquo;StratKids provided the perfect intellectual boost during summer vacation. The Friday tournament format was encouraging and celebratory. My twins can&rsquo;t wait to return next year!&rdquo;
             </p>
-            <div class="mt-auto d-flex align-items-center gap-3">
+            <div class="mt-auto d-flex align-items-center gap-3 pt-2 border-top">
               <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=120&h=120&q=80" alt="Ananya Rao" class="rounded-circle border border-2 border-white shadow-sm flex-shrink-0" style="width: 48px; height: 48px; object-fit: cover;">
               <div>
                 <h6 class="mb-0 fw-bold">Ananya Rao</h6>
@@ -944,7 +989,7 @@
   <!-- ==========================================================================
        GLOBAL FOOTER (Redesigned Modern Interactive Experience)
        ========================================================================== -->
-  <footer class="stratkids-footer position-relative">
+  <footer class="stratkids-footer position-relative" id="mainGlobalFooter">
     <div class="container position-relative" style="z-index: 2;">
       <!-- Main Footer Columns -->
       <div class="row g-4 g-lg-5">

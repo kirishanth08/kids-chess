@@ -5,8 +5,10 @@
 
 /* Global horizontal overflow prevention */
 html, body {
-  overflow-x: clip;
+  overflow-x: hidden;
   max-width: 100%;
+  width: 100%;
+  position: relative;
 }
 
 /* Large Desktop (1440px - 1920px+) */
@@ -50,13 +52,8 @@ html, body {
   }
 }
 
-/* Mobile & Tablet Breakpoint (max 991.98px) */
-@media (max-width: 991.98px) {
-  .section-py {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
-  }
-
+/* Mobile & Tablet Breakpoint (max 1199.98px) for Navbar Collapse */
+@media (max-width: 1199.98px) {
   /* StratKids Navbar Mobile Drawer */
   .navbar-collapse {
     background: var(--sk-surface-card);
@@ -74,6 +71,14 @@ html, body {
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+}
+
+/* Mobile & Tablet General Breakpoint (max 991.98px) */
+@media (max-width: 991.98px) {
+  .section-py {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 
   /* Timeline mobile linear fallback */
@@ -127,10 +132,24 @@ html, body {
     padding: 1.5rem 1rem;
   }
 
-  .hero-floating-bubble-1,
-  .hero-floating-bubble-2 {
-    position: static;
-    margin-top: 1rem;
+  .hero-floating-bubble-1 {
+    top: -12px !important;
+    left: 4px !important;
+    right: auto !important;
+    font-size: 0.82rem !important;
+    padding: 0.45rem 0.85rem !important;
+  }
+  .hero-badge-screenfree {
+    top: -12px !important;
+    right: 4px !important;
+    font-size: 0.82rem !important;
+    padding: 0.45rem 0.85rem !important;
+  }
+  .hero-card-livepod {
+    bottom: 12px !important;
+    right: 12px !important;
+    max-width: 240px !important;
+    padding: 0.75rem !important;
   }
 
   .footer-cta-box {

@@ -32,16 +32,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 1. Sticky Navbar Shrink on Scroll
+  // 1. Sticky Navbar Shrink & Smart Hide on Scroll (Ensures footer icon & heading remain unobstructed)
   const navbar = document.querySelector('.stratkids-navbar');
+  const footerEl = document.querySelector('.stratkids-footer') || document.getElementById('mainGlobalFooter');
+  let lastScrollY = window.scrollY;
+
   if (navbar) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
+      const currentScrollY = window.scrollY;
+
+      // Add scrolled style
+      if (currentScrollY > 40) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
       }
-    });
+
+      // Hide navbar when approaching or viewing footer so footer icon and heading are 100% visible
+      let isNearFooter = false;
+      if (footerEl) {
+        const footerRect = footerEl.getBoundingClientRect();
+        // If the top of footer is within 250px of the viewport or visible
+        if (footerRect.top <= window.innerHeight - 20) {
+          isNearFooter = true;
+        }
+      }
+
+      if (isNearFooter) {
+        navbar.classList.add('nav-hidden-footer');
+      } else {
+        navbar.classList.remove('nav-hidden-footer');
+        // Smart scroll-down hide, scroll-up show on mobile/tablet
+        if (currentScrollY > 200 && currentScrollY > lastScrollY + 10) {
+          navbar.classList.add('nav-hidden-scroll');
+        } else if (currentScrollY < lastScrollY - 5 || currentScrollY <= 100) {
+          navbar.classList.remove('nav-hidden-scroll');
+        }
+      }
+
+      lastScrollY = currentScrollY;
+    }, { passive: true });
   }
 
   // 2. Active Nav Link Detector
@@ -157,21 +187,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const camperViews = document.querySelectorAll('.lens-view-camper');
     const parentViews = document.querySelectorAll('.lens-view-parent');
 
-    lensBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lensType = btn.getAttribute('data-lens');
-        lensBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        if (lensType === 'camper') {
-          camperViews.forEach(v => v.classList.remove('d-none'));
-          parentViews.forEach(v => v.classList.add('d-none'));
+    function switchLens(lensType) {
+      lensBtns.forEach(b => {
+        if (b.getAttribute('data-lens') === lensType) {
+          b.classList.add('active');
         } else {
-          camperViews.forEach(v => v.classList.add('d-none'));
-          parentViews.forEach(v => v.classList.remove('d-none'));
+          b.classList.remove('active');
         }
       });
+
+      if (lensType === 'camper') {
+        parentViews.forEach(v => {
+          v.classList.add('d-none');
+          v.style.opacity = '0';
+        });
+        camperViews.forEach(v => {
+          v.classList.remove('d-none');
+          requestAnimationFrame(() => {
+            v.style.transition = 'opacity 0.25s ease-in';
+            v.style.opacity = '1';
+          });
+        });
+      } else {
+        camperViews.forEach(v => {
+          v.classList.add('d-none');
+          v.style.opacity = '0';
+        });
+        parentViews.forEach(v => {
+          v.classList.remove('d-none');
+          requestAnimationFrame(() => {
+            v.style.transition = 'opacity 0.25s ease-in';
+            v.style.opacity = '1';
+          });
+        });
+      }
+    }
+
+    lensBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const lensType = btn.getAttribute('data-lens') || 'parent';
+        switchLens(lensType);
+      });
     });
+
+    // Expose globally for inline onclick fallbacks
+    window.stratkidsSwitchLens = switchLens;
   }
 
   // 8. Interactive Live Tuition Estimator (Pricing Page & Enrollment)

@@ -158,44 +158,47 @@
               <img src="assets/images/camper_hero.jpg" alt="Children playing chess happily at StratKids Summer Camp" class="img-fluid w-100 h-100" style="object-fit: cover; min-height: 420px;">
               
               <!-- Soft Gradient Overlay at base -->
-              <div class="position-absolute bottom-0 start-0 end-0 p-4" style="background: linear-gradient(180deg, transparent 0%, rgba(38, 51, 58, 0.8) 100%);">
-                <div class="d-flex align-items-center justify-content-between text-white">
-                  <div>
-                    <span class="badge text-dark rounded-pill px-3 py-1 fw-bold mb-1" style="background: var(--sk-yellow);">Summer 2026</span>
-                    <div class="fw-bold fs-6">Tactical Labs &bull; Outdoor Relays &bull; Strategy Arenas</div>
+              <div class="position-absolute bottom-0 start-0 end-0 p-3 p-md-4 hero-bottom-overlay" style="background: linear-gradient(180deg, transparent 0%, rgba(38, 51, 58, 0.88) 100%); z-index: 2;">
+                <div class="d-flex align-items-center justify-content-between text-white flex-wrap gap-2">
+                  <div class="hero-bottom-text-group">
+                    <span class="badge text-dark rounded-pill px-2 px-md-3 py-1 fw-bold mb-1 hero-season-pill" style="background: var(--sk-yellow);">Summer 2026</span>
+                    <div class="fw-bold hero-bottom-tagline d-none d-md-block" style="font-size: 0.95rem;">Tactical Labs &bull; Outdoor Relays &bull; Strategy Arenas</div>
                   </div>
-                  <span class="badge bg-danger rounded-pill px-3 py-2 fw-bold">June 15 &ndash; Aug 7</span>
+                  <span class="badge bg-danger rounded-pill px-2 px-md-3 py-1 py-md-2 fw-bold hero-dates-pill">June 15 &ndash; Aug 7</span>
                 </div>
               </div>
             </div>
 
-            <!-- Floating Micro-Badges: Separated cleanly to prevent overlapping -->
-            <div class="hero-floating-bubble-1" style="top: -16px; left: -10px; right: auto;">
-              <i class="bi bi-patch-check-fill text-success fs-5"></i>
-              <span>Accredited &amp; First-Aid Certified</span>
+            <!-- Floating Top Micro-Badges Bar: Clean flex container preventing any overlapping -->
+            <div class="hero-top-badges-container position-absolute start-0 end-0 d-flex justify-content-between align-items-center">
+              <!-- Badge 1: Accredited -->
+              <div class="hero-micro-pill hero-micro-pill-left">
+                <i class="bi bi-patch-check-fill text-success"></i>
+                <span>Accredited<span class="d-none d-sm-inline"> &amp; First-Aid Certified</span></span>
+              </div>
+
+              <!-- Badge 2: 100% Screen-Free -->
+              <div class="hero-micro-pill hero-micro-pill-right">
+                <i class="bi bi-shield-heart-fill text-danger"></i>
+                <span class="fw-bold text-dark">100% Screen-Free<span class="d-none d-sm-inline"> Strategy</span></span>
+              </div>
             </div>
 
-            <!-- Floating Badge: 100% Screen-Free (Anchored top-right cleanly) -->
-            <div class="position-absolute bg-white rounded-pill px-3 py-2 shadow-sm border d-flex align-items-center gap-2 hero-badge-screenfree" style="top: -16px; right: -10px; border-color: var(--sk-pink) !important; z-index: 3;">
-              <i class="bi bi-shield-heart-fill text-danger fs-5"></i>
-              <span class="fw-bold small text-dark">100% Screen-Free Strategy</span>
-            </div>
-
-            <!-- Floating Camper Pod Live Card (Anchored cleanly at bottom-right without colliding with banner) -->
-            <div class="position-absolute bg-white p-3 rounded-4 shadow-lg border hero-card-livepod" style="bottom: 16px; right: 16px; max-width: 260px; z-index: 4; border-color: var(--sk-yellow) !important; border-width: 2px;">
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge-emblem badge-rose" style="width: 32px; height: 32px; font-size: 0.9rem;"><i class="bi bi-fire text-white"></i></span>
-                <div>
-                  <strong class="d-block text-dark small" style="line-height: 1.2;">Tactics Arena Active</strong>
-                  <small class="text-success fw-bold" style="font-size: 0.72rem;"><i class="bi bi-circle-fill text-success" style="font-size: 0.45rem;"></i> 18 Pods In Session</small>
+            <!-- Floating Camper Pod Live Card: Sized compactly and positioned cleanly without colliding -->
+            <div class="position-absolute bg-white hero-card-livepod rounded-4 shadow-lg border">
+              <div class="d-flex align-items-center gap-2 mb-1 mb-md-2">
+                <span class="badge-emblem badge-rose hero-pod-emblem"><i class="bi bi-fire text-white"></i></span>
+                <div class="hero-pod-header">
+                  <strong class="d-block text-dark hero-pod-title">Tactics Arena Active</strong>
+                  <small class="text-success fw-bold hero-pod-status"><i class="bi bi-circle-fill text-success"></i> 18 Pods In Session</small>
                 </div>
               </div>
-              <div class="d-flex justify-content-between small text-muted" style="font-size: 0.76rem;">
+              <div class="d-flex justify-content-between text-muted hero-pod-ratio">
                 <span>Pod Ratio:</span>
                 <strong class="text-dark">1 Coach : 6 Campers</strong>
               </div>
-              <div class="progress mt-2" style="height: 5px;">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 88%"></div>
+              <div class="progress mt-1 mt-md-2 hero-pod-progress">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>

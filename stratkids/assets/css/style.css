@@ -691,18 +691,6 @@ img {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
-.stratkids-navbar.nav-hidden-footer {
-  transform: translateY(-100%) !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transition: transform 0.35s ease, opacity 0.25s ease !important;
-}
-
-.stratkids-navbar.nav-hidden-scroll {
-  transform: translateY(-100%);
-  transition: transform 0.3s ease;
-}
-
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -1875,6 +1863,88 @@ img {
 }
 
 /* ==========================================================================
+   Hero Visual Image Micro-Tags & Floating Live Pod
+   ========================================================================== */
+.hero-top-badges-container {
+  top: -16px;
+  padding: 0 4px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-micro-pill {
+  pointer-events: auto;
+  background: var(--sk-surface-card);
+  border-radius: var(--sk-radius-pill);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--sk-font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.55rem 1.1rem;
+  white-space: nowrap;
+}
+
+.hero-micro-pill i {
+  font-size: 1.1rem;
+}
+
+.hero-micro-pill-left {
+  border: 2px solid var(--sk-aqua);
+  animation: floatBubble1 4s ease-in-out infinite alternate;
+}
+
+.hero-micro-pill-right {
+  border: 2px solid var(--sk-pink);
+  animation: floatBubble2 4.5s ease-in-out infinite alternate;
+}
+
+.hero-card-livepod {
+  bottom: 20px;
+  right: 20px;
+  max-width: 250px;
+  padding: 1rem;
+  z-index: 4;
+  border: 2px solid var(--sk-yellow) !important;
+  transition: transform var(--sk-transition-bounce);
+}
+
+.hero-card-livepod:hover {
+  transform: translateY(-4px);
+}
+
+.hero-pod-emblem {
+  width: 32px;
+  height: 32px;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.hero-pod-title {
+  font-size: 0.88rem;
+  line-height: 1.2;
+}
+
+.hero-pod-status {
+  font-size: 0.72rem;
+}
+
+.hero-pod-status i {
+  font-size: 0.45rem;
+  vertical-align: middle;
+}
+
+.hero-pod-ratio {
+  font-size: 0.76rem;
+}
+
+.hero-pod-progress {
+  height: 5px;
+}
+
+/* ==========================================================================
    Organic Wave Section Dividers
    ========================================================================== */
 .wave-divider {
@@ -2255,21 +2325,42 @@ img {
   background: var(--sk-aqua);
 }
 .coach-details-body {
-  padding: 1.75rem;
+  padding: 2rem 1.75rem 2rem 1.75rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 .coach-role-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 38px;
   background: rgba(158, 211, 220, 0.35);
   color: #1A606C;
   font-family: var(--sk-font-heading);
   font-weight: 700;
   font-size: 0.82rem;
-  padding: 0.25rem 0.75rem;
+  padding: 0.35rem 0.95rem;
   border-radius: var(--sk-radius-pill);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.15rem;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
+}
+.coach-details-body .coach-name,
+.coach-details-body h4 {
+  font-family: var(--sk-font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin-bottom: 0.85rem;
+  color: var(--sk-dark);
+  line-height: 1.3;
+}
+.coach-details-body .coach-bio,
+.coach-details-body p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--sk-text-muted);
+  margin-bottom: 0;
 }
 [data-bs-theme="dark"] .coach-role-tag {
   color: var(--sk-aqua);

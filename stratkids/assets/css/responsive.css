@@ -3,12 +3,11 @@
    Supports 320px up to 1920px+ with zero horizontal overflow
    ========================================================================== */
 
-/* Global horizontal overflow prevention */
+/* Global horizontal overflow prevention (preserves position: sticky) */
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   width: 100%;
-  position: relative;
 }
 
 /* Large Desktop (1440px - 1920px+) */
@@ -132,24 +131,40 @@ html, body {
     padding: 1.5rem 1rem;
   }
 
+  /* Hero image floating badges & live cards on tablets (max 991.98px) */
+  .hero-top-badges-container {
+    top: -12px;
+    padding: 0 8px;
+    gap: 8px;
+  }
+  .hero-micro-pill {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.8rem !important;
+    gap: 0.4rem !important;
+  }
+  .hero-micro-pill i {
+    font-size: 0.95rem !important;
+  }
   .hero-floating-bubble-1 {
-    top: -12px !important;
-    left: 4px !important;
-    right: auto !important;
     font-size: 0.82rem !important;
     padding: 0.45rem 0.85rem !important;
   }
-  .hero-badge-screenfree {
-    top: -12px !important;
-    right: 4px !important;
-    font-size: 0.82rem !important;
-    padding: 0.45rem 0.85rem !important;
+  .hero-floating-bubble-2 {
+    font-size: 0.8rem !important;
+    padding: 0.45rem 0.8rem !important;
   }
   .hero-card-livepod {
-    bottom: 12px !important;
-    right: 12px !important;
-    max-width: 240px !important;
+    bottom: 14px !important;
+    right: 14px !important;
+    max-width: 215px !important;
     padding: 0.75rem !important;
+  }
+  .hero-pod-title {
+    font-size: 0.82rem !important;
+  }
+  .hero-pod-status,
+  .hero-pod-ratio {
+    font-size: 0.7rem !important;
   }
 
   .footer-cta-box {
@@ -204,6 +219,79 @@ html, body {
   table {
     max-width: 100%;
   }
+
+  /* Hero image visual tags & live card: scaled gracefully for mobile view */
+  .hero-top-badges-container {
+    top: -12px;
+    padding: 0 4px;
+    gap: 6px;
+  }
+  .hero-micro-pill {
+    font-size: 0.74rem !important;
+    padding: 0.32rem 0.65rem !important;
+    gap: 0.35rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  }
+  .hero-micro-pill i {
+    font-size: 0.85rem !important;
+  }
+  .hero-floating-bubble-1,
+  .hero-floating-bubble-2 {
+    font-size: 0.75rem !important;
+    padding: 0.35rem 0.7rem !important;
+  }
+  .hero-floating-bubble-2 .badge-emblem {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Main visual image container height and overlay */
+  .hero-main-img-box,
+  .hero-main-img-box img {
+    min-height: 380px !important;
+  }
+  .hero-bottom-overlay {
+    padding: 0.75rem 0.85rem !important;
+  }
+  .hero-season-pill,
+  .hero-dates-pill {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.55rem !important;
+  }
+
+  /* Compact live card for mobile - prevents collision with base overlay and photo */
+  .hero-card-livepod {
+    bottom: 10px !important;
+    right: 10px !important;
+    max-width: 175px !important;
+    padding: 0.5rem 0.65rem !important;
+    border-radius: 14px !important;
+    border-width: 1.5px !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+  }
+  .hero-pod-emblem {
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 0.75rem !important;
+  }
+  .hero-pod-title {
+    font-size: 0.72rem !important;
+    line-height: 1.15 !important;
+  }
+  .hero-pod-status {
+    font-size: 0.62rem !important;
+  }
+  .hero-pod-status i {
+    font-size: 0.38rem !important;
+  }
+  .hero-pod-ratio {
+    font-size: 0.63rem !important;
+  }
+  .hero-pod-progress {
+    height: 3px !important;
+    margin-top: 3px !important;
+  }
 }
 
 /* Small Phones (320px - 480px) */
@@ -213,6 +301,49 @@ html, body {
   }
   .brand-tagline {
     font-size: 0.6rem;
+  }
+  
+  /* Hero visual elements ultra-compact on small phones (320px - 480px) */
+  .hero-top-badges-container {
+    top: -10px;
+    padding: 0 2px;
+    gap: 4px;
+  }
+  .hero-micro-pill {
+    font-size: 0.68rem !important;
+    padding: 0.25rem 0.5rem !important;
+    gap: 0.25rem !important;
+  }
+  .hero-micro-pill i {
+    font-size: 0.78rem !important;
+  }
+  .hero-card-livepod {
+    bottom: 8px !important;
+    right: 8px !important;
+    max-width: 155px !important;
+    padding: 0.4rem 0.5rem !important;
+    border-radius: 12px !important;
+  }
+  .hero-pod-emblem {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 0.68rem !important;
+  }
+  .hero-pod-title {
+    font-size: 0.66rem !important;
+  }
+  .hero-pod-status,
+  .hero-pod-ratio {
+    font-size: 0.58rem !important;
+  }
+  .hero-season-pill,
+  .hero-dates-pill {
+    font-size: 0.65rem !important;
+    padding: 0.2rem 0.45rem !important;
+  }
+  .hero-main-img-box,
+  .hero-main-img-box img {
+    min-height: 350px !important;
   }
   
   /* CTA Buttons: Only full-width when part of a block CTA group, NOT inside newsletter or badge rows */

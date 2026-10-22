@@ -32,45 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 1. Sticky Navbar Shrink & Smart Hide on Scroll (Ensures footer icon & heading remain unobstructed)
+  // 1. Permanent Sticky Navbar (Adds .scrolled styling on scroll, stays sticky at all times)
   const navbar = document.querySelector('.stratkids-navbar');
-  const footerEl = document.querySelector('.stratkids-footer') || document.getElementById('mainGlobalFooter');
-  let lastScrollY = window.scrollY;
 
   if (navbar) {
     window.addEventListener('scroll', () => {
       const currentScrollY = window.scrollY;
 
-      // Add scrolled style
-      if (currentScrollY > 40) {
+      // Add scrolled style for refined elevation & compact padding
+      if (currentScrollY > 30) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
       }
-
-      // Hide navbar when approaching or viewing footer so footer icon and heading are 100% visible
-      let isNearFooter = false;
-      if (footerEl) {
-        const footerRect = footerEl.getBoundingClientRect();
-        // If the top of footer is within 250px of the viewport or visible
-        if (footerRect.top <= window.innerHeight - 20) {
-          isNearFooter = true;
-        }
-      }
-
-      if (isNearFooter) {
-        navbar.classList.add('nav-hidden-footer');
-      } else {
-        navbar.classList.remove('nav-hidden-footer');
-        // Smart scroll-down hide, scroll-up show on mobile/tablet
-        if (currentScrollY > 200 && currentScrollY > lastScrollY + 10) {
-          navbar.classList.add('nav-hidden-scroll');
-        } else if (currentScrollY < lastScrollY - 5 || currentScrollY <= 100) {
-          navbar.classList.remove('nav-hidden-scroll');
-        }
-      }
-
-      lastScrollY = currentScrollY;
     }, { passive: true });
   }
 

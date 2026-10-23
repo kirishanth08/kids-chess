@@ -32,8 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 1. Permanent Sticky Navbar (Adds .scrolled styling on scroll, stays sticky at all times)
+  // 1. Sticky Navbar Shrink & Smart Hide on Footer Scroll (Ensures footer icon & heading remain unobstructed)
   const navbar = document.querySelector('.stratkids-navbar');
+  const footerEl = document.querySelector('.stratkids-footer') || document.getElementById('mainGlobalFooter');
 
   if (navbar) {
     window.addEventListener('scroll', () => {
@@ -44,6 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
+      }
+
+      // Hide navbar when approaching or viewing footer so footer icon and heading are 100% visible
+      if (footerEl) {
+        const footerRect = footerEl.getBoundingClientRect();
+        if (footerRect.top <= window.innerHeight - 30) {
+          navbar.classList.add('nav-hidden-footer');
+        } else {
+          navbar.classList.remove('nav-hidden-footer');
+        }
       }
     }, { passive: true });
   }
@@ -155,59 +166,52 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 7. Dual Perspective Lens Switcher ("Camper Fun" vs "Parent Peace of Mind")
-  const lensBox = document.querySelector('.perspective-lens-box');
-  if (lensBox) {
-    const lensBtns = lensBox.querySelectorAll('.lens-btn');
+  function switchLens(lensType) {
+    const lensBtns = document.querySelectorAll('.lens-btn');
     const camperViews = document.querySelectorAll('.lens-view-camper');
     const parentViews = document.querySelectorAll('.lens-view-parent');
 
-    function switchLens(lensType) {
-      lensBtns.forEach(b => {
-        if (b.getAttribute('data-lens') === lensType) {
-          b.classList.add('active');
-        } else {
-          b.classList.remove('active');
-        }
-      });
-
-      if (lensType === 'camper') {
-        parentViews.forEach(v => {
-          v.classList.add('d-none');
-          v.style.opacity = '0';
-        });
-        camperViews.forEach(v => {
-          v.classList.remove('d-none');
-          requestAnimationFrame(() => {
-            v.style.transition = 'opacity 0.25s ease-in';
-            v.style.opacity = '1';
-          });
-        });
+    lensBtns.forEach(b => {
+      if (b.getAttribute('data-lens') === lensType) {
+        b.classList.add('active');
       } else {
-        camperViews.forEach(v => {
-          v.classList.add('d-none');
-          v.style.opacity = '0';
-        });
-        parentViews.forEach(v => {
-          v.classList.remove('d-none');
-          requestAnimationFrame(() => {
-            v.style.transition = 'opacity 0.25s ease-in';
-            v.style.opacity = '1';
-          });
-        });
+        b.classList.remove('active');
       }
-    }
-
-    lensBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const lensType = btn.getAttribute('data-lens') || 'parent';
-        switchLens(lensType);
-      });
     });
 
-    // Expose globally for inline onclick fallbacks
-    window.stratkidsSwitchLens = switchLens;
+    if (lensType === 'camper') {
+      parentViews.forEach(v => {
+        v.classList.add('d-none');
+        v.style.opacity = '0';
+      });
+      camperViews.forEach(v => {
+        v.classList.remove('d-none');
+        v.style.opacity = '1';
+      });
+    } else {
+      camperViews.forEach(v => {
+        v.classList.add('d-none');
+        v.style.opacity = '0';
+      });
+      parentViews.forEach(v => {
+        v.classList.remove('d-none');
+        v.style.opacity = '1';
+      });
+    }
   }
+
+  // Expose globally for inline onclick fallbacks
+  window.stratkidsSwitchLens = switchLens;
+
+  // Delegated click handler for lens buttons
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lens-btn');
+    if (btn) {
+      e.preventDefault();
+      const lensType = btn.getAttribute('data-lens') || 'parent';
+      switchLens(lensType);
+    }
+  });
 
   // 8. Interactive Live Tuition Estimator (Pricing Page & Enrollment)
   const tuitionSlider = document.getElementById('calcWeeksRange');

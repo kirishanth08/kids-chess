@@ -54,22 +54,101 @@ html, body {
 /* Mobile & Tablet Breakpoint (max 1199.98px) for Navbar Collapse */
 @media (max-width: 1199.98px) {
   /* StratKids Navbar Mobile Drawer */
-  .navbar-collapse {
-    background: var(--sk-surface-card);
-    border: 2px solid var(--sk-border-color);
-    border-radius: var(--sk-radius-lg);
-    padding: 1.5rem;
-    margin-top: 1rem;
-    box-shadow: var(--sk-shadow-lg);
+  .stratkids-navbar .navbar-collapse {
+    background: var(--sk-surface-card) !important;
+    border: 2px solid var(--sk-border-color) !important;
+    border-radius: var(--sk-radius-xl) !important;
+    padding: 1.25rem 1.25rem 1.5rem !important;
+    margin-top: 0.85rem !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22) !important;
+    position: relative;
+    z-index: 1050;
   }
 
-  .nav-tools {
-    margin-top: 1.25rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--sk-border-color);
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+  .stratkids-navbar .navbar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.35rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .stratkids-navbar .navbar-nav .nav-item {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .stratkids-navbar .navbar-nav .nav-link {
+    color: var(--sk-dark) !important;
+    padding: 0.7rem 1.1rem !important;
+    font-size: 1rem !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    background: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .stratkids-navbar .navbar-nav .nav-link:hover {
+    background-color: var(--sk-surface-alt) !important;
+    color: var(--sk-rose) !important;
+  }
+
+  .stratkids-navbar .navbar-nav .nav-link.active {
+    background-color: var(--sk-yellow) !important;
+    color: #111A20 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 12px rgba(254, 253, 153, 0.4) !important;
+  }
+
+  .stratkids-navbar .dropdown-menu {
+    position: static !important;
+    float: none !important;
+    background-color: var(--sk-surface-alt) !important;
+    border: 1px solid var(--sk-border-color) !important;
+    border-radius: 12px !important;
+    margin: 0.35rem 0 0.5rem 0.5rem !important;
+    box-shadow: none !important;
+    padding: 0.5rem !important;
+  }
+
+  .stratkids-navbar .dropdown-item {
+    color: var(--sk-dark) !important;
+    padding: 0.55rem 0.85rem !important;
+    border-radius: 8px !important;
+    font-size: 0.92rem !important;
+  }
+
+  .stratkids-navbar .dropdown-item:hover {
+    background-color: rgba(202, 97, 128, 0.12) !important;
+    color: var(--sk-rose) !important;
+  }
+
+  .stratkids-navbar .nav-tools {
+    margin-top: 1.25rem !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid var(--sk-border-color) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+
+  .stratkids-navbar .nav-tools .btn-nav-login {
+    display: inline-flex !important;
+    color: var(--sk-dark) !important;
+    font-weight: 700 !important;
+  }
+
+  .stratkids-navbar .nav-tools .tool-toggle-btn {
+    color: var(--sk-dark) !important;
+    border-color: var(--sk-border-color) !important;
+    background: var(--sk-surface-alt) !important;
   }
 }
 
@@ -417,3 +496,91 @@ html, body {
     font-size: 1.55rem !important;
   }
 }
+
+/* ==========================================================================
+   GLOBAL ALIGNMENTS & SPECIAL FIXES
+   ========================================================================== */
+
+/* 1. Global Container Alignment Guarantee */
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  max-width: 1280px;
+}
+
+/* 2. Sticky Navbar Smart Hide on Footer Scroll (Keeps footer icon & heading visible) */
+.stratkids-navbar {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.25s ease, padding 0.25s ease !important;
+}
+
+.stratkids-navbar.nav-hidden-footer {
+  transform: translateY(-100%) !important;
+  pointer-events: none !important;
+}
+
+/* 3. Customer Testimonial Row Equal Height & Alignment Guarantee */
+#campStoriesRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+#campStoriesRow > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+#campStoriesRow .sk-card {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 4. Home-2 Chess Academy Container Padding & Board Frame Overflow Fix */
+.chess-coin-academy {
+  padding: clamp(1.25rem, 3vw, 2.25rem) !important;
+  overflow: hidden !important;
+}
+
+.coin-list-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.65rem !important;
+  width: 100% !important;
+}
+
+.coin-card-btn {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.coin-details-title {
+  white-space: normal !important;
+  word-break: break-word !important;
+}
+
+.interactive-board-frame {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 5. Coach Cards Responsive Typography & Padding (About Page) */
+.coach-details-body {
+  padding: 1.5rem 1.25rem !important;
+}
+
+.coach-details-body .coach-name {
+  font-size: 1.15rem !important;
+  white-space: normal !important;
+}
+
+.coach-role-tag {
+  white-space: normal !important;
+  height: auto !important;
+  padding: 0.35rem 0.75rem !important;
+}
+

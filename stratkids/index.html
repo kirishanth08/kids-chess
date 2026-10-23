@@ -160,11 +160,10 @@
               <!-- Soft Gradient Overlay at base -->
               <div class="position-absolute bottom-0 start-0 end-0 p-3 p-md-4 hero-bottom-overlay" style="background: linear-gradient(180deg, transparent 0%, rgba(38, 51, 58, 0.88) 100%); z-index: 2;">
                 <div class="d-flex align-items-center justify-content-between text-white flex-wrap gap-2">
-                  <div class="hero-bottom-text-group">
+                  <div class="hero-bottom-text-group" style="max-width: 50%;">
                     <span class="badge text-dark rounded-pill px-2 px-md-3 py-1 fw-bold mb-1 hero-season-pill" style="background: var(--sk-yellow);">Summer 2026</span>
-                    <div class="fw-bold hero-bottom-tagline d-none d-md-block" style="font-size: 0.95rem;">Tactical Labs &bull; Outdoor Relays &bull; Strategy Arenas</div>
+                    <div class="fw-bold hero-bottom-tagline d-none d-md-block" style="font-size: 0.88rem;">Tactical Labs &bull; Outdoor Relays</div>
                   </div>
-                  <span class="badge bg-danger rounded-pill px-2 px-md-3 py-1 py-md-2 fw-bold hero-dates-pill">June 15 &ndash; Aug 7</span>
                 </div>
               </div>
             </div>
@@ -387,10 +386,10 @@
 
         <!-- Perspective Lens Switcher -->
         <div class="perspective-lens-box mt-3" id="perspectiveLensBox">
-          <button type="button" class="lens-btn active" data-lens="parent" id="lensBtnParent" aria-label="Parent Peace of Mind Mode">
+          <button type="button" class="lens-btn active" data-lens="parent" id="lensBtnParent" onclick="window.stratkidsSwitchLens &amp;&amp; window.stratkidsSwitchLens('parent')" aria-label="Parent Peace of Mind Mode">
             <i class="bi bi-shield-check"></i> Parent Peace of Mind
           </button>
-          <button type="button" class="lens-btn" data-lens="camper" id="lensBtnCamper" aria-label="Camper Fun and Quests Mode">
+          <button type="button" class="lens-btn" data-lens="camper" id="lensBtnCamper" onclick="window.stratkidsSwitchLens &amp;&amp; window.stratkidsSwitchLens('camper')" aria-label="Camper Fun and Quests Mode">
             <i class="bi bi-controller"></i> Camper Fun &amp; Quests
           </button>
         </div>
@@ -928,10 +927,10 @@
         </p>
       </div>
 
-      <div class="row g-4 mb-5 justify-content-center" id="campStoriesRow">
+      <div class="row g-4 mb-5 justify-content-center align-items-stretch" id="campStoriesRow">
         <!-- Testimonial 1 -->
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="sk-card h-100">
+        <div class="col-lg-4 col-md-4 col-12 d-flex">
+          <div class="sk-card w-100 h-100 d-flex flex-column">
             <div class="d-flex align-items-center gap-1 text-warning mb-3">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
@@ -949,8 +948,8 @@
         </div>
 
         <!-- Testimonial 2 -->
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="sk-card h-100">
+        <div class="col-lg-4 col-md-4 col-12 d-flex">
+          <div class="sk-card w-100 h-100 d-flex flex-column">
             <div class="d-flex align-items-center gap-1 text-warning mb-3">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
@@ -968,8 +967,8 @@
         </div>
 
         <!-- Testimonial 3 -->
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="sk-card h-100">
+        <div class="col-lg-4 col-md-4 col-12 d-flex">
+          <div class="sk-card w-100 h-100 d-flex flex-column">
             <div class="d-flex align-items-center gap-1 text-warning mb-3">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>

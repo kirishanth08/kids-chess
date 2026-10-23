@@ -21,10 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
       .trim();
   }
 
+  // Pre-cache full text for all cards using textContent so display:none never destroys searchable text
+  const programCards = document.querySelectorAll('.program-item-col');
+  programCards.forEach(card => {
+    const rawContent = card.textContent || '';
+    const cardAge = card.getAttribute('data-age-group') || '';
+    const cardSkill = card.getAttribute('data-skill-level') || '';
+    card._cachedSearchText = normalizeText(rawContent + ' ' + cardAge + ' ' + cardSkill);
+  });
+
   function filterPrograms() {
-    const programCards = document.querySelectorAll('.program-item-col');
+    const cards = document.querySelectorAll('.program-item-col');
     const activeBtn = document.querySelector('.program-filter-btn.active');
-    const selectedAge = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+    const selectedAge = activeBtn ? (activeBtn.getAttribute('data-filter') || 'all') : 'all';
     const selectedSkill = skillSelect ? skillSelect.value : 'all';
     const rawSearch = searchInput ? searchInput.value : '';
     const normalizedSearch = normalizeText(rawSearch);
@@ -32,16 +41,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let visibleCount = 0;
 
-    programCards.forEach(card => {
+    cards.forEach(card => {
       const cardAge = card.getAttribute('data-age-group') || '';
       const cardSkill = card.getAttribute('data-skill-level') || '';
-      const cardText = normalizeText(card.innerText + ' ' + cardAge + ' ' + cardSkill);
+      const cardText = card._cachedSearchText || normalizeText((card.textContent || '') + ' ' + cardAge + ' ' + cardSkill);
 
-      // Age check: matches 'all' or matches specific age group or card contains the age
-      const matchesAge = (selectedAge === 'all' || cardAge === selectedAge || cardAge.includes(selectedAge));
+      // Age check: matches 'all' or matches specific age group
+      const matchesAge = (
+        selectedAge === 'all' ||
+        cardAge === selectedAge ||
+        cardAge.split(' ').includes(selectedAge) ||
+        cardAge.includes(selectedAge)
+      );
 
-      // Skill check: matches 'all' or matches exact skill or card contains the skill
-      const matchesSkill = (selectedSkill === 'all' || cardSkill === selectedSkill || cardSkill.includes(selectedSkill));
+      // Skill check: matches 'all' or matches specific skill level
+      const matchesSkill = (
+        selectedSkill === 'all' ||
+        cardSkill === selectedSkill ||
+        cardSkill.split(' ').includes(selectedSkill) ||
+        cardSkill.includes(selectedSkill)
+      );
 
       // Search check: every token in search must be found in card text
       let matchesSearch = true;

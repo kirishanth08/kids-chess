@@ -3214,22 +3214,17 @@ textarea:focus-visible {
 }
 
 .coin-list-group {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 0.65rem;
-}
-
-@media (max-width: 576px) {
-  .coin-list-group {
-    grid-template-columns: 1fr;
-  }
+  width: 100%;
 }
 
 .coin-card-btn {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.7rem 0.85rem;
+  padding: 0.75rem 1rem;
   border-radius: var(--sk-radius-lg);
   border: 2px solid var(--sk-border-color);
   background: var(--sk-surface-alt);
@@ -3290,10 +3285,9 @@ textarea:focus-visible {
 .coin-details-title {
   font-family: var(--sk-font-heading);
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   margin-bottom: 0.1rem;
   color: var(--sk-dark);
-  white-space: nowrap;
 }
 
 .coin-details-sub {

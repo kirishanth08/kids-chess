@@ -584,3 +584,62 @@ html, body {
   padding: 0.35rem 0.75rem !important;
 }
 
+/* 6. Bento Grid Cards Equal Height & Callout Pill Alignment Guarantee */
+.sk-bento-grid {
+  align-items: stretch;
+}
+
+.bento-card {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.bento-card .lens-view-parent,
+.bento-card .lens-view-camper {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+@media (min-width: 992px) {
+  .bento-col-4 .lens-view-parent h4,
+  .bento-col-4 .lens-view-camper h4,
+  .bento-col-6 .lens-view-parent h4,
+  .bento-col-6 .lens-view-camper h4 {
+    min-height: 3.4rem !important;
+    display: flex !important;
+    align-items: flex-start !important;
+  }
+}
+
+.bento-callout-pill {
+  min-height: 76px;
+  margin-top: auto !important;
+}
+
+/* 7. Centered Bento / Feature Cards Equal Height & Spacing Guarantee */
+.bento-card.text-center {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+@media (min-width: 992px) {
+  .bento-card.text-center h4,
+  .bento-card.text-center h5,
+  .bento-card.text-center h6 {
+    min-height: 2.1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .bento-card.text-center p,
+  .bento-card.text-center small:not(.d-block) {
+    min-height: 5.6rem !important;
+  }
+}
+
+

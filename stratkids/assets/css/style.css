@@ -96,9 +96,9 @@ html, body {
   color: var(--sk-dark) !important;
 }
 
-[data-bs-theme="dark"] .text-dark,
-[data-bs-theme="dark"] strong.text-dark,
-[data-bs-theme="dark"] span.text-dark {
+[data-bs-theme="dark"] .text-dark:not(.bg-warning):not(.bg-warning *):not([style*="var(--sk-yellow)"]):not([style*="var(--sk-yellow)"] *):not([style*="#FEFD99"]):not([style*="#FEFD99"] *),
+[data-bs-theme="dark"] strong.text-dark:not(.bg-warning *):not([style*="var(--sk-yellow)"] *),
+[data-bs-theme="dark"] span.text-dark:not(.bg-warning):not(.bg-warning *):not([style*="var(--sk-yellow)"]):not([style*="var(--sk-yellow)"] *) {
   color: var(--sk-dark) !important;
 }
 
@@ -149,7 +149,8 @@ html, body {
   color: #8A6D00;
 }
 [data-bs-theme="dark"] .lens-tag-yellow,
-[data-bs-theme="dark"] .text-warning {
+[data-bs-theme="dark"] .text-warning,
+[data-bs-theme="dark"] i.text-warning {
   color: #FFE66D !important;
 }
 
@@ -157,7 +158,10 @@ html, body {
   color: #145E6B;
 }
 [data-bs-theme="dark"] .lens-tag-aqua,
-[data-bs-theme="dark"] .text-info {
+[data-bs-theme="dark"] .text-info,
+[data-bs-theme="dark"] i.text-info,
+[data-bs-theme="dark"] .text-primary,
+[data-bs-theme="dark"] i.text-primary {
   color: #7FE5F5 !important;
 }
 
@@ -165,8 +169,124 @@ html, body {
   color: #B24F6C;
 }
 [data-bs-theme="dark"] .lens-tag-rose,
-[data-bs-theme="dark"] .text-rose {
+[data-bs-theme="dark"] .text-rose,
+[data-bs-theme="dark"] i.text-rose,
+[data-bs-theme="dark"] .text-danger,
+[data-bs-theme="dark"] i.text-danger {
   color: #FFA3BA !important;
+}
+
+[data-bs-theme="dark"] .text-success,
+[data-bs-theme="dark"] i.text-success {
+  color: #4ADE80 !important;
+}
+
+[data-bs-theme="dark"] .text-secondary,
+[data-bs-theme="dark"] i.text-secondary {
+  color: #94A3B8 !important;
+}
+
+[data-bs-theme="dark"] .text-dark:not(.bg-warning):not(.bg-warning *):not([style*="var(--sk-yellow)"]):not([style*="var(--sk-yellow)"] *):not([style*="#FEFD99"]):not([style*="#FEFD99"] *),
+[data-bs-theme="dark"] strong.text-dark:not(.bg-warning *):not([style*="var(--sk-yellow)"] *),
+[data-bs-theme="dark"] span.text-dark:not(.bg-warning):not(.bg-warning *):not([style*="var(--sk-yellow)"]):not([style*="var(--sk-yellow)"] *):not([style*="#FEFD99"]):not([style*="#FEFD99"] *),
+[data-bs-theme="dark"] h1.text-dark,
+[data-bs-theme="dark"] h2.text-dark,
+[data-bs-theme="dark"] h3.text-dark,
+[data-bs-theme="dark"] h4.text-dark,
+[data-bs-theme="dark"] h5.text-dark,
+[data-bs-theme="dark"] h6.text-dark,
+[data-bs-theme="dark"] p.text-dark {
+  color: #F3F8FA !important;
+}
+
+/* Dark Mode Badges & Subtles */
+[data-bs-theme="dark"] .badge.bg-light {
+  background-color: #23313C !important;
+  color: #E2E8F0 !important;
+  border-color: #344655 !important;
+}
+[data-bs-theme="dark"] .badge.bg-white {
+  background-color: #23313C !important;
+  color: #FFFFFF !important;
+}
+[data-bs-theme="dark"] .badge.bg-secondary {
+  background-color: #334155 !important;
+  color: #E2E8F0 !important;
+}
+[data-bs-theme="dark"] .badge.bg-success-subtle {
+  background-color: rgba(74, 222, 128, 0.2) !important;
+  color: #4ADE80 !important;
+}
+[data-bs-theme="dark"] .badge.bg-warning-subtle {
+  background-color: rgba(254, 253, 153, 0.2) !important;
+  color: #FEFD99 !important;
+}
+[data-bs-theme="dark"] .badge.bg-danger-subtle {
+  background-color: rgba(255, 123, 149, 0.2) !important;
+  color: #FFA3BA !important;
+}
+[data-bs-theme="dark"] .badge.bg-info-subtle {
+  background-color: rgba(127, 229, 245, 0.2) !important;
+  color: #7FE5F5 !important;
+}
+[data-bs-theme="dark"] .badge.bg-warning {
+  background-color: #FEFD99 !important;
+  color: #111A20 !important;
+}
+
+/* Custom In-line Contrast Fixes for Badges/Circles in Dark Mode */
+[data-bs-theme="dark"] .milestone-step .rounded-circle.bg-white {
+  background-color: #19242D !important;
+}
+[data-bs-theme="dark"] .milestone-step .rounded-circle[style*="border-color: var(--sk-aqua)"] {
+  color: #7FE5F5 !important;
+  border-color: #7FE5F5 !important;
+}
+[data-bs-theme="dark"] .milestone-step .rounded-circle[style*="border-color: var(--sk-rose)"] {
+  color: #FFA3BA !important;
+  border-color: #FFA3BA !important;
+}
+[data-bs-theme="dark"] [style*="color: #16606C"],
+[data-bs-theme="dark"] [style*="color:#16606C"],
+[data-bs-theme="dark"] [style*="color: #145964"],
+[data-bs-theme="dark"] [style*="color:#145964"],
+[data-bs-theme="dark"] [style*="color: #0E505C"],
+[data-bs-theme="dark"] [style*="color:#0E505C"] {
+  color: #7FE5F5 !important;
+}
+[data-bs-theme="dark"] [style*="color: #8A7A00"],
+[data-bs-theme="dark"] [style*="color:#8A7A00"],
+[data-bs-theme="dark"] [style*="color: #6B5500"],
+[data-bs-theme="dark"] [style*="color:#6B5500"] {
+  color: #FEFD99 !important;
+}
+[data-bs-theme="dark"] [style*="color: #9C3854"],
+[data-bs-theme="dark"] [style*="color:#9C3854"],
+[data-bs-theme="dark"] [style*="color: #8C2E49"],
+[data-bs-theme="dark"] [style*="color:#8C2E49"] {
+  color: #FF9EBE !important;
+}
+
+/* Universal In-line dark text overrides on dark theme cards */
+[data-bs-theme="dark"] [style*="color: var(--sk-dark)"],
+[data-bs-theme="dark"] [style*="color:#26333A"],
+[data-bs-theme="dark"] [style*="color: #26333A"],
+[data-bs-theme="dark"] [style*="color:#111A20"],
+[data-bs-theme="dark"] [style*="color: #111A20"],
+[data-bs-theme="dark"] [style*="color:#1A242B"],
+[data-bs-theme="dark"] [style*="color: #1A242B"],
+[data-bs-theme="dark"] [style*="color:#0E151A"],
+[data-bs-theme="dark"] [style*="color: #0E151A"],
+[data-bs-theme="dark"] [style*="color: #212529"],
+[data-bs-theme="dark"] [style*="color:#212529"] {
+  color: #F3F8FA !important;
+}
+
+[data-bs-theme="dark"] [style*="color: #42555F"],
+[data-bs-theme="dark"] [style*="color:#42555F"],
+[data-bs-theme="dark"] [style*="color: #64748B"],
+[data-bs-theme="dark"] [style*="color:#64748B"] {
+  color: #94A3B8 !important;
 }
 
 [data-bs-theme="dark"] .hero-stat-pill .h4 {
@@ -720,24 +840,60 @@ img {
   font-size: 1.65rem;
   font-weight: 800;
   line-height: 1;
-  color: #FFFFFF !important;
+  color: var(--sk-dark);
   letter-spacing: -0.02em;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .brand-title span {
-  color: #FF6B8B !important;
+  color: #CA6180;
 }
 
 .brand-tagline {
   font-family: var(--sk-font-body);
   font-size: 0.68rem;
   font-weight: 800;
-  color: #7FE5F5 !important;
+  color: #CA6180;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-top: 3px;
+}
+
+/* Stratkids Navbar Brand Styling (Always Crisp on Dark Header) */
+.stratkids-navbar .brand-title {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.stratkids-navbar .brand-title span {
+  color: #FF6B8B !important;
+}
+
+.stratkids-navbar .brand-tagline {
+  color: #7FE5F5 !important;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stratkids-navbar .btn-outline-dark {
+  color: #F3F8FA !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.stratkids-navbar .btn-outline-dark:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #FFFFFF !important;
+}
+
+/* Dark Mode Brand Rules */
+[data-bs-theme="dark"] .brand-title {
+  color: #FFFFFF !important;
+}
+
+[data-bs-theme="dark"] .brand-title span {
+  color: #FF6B8B !important;
+}
+
+[data-bs-theme="dark"] .brand-tagline {
+  color: #7FE5F5 !important;
 }
 
 .stratkids-navbar .container,
@@ -799,8 +955,31 @@ img {
   color: #7FE5F5 !important;
 }
 
+.stratkids-navbar .navbar-toggler {
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: var(--sk-radius-sm) !important;
+  padding: 0.45rem 0.65rem !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.stratkids-navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(158, 211, 220, 0.35) !important;
+}
+
 .stratkids-navbar .navbar-toggler-icon {
-  filter: invert(1);
+  filter: none !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.95%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  width: 1.35em !important;
+  height: 1.35em !important;
+}
+
+[data-bs-theme="dark"] .stratkids-navbar .navbar-toggler-icon {
+  filter: none !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.95%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 .stratkids-navbar .tool-toggle-btn {
@@ -1307,8 +1486,13 @@ img {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  height: 100%;
   width: 100%;
+}
+.bento-card .lens-view-parent.d-none,
+.bento-card .lens-view-camper.d-none,
+.lens-view-parent.d-none,
+.lens-view-camper.d-none {
+  display: none !important;
 }
 
 /* Uniform heading heights across 3-column Bento cards */
@@ -2238,14 +2422,112 @@ img {
   font-weight: 700;
   font-size: 0.85rem;
   transition: transform 0.3s ease;
+  border: 2px solid transparent;
 }
 .board-tile:hover {
   transform: scale(1.06);
 }
-.board-tile.tile-aqua { background: rgba(158, 211, 220, 0.4); color: #1A606C; }
-.board-tile.tile-yellow { background: rgba(254, 253, 153, 0.5); color: #6B6800; }
-.board-tile.tile-pink { background: rgba(252, 183, 199, 0.5); color: #8C2E49; }
-.board-tile.tile-rose { background: var(--sk-rose); color: #FFFFFF; }
+.board-tile.tile-rose { background: #CA6180 !important; color: #FFFFFF !important; border-color: #B24F6C !important; }
+.board-tile.tile-aqua { background: #E0F7FA !important; color: #0A3C45 !important; border-color: #7FE5F5 !important; }
+.board-tile.tile-yellow { background: #FFFDE0 !important; color: #363000 !important; border-color: #FEFD99 !important; }
+.board-tile.tile-pink { background: #FCE4EC !important; color: #52091D !important; border-color: #FCB7C7 !important; }
+
+/* Dark mode high-contrast overrides for board tiles */
+[data-bs-theme="dark"] .board-grid-preview {
+  background: #111B21 !important;
+  border-color: #32535F !important;
+}
+[data-bs-theme="dark"] .board-tile.tile-rose {
+  background: #B24F6C !important;
+  color: #FFFFFF !important;
+  border-color: #E27A97 !important;
+}
+[data-bs-theme="dark"] .board-tile.tile-aqua {
+  background: #123740 !important;
+  color: #B2F7FF !important;
+  border-color: #267182 !important;
+}
+[data-bs-theme="dark"] .board-tile.tile-yellow {
+  background: #3B360A !important;
+  color: #FFFCA8 !important;
+  border-color: #7A7016 !important;
+}
+[data-bs-theme="dark"] .board-tile.tile-pink {
+  background: #451522 !important;
+  color: #FFC4D4 !important;
+  border-color: #8C2E49 !important;
+}
+[data-bs-theme="dark"] .board-tile i.text-warning {
+  color: #FFE566 !important;
+}
+[data-bs-theme="dark"] .board-tile i.text-primary {
+  color: #7FE5F5 !important;
+}
+[data-bs-theme="dark"] .board-tile i.text-danger {
+  color: #FF8BA4 !important;
+}
+[data-bs-theme="dark"] .board-tile i.text-success {
+  color: #72E4A0 !important;
+}
+[data-bs-theme="dark"] .board-tile i.text-info {
+  color: #80E3F5 !important;
+}
+
+/* Bento Card Image Header (Replaces generic icons with real photos) */
+.bento-card-media {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--sk-border-color);
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+}
+.bento-col-4 .bento-card-media {
+  height: 180px !important;
+}
+.bento-col-6 .bento-card-media {
+  height: 240px !important;
+}
+.bento-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.bento-card:hover .bento-card-media img {
+  transform: scale(1.04);
+}
+
+/* Weekly Finale & Activity Badge High Contrast Fix */
+.activity-badge,
+.activity-badge.badge,
+.badge.bg-warning-subtle.text-warning {
+  background-color: #FEFD99 !important;
+  color: #111A20 !important;
+  font-weight: 700 !important;
+}
+[data-bs-theme="dark"] .activity-badge,
+[data-bs-theme="dark"] .activity-badge.badge,
+[data-bs-theme="dark"] .badge.bg-warning-subtle.text-warning {
+  background-color: #3B360A !important;
+  color: #FFFDE0 !important;
+  border: 1px solid #7A7016 !important;
+}
+
+/* Hero CTA Group Equal Alignment */
+.hero-cta-group {
+  display: flex !important;
+  align-items: stretch;
+}
+.hero-cta-group .btn-strat-primary,
+.hero-cta-group .btn-strat-secondary,
+.hero-cta-group .btn {
+  flex: 1 1 200px;
+  max-width: 250px;
+  text-align: center;
+  justify-content: center;
+}
 
 /* Move Number Badge */
 .step-number-badge {
@@ -3051,17 +3333,61 @@ img {
   border-radius: var(--sk-radius-pill);
   border: 2px solid var(--sk-border-color);
   background: var(--sk-surface-card);
+  color: var(--sk-dark) !important;
   cursor: pointer;
   font-family: var(--sk-font-heading);
   font-weight: 700;
   font-size: 0.95rem;
   transition: all 0.2s ease;
 }
+.child-select-pill strong {
+  color: var(--sk-dark) !important;
+}
+.child-select-pill .text-muted,
+.child-select-pill span.text-muted {
+  color: var(--sk-dark-soft) !important;
+}
 .child-select-pill.active {
-  background: var(--sk-yellow);
-  border-color: #E6E458;
-  color: #26333A;
+  background: #FEFD99 !important;
+  border-color: #E6E458 !important;
+  color: #111A20 !important;
   box-shadow: var(--sk-shadow-sm);
+}
+.child-select-pill.active strong {
+  color: #111A20 !important;
+}
+.child-select-pill.active .text-muted,
+.child-select-pill.active span,
+.child-select-pill.active small {
+  color: #383200 !important;
+  font-weight: 700 !important;
+}
+
+[data-bs-theme="dark"] .child-select-pill {
+  background: #1A242B !important;
+  border-color: #2D3E4A !important;
+  color: #F3F8FA !important;
+}
+[data-bs-theme="dark"] .child-select-pill strong {
+  color: #FFFFFF !important;
+}
+[data-bs-theme="dark"] .child-select-pill .text-muted,
+[data-bs-theme="dark"] .child-select-pill span {
+  color: #94A3B8 !important;
+}
+[data-bs-theme="dark"] .child-select-pill.active {
+  background: #FEFD99 !important;
+  border-color: #FACC15 !important;
+  color: #111A20 !important;
+}
+[data-bs-theme="dark"] .child-select-pill.active strong {
+  color: #111A20 !important;
+}
+[data-bs-theme="dark"] .child-select-pill.active .text-muted,
+[data-bs-theme="dark"] .child-select-pill.active span,
+[data-bs-theme="dark"] .child-select-pill.active small {
+  color: #383200 !important;
+  font-weight: 700 !important;
 }
 
 .chat-contact-item {
@@ -3563,6 +3889,35 @@ textarea:focus-visible {
   color: var(--sk-dark);
   white-space: nowrap;
   margin-left: auto;
+}
+
+.badge-coin-yellow,
+[data-bs-theme="dark"] .badge-coin-yellow {
+  background-color: #FEFD99 !important;
+  color: #111A20 !important;
+  font-weight: 800 !important;
+}
+
+.badge-coin-aqua,
+[data-bs-theme="dark"] .badge-coin-aqua {
+  background-color: #9ED3DC !important;
+  color: #0E4852 !important;
+  font-weight: 800 !important;
+}
+
+.badge-coin-pink,
+[data-bs-theme="dark"] .badge-coin-pink {
+  background-color: #FFA3BA !important;
+  color: #7A1C34 !important;
+  font-weight: 800 !important;
+}
+
+.badge-coin-dark,
+[data-bs-theme="dark"] .badge-coin-dark {
+  background-color: #243440 !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  font-weight: 700 !important;
 }
 
 /* 8x8 Chessboard Grid for Visualizer & Playable Arena */
@@ -4079,74 +4434,377 @@ textarea:focus-visible {
 /* ALL PASTEL CONTAINERS & CARDS - BOTH LIGHT AND DARK MODES:
    Because pastel surfaces are light/bright, text inside them MUST ALWAYS be deep dark (#111A20)
    to ensure maximum AAA readability and contrast. */
-.card-pastel-aqua,
-.card-pastel-pink,
-[style*="background-color: var(--sk-aqua)"],
-[style*="background-color: var(--sk-pink)"],
-[style*="background: var(--sk-aqua)"],
-[style*="background: var(--sk-pink)"],
-[style*="var(--sk-yellow)"] {
+/* Pastel Card Containers in Light Mode */
+:root:not([data-bs-theme="dark"]) .card-pastel-aqua,
+:root:not([data-bs-theme="dark"]) .card-pastel-pink,
+:root:not([data-bs-theme="dark"]) .card-pastel-yellow {
   color: #111A20 !important;
 }
 
-.card-pastel-title,
-.card-pastel-aqua h1, .card-pastel-aqua h2, .card-pastel-aqua h3, .card-pastel-aqua h4, .card-pastel-aqua h5, .card-pastel-aqua h6,
-.card-pastel-pink h1, .card-pastel-pink h2, .card-pastel-pink h3, .card-pastel-pink h4, .card-pastel-pink h5, .card-pastel-pink h6,
-[style*="var(--sk-aqua)"] h1, [style*="var(--sk-aqua)"] h2, [style*="var(--sk-aqua)"] h3, [style*="var(--sk-aqua)"] h4, [style*="var(--sk-aqua)"] h5, [style*="var(--sk-aqua)"] h6,
-[style*="var(--sk-pink)"] h1, [style*="var(--sk-pink)"] h2, [style*="var(--sk-pink)"] h3, [style*="var(--sk-pink)"] h4, [style*="var(--sk-pink)"] h5, [style*="var(--sk-pink)"] h6,
-[style*="var(--sk-yellow)"] h1, [style*="var(--sk-yellow)"] h2, [style*="var(--sk-yellow)"] h3, [style*="var(--sk-yellow)"] h4, [style*="var(--sk-yellow)"] h5, [style*="var(--sk-yellow)"] h6,
-[style*="radial-gradient"][style*="aqua"] h1, [style*="radial-gradient"][style*="aqua"] h2, [style*="radial-gradient"][style*="aqua"] h3, [style*="radial-gradient"][style*="aqua"] h4, [style*="radial-gradient"][style*="aqua"] h5, [style*="radial-gradient"][style*="aqua"] h6,
-[style*="radial-gradient"][style*="pink"] h1, [style*="radial-gradient"][style*="pink"] h2, [style*="radial-gradient"][style*="pink"] h3, [style*="radial-gradient"][style*="pink"] h4, [style*="radial-gradient"][style*="pink"] h5, [style*="radial-gradient"][style*="pink"] h6 {
+:root:not([data-bs-theme="dark"]) .card-pastel-aqua h1,
+:root:not([data-bs-theme="dark"]) .card-pastel-aqua h2,
+:root:not([data-bs-theme="dark"]) .card-pastel-aqua h3,
+:root:not([data-bs-theme="dark"]) .card-pastel-aqua h4,
+:root:not([data-bs-theme="dark"]) .card-pastel-aqua h5,
+:root:not([data-bs-theme="dark"]) .card-pastel-aqua h6,
+:root:not([data-bs-theme="dark"]) .card-pastel-pink h1,
+:root:not([data-bs-theme="dark"]) .card-pastel-pink h2,
+:root:not([data-bs-theme="dark"]) .card-pastel-pink h3,
+:root:not([data-bs-theme="dark"]) .card-pastel-pink h4,
+:root:not([data-bs-theme="dark"]) .card-pastel-pink h5,
+:root:not([data-bs-theme="dark"]) .card-pastel-pink h6 {
   color: #111A20 !important;
   font-weight: 800 !important;
 }
 
-.card-pastel-desc,
-.card-pastel-aqua p, .card-pastel-pink p,
-[style*="var(--sk-aqua)"] p, [style*="var(--sk-pink)"] p, [style*="var(--sk-yellow)"] p,
-[style*="var(--sk-aqua)"] .text-dark-soft, [style*="var(--sk-pink)"] .text-dark-soft, [style*="var(--sk-yellow)"] .text-dark-soft,
-[style*="var(--sk-aqua)"] .text-dark, [style*="var(--sk-pink)"] .text-dark, [style*="var(--sk-yellow)"] .text-dark,
-[style*="radial-gradient"][style*="aqua"] p, [style*="radial-gradient"][style*="pink"] p,
-[style*="radial-gradient"][style*="aqua"] .text-dark-soft, [style*="radial-gradient"][style*="pink"] .text-dark-soft,
-[style*="radial-gradient"][style*="aqua"] .text-dark, [style*="radial-gradient"][style*="pink"] .text-dark {
-  color: #152A30 !important;
-  font-weight: 500 !important;
-}
+/* ==========================================================================
+   Universal Dark Mode High-Contrast Rules (Resolves All User Screenshot Issues)
+   ========================================================================== */
 
-.card-pastel-link,
-.card-pastel-aqua a, [style*="var(--sk-aqua)"] a {
-  color: #0A3B43 !important;
-  font-weight: 700 !important;
-}
-.card-pastel-pink a, [style*="var(--sk-pink)"] a {
-  color: #5C1528 !important;
-  font-weight: 700 !important;
-}
-
-/* Universal text-dark & text-dark-soft High-Contrast Fix in Dark Mode (Non-Pastel Containers) */
-[data-bs-theme="dark"] .text-dark:not(.btn-warning):not(.btn-warning *):not(.bg-warning):not(.bg-warning *):not(.badge.bg-warning):not(.alert-warning):not(.alert-warning *):not(.badge.bg-info):not(.badge.bg-light):not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *),
-[data-bs-theme="dark"] strong.text-dark:not(.btn-warning *):not(.bg-warning *):not(.alert-warning *):not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *),
-[data-bs-theme="dark"] span.text-dark:not(.btn-warning *):not(.bg-warning *):not(.alert-warning *):not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *),
-[data-bs-theme="dark"] h1.text-dark:not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *),
-[data-bs-theme="dark"] h2.text-dark:not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *),
-[data-bs-theme="dark"] h3.text-dark:not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *),
-[data-bs-theme="dark"] h4.text-dark:not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *),
-[data-bs-theme="dark"] h5.text-dark:not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *),
-[data-bs-theme="dark"] h6.text-dark:not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *),
-[data-bs-theme="dark"] p.text-dark:not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *),
-[data-bs-theme="dark"] div.text-dark:not(.alert-warning):not(.badge):not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *) {
+/* 1. All Headings in Dark Mode are White */
+[data-bs-theme="dark"] h1:not(.badge):not(.badge *),
+[data-bs-theme="dark"] h2:not(.badge):not(.badge *),
+[data-bs-theme="dark"] h3:not(.badge):not(.badge *),
+[data-bs-theme="dark"] h4:not(.badge):not(.badge *),
+[data-bs-theme="dark"] h5:not(.badge):not(.badge *),
+[data-bs-theme="dark"] h6:not(.badge):not(.badge *),
+[data-bs-theme="dark"] .h1:not(.badge):not(.badge *),
+[data-bs-theme="dark"] .h2:not(.badge):not(.badge *),
+[data-bs-theme="dark"] .h3:not(.badge):not(.badge *),
+[data-bs-theme="dark"] .h4:not(.badge):not(.badge *),
+[data-bs-theme="dark"] .h5:not(.badge):not(.badge *),
+[data-bs-theme="dark"] .h6:not(.badge):not(.badge *),
+[data-bs-theme="dark"] .sk-card h1,
+[data-bs-theme="dark"] .sk-card h2,
+[data-bs-theme="dark"] .sk-card h3,
+[data-bs-theme="dark"] .sk-card h4,
+[data-bs-theme="dark"] .sk-card h5,
+[data-bs-theme="dark"] .sk-card h6,
+[data-bs-theme="dark"] .bento-card h1,
+[data-bs-theme="dark"] .bento-card h2,
+[data-bs-theme="dark"] .bento-card h3,
+[data-bs-theme="dark"] .bento-card h4,
+[data-bs-theme="dark"] .bento-card h5,
+[data-bs-theme="dark"] .bento-card h6,
+[data-bs-theme="dark"] .activity-uniform-card h1,
+[data-bs-theme="dark"] .activity-uniform-card h2,
+[data-bs-theme="dark"] .activity-uniform-card h3,
+[data-bs-theme="dark"] .activity-uniform-card h4,
+[data-bs-theme="dark"] .activity-uniform-card h5,
+[data-bs-theme="dark"] .activity-uniform-card h6,
+[data-bs-theme="dark"] [style*="color: var(--sk-dark)"],
+[data-bs-theme="dark"] [style*="color:var(--sk-dark)"] {
   color: #FFFFFF !important;
 }
 
-[data-bs-theme="dark"] a.text-dark:not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *) {
-  color: #F8FAFC !important;
-}
-[data-bs-theme="dark"] a.text-dark:not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *):hover {
-  color: #FF8EA6 !important;
+/* 2. Text-dark and Text-muted in Dark Mode */
+[data-bs-theme="dark"] .text-dark:not(.badge.bg-warning):not(.badge.bg-warning *):not(.tag-yellow):not(.badge-gold):not([style*="var(--sk-yellow)"]):not([style*="var(--sk-yellow)"] *):not([style*="#FEFD99"]):not([style*="#FEFD99"] *):not(.btn-warning):not(.btn-warning *):not(.alert-warning):not(.alert-warning *),
+[data-bs-theme="dark"] strong.text-dark:not(.badge.bg-warning *):not([style*="var(--sk-yellow)"] *),
+[data-bs-theme="dark"] span.text-dark:not(.badge.bg-warning):not(.badge.bg-warning *):not([style*="var(--sk-yellow)"] *),
+[data-bs-theme="dark"] div.text-dark:not(.badge.bg-warning *):not([style*="var(--sk-yellow)"] *),
+[data-bs-theme="dark"] p.text-dark:not([style*="var(--sk-yellow)"] *),
+[data-bs-theme="dark"] a.text-dark:not(.badge *):not([style*="var(--sk-yellow)"] *) {
+  color: #FFFFFF !important;
 }
 
-[data-bs-theme="dark"] .text-dark-soft:not(.card-pastel-aqua *):not(.card-pastel-pink *):not([style*="var(--sk-aqua)"] *):not([style*="var(--sk-pink)"] *):not([style*="var(--sk-yellow)"] *):not([style*="radial-gradient"] *) {
-  color: #CBD5E1 !important;
+[data-bs-theme="dark"] .text-dark-soft,
+[data-bs-theme="dark"] .text-muted:not([style*="background: var(--sk-yellow)"] *) {
+  color: #9FB2BC !important;
+}
+
+/* 3. Yellow Badges, Pills & Tags MUST ALWAYS HAVE DARK TEXT (Both Light & Dark Mode) */
+.badge.bg-warning,
+.badge-gold,
+.badge-yellow,
+.lens-tag-yellow,
+.tag-yellow,
+.callout-badge.bg-warning,
+.activity-badge.bg-warning,
+.badge-coin-yellow,
+.coin-pts-badge[style*="var(--sk-yellow)"],
+[style*="background: var(--sk-yellow)"],
+[style*="background:#FEFD99"],
+[style*="background: #FEFD99"],
+[data-bs-theme="dark"] .badge.bg-warning,
+[data-bs-theme="dark"] .badge.bg-warning *,
+[data-bs-theme="dark"] .badge.bg-warning.text-dark,
+[data-bs-theme="dark"] .badge-coin-yellow,
+[data-bs-theme="dark"] .badge[style*="var(--sk-yellow)"],
+[data-bs-theme="dark"] .badge[style*="var(--sk-yellow)"] *,
+[data-bs-theme="dark"] .coin-pts-badge[style*="var(--sk-yellow)"],
+[data-bs-theme="dark"] .callout-badge.bg-warning,
+[data-bs-theme="dark"] .activity-badge.bg-warning,
+[data-bs-theme="dark"] [style*="background: var(--sk-yellow)"],
+[data-bs-theme="dark"] [style*="background: var(--sk-yellow)"] *,
+[data-bs-theme="dark"] [style*="background:#FEFD99"],
+[data-bs-theme="dark"] [style*="background:#FEFD99"] *,
+[data-bs-theme="dark"] [style*="background: #FEFD99"],
+[data-bs-theme="dark"] [style*="background: #FEFD99"] * {
+  background-color: #FEFD99 !important;
+  color: #111A20 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+/* 4. Pink Badges and Pills MUST ALWAYS HAVE DEEP HIGH-CONTRAST TEXT */
+.badge-pink,
+.lens-tag-pink,
+.tag-pink,
+.coin-pts-badge[style*="var(--sk-pink)"],
+[style*="background: var(--sk-pink)"],
+[data-bs-theme="dark"] .coin-pts-badge[style*="var(--sk-pink)"],
+[data-bs-theme="dark"] .badge[style*="var(--sk-pink)"],
+[data-bs-theme="dark"] [style*="background: var(--sk-pink)"],
+[data-bs-theme="dark"] [style*="background: var(--sk-pink)"] * {
+  background-color: #FFA3BA !important;
+  color: #7A1C34 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+/* 5. Aqua Badges and Pills MUST ALWAYS HAVE DEEP HIGH-CONTRAST TEXT */
+.badge-aqua,
+.lens-tag-aqua,
+.tag-aqua,
+.coin-pts-badge[style*="var(--sk-aqua)"],
+[style*="background: var(--sk-aqua)"],
+[data-bs-theme="dark"] .coin-pts-badge[style*="var(--sk-aqua)"],
+[data-bs-theme="dark"] .badge[style*="var(--sk-aqua)"],
+[data-bs-theme="dark"] [style*="background: var(--sk-aqua)"],
+[data-bs-theme="dark"] [style*="background: var(--sk-aqua)"] * {
+  background-color: #9ED3DC !important;
+  color: #0E4852 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+/* 6. Subtle Badges in Dark Mode (Active Play & Weekly Finale Fix) */
+[data-bs-theme="dark"] .badge.bg-warning-subtle,
+[data-bs-theme="dark"] .bg-warning-subtle {
+  background-color: rgba(254, 253, 153, 0.22) !important;
+  color: #FEFD99 !important;
+  border: 1px solid rgba(254, 253, 153, 0.45) !important;
+}
+[data-bs-theme="dark"] .badge.bg-warning-subtle.text-warning,
+[data-bs-theme="dark"] .badge.bg-warning-subtle .text-warning {
+  color: #FEFD99 !important;
+}
+
+[data-bs-theme="dark"] .badge.bg-danger-subtle,
+[data-bs-theme="dark"] .bg-danger-subtle {
+  background-color: rgba(255, 107, 139, 0.22) !important;
+  color: #FFA3BA !important;
+  border: 1px solid rgba(255, 107, 139, 0.45) !important;
+}
+[data-bs-theme="dark"] .badge.bg-danger-subtle.text-danger,
+[data-bs-theme="dark"] .badge.bg-danger-subtle .text-danger {
+  color: #FFA3BA !important;
+}
+
+/* 7. Icon High Contrast inside Colored Emblems and Boxes (Sun & Trophy Fix) */
+.icon-yellow i,
+.icon-yellow .bi,
+.icon-yellow svg,
+.activity-icon-emblem.icon-yellow i,
+.activity-icon-emblem.icon-yellow .bi,
+.sk-card-top-icon.icon-yellow i,
+.sk-card-top-icon.icon-yellow .bi,
+[data-bs-theme="dark"] .icon-yellow i,
+[data-bs-theme="dark"] .icon-yellow .bi,
+[data-bs-theme="dark"] .icon-yellow svg,
+[data-bs-theme="dark"] .activity-icon-emblem.icon-yellow i,
+[data-bs-theme="dark"] .activity-icon-emblem.icon-yellow .bi,
+[data-bs-theme="dark"] .sk-card-top-icon.icon-yellow i,
+[data-bs-theme="dark"] .sk-card-top-icon.icon-yellow .bi {
+  color: #4A3B00 !important;
+  fill: #4A3B00 !important;
+}
+
+.icon-pink i,
+.icon-pink .bi,
+.icon-pink svg,
+.activity-icon-emblem.icon-pink i,
+.activity-icon-emblem.icon-pink .bi,
+.sk-card-top-icon.icon-pink i,
+.sk-card-top-icon.icon-pink .bi,
+[data-bs-theme="dark"] .icon-pink i,
+[data-bs-theme="dark"] .icon-pink .bi,
+[data-bs-theme="dark"] .icon-pink svg,
+[data-bs-theme="dark"] .activity-icon-emblem.icon-pink i,
+[data-bs-theme="dark"] .activity-icon-emblem.icon-pink .bi,
+[data-bs-theme="dark"] .sk-card-top-icon.icon-pink i,
+[data-bs-theme="dark"] .sk-card-top-icon.icon-pink .bi {
+  color: #5C1226 !important;
+  fill: #5C1226 !important;
+}
+
+.icon-aqua i,
+.icon-aqua .bi,
+.icon-aqua svg,
+.activity-icon-emblem.icon-aqua i,
+.activity-icon-emblem.icon-aqua .bi,
+.sk-card-top-icon.icon-aqua i,
+.sk-card-top-icon.icon-aqua .bi,
+[data-bs-theme="dark"] .icon-aqua i,
+[data-bs-theme="dark"] .icon-aqua .bi,
+[data-bs-theme="dark"] .icon-aqua svg,
+[data-bs-theme="dark"] .activity-icon-emblem.icon-aqua i,
+[data-bs-theme="dark"] .activity-icon-emblem.icon-aqua .bi,
+[data-bs-theme="dark"] .sk-card-top-icon.icon-aqua i,
+[data-bs-theme="dark"] .sk-card-top-icon.icon-aqua .bi {
+  color: #08343C !important;
+  fill: #08343C !important;
+}
+
+/* 8. Bottom Badge Pills in Dark Mode Cards */
+[data-bs-theme="dark"] .badge.bg-body,
+[data-bs-theme="dark"] .badge.bg-light {
+  background-color: #19242D !important;
+  color: #E2E8F0 !important;
+  border-color: rgba(158, 211, 220, 0.25) !important;
+}
+[data-bs-theme="dark"] .badge.bg-body.text-body,
+[data-bs-theme="dark"] .badge.bg-light.text-dark {
+  color: #E2E8F0 !important;
+}
+
+/* 9. Interactive Telemetry Box in Dark & Light Mode (King Challenge Box Fix) */
+#visualizerStatsCard {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+#visualizerStatsCard .bg-light {
+  background-color: #F8FAFC !important;
+  border-color: #E2E8F0 !important;
+}
+#visualizerStatsCard .text-dark,
+#visualizerStatsCard .text-body,
+#visualizerStatsCard #vCoachChallenge,
+#visualizerStatsCard #vCoachChallenge strong {
+  color: #111A20 !important;
+}
+[data-bs-theme="dark"] #visualizerStatsCard {
+  background-color: #15222A !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+[data-bs-theme="dark"] #visualizerStatsCard .bg-light {
+  background-color: #1C2B36 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+[data-bs-theme="dark"] #visualizerStatsCard .text-dark,
+[data-bs-theme="dark"] #visualizerStatsCard .text-body,
+[data-bs-theme="dark"] #visualizerStatsCard #vCoachChallenge,
+[data-bs-theme="dark"] #visualizerStatsCard #vCoachChallenge strong,
+[data-bs-theme="dark"] #visualizerStatsCard #vMoveCounter,
+[data-bs-theme="dark"] #visualizerStatsCard #vStatCoverage,
+[data-bs-theme="dark"] #visualizerStatsCard #vStatVector {
+  color: #FFFFFF !important;
+}
+[data-bs-theme="dark"] #visualizerStatsCard .text-muted {
+  color: #A0B3BD !important;
+}
+
+/* Header Nav Tools (Theme & RTL Toggles on Navbar) */
+.header-nav-tools {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+.header-nav-tools .tool-toggle-btn {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
+  color: #FFFFFF !important;
+  font-size: 1.05rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+.header-nav-tools .tool-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Coin Selector Badges High Contrast */
+.coin-pts-badge.badge-coin-yellow,
+.coin-card-btn .badge-coin-yellow,
+[data-bs-theme="dark"] .coin-pts-badge.badge-coin-yellow,
+[data-bs-theme="dark"] .coin-card-btn .badge-coin-yellow {
+  background-color: #FEFD99 !important;
+  color: #111A20 !important;
+  font-weight: 800 !important;
+}
+.coin-pts-badge.badge-coin-pink,
+.coin-card-btn .badge-coin-pink,
+[data-bs-theme="dark"] .coin-pts-badge.badge-coin-pink,
+[data-bs-theme="dark"] .coin-card-btn .badge-coin-pink {
+  background-color: #FFA3BA !important;
+  color: #5C1226 !important;
+  font-weight: 800 !important;
+}
+.coin-pts-badge.badge-coin-aqua,
+.coin-card-btn .badge-coin-aqua,
+[data-bs-theme="dark"] .coin-pts-badge.badge-coin-aqua,
+[data-bs-theme="dark"] .coin-card-btn .badge-coin-aqua {
+  background-color: #9ED3DC !important;
+  color: #08343C !important;
+  font-weight: 800 !important;
+}
+
+/* 10. Certificate Unlock Banner (High-Contrast in Both Light & Dark Mode) */
+.cert-unlock-banner {
+  background: linear-gradient(135deg, #FFFDE0 0%, #D8F3F7 100%) !important;
+  border-color: rgba(158, 211, 220, 0.45) !important;
+}
+
+.cert-unlock-banner h2,
+.cert-unlock-banner h2.text-dark {
+  color: #111A20 !important;
+}
+
+.cert-unlock-banner p,
+.cert-unlock-banner p.text-dark {
+  color: #2D3D45 !important;
+  font-weight: 500 !important;
+}
+
+.cert-unlock-banner .btn-strat-secondary {
+  background-color: #FFFFFF !important;
+  color: #111A20 !important;
+  border: 1.5px solid #26333A !important;
+}
+.cert-unlock-banner .btn-strat-secondary:hover {
+  background-color: #F1F5F9 !important;
+  color: #111A20 !important;
+}
+
+[data-bs-theme="dark"] .cert-unlock-banner {
+  background: linear-gradient(135deg, #1C2730 0%, #152028 100%) !important;
+  border-color: rgba(158, 211, 220, 0.25) !important;
+}
+
+[data-bs-theme="dark"] .cert-unlock-banner h2,
+[data-bs-theme="dark"] .cert-unlock-banner h2.text-dark {
+  color: #FFFFFF !important;
+}
+
+[data-bs-theme="dark"] .cert-unlock-banner p,
+[data-bs-theme="dark"] .cert-unlock-banner p.text-dark {
+  color: #B2C4CC !important;
+}
+
+[data-bs-theme="dark"] .cert-unlock-banner .btn-strat-secondary {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+[data-bs-theme="dark"] .cert-unlock-banner .btn-strat-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
 }
 
 /* ==========================================================================

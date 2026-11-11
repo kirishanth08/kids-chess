@@ -41,6 +41,16 @@
           <span class="brand-tagline">Think. Play. Grow.</span>
         </div>
       </a>
+      <!-- Header Tools (Theme & RTL Toggles Directly on Navbar) -->
+      <div class="header-nav-tools d-flex align-items-center gap-2 ms-auto me-2 me-xl-3">
+        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+      </div>
+
       <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -58,6 +68,7 @@
           </li>
           <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link " href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link " href="camp-life.html">Activities</a></li>
           <li class="nav-item"><a class="nav-link " href="schedule.html">Schedule</a></li>
           <li class="nav-item"><a class="nav-link " href="pricing.html">Pricing</a></li>
           <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
@@ -67,27 +78,10 @@
           </li>
         </ul>
 
-        <div class="nav-tools d-flex align-items-center gap-2">
-          <!-- Dark Mode Switcher Circle -->
-          <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
-            <i class="bi bi-moon-stars"></i>
-          </button>
-
-          <!-- RTL / LTR Toggle Circle -->
-          <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
-            <i class="bi bi-arrow-left-right"></i>
-          </button>
-
-          
-
-          <!-- Primary CTA Button (Identical across all pages) -->
-          <!-- Login Button in Navbar before CTA -->
-          <a href="auth/login.html" class="btn-nav-login" title="Parent Portal Login">
-            <i class="bi bi-box-arrow-in-right"></i> Login
-          </a>
-          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
-            <i class="bi bi-calendar2-check-fill"></i> Enroll Now
-          </button>
+        <!-- Nav CTAs (Aligned side-by-side in hamburger on mobile, side-by-side on desktop) -->
+        <div class="nav-cta-group d-flex align-items-center gap-2">
+          <a href="auth/login.html" class="btn-nav-login" title="Parent Portal Login">Login</a>
+          <a href="enroll.html" class="btn-strat-primary"><i class="bi bi-calendar2-check-fill"></i> Enroll Now</a>
         </div>
       </div>
     </div>
@@ -111,9 +105,9 @@
           </p>
 
           <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
-            <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+            <a href="enroll.html" class="btn-strat-primary">
               <i class="bi bi-play-circle-fill"></i> Join the Board
-            </button>
+            </a>
             <a href="schedule.html" class="btn-strat-secondary">
               <i class="bi bi-calendar3"></i> View Camp Schedule
             </a>
@@ -267,7 +261,7 @@
             <div class="d-flex align-items-center justify-content-between mb-3">
               <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill fw-bold">Active Play</span>
               <div class="sk-card-top-icon icon-yellow mb-0" style="width: 52px; height: 52px; font-size: 1.45rem;">
-                <i class="bi bi-sun-fill text-warning"></i>
+                <i class="bi bi-sun-fill" style="color: #4A3B00 !important;"></i>
               </div>
             </div>
             <h3 class="h4 fw-bold mb-2">Outdoor Sunshine Recess</h3>
@@ -288,7 +282,7 @@
             <div class="d-flex align-items-center justify-content-between mb-3">
               <span class="badge bg-danger-subtle text-danger px-3 py-2 rounded-pill fw-bold">Weekly Finale</span>
               <div class="sk-card-top-icon icon-pink mb-0" style="width: 52px; height: 52px; font-size: 1.45rem;">
-                <i class="bi bi-award-fill text-rose"></i>
+                <i class="bi bi-award-fill" style="color: #5C1226 !important;"></i>
               </div>
             </div>
             <h3 class="h4 fw-bold mb-2">Friday Grand Prix &amp; Award Gala</h3>
@@ -349,7 +343,7 @@
                   <div class="coin-details-title">The Queen (&#9813;)</div>
                   <div class="coin-details-sub">Straight + Diagonals any distance &bull; Supreme power</div>
                 </div>
-                <span class="coin-pts-badge" style="background: var(--sk-yellow); color: #26333A;">9 Points</span>
+                <span class="coin-pts-badge badge-coin-yellow" style="background-color: #FEFD99 !important; color: #111A20 !important; font-weight: 800 !important;">9 Points</span>
               </button>
 
               <!-- Rook -->
@@ -359,7 +353,7 @@
                   <div class="coin-details-title">The Rook / Castle (&#9814;)</div>
                   <div class="coin-details-sub">Ranks &amp; Files (horizontal / vertical) &bull; Cannon tower</div>
                 </div>
-                <span class="coin-pts-badge" style="background: var(--sk-aqua); color: #165662;">5 Points</span>
+                <span class="coin-pts-badge badge-coin-aqua" style="background-color: #9ED3DC !important; color: #08343C !important; font-weight: 800 !important;">5 Points</span>
               </button>
 
               <!-- Bishop -->
@@ -369,7 +363,7 @@
                   <div class="coin-details-title">The Bishop (&#9815;)</div>
                   <div class="coin-details-sub">Diagonal highways &bull; Color-bound sniper</div>
                 </div>
-                <span class="coin-pts-badge" style="background: var(--sk-pink); color: #9C3854;">3 Points</span>
+                <span class="coin-pts-badge badge-coin-pink" style="background-color: #FFA3BA !important; color: #5C1226 !important; font-weight: 800 !important;">3 Points</span>
               </button>
 
               <!-- Knight -->
@@ -379,7 +373,7 @@
                   <div class="coin-details-title">The Knight / Horse (&#9816;)</div>
                   <div class="coin-details-sub">&ldquo;L-Shape&rdquo; leap (2+1) &bull; Only piece that jumps!</div>
                 </div>
-                <span class="coin-pts-badge" style="background: var(--sk-yellow); color: #26333A;">3 Points</span>
+                <span class="coin-pts-badge badge-coin-yellow" style="background-color: #FEFD99 !important; color: #111A20 !important; font-weight: 800 !important;">3 Points</span>
               </button>
 
               <!-- Pawn -->
@@ -389,7 +383,7 @@
                   <div class="coin-details-title">The Pawn (&#9817;)</div>
                   <div class="coin-details-sub">March forward 1-2 &bull; Strike diagonally &bull; Queen promotion</div>
                 </div>
-                <span class="coin-pts-badge bg-light text-dark">1 Point</span>
+                <span class="coin-pts-badge badge-coin-dark" style="background-color: #243440 !important; color: #FFFFFF !important; font-weight: 700 !important;">1 Point</span>
               </button>
             </div>
 
@@ -492,9 +486,9 @@
                 </div>
               </div>
 
-              <div class="p-2 rounded-3 border d-flex align-items-center gap-2 small" style="background-color: #F8FAFC;">
+              <div class="p-2 rounded-3 bg-light border d-flex align-items-center gap-2 small">
                 <i class="bi bi-lightbulb-fill text-warning fs-5 flex-shrink-0"></i>
-                <div class="text-muted" id="vCoachChallenge">
+                <div class="text-body" id="vCoachChallenge">
                   <strong>Master Challenge:</strong> Tap any glowing dot to reposition this piece and watch how tactical coverage updates dynamically!
                 </div>
               </div>
@@ -533,8 +527,8 @@
             </div>
             <div class="p-4 p-md-5 d-flex flex-column justify-content-between flex-grow-1">
               <div>
-                <span class="badge text-dark rounded-pill px-3 py-1 fw-bold mb-2" style="background: var(--sk-aqua);">Tactical Calculation</span>
-                <h4 class="h5 fw-bold mb-2">Master Coaching &amp; Candidate Move Labs</h4>
+                <span class="badge rounded-pill px-3 py-1 fw-bold mb-2" style="background: var(--sk-aqua); color: #08343C !important;">Tactical Calculation</span>
+                <h4 class="h5 fw-bold mb-2" style="color: inherit;">Master Coaching &amp; Candidate Move Labs</h4>
                 <p class="small text-muted mb-3">
                   In intimate 1:6 pods, campers explore opening concepts, solve mate-in-two puzzles on demonstration boards, and develop the patience to look two moves ahead before touching a piece.
                 </p>
@@ -559,8 +553,8 @@
             </div>
             <div class="p-4 p-md-5 d-flex flex-column justify-content-between flex-grow-1">
               <div>
-                <span class="badge text-dark rounded-pill px-3 py-1 fw-bold mb-2" style="background: var(--sk-yellow);">Screen-Free Active Play</span>
-                <h4 class="h5 fw-bold mb-2">Outdoor Strategy Relays &amp; Modern Board Games</h4>
+                <span class="badge rounded-pill px-3 py-1 fw-bold mb-2" style="background: var(--sk-yellow); color: #111A20 !important;">Screen-Free Active Play</span>
+                <h4 class="h5 fw-bold mb-2" style="color: inherit;">Outdoor Strategy Relays &amp; Modern Board Games</h4>
                 <p class="small text-muted mb-3">
                   After lunch, energy peaks with frisbee capture-the-king, giant lawn chess, and cooperative tabletop strategy games like Catan Junior and Hive to develop spatial reasoning and teamwork.
                 </p>
@@ -637,17 +631,19 @@
        ========================================================================== -->
   <section class="section-py chess-pattern-bg">
     <div class="container">
-      <div class="p-5 rounded-5 text-center text-white cta-banner-rose" style="background: linear-gradient(135deg, var(--sk-rose) 0%, #8C2E49 100%); box-shadow: var(--sk-shadow-lg);">
-        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3">Spots Are Strictly Limited To 24 Campers Per Track</span>
+      <div class="p-4 p-sm-5 rounded-5 text-center text-white cta-banner-rose mx-auto" style="max-width: 900px; background: linear-gradient(135deg, var(--sk-rose) 0%, #8C2E49 100%); box-shadow: var(--sk-shadow-lg);">
+        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3 text-wrap" style="max-width: 100%; white-space: normal; line-height: 1.4; display: inline-block;">
+          <i class="bi bi-fire text-danger me-1"></i> Spots Are Strictly Limited To 24 Campers Per Track
+        </span>
         <h2 class="display-5 fw-bold mb-3 text-white">Claim Your Child&rsquo;s Square On The Board!</h2>
-        <p class="fs-5 text-white-50 mb-4 mx-auto" style="max-width: 650px;">
+        <p class="fs-5 mb-4 mx-auto" style="max-width: 650px; color: rgba(255, 255, 255, 0.95); line-height: 1.6;">
           Early bird tuition pricing ends soon. Reserve your spot today with our risk-free cancellation policy.
         </p>
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+        <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+          <a href="enroll.html" class="btn-strat-primary">
             <i class="bi bi-lightning-charge-fill"></i> Enroll Camper Now
-          </button>
-          <a href="faqs.html" class="btn-strat-secondary">
+          </a>
+          <a href="faqs.html" class="btn-strat-secondary" style="border: 2px solid rgba(255, 255, 255, 0.45); color: #FFFFFF !important; background: rgba(255, 255, 255, 0.1);">
             <i class="bi bi-question-circle"></i> Camp FAQs
           </a>
         </div>

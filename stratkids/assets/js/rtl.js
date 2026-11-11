@@ -31,20 +31,32 @@
     });
   }
 
+  function toggleRtlAction() {
+    const current = html.getAttribute('dir') || 'ltr';
+    const target = current === 'rtl' ? 'ltr' : 'rtl';
+    localStorage.setItem(STORAGE_KEY, target);
+    applyDirection(target);
+  }
+
   // Set initial direction
   applyDirection(getPreferredDirection());
 
-  document.addEventListener('DOMContentLoaded', () => {
-    applyDirection(getPreferredDirection());
-
-    document.querySelectorAll('.rtl-toggle-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const current = html.getAttribute('dir') || 'ltr';
-        const target = current === 'rtl' ? 'ltr' : 'rtl';
-        localStorage.setItem(STORAGE_KEY, target);
-        applyDirection(target);
-      });
-    });
+  // Global delegated click handler for RTL toggle buttons (works across all pages & dynamically loaded elements)
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.rtl-toggle-btn');
+    if (btn) {
+      e.preventDefault();
+      toggleRtlAction();
+    }
   });
+
+  function init() {
+    applyDirection(getPreferredDirection());
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();

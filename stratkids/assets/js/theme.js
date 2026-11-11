@@ -40,28 +40,43 @@
     });
   }
 
+  function toggleThemeAction() {
+    const current = html.getAttribute('data-bs-theme') || 'light';
+    const target = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem(STORAGE_KEY, target);
+    applyTheme(target);
+  }
+
   // Set initial theme as early as possible
-  const initialTheme = getPreferredTheme();
-  applyTheme(initialTheme);
+  applyTheme(getPreferredTheme());
 
-  document.addEventListener('DOMContentLoaded', () => {
-    applyTheme(getPreferredTheme());
-
-    document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const current = html.getAttribute('data-bs-theme') || 'light';
-        const target = current === 'dark' ? 'light' : 'dark';
-        localStorage.setItem(STORAGE_KEY, target);
-        applyTheme(target);
-      });
-    });
-  });
-
-  // Listen for OS changes if user hasn't explicitly set preference
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    if (!localStorage.getItem(STORAGE_KEY)) {
-      applyTheme(e.matches ? 'dark' : 'light');
+  // Global delegated click handler for theme toggle buttons (works across all pages & dynamically loaded elements)
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.theme-toggle-btn');
+    if (btn) {
+      e.preventDefault();
+      toggleThemeAction();
     }
   });
+
+  function init() {
+    applyTheme(getPreferredTheme());
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Listen for OS changes if user hasn't explicitly set preference
+  try {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        applyTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  } catch (err) {
+    // Ignore on older browsers
+  }
 })();

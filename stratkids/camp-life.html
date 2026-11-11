@@ -40,6 +40,16 @@
           <span class="brand-tagline">Think. Play. Grow.</span>
         </div>
       </a>
+      <!-- Header Tools (Theme & RTL Toggles Directly on Navbar) -->
+      <div class="header-nav-tools d-flex align-items-center gap-2 ms-auto me-2 me-xl-3">
+        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+      </div>
+
       <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -65,28 +75,10 @@
             <a class="nav-link nav-dashboard-link" href="parent-dashboard/dashboard.html" title="Parent Dashboard">Dashboard</a>
           </li>
         </ul>
-
-        <div class="nav-tools d-flex align-items-center gap-2">
-          <!-- Dark Mode Switcher Circle -->
-          <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
-            <i class="bi bi-moon-stars"></i>
-          </button>
-
-          <!-- RTL / LTR Toggle Circle -->
-          <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
-            <i class="bi bi-arrow-left-right"></i>
-          </button>
-
-          
-
-          <!-- Primary CTA Button (Identical across all pages) -->
-          <!-- Login Button in Navbar before CTA -->
-          <a href="auth/login.html" class="btn-nav-login" title="Parent Portal Login">
-            <i class="bi bi-box-arrow-in-right"></i> Login
-          </a>
-          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
-            <i class="bi bi-calendar2-check-fill"></i> Enroll Now
-          </button>
+        <!-- Nav CTAs (Aligned side-by-side in hamburger on mobile, side-by-side on desktop) -->
+        <div class="nav-cta-group d-flex align-items-center gap-2">
+          <a href="auth/login.html" class="btn-nav-login" title="Parent Portal Login">Login</a>
+          <a href="enroll.html" class="btn-strat-primary"><i class="bi bi-calendar2-check-fill"></i> Enroll Now</a>
         </div>
       </div>
     </div>
@@ -109,9 +101,9 @@
             Camp at StratKids is far more than sitting quietly at a chessboard. It's an electric mix of collaborative tactical puzzles, modern tabletop strategy games, team relays, and sunshine lawn sports!
           </p>
           <div class="d-flex flex-wrap gap-3">
-            <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+            <a href="enroll.html" class="btn-strat-primary">
               <i class="bi bi-sparkles"></i> Enroll In Camp
-            </button>
+            </a>
             <a href="gallery.html" class="btn-strat-secondary">
               <i class="bi bi-images"></i> View Photo Gallery
             </a>
@@ -177,6 +169,151 @@
           <p class="text-muted small">
             This rapid feedback loop turns abstract positional theory into instinctive pattern recognition that sticks with children for life.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2B: MASTER STRATEGIC CURRICULUM & TACTICAL PILLARS
+       ========================================================================== -->
+  <section class="section-py chess-pattern-bg">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-rose">
+          <i class="bi bi-diagram-3-fill"></i> Strategic Curriculum Blueprint
+        </div>
+        <h2 class="section-title">The 5 Core Tactical Pillars We Teach</h2>
+        <p class="section-desc">
+          Beyond simply memorizing piece movements, campers build genuine strategic foresight through structured tactical frameworks developed by FIDE Masters and child pedagogy experts.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Pillar 1: Tactical Motifs -->
+        <div class="col-lg-4 col-md-6">
+          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm" style="border-top: 4px solid var(--sk-rose) !important;">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <span class="badge-emblem badge-rose mb-0" style="width: 50px; height: 50px; font-size: 1.4rem;">
+                <i class="bi bi-bullseye"></i>
+              </span>
+              <div>
+                <h5 class="fw-bold mb-0 text-dark">Tactical Motifs Lab</h5>
+                <small class="text-rose fw-bold">Pattern Recognition</small>
+              </div>
+            </div>
+            <p class="small text-muted mb-3">Campers drill essential tactical patterns daily, learning to spot decisive tactics instantly on the board.</p>
+            <ul class="list-unstyled small mb-0 d-flex flex-column gap-2 text-dark">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Forks &amp; Double Attacks:</strong> Knight jumping tricks and Queen splits</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Pins &amp; Skewers:</strong> Absolute King pins vs relative piece pins</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Decoy &amp; Deflection:</strong> Luring defenders away from key squares</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Discovered Checks:</strong> Unleashing battery surprise checks</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Opening Theory -->
+        <div class="col-lg-4 col-md-6">
+          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm" style="border-top: 4px solid var(--sk-aqua) !important;">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <span class="badge-emblem badge-aqua mb-0" style="width: 50px; height: 50px; font-size: 1.4rem;">
+                <i class="bi bi-compass"></i>
+              </span>
+              <div>
+                <h5 class="fw-bold mb-0 text-dark">Opening Principles</h5>
+                <small class="text-info fw-bold">The Golden Rules of Move 1-10</small>
+              </div>
+            </div>
+            <p class="small text-muted mb-3">Eliminating opening blunders through structured developmental discipline rather than blind rote memorization.</p>
+            <ul class="list-unstyled small mb-0 d-flex flex-column gap-2 text-dark">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Center Dominance:</strong> Staking claim with e4/d4 pawns early</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Rapid Minor Piece Mobilization:</strong> Knights before Bishops</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>King Safety First:</strong> Castling kingside before launching attacks</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Pawn Structure Integrity:</strong> Avoiding early piece overextension</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Middlegame & Positional Planning -->
+        <div class="col-lg-4 col-md-6">
+          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm" style="border-top: 4px solid var(--sk-yellow) !important;">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <span class="badge-emblem badge-gold mb-0" style="width: 50px; height: 50px; font-size: 1.4rem;">
+                <i class="bi bi-lightbulb"></i>
+              </span>
+              <div>
+                <h5 class="fw-bold mb-0 text-dark">Middlegame Strategy</h5>
+                <small class="text-warning fw-bold">Candidate Moves &amp; Outposts</small>
+              </div>
+            </div>
+            <p class="small text-muted mb-3">Moving from single-move reactions to 3-move strategic plans based on weak squares and file control.</p>
+            <ul class="list-unstyled small mb-0 d-flex flex-column gap-2 text-dark">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Outpost Domination:</strong> Planting Knights on unchallengeable squares</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Open File Batteries:</strong> Doubling Rooks on 7th rank infiltration</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Pawn Weakness Targeting:</strong> Isolated and backward pawns</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Prophylactic Thinking:</strong> Asking &ldquo;What does my rival want?&rdquo;</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Endgame Precision -->
+        <div class="col-lg-6 col-md-6">
+          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm" style="border-top: 4px solid var(--sk-pink) !important;">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <span class="badge-emblem badge-pink mb-0" style="width: 50px; height: 50px; font-size: 1.4rem;">
+                <i class="bi bi-trophy"></i>
+              </span>
+              <div>
+                <h5 class="fw-bold mb-0 text-dark">Endgame Precision &amp; Conversions</h5>
+                <small class="text-rose fw-bold">Turning Advantages Into Victories</small>
+              </div>
+            </div>
+            <p class="small text-muted mb-3">Endgames separate good players from tournament champions. Campers practice core technical conversion scenarios on tactile wooden boards.</p>
+            <div class="row g-2 text-dark small">
+              <div class="col-sm-6">
+                <div class="p-2 rounded-3 bg-light border"><i class="bi bi-check-circle-fill text-success me-1"></i><strong>King Opposition:</strong> Winning breakthrough squares</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-2 rounded-3 bg-light border"><i class="bi bi-check-circle-fill text-success me-1"></i><strong>Rule of the Square:</strong> Calculating passed pawns</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-2 rounded-3 bg-light border"><i class="bi bi-check-circle-fill text-success me-1"></i><strong>Lucena Rook Bridge:</strong> Shielding king on promotion</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-2 rounded-3 bg-light border"><i class="bi bi-check-circle-fill text-success me-1"></i><strong>Philidor Defense:</strong> Active drawing techniques</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 5: Time Control & Psychology -->
+        <div class="col-lg-6 col-md-12">
+          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm" style="border-top: 4px solid #10B981 !important;">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <span class="badge-emblem mb-0" style="width: 50px; height: 50px; font-size: 1.4rem; background: rgba(16, 185, 129, 0.15); color: #059669;">
+                <i class="bi bi-stopwatch"></i>
+              </span>
+              <div>
+                <h5 class="fw-bold mb-0 text-dark">Clock Strategy &amp; Composure</h5>
+                <small class="text-success fw-bold">Psychological Resilience &amp; Time Budgeting</small>
+              </div>
+            </div>
+            <p class="small text-muted mb-3">Playing under a ticking DGT tournament clock requires calm nerves, breath control, and strategic time allocation per phase of the game.</p>
+            <div class="row g-2 text-dark small">
+              <div class="col-sm-6">
+                <div class="p-2 rounded-3 bg-light border"><i class="bi bi-check-circle-fill text-success me-1"></i><strong>Increment Management:</strong> Maximizing 5-second delays</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-2 rounded-3 bg-light border"><i class="bi bi-check-circle-fill text-success me-1"></i><strong>Time Budgeting:</strong> 2 mins opening, 10 mins middlegame</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-2 rounded-3 bg-light border"><i class="bi bi-check-circle-fill text-success me-1"></i><strong>Blunder Recovery:</strong> Mental resets without panic</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-2 rounded-3 bg-light border"><i class="bi bi-check-circle-fill text-success me-1"></i><strong>Gracious Etiquette:</strong> Respectful pre &amp; post handshakes</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -260,13 +397,13 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+          <a href="enroll.html" class="btn-strat-primary">
             <i class="bi bi-play-circle-fill"></i> Join a Summer Squad
-          </button>
+          </a>
         </div>
 
         <div class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80" alt="Campers collaborating during puzzle relay" class="img-fluid rounded-5 shadow-lg border border-3" style="border-color: var(--sk-aqua) !important;">
+          <img src="assets/images/chess/pexels_8465434.jpg" alt="Campers collaborating during puzzle relay" class="img-fluid rounded-5 shadow-lg border border-3" style="border-color: var(--sk-aqua) !important; max-height: 420px; width: 100%; object-fit: cover;">
         </div>
       </div>
     </div>
@@ -328,7 +465,7 @@
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1000&q=80" alt="Camper art and creative board crafts" class="img-fluid rounded-5 shadow-lg border border-3" style="border-color: var(--sk-yellow) !important;">
+          <img src="assets/images/chess/concentrated_girl_chess.jpg" alt="Camper art and creative board crafts" class="img-fluid rounded-5 shadow-lg border border-3" style="border-color: var(--sk-yellow) !important; max-height: 420px; width: 100%; object-fit: cover;">
         </div>
 
         <div class="col-lg-6">
@@ -364,9 +501,9 @@
           Spaces in our summer pods are capped at 12&ndash;16 campers to ensure attentive coaching and rich friendships.
         </p>
         <div class="d-flex flex-wrap justify-content-center gap-3">
-          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
+          <a href="enroll.html" class="btn-strat-primary">
             <i class="bi bi-lightning-charge-fill"></i> Enroll Your Camper Now
-          </button>
+          </a>
           <a href="schedule.html" class="btn-strat-secondary">
             <i class="bi bi-calendar3"></i> Check Available Dates
           </a>

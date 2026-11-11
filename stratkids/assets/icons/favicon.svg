@@ -1,8 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="16" fill="#9ED3DC"/>
-  <rect x="4" y="4" width="56" height="56" rx="13" stroke="#CA6180" stroke-width="3" stroke-dasharray="5 3"/>
-  <path d="M22 50 C22 44 24 38 28 34 C30 30 27 26 24 25 C21 24 21 20 24 19 C27 18 32 19 35 22 C37 17 42 16 46 19 C50 22 51 27 50 31 C47 36 46 40 47 50 Z" fill="#CA6180"/>
-  <circle cx="30" cy="24" r="3" fill="#FEFD99"/>
-  <path d="M42 8 L44 13 L49 12 L45 16 L48 21 L42 19 L37 21 L39 16 L35 12 L40 13 Z" fill="#FEFD99" stroke="#26333A" stroke-width="1.2"/>
-  <rect x="18" y="50" width="32" height="6" rx="3" fill="#26333A"/>
+  <!-- Rounded Squircle Badge Base -->
+  <rect width="64" height="64" rx="16" fill="#CA6180"/>
+  <rect x="3" y="3" width="58" height="58" rx="13" stroke="#9ED3DC" stroke-width="2.5" stroke-dasharray="5 3"/>
+
+  <!-- Chess Rook (Castle) Silhouette -->
+  <!-- Rook Crenellations (Battlements) -->
+  <path d="M18 18 H24 V23 H28 V18 H36 V23 H40 V18 H46 V26 H18 Z" fill="#FFFFFF"/>
+  <!-- Rook Head & Neck -->
+  <path d="M20 26 H44 L41 33 H23 Z" fill="#FFFFFF"/>
+  <!-- Rook Body -->
+  <path d="M23 33 H41 L39 44 H25 Z" fill="#FFFFFF"/>
+  <!-- Rook Base Pedestal -->
+  <path d="M20 44 H44 V47 H20 Z" fill="#FEFD99"/>
+  <path d="M16 47 H48 V51 C48 52.1 47.1 53 46 53 H18 C16.9 53 16 52.1 16 51 Z" fill="#FFFFFF"/>
+
+  <!-- Star Embellishment on Rook Chest -->
+  <path d="M32 34 L33.2 37.5 L36.8 37.5 L33.9 39.5 L35 43 L32 41 L29 43 L30.1 39.5 L27.2 37.5 L30.8 37.5 Z" fill="#CA6180"/>
 </svg>

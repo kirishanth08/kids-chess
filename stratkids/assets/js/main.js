@@ -47,15 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.remove('scrolled');
       }
 
-      // Hide navbar when approaching or viewing footer so footer icon and heading are 100% visible
-      if (footerEl) {
-        const footerRect = footerEl.getBoundingClientRect();
-        if (footerRect.top <= window.innerHeight - 30) {
-          navbar.classList.add('nav-hidden-footer');
-        } else {
-          navbar.classList.remove('nav-hidden-footer');
-        }
-      }
+      // Ensure header stays visible and consistent throughout scrolling
+      navbar.classList.remove('nav-hidden-footer');
     }, { passive: true });
   }
 
@@ -182,23 +175,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lensType === 'camper') {
       parentViews.forEach(v => {
         v.classList.add('d-none');
-        v.style.opacity = '0';
+        v.style.display = 'none';
       });
       camperViews.forEach(v => {
         v.classList.remove('d-none');
-        v.style.opacity = '1';
+        v.style.display = 'flex';
       });
     } else {
       camperViews.forEach(v => {
         v.classList.add('d-none');
-        v.style.opacity = '0';
+        v.style.display = 'none';
       });
       parentViews.forEach(v => {
         v.classList.remove('d-none');
-        v.style.opacity = '1';
+        v.style.display = 'flex';
       });
     }
   }
+
+  // Ensure default parent view is active with camper views cleanly hidden on load
+  switchLens('parent');
 
   // Expose globally for inline onclick fallbacks
   window.stratkidsSwitchLens = switchLens;

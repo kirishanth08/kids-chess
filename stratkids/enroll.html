@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register your child for StratKids Summer Chess & Strategy Camp 2026. Choose camp tracks, schedules, campuses, and secure early bird rates.">
+  <meta name="keywords" content="kids chess camp enrollment, summer camp registration, chess for kids, strategy camp enrollment">
+  <title>Camper Enrollment &bull; StratKids Summer Chess &amp; Strategy Camp</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Google Fonts: Baloo 2 (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Main Custom Theme CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    (function(){
+      const t = localStorage.getItem('stratkids_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', t);
+      const d = localStorage.getItem('stratkids_direction') || 'ltr';
+      document.documentElement.setAttribute('dir', d);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL NAVBAR
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-xl stratkids-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/icons/favicon.svg" alt="StratKids Logo" height="42" width="42" class="rounded-3 shadow-sm">
+        <div class="brand-text">
+          <span class="brand-title">Strat<span>Kids</span></span>
+          <span class="brand-tagline">Think. Play. Grow.</span>
+        </div>
+      </a>
+      <!-- Header Tools (Theme & RTL Toggles Directly on Navbar) -->
+      <div class="header-nav-tools d-flex align-items-center gap-2 ms-auto me-2 me-xl-3">
+        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+      </div>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="stratkidsNavContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu border-2 shadow-sm rounded-4">
+              <li><a class="dropdown-item fw-bold text-rose" href="index.html">Home 1 (Camp Adventure)</a></li>
+              <li><a class="dropdown-item fw-bold" href="home-2.html">Home 2 (Game Board Layout)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="camp-life.html">Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link nav-dashboard-link" href="parent-dashboard/dashboard.html" title="Parent Dashboard">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Nav CTAs (Aligned side-by-side in hamburger on mobile, side-by-side on desktop) -->
+        <div class="nav-cta-group d-flex align-items-center gap-2">
+          <a href="auth/login.html" class="btn-nav-login" title="Parent Portal Login">Login</a>
+          <a href="enroll.html" class="btn-strat-primary active" style="box-shadow: 0 4px 15px rgba(202, 97, 128, 0.4);">
+            <i class="bi bi-calendar2-check-fill"></i> Enroll Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       SECTION 1: HERO HEADER
+       ========================================================================== -->
+  <header class="section-py-sm chess-pattern-bg border-bottom text-center">
+    <div class="container py-3">
+      <div class="section-tag tag-rose mb-3">
+        <i class="bi bi-stars"></i> Summer 2026 Registration
+      </div>
+      <h1 class="hero-title mb-3">
+        Enroll Your Camper in <span class="highlight-rose">StratKids.</span>
+      </h1>
+      <p class="hero-lead mx-auto mb-0" style="max-width: 720px;">
+        Reserve your child's spot for an extraordinary screen-free summer of tactical breakthroughs, tabletop strategy, and lifelong friendships. Complete the enrollment form below in just 3 minutes.
+      </p>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       SECTION 2: ENROLLMENT FORM & SUMMARY SPLIT
+       ========================================================================== -->
+  <section class="section-py bg-light">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Main Form Column -->
+        <div class="col-lg-8">
+          <div class="p-4 p-md-5 rounded-5 bg-white border shadow-sm" style="border-color: var(--sk-border-color) !important;">
+            
+            <div id="enrollmentAlertContainer"></div>
+
+            <form id="standaloneEnrollmentForm" novalidate>
+              
+              <!-- STEP 1: CAMPER INFORMATION -->
+              <div class="mb-5">
+                <div class="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom">
+                  <span class="badge-emblem badge-rose" style="width: 36px; height: 36px; font-size: 1rem;">1</span>
+                  <h4 class="h5 mb-0 fw-bold text-dark" style="font-family: var(--sk-font-heading);">Camper Information</h4>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-7">
+                    <label class="form-label fw-bold small text-dark" for="camperName">Camper Full Name <span class="text-danger">*</span></label>
+                    <input type="text" id="camperName" class="form-control rounded-3" placeholder="e.g. Leo Vance" required pattern="^[A-Za-z\s\.\'\-]+$">
+                    <div class="invalid-feedback">Please enter the camper's legal full name.</div>
+                  </div>
+
+                  <div class="col-md-5">
+                    <label class="form-label fw-bold small text-dark" for="camperDob">Date of Birth <span class="text-danger">*</span></label>
+                    <input type="date" id="camperDob" class="form-control rounded-3" required value="2018-05-14">
+                    <div class="invalid-feedback">Please select camper's date of birth.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="camperSkill">Current Chess Experience <span class="text-danger">*</span></label>
+                    <select id="camperSkill" class="form-select rounded-3" required>
+                      <option value="" disabled>Select experience level...</option>
+                      <option value="beginner">Pawn Explorer (Brand new to chess)</option>
+                      <option value="foundation" selected>Knight Rider (Knows rules &amp; piece moves)</option>
+                      <option value="intermediate">Bishop Strategist (Plays games, solves basic tactics)</option>
+                      <option value="advanced">Rook &amp; Queen Master (Tournament rated / club player)</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="camperShirt">Camp T-Shirt Size <span class="text-danger">*</span></label>
+                    <select id="camperShirt" class="form-select rounded-3" required>
+                      <option value="YS">Youth Small (Ages 5-7)</option>
+                      <option value="YM" selected>Youth Medium (Ages 8-10)</option>
+                      <option value="YL">Youth Large (Ages 11-13)</option>
+                      <option value="AS">Adult Small (Ages 14+)</option>
+                      <option value="AM">Adult Medium</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 2: PARENT / GUARDIAN INFORMATION -->
+              <div class="mb-5">
+                <div class="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom">
+                  <span class="badge-emblem badge-aqua" style="width: 36px; height: 36px; font-size: 1rem;">2</span>
+                  <h4 class="h5 mb-0 fw-bold text-dark" style="font-family: var(--sk-font-heading);">Parent / Guardian Contact</h4>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="guardianName">Guardian Full Name <span class="text-danger">*</span></label>
+                    <input type="text" id="guardianName" class="form-control rounded-3" placeholder="e.g. Sarah Vance" required pattern="^[A-Za-z\s\.\'\-]+$">
+                    <div class="invalid-feedback">Please enter guardian's full name.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="guardianRelation">Relationship <span class="text-danger">*</span></label>
+                    <select id="guardianRelation" class="form-select rounded-3" required>
+                      <option value="Mother" selected>Mother</option>
+                      <option value="Father">Father</option>
+                      <option value="Guardian">Legal Guardian</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="guardianEmail">Email Address <span class="text-danger">*</span></label>
+                    <input type="email" id="guardianEmail" class="form-control rounded-3" placeholder="sarah.vance@example.com" required>
+                    <div class="invalid-feedback">Please enter a valid email address for confirmation receipts.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="guardianPhone">Phone Number <span class="text-danger">*</span></label>
+                    <input type="tel" id="guardianPhone" class="form-control rounded-3" placeholder="(555) 234-5678" required pattern="^[\d\s\(\)\-\+\.]{10,20}$">
+                    <div class="invalid-feedback">Please enter a valid primary contact phone number.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label fw-bold small text-dark" for="emergencyContact">Emergency Contact (If guardian unreachable) <span class="text-danger">*</span></label>
+                    <input type="text" id="emergencyContact" class="form-control rounded-3" placeholder="Name &amp; Phone (e.g. David Vance - 555-987-6543)" required>
+                    <div class="invalid-feedback">Please provide an emergency contact name and phone.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 3: PROGRAM TRACK & CAMPUS -->
+              <div class="mb-5">
+                <div class="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom">
+                  <span class="badge-emblem badge-gold" style="width: 36px; height: 36px; font-size: 1rem;">3</span>
+                  <h4 class="h5 mb-0 fw-bold text-dark" style="font-family: var(--sk-font-heading);">Camp Track &amp; Campus Location</h4>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="enrollTrack">Program Track <span class="text-danger">*</span></label>
+                    <select id="enrollTrack" class="form-select rounded-3" required>
+                      <option value="little-thinkers">Little Thinkers (Ages 5–7)</option>
+                      <option value="smart-players" selected>Smart Players (Ages 8–10)</option>
+                      <option value="strategic-minds">Strategic Minds (Ages 11–13)</option>
+                      <option value="future-masters">Future Masters (Ages 14–16)</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="enrollCampus">Campus Location <span class="text-danger">*</span></label>
+                    <select id="enrollCampus" class="form-select rounded-3" required>
+                      <option value="boston" selected>Boston &bull; Back Bay Academic Campus</option>
+                      <option value="nyc">New York City &bull; Upper West Side Hub</option>
+                      <option value="chicago">Chicago &bull; Lincoln Park Center</option>
+                      <option value="sanjose">San Jose &bull; Silicon Valley Academy</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="enrollWeek">Camp Week <span class="text-danger">*</span></label>
+                    <select id="enrollWeek" class="form-select rounded-3" required>
+                      <option value="w1" selected>Week 1: July 6 &ndash; July 10 (Opening Week)</option>
+                      <option value="w2">Week 2: July 13 &ndash; July 17 (Tactical Breakthroughs)</option>
+                      <option value="w3">Week 3: July 20 &ndash; July 24 (Grandmaster Strategy)</option>
+                      <option value="w4">Week 4: July 27 &ndash; July 31 (Championship Finale)</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="enrollSchedule">Daily Schedule Format <span class="text-danger">*</span></label>
+                    <select id="enrollSchedule" class="form-select rounded-3" required>
+                      <option value="half" data-price="295">Half Day (9:00 AM &ndash; 12:30 PM) &bull; $295/wk</option>
+                      <option value="full" data-price="485" selected>Full Day (9:00 AM &ndash; 3:30 PM) &bull; $485/wk [Recommended]</option>
+                      <option value="extended" data-price="595">Extended Day (8:00 AM &ndash; 5:30 PM) &bull; $595/wk</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 4: HEALTH, DIETARY & MEDICAL NOTES -->
+              <div class="mb-5">
+                <div class="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom">
+                  <span class="badge-emblem badge-pink" style="width: 36px; height: 36px; font-size: 1rem;">4</span>
+                  <h4 class="h5 mb-0 fw-bold text-dark" style="font-family: var(--sk-font-heading);">Health &amp; Dietary Preferences</h4>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="enrollDiet">Lunch &amp; Snack Preference</label>
+                    <select id="enrollDiet" class="form-select rounded-3">
+                      <option value="standard" selected>Standard Nut-Free Lunch</option>
+                      <option value="vegetarian">Vegetarian</option>
+                      <option value="gluten-free">Gluten-Free</option>
+                      <option value="halal">Halal Certified</option>
+                      <option value="home-packed">Camper Packs Own Lunch</option>
+                    </select>
+                    <small class="text-muted d-block mt-1"><i class="bi bi-shield-check text-success"></i> All campuses are 100% nut-free facilities.</small>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-bold small text-dark" for="enrollAllergies">Allergies or Medical Notes</label>
+                    <input type="text" id="enrollAllergies" class="form-control rounded-3" placeholder="e.g. Mild asthma (inhaler with camper), bee sting allergy">
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label fw-bold small text-dark" for="enrollNotes">Special Coach Notes / Camper Requests</label>
+                    <textarea id="enrollNotes" class="form-control rounded-3" rows="2" placeholder="Tell our coaches about your child's favorite chess piece, learning style, or friend pairing requests..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 5: TERMS & AGREEMENTS -->
+              <div class="p-3 bg-light rounded-4 border mb-4">
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" id="termsCheck" required checked>
+                  <label class="form-check-label small text-dark" for="termsCheck">
+                    I agree to the <a href="contact.html" class="text-rose text-decoration-none fw-bold">Camp Safety Policy</a>, Emergency Medical Authorization, and <a href="contact.html" class="text-rose text-decoration-none fw-bold">Terms of Registration</a>. <span class="text-danger">*</span>
+                  </label>
+                  <div class="invalid-feedback">You must accept the camp policies to enroll.</div>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="photoConsent" checked>
+                  <label class="form-check-label small text-muted" for="photoConsent">
+                    I grant permission for StratKids to include my camper in team celebration photos and Friday Grand Prix award ceremony memories.
+                  </label>
+                </div>
+              </div>
+
+              <!-- SUBMIT BUTTON -->
+              <div class="d-grid">
+                <button type="submit" id="submitEnrollBtn" class="btn btn-strat-primary py-3 fs-5 fw-bold rounded-pill">
+                  <i class="bi bi-check2-circle me-2"></i> Complete Camper Registration
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- Right Summary Sidebar -->
+        <div class="col-lg-4">
+          <div class="sticky-top" style="top: 90px;">
+            <!-- Order Summary Card -->
+            <div class="p-4 rounded-5 bg-white border shadow-sm mb-4" style="border-color: var(--sk-border-color) !important;">
+              <h5 class="fw-bold mb-3 text-dark border-bottom pb-2" style="font-family: var(--sk-font-heading);">
+                <i class="bi bi-receipt text-rose me-2"></i>Enrollment Summary
+              </h5>
+
+              <div class="d-flex justify-content-between mb-2 small">
+                <span class="text-muted">Selected Track:</span>
+                <strong class="text-dark" id="summaryTrack">Smart Players (8–10)</strong>
+              </div>
+
+              <div class="d-flex justify-content-between mb-2 small">
+                <span class="text-muted">Campus:</span>
+                <strong class="text-dark" id="summaryCampus">Boston (Back Bay)</strong>
+              </div>
+
+              <div class="d-flex justify-content-between mb-2 small">
+                <span class="text-muted">Camp Week:</span>
+                <strong class="text-dark" id="summaryWeek">Week 1 (July 6-10)</strong>
+              </div>
+
+              <div class="d-flex justify-content-between mb-3 small">
+                <span class="text-muted">Daily Schedule:</span>
+                <strong class="text-dark" id="summarySchedule">Full Day (9am-3:30pm)</strong>
+              </div>
+
+              <hr class="my-3">
+
+              <div class="d-flex justify-content-between mb-2 small">
+                <span class="text-muted">Base Weekly Tuition:</span>
+                <span class="text-dark fw-bold" id="summaryBasePrice">$485.00</span>
+              </div>
+
+              <div class="d-flex justify-content-between mb-2 small text-success">
+                <span><i class="bi bi-tag-fill me-1"></i>Early Bird Discount:</span>
+                <strong id="summaryDiscount">-$50.00</strong>
+              </div>
+
+              <div class="d-flex justify-content-between mb-3 small">
+                <span class="text-muted">Materials &amp; Tournament Fee:</span>
+                <span class="text-success fw-bold">FREE ($75 Value)</span>
+              </div>
+
+              <div class="p-3 rounded-4 bg-light border d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <span class="d-block small text-muted text-uppercase fw-bold">Total Due Today</span>
+                  <span class="text-dark fw-bold fs-4" id="summaryTotalPrice">$435.00</span>
+                </div>
+                <span class="badge bg-success rounded-pill px-3 py-2">Saved $50</span>
+              </div>
+
+              <!-- Included Pack Details -->
+              <h6 class="fw-bold text-dark small mb-2"><i class="bi bi-box2-heart-fill text-rose me-1"></i>Every Enrollment Includes:</h6>
+              <ul class="list-unstyled small text-muted mb-0 d-flex flex-column gap-1">
+                <li><i class="bi bi-check2 text-success me-1"></i>Official weighted tournament chess set &amp; vinyl board</li>
+                <li><i class="bi bi-check2 text-success me-1"></i>StratKids summer camp t-shirt &amp; tactical notebook</li>
+                <li><i class="bi bi-check2 text-success me-1"></i>Nut-free hot lunch, afternoon snacks &amp; hydration</li>
+                <li><i class="bi bi-check2 text-success me-1"></i>Friday Grand Prix medal, trophy, &amp; certificate</li>
+                <li><i class="bi bi-check2 text-success me-1"></i>Parent portal live progress &amp; photo gallery access</li>
+              </ul>
+            </div>
+
+            <!-- Trust & Guarantee Badge -->
+            <div class="p-3 rounded-4 bg-white border text-center shadow-sm">
+              <div class="d-flex align-items-center justify-content-center gap-2 mb-2 text-dark fw-bold">
+                <i class="bi bi-shield-check text-success fs-5"></i> 100% Satisfaction Guarantee
+              </div>
+              <p class="small text-muted mb-0">
+                Cancel up to 14 days before your camp session starts for a 100% full tuition refund, zero hassle.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: FAQ ACCORDION
+       ========================================================================== -->
+  <section class="section-py chess-pattern-bg">
+    <div class="container" style="max-width: 800px;">
+      <div class="text-center mb-5">
+        <div class="section-tag tag-aqua mb-2">
+          <i class="bi bi-question-circle-fill"></i> Common Questions
+        </div>
+        <h2 class="section-title">Enrollment &amp; Camp FAQs</h2>
+      </div>
+
+      <div class="accordion accordion-flush rounded-4 overflow-hidden shadow-sm border" id="enrollmentFaq">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              What if my child has never played chess before?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#enrollmentFaq">
+            <div class="accordion-body text-muted small">
+              Our <strong>Little Thinkers (5–7)</strong> and <strong>Pawn Explorer</strong> tracks are designed specifically for true beginners! We introduce piece movements through engaging cartoon stories, movement songs, and fun mini-games that build instant confidence without any pressure.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Can I enroll siblings in different tracks?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#enrollmentFaq">
+            <div class="accordion-body text-muted small">
+              Yes! All tracks run simultaneously under the same roof at each campus. Siblings arrive and dismiss together, share lunch and outdoor recess, while enjoying specialized tactical instruction tailored to their individual age and skill tier.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              What is the camper-to-coach ratio?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#enrollmentFaq">
+            <div class="accordion-body text-muted small">
+              We strictly maintain a <strong>1:6 coach-to-camper ratio</strong> for our youngest campers (Ages 5–7) and <strong>1:8</strong> for older cohorts. This guarantees personal encouragement, real-time tactical hints, and thorough safety supervision throughout the day.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+              What is your cancellation and transfer policy?
+            </button>
+          </h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#enrollmentFaq">
+            <div class="accordion-body text-muted small">
+              We offer full flexibility. You may switch camp weeks or campus locations anytime up to 7 days before your session begins at no extra charge, subject to room availability. Full refunds are provided for cancellations made at least 14 days prior to camp start.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GLOBAL FOOTER
+       ========================================================================== -->
+  <footer class="stratkids-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <a class="navbar-brand mb-3 d-inline-flex" href="index.html">
+            <img src="assets/icons/favicon.svg" alt="StratKids Logo" height="42" width="42" class="rounded-3 shadow-sm">
+            <div class="brand-text">
+              <span class="brand-title">Strat<span>Kids</span></span>
+              <span class="brand-tagline">Think. Play. Grow.</span>
+            </div>
+          </a>
+          <p class="small text-muted mb-4" style="max-width: 340px;">
+            Cultivating critical foresight, patience, and lifelong friendships through screen-free chess and tabletop strategy summer camps.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://facebook.com" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://twitter.com" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Navigation</h6>
+          <ul class="footer-link-list">
+            <li><a href="about.html">About Camp</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="camp-life.html">Activities</a></li>
+            <li><a href="schedule.html">Daily Schedule</a></li>
+            <li><a href="pricing.html">Tuition &amp; Fees</a></li>
+            <li><a href="enroll.html">Enroll Camper</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="footer-heading">Community</h6>
+          <ul class="footer-link-list">
+            <li><a href="gallery.html">Camp Gallery</a></li>
+            <li><a href="blog.html">Parent Blog</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Camp Locations</a></li>
+            <li><a href="parent-dashboard/dashboard.html">Parent Portal</a></li>
+            <li><a href="auth/login.html">Guardian Login</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h6 class="footer-heading">Camp Office</h6>
+          <p class="small text-muted mb-2">
+            <i class="bi bi-geo-alt-fill text-rose me-2"></i> 100 Innovation Way, Suite 400, Boston, MA 02116
+          </p>
+          <p class="small text-muted mb-2">
+            <i class="bi bi-telephone-fill text-aqua me-2"></i> (800) 555-CHESS / (800) 555-2437
+          </p>
+          <p class="small text-muted mb-3">
+            <i class="bi bi-envelope-fill text-warning me-2"></i> hello@stratkidscamp.com
+          </p>
+          <span class="badge bg-success-subtle text-success p-2 rounded-3">
+            <i class="bi bi-check2-circle me-1"></i> FIDE Certified Coaches &bull; CPR/First Aid Staff
+          </span>
+        </div>
+      </div>
+
+      <div class="pt-4 border-top border-secondary border-opacity-25 d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <span class="small text-muted">&copy; 2026 StratKids Summer Chess Camp. All rights reserved.</span>
+        <div class="d-flex gap-3 small">
+          <a href="contact.html" class="text-muted text-decoration-none">Privacy Policy</a>
+          <a href="contact.html" class="text-muted text-decoration-none">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none">Camp Safety Rules</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Interactive Form & Price Calculation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('standaloneEnrollmentForm');
+      const trackSelect = document.getElementById('enrollTrack');
+      const campusSelect = document.getElementById('enrollCampus');
+      const weekSelect = document.getElementById('enrollWeek');
+      const scheduleSelect = document.getElementById('enrollSchedule');
+
+      const summaryTrack = document.getElementById('summaryTrack');
+      const summaryCampus = document.getElementById('summaryCampus');
+      const summaryWeek = document.getElementById('summaryWeek');
+      const summarySchedule = document.getElementById('summarySchedule');
+      const summaryBasePrice = document.getElementById('summaryBasePrice');
+      const summaryTotalPrice = document.getElementById('summaryTotalPrice');
+      const alertContainer = document.getElementById('enrollmentAlertContainer');
+
+      function updateSummary() {
+        if (trackSelect && summaryTrack) {
+          summaryTrack.textContent = trackSelect.options[trackSelect.selectedIndex].text.split('(')[0].trim();
+        }
+        if (campusSelect && summaryCampus) {
+          summaryCampus.textContent = campusSelect.options[campusSelect.selectedIndex].text.split('•')[0].trim();
+        }
+        if (weekSelect && summaryWeek) {
+          summaryWeek.textContent = weekSelect.options[weekSelect.selectedIndex].text.split(':')[0].trim();
+        }
+        if (scheduleSelect && summarySchedule) {
+          const selectedOption = scheduleSelect.options[scheduleSelect.selectedIndex];
+          summarySchedule.textContent = selectedOption.text.split('•')[0].trim();
+          const basePrice = parseInt(selectedOption.getAttribute('data-price') || '485', 10);
+          const discount = 50;
+          const total = basePrice - discount;
+          if (summaryBasePrice) summaryBasePrice.textContent = `$${basePrice}.00`;
+          if (summaryTotalPrice) summaryTotalPrice.textContent = `$${total}.00`;
+        }
+      }
+
+      if (trackSelect) trackSelect.addEventListener('change', updateSummary);
+      if (campusSelect) campusSelect.addEventListener('change', updateSummary);
+      if (weekSelect) weekSelect.addEventListener('change', updateSummary);
+      if (scheduleSelect) scheduleSelect.addEventListener('change', updateSummary);
+
+      updateSummary();
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (!form.checkValidity()) {
+            e.stopPropagation();
+            form.classList.add('was-validated');
+            return;
+          }
+
+          const camper = document.getElementById('camperName').value;
+          const track = trackSelect.options[trackSelect.selectedIndex].text;
+          const week = weekSelect.options[weekSelect.selectedIndex].text;
+
+          alertContainer.innerHTML = `
+            <div class="alert alert-success alert-dismissible fade show rounded-4 p-4 mb-4 border-2 shadow-sm" role="alert">
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-check-circle-fill text-success fs-1"></i>
+                <div>
+                  <h5 class="alert-heading fw-bold mb-1">Enrollment Confirmed for ${camper}!</h5>
+                  <p class="mb-2 small">Your registration for <strong>${track}</strong> (${week}) has been successfully received. A welcome email and invoice receipt have been sent to your guardian email address.</p>
+                  <a href="parent-dashboard/dashboard.html" class="btn btn-sm btn-strat-primary rounded-pill px-3">
+                    <i class="bi bi-speedometer2 me-1"></i> Access Parent Command Center
+                  </a>
+                </div>
+              </div>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          `;
+
+          alertContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          form.reset();
+          form.classList.remove('was-validated');
+          updateSummary();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+

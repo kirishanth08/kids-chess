@@ -33,7 +33,7 @@
        GLOBAL NAVBAR
        ========================================================================== -->
     <nav class="navbar navbar-expand-xl stratkids-navbar sticky-top">
-    <div class="container">
+    <div class="container-fluid px-3 px-sm-4 px-xl-5">
       <a class="navbar-brand" href="index.html">
         <img src="assets/icons/favicon.svg" alt="StratKids Logo" height="42" width="42" class="rounded-3 shadow-sm">
         <div class="brand-text">
@@ -41,22 +41,13 @@
           <span class="brand-tagline">Think. Play. Grow.</span>
         </div>
       </a>
-      <!-- Header Tools (Theme & RTL Toggles Directly on Navbar) -->
-      <div class="header-nav-tools d-flex align-items-center gap-2 ms-auto me-2 me-xl-3">
-        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
-          <i class="bi bi-moon-stars"></i>
-        </button>
-        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
-          <i class="bi bi-arrow-left-right"></i>
-        </button>
-      </div>
 
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0 shadow-none ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="stratkidsNavContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+        <ul class="navbar-nav me-auto mb-2 mb-xl-0 align-items-xl-center gap-xl-1">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Home
@@ -67,20 +58,35 @@
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link " href="programs.html">Programs</a></li>
-          <li class="nav-item"><a class="nav-link " href="camp-life.html">Activities</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Programs
+            </a>
+            <ul class="dropdown-menu border-2 shadow-sm rounded-4">
+              <li><a class="dropdown-item fw-bold" href="programs.html"><i class="bi bi-compass text-info me-1"></i> All Programs &amp; Tracks</a></li>
+              <li><a class="dropdown-item fw-bold" href="camp-life.html"><i class="bi bi-controller text-warning me-1"></i> Camp Activities &amp; Life</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link " href="schedule.html">Schedule</a></li>
           <li class="nav-item"><a class="nav-link " href="pricing.html">Pricing</a></li>
           <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
-          <li class="nav-item">
-            <a class="nav-link nav-dashboard-link" href="parent-dashboard/dashboard.html" title="Parent Dashboard">Dashboard</a>
+          <li class="nav-item ms-xl-1">
+            <a class="nav-link nav-dashboard-link d-inline-flex align-items-center gap-1" href="parent-dashboard/dashboard.html" title="Parent Dashboard">
+              <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
           </li>
         </ul>
 
-        <!-- Nav CTAs (Aligned side-by-side in hamburger on mobile, side-by-side on desktop) -->
-        <div class="nav-cta-group d-flex align-items-center gap-2">
-          <a href="auth/login.html" class="btn-nav-login" title="Parent Portal Login">Login</a>
+        <!-- Right Group: Dark Toggle, RTL Toggle, Login & Enroll (Moved to Right Edge) -->
+        <div class="nav-right-cluster d-flex align-items-center gap-2 ms-xl-auto mt-3 mt-xl-0">
+          <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+          <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+          <a href="auth/login.html" class="btn-nav-login ms-xl-1" title="Parent Portal Login">Login</a>
           <a href="enroll.html" class="btn-strat-primary"><i class="bi bi-calendar2-check-fill"></i> Enroll Now</a>
         </div>
       </div>
@@ -90,77 +96,73 @@
   <!-- ==========================================================================
        SECTION 1: HERO SECTION WITH INTERACTIVE TACTICAL PUZZLE WIDGET
        ========================================================================== -->
+  <!-- ==========================================================================
+       SECTION 1: HERO SECTION - CLEAN, ELEGANT REDESIGN
+       ========================================================================== -->
   <header class="hero-section-main">
     <div class="container">
-      <div class="row align-items-center g-5">
+      <div class="row align-items-center g-4 g-lg-5">
         <div class="col-lg-6">
-          <div class="section-tag tag-rose">
-            <i class="bi bi-trophy-fill text-warning"></i> Summer 2026 Registration Open
+          <div class="section-tag tag-rose mb-3">
+            <i class="bi bi-trophy-fill text-warning"></i> Summer 2026 Registration Open &bull; Ages 5&ndash;16
           </div>
           <h1 class="hero-title">
             Where Smart Moves Become <span class="highlight-rose">Big Adventures.</span>
           </h1>
           <p class="hero-lead">
-            StratKids merges master chess coaching, tabletop strategy games, outdoor sports, and character-building fun to help children think ahead, solve complex puzzles, and build unshakeable confidence.
+            StratKids merges master chess coaching, tabletop strategy quests, outdoor lawn games, and character-building fun to help children calculate ahead, solve complex challenges, and build unshakeable confidence.
           </p>
 
-          <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-4 hero-cta-group">
             <a href="enroll.html" class="btn-strat-primary">
-              <i class="bi bi-rocket-takeoff-fill"></i> Enroll Now
+              <i class="bi bi-calendar2-check-fill"></i> Enroll Camper Now
             </a>
             <a href="programs.html" class="btn-strat-secondary">
-              <i class="bi bi-compass-fill"></i> Explore Programs
+              <i class="bi bi-compass-fill"></i> Explore Camp Programs
             </a>
           </div>
 
-          <!-- Hero Trust Stats -->
-          <div class="hero-stats-strip">
+          <!-- Hero Trust Stats Strip: Elegant, Professionally Aligned Stat Cards -->
+          <div class="hero-stats-strip d-flex flex-wrap align-items-center gap-3 pt-3 border-top mt-4">
+            <!-- 1. Happy Campers (Rose Accent) -->
             <div class="hero-stat-pill">
               <div class="hero-stat-icon icon-rose">
                 <i class="bi bi-people-fill"></i>
               </div>
-              <div>
-                <div class="h4 mb-0 fw-bold stat-count" data-target="1250" style="color: var(--sk-rose);">1,250+</div>
-                <small class="fw-bold text-muted">Happy Campers</small>
+              <div class="hero-stat-body">
+                <div class="hero-stat-number stat-badge-rose">1,250+</div>
+                <div class="hero-stat-label">Happy Campers</div>
               </div>
             </div>
+
+            <!-- 2. Coach-Student Ratio (Aqua / Blue Accent) -->
             <div class="hero-stat-pill">
               <div class="hero-stat-icon icon-aqua">
                 <i class="bi bi-shield-check"></i>
               </div>
-              <div>
-                <div class="h4 mb-0 fw-bold lens-tag-aqua">1:6</div>
-                <small class="fw-bold text-muted">Coach-Student Ratio</small>
+              <div class="hero-stat-body">
+                <div class="hero-stat-number stat-badge-aqua">1:6</div>
+                <div class="hero-stat-label">Coach-Student Ratio</div>
               </div>
             </div>
+
+            <!-- 3. Parent Rating (Yellow / Gold Accent) -->
             <div class="hero-stat-pill">
               <div class="hero-stat-icon icon-yellow">
-                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill"></i>
               </div>
-              <div>
-                <div class="h4 mb-0 fw-bold lens-tag-yellow">4.9 / 5.0</div>
-                <small class="fw-bold text-muted">Parent Rating</small>
+              <div class="hero-stat-body">
+                <div class="hero-stat-number stat-badge-yellow">4.9 / 5.0</div>
+                <div class="hero-stat-label">Parent Rating</div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="col-lg-6">
-          <div class="position-relative">
-            <!-- Clean, High-Quality Camp Hero Image Frame -->
-            <div class="position-relative overflow-hidden rounded-5 shadow-lg border border-3" style="border-color: var(--sk-white) !important;">
-              <img src="assets/images/chess/concentrated_girl_chess.jpg" alt="Children mastering chess and strategy at StratKids Summer Camp" class="img-fluid w-100" style="object-fit: cover; min-height: 420px; max-height: 480px;">
-            </div>
-            <!-- Refined Single Subtle Floating Trust Badge -->
-            <div class="position-absolute bottom-0 start-0 m-4 p-3 rounded-4 shadow-lg border bg-white d-flex align-items-center gap-3 d-none d-sm-flex" style="border-color: var(--sk-border-color) !important; max-width: 320px;">
-              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px; background: #CA6180; color: #fff;">
-                <i class="bi bi-shield-check fs-5"></i>
-              </div>
-              <div>
-                <strong class="d-block text-dark small">USCF &amp; CPR Certified Mentors</strong>
-                <small class="text-muted">100% Screen-Free Tactics &amp; Play</small>
-              </div>
-            </div>
+          <!-- Clean, Professional High-Quality Camp Photography (No Floating Clutter) -->
+          <div class="hero-image-wrapper position-relative overflow-hidden rounded-5 shadow-lg border border-3" style="border-color: var(--sk-white) !important;">
+            <img src="assets/images/chess/concentrated_girl_chess.jpg" alt="Children mastering chess tactics and strategic calculation at StratKids Camp" class="img-fluid w-100" style="object-fit: cover; min-height: 420px; max-height: 500px; display: block;">
           </div>
         </div>
       </div>
@@ -338,7 +340,7 @@
     <div class="container">
       <div class="text-center mb-4">
         <div class="section-tag tag-aqua">
-          <i class="bi bi-stars"></i> The StratKids Advantage
+          <i class="bi bi-stars"></i> Target Advantage &amp; Core Pillars
         </div>
         <h2 class="section-title">What Makes StratKids Different?</h2>
         <p class="section-desc">
@@ -655,17 +657,20 @@
         <!-- 1. Chess Masterclasses -->
         <div class="col-md-6 col-lg-4">
           <div class="activity-uniform-card" style="--card-accent: var(--sk-aqua);">
+            <div class="activity-card-media">
+              <img src="assets/images/chess/concentrated_girl_chess.jpg" alt="Chess Masterclasses" class="activity-card-img">
+            </div>
             <div>
               <div class="activity-card-header">
                 <span class="activity-badge badge bg-info-subtle text-info">Morning Core</span>
-                <div class="activity-icon-emblem icon-aqua"><i class="bi bi-mortarboard-fill"></i></div>
+                <span class="small fw-bold text-info"><i class="bi bi-person-video3 me-1"></i> FIDE Mentors</span>
               </div>
               <h4 class="activity-card-title">Chess Masterclasses</h4>
               <p class="activity-card-desc">Interactive master board demonstrations, opening motifs, and guided tactical drills taught by FIDE certified camp coaches.</p>
             </div>
             <div class="activity-card-footer">
-              <i class="bi bi-person-video3 text-info"></i>
-              <span>1:6 Coach Ratio &bull; FIDE Mentors</span>
+              <i class="bi bi-people-fill text-info"></i>
+              <span>1:6 Coach Ratio &bull; Structured Labs</span>
             </div>
           </div>
         </div>
@@ -673,10 +678,13 @@
         <!-- 2. Modern Strategy Games -->
         <div class="col-md-6 col-lg-4">
           <div class="activity-uniform-card" style="--card-accent: var(--sk-yellow);">
+            <div class="activity-card-media">
+              <img src="assets/images/blog/blog_strategy_boardgames.jpg" alt="Modern Strategy Games" class="activity-card-img">
+            </div>
             <div>
               <div class="activity-card-header">
-                <span class="activity-badge badge bg-warning-subtle text-warning">Strategy Lab</span>
-                <div class="activity-icon-emblem icon-yellow"><i class="bi bi-dice-5-fill"></i></div>
+                <span class="activity-badge badge bg-warning text-dark fw-bold">Strategy Lab</span>
+                <span class="small fw-bold text-warning"><i class="bi bi-dice-5-fill me-1"></i> Tabletop Hub</span>
               </div>
               <h4 class="activity-card-title">Modern Strategy Games</h4>
               <p class="activity-card-desc">Award-winning strategy tabletop games (Catan Junior, Hive, Blokus, Quoridor) enhancing spatial planning and resource foresight.</p>
@@ -691,16 +699,19 @@
         <!-- 3. Speed Puzzle Relays -->
         <div class="col-md-6 col-lg-4">
           <div class="activity-uniform-card" style="--card-accent: var(--sk-rose);">
+            <div class="activity-card-media">
+              <img src="assets/images/chess/pexels_8465434.jpg" alt="Speed Puzzle Relays" class="activity-card-img">
+            </div>
             <div>
               <div class="activity-card-header">
                 <span class="activity-badge badge bg-danger-subtle text-danger">Team Co-Op</span>
-                <div class="activity-icon-emblem icon-rose"><i class="bi bi-puzzle-fill"></i></div>
+                <span class="small fw-bold text-rose"><i class="bi bi-lightning-charge-fill me-1"></i> Tactics Race</span>
               </div>
               <h4 class="activity-card-title">Speed Puzzle Relays</h4>
               <p class="activity-card-desc">Energetic team races where pairs dash up to solve tactics boards together, cheering their teammates on with spirited sportsmanship.</p>
             </div>
             <div class="activity-card-footer">
-              <i class="bi bi-lightning-charge-fill text-danger"></i>
+              <i class="bi bi-flag-fill text-danger"></i>
               <span>High-Energy Tactical Teamwork</span>
             </div>
           </div>
@@ -709,10 +720,13 @@
         <!-- 4. Outdoor Lawn Games -->
         <div class="col-md-6 col-lg-4">
           <div class="activity-uniform-card" style="--card-accent: var(--sk-aqua);">
+            <div class="activity-card-media">
+              <img src="assets/images/chess/gallery_lawn_chess.jpg" alt="Outdoor Lawn Games" class="activity-card-img">
+            </div>
             <div>
               <div class="activity-card-header">
                 <span class="activity-badge badge bg-success-subtle text-success">Active Play</span>
-                <div class="activity-icon-emblem icon-aqua"><i class="bi bi-sun-fill text-warning"></i></div>
+                <span class="small fw-bold text-success"><i class="bi bi-sun-fill me-1"></i> Fresh Air</span>
               </div>
               <h4 class="activity-card-title">Outdoor Lawn Games</h4>
               <p class="activity-card-desc">Daily fresh-air breaks with capture-the-flag, frisbee strategy, and tag games to balance mental concentration with healthy physical fun.</p>
@@ -727,10 +741,13 @@
         <!-- 5. Friday Grand Prix -->
         <div class="col-md-6 col-lg-4">
           <div class="activity-uniform-card" style="--card-accent: var(--sk-yellow);">
+            <div class="activity-card-media">
+              <img src="assets/images/chess/gallery_tournament_award.jpg" alt="Friday Grand Prix" class="activity-card-img">
+            </div>
             <div>
               <div class="activity-card-header">
                 <span class="activity-badge badge bg-warning text-dark fw-bold">Weekly Finale</span>
-                <div class="activity-icon-emblem icon-yellow"><i class="bi bi-trophy-fill" style="color: #4A3B00 !important;"></i></div>
+                <span class="small fw-bold text-warning"><i class="bi bi-trophy-fill me-1"></i> Swiss Tourney</span>
               </div>
               <h4 class="activity-card-title">Friday Grand Prix</h4>
               <p class="activity-card-desc">Every Friday features an encouraging, non-elimination camp tournament where every single camper takes home a medal and certificate.</p>
@@ -745,10 +762,13 @@
         <!-- 6. Creative Board Design -->
         <div class="col-md-6 col-lg-4">
           <div class="activity-uniform-card" style="--card-accent: var(--sk-pink);">
+            <div class="activity-card-media">
+              <img src="assets/images/chess/pexels_8471881.jpg" alt="Creative Board Design" class="activity-card-img">
+            </div>
             <div>
               <div class="activity-card-header">
                 <span class="activity-badge badge bg-primary-subtle text-primary">Arts &amp; Crafts</span>
-                <div class="activity-icon-emblem icon-pink"><i class="bi bi-palette-fill" style="color: #5C1226 !important;"></i></div>
+                <span class="small fw-bold text-rose"><i class="bi bi-palette-fill me-1"></i> Hands-On</span>
               </div>
               <h4 class="activity-card-title">Creative Board Design</h4>
               <p class="activity-card-desc">Hands-on craft sessions where children customize their own tournament chess set, paint themed pieces, and design game maps.</p>
@@ -953,7 +973,7 @@
        GLOBAL FOOTER (Redesigned Modern Interactive Experience)
        ========================================================================== -->
   <footer class="stratkids-footer position-relative" id="mainGlobalFooter">
-    <div class="container position-relative" style="z-index: 2;">
+    <div class="container-fluid px-3 px-sm-4 px-xl-5 position-relative" style="z-index: 2;">
       <!-- Main Footer Columns -->
       <div class="row g-4 g-lg-5">
         <!-- Col 1: Brand & Professional Accreditation Matrix -->

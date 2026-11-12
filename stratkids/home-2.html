@@ -33,7 +33,7 @@
        GLOBAL NAVBAR
        ========================================================================== -->
     <nav class="navbar navbar-expand-xl stratkids-navbar sticky-top">
-    <div class="container">
+    <div class="container-fluid px-3 px-sm-4 px-xl-5">
       <a class="navbar-brand" href="index.html">
         <img src="assets/icons/favicon.svg" alt="StratKids Logo" height="42" width="42" class="rounded-3 shadow-sm">
         <div class="brand-text">
@@ -41,22 +41,13 @@
           <span class="brand-tagline">Think. Play. Grow.</span>
         </div>
       </a>
-      <!-- Header Tools (Theme & RTL Toggles Directly on Navbar) -->
-      <div class="header-nav-tools d-flex align-items-center gap-2 ms-auto me-2 me-xl-3">
-        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
-          <i class="bi bi-moon-stars"></i>
-        </button>
-        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
-          <i class="bi bi-arrow-left-right"></i>
-        </button>
-      </div>
 
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0 shadow-none ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="stratkidsNavContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+        <ul class="navbar-nav me-auto mb-2 mb-xl-0 align-items-xl-center gap-xl-1">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Home
@@ -67,20 +58,35 @@
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link " href="programs.html">Programs</a></li>
-          <li class="nav-item"><a class="nav-link " href="camp-life.html">Activities</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Programs
+            </a>
+            <ul class="dropdown-menu border-2 shadow-sm rounded-4">
+              <li><a class="dropdown-item fw-bold" href="programs.html"><i class="bi bi-compass text-info me-1"></i> All Programs &amp; Tracks</a></li>
+              <li><a class="dropdown-item fw-bold" href="camp-life.html"><i class="bi bi-controller text-warning me-1"></i> Camp Activities &amp; Life</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link " href="schedule.html">Schedule</a></li>
           <li class="nav-item"><a class="nav-link " href="pricing.html">Pricing</a></li>
           <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
-          <li class="nav-item">
-            <a class="nav-link nav-dashboard-link" href="parent-dashboard/dashboard.html" title="Parent Dashboard">Dashboard</a>
+          <li class="nav-item ms-xl-1">
+            <a class="nav-link nav-dashboard-link d-inline-flex align-items-center gap-1" href="parent-dashboard/dashboard.html" title="Parent Dashboard">
+              <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
           </li>
         </ul>
 
-        <!-- Nav CTAs (Aligned side-by-side in hamburger on mobile, side-by-side on desktop) -->
-        <div class="nav-cta-group d-flex align-items-center gap-2">
-          <a href="auth/login.html" class="btn-nav-login" title="Parent Portal Login">Login</a>
+        <!-- Right Group: Dark Toggle, RTL Toggle, Login & Enroll (Moved to Right Edge) -->
+        <div class="nav-right-cluster d-flex align-items-center gap-2 ms-xl-auto mt-3 mt-xl-0">
+          <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+          <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+          <a href="auth/login.html" class="btn-nav-login ms-xl-1" title="Parent Portal Login">Login</a>
           <a href="enroll.html" class="btn-strat-primary"><i class="bi bi-calendar2-check-fill"></i> Enroll Now</a>
         </div>
       </div>
@@ -452,43 +458,43 @@
             </div>
 
             <!-- Live Tactical Telemetry & Square Analyzer (Balances layout height) -->
-            <div class="w-100 mt-4 p-3 rounded-4 border bg-white shadow-sm text-start" id="visualizerStatsCard" style="border-color: #E2E8F0 !important;">
+            <div class="w-100 mt-4 p-3 rounded-4 border shadow-sm text-start visualizer-stats-card" id="visualizerStatsCard">
               <div class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-2 mb-3 gap-2">
                 <div class="d-flex align-items-center gap-2">
                   <span class="badge rounded-pill bg-dark text-white px-2 py-1 small" id="telemetryPieceBadge">
                     <i class="bi bi-cpu-fill text-info me-1"></i> Board Telemetry
                   </span>
-                  <span class="fw-bold small text-dark" id="telemetrySquareLabel">Active Square: <strong class="text-primary font-monospace fs-6" id="vActiveSquare">e4</strong></span>
+                  <span class="fw-bold small telemetry-square-label" id="telemetrySquareLabel">Active Square: <strong class="text-primary font-monospace fs-6" id="vActiveSquare">e4</strong></span>
                 </div>
-                <span class="badge bg-light text-muted border small" id="telemetryMovesCount">
-                  <i class="bi bi-arrow-repeat text-success me-1"></i> Moves Made: <span id="vMoveCounter" class="fw-bold text-dark">0</span>
+                <span class="badge telemetry-box border small" id="telemetryMovesCount">
+                  <i class="bi bi-arrow-repeat text-success me-1"></i> Moves Made: <span id="vMoveCounter" class="fw-bold">0</span>
                 </span>
               </div>
 
               <div class="row g-2 text-center mb-3">
                 <div class="col-4">
-                  <div class="p-2 rounded-3 bg-light border h-100">
-                    <div class="text-muted" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Coverage</div>
-                    <div class="fw-bold text-dark fs-6 mt-1" id="vStatCoverage">8 Squares</div>
+                  <div class="p-2 rounded-3 telemetry-box border h-100">
+                    <div class="telemetry-label" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Coverage</div>
+                    <div class="fw-bold fs-6 mt-1 telemetry-value" id="vStatCoverage">8 Squares</div>
                   </div>
                 </div>
                 <div class="col-4">
-                  <div class="p-2 rounded-3 bg-light border h-100">
-                    <div class="text-muted" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Vector Style</div>
-                    <div class="fw-bold text-dark fs-6 mt-1" id="vStatVector">Omni 1-Step</div>
+                  <div class="p-2 rounded-3 telemetry-box border h-100">
+                    <div class="telemetry-label" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Vector Style</div>
+                    <div class="fw-bold fs-6 mt-1 telemetry-value" id="vStatVector">Omni 1-Step</div>
                   </div>
                 </div>
                 <div class="col-4">
-                  <div class="p-2 rounded-3 bg-light border h-100">
-                    <div class="text-muted" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Board Zone</div>
-                    <div class="fw-bold text-primary fs-6 mt-1" id="vStatZone">Center Outpost</div>
+                  <div class="p-2 rounded-3 telemetry-box border h-100">
+                    <div class="telemetry-label" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Board Zone</div>
+                    <div class="fw-bold text-primary fs-6 mt-1 telemetry-value" id="vStatZone">Center Outpost</div>
                   </div>
                 </div>
               </div>
 
-              <div class="p-2 rounded-3 bg-light border d-flex align-items-center gap-2 small">
+              <div class="p-2 rounded-3 telemetry-challenge-box border d-flex align-items-center gap-2 small">
                 <i class="bi bi-lightbulb-fill text-warning fs-5 flex-shrink-0"></i>
-                <div class="text-body" id="vCoachChallenge">
+                <div id="vCoachChallenge">
                   <strong>Master Challenge:</strong> Tap any glowing dot to reposition this piece and watch how tactical coverage updates dynamically!
                 </div>
               </div>
@@ -528,7 +534,7 @@
             <div class="p-4 p-md-5 d-flex flex-column justify-content-between flex-grow-1">
               <div>
                 <span class="badge rounded-pill px-3 py-1 fw-bold mb-2" style="background: var(--sk-aqua); color: #08343C !important;">Tactical Calculation</span>
-                <h4 class="h5 fw-bold mb-2" style="color: inherit;">Master Coaching &amp; Candidate Move Labs</h4>
+                <h4 class="h5 fw-bold mb-2 text-heading">Master Coaching &amp; Candidate Move Labs</h4>
                 <p class="small text-muted mb-3">
                   In intimate 1:6 pods, campers explore opening concepts, solve mate-in-two puzzles on demonstration boards, and develop the patience to look two moves ahead before touching a piece.
                 </p>
@@ -554,7 +560,7 @@
             <div class="p-4 p-md-5 d-flex flex-column justify-content-between flex-grow-1">
               <div>
                 <span class="badge rounded-pill px-3 py-1 fw-bold mb-2" style="background: var(--sk-yellow); color: #111A20 !important;">Screen-Free Active Play</span>
-                <h4 class="h5 fw-bold mb-2" style="color: inherit;">Outdoor Strategy Relays &amp; Modern Board Games</h4>
+                <h4 class="h5 fw-bold mb-2 text-heading">Outdoor Strategy Relays &amp; Modern Board Games</h4>
                 <p class="small text-muted mb-3">
                   After lunch, energy peaks with frisbee capture-the-king, giant lawn chess, and cooperative tabletop strategy games like Catan Junior and Hive to develop spatial reasoning and teamwork.
                 </p>
@@ -603,7 +609,7 @@
             </div>
           </div>
 
-          <a href="about.html" class="btn-strat-secondary">
+          <a href="about.html" class="btn-strat-secondary w-100 w-sm-auto text-center justify-content-center">
             <i class="bi bi-compass"></i> Learn More About Our Campuses
           </a>
         </div>
@@ -655,7 +661,7 @@
        GLOBAL FOOTER (Redesigned Modern Interactive Experience)
        ========================================================================== -->
   <footer class="stratkids-footer position-relative">
-    <div class="container position-relative" style="z-index: 2;">
+    <div class="container-fluid px-3 px-sm-4 px-xl-5 position-relative" style="z-index: 2;">
 
       <!-- Main Footer Columns -->
       <div class="row g-4 g-lg-5">

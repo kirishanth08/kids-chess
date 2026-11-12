@@ -32,7 +32,7 @@
        GLOBAL NAVBAR
        ========================================================================== -->
     <nav class="navbar navbar-expand-xl stratkids-navbar sticky-top">
-    <div class="container">
+    <div class="container-fluid px-3 px-sm-4 px-xl-5">
       <a class="navbar-brand" href="../index.html">
         <img src="../assets/icons/favicon.svg" alt="StratKids Logo" height="42" width="42" class="rounded-3 shadow-sm">
         <div class="brand-text">
@@ -40,12 +40,12 @@
           <span class="brand-tagline">Think. Play. Grow.</span>
         </div>
       </a>
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0 shadow-none ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="stratkidsNavContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+        <ul class="navbar-nav me-auto mb-2 mb-xl-0 align-items-xl-center gap-xl-1">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Home
@@ -56,35 +56,36 @@
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link " href="../about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link " href="../programs.html">Programs</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Programs
+            </a>
+            <ul class="dropdown-menu border-2 shadow-sm rounded-4">
+              <li><a class="dropdown-item fw-bold" href="../programs.html"><i class="bi bi-compass text-info me-1"></i> All Programs &amp; Tracks</a></li>
+              <li><a class="dropdown-item fw-bold" href="../camp-life.html"><i class="bi bi-controller text-warning me-1"></i> Camp Activities &amp; Life</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link " href="../schedule.html">Schedule</a></li>
           <li class="nav-item"><a class="nav-link " href="../pricing.html">Pricing</a></li>
           <li class="nav-item"><a class="nav-link " href="../blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link " href="../contact.html">Contact</a></li>
-          <li class="nav-item">
-            <a class="nav-link nav-dashboard-link" href="../parent-dashboard/dashboard.html" title="Parent Dashboard">Dashboard</a>
+          <li class="nav-item ms-xl-1">
+            <a class="nav-link nav-dashboard-link d-inline-flex align-items-center gap-1" href="../parent-dashboard/dashboard.html" title="Parent Dashboard">
+              <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
           </li>
         </ul>
 
-        <div class="nav-tools d-flex align-items-center gap-2">
-          <!-- Dark Mode Switcher Circle -->
+        <!-- Right Group: Dark Toggle, RTL Toggle, Login & Enroll (Moved to Right Edge) -->
+        <div class="nav-right-cluster d-flex align-items-center gap-2 ms-xl-auto mt-3 mt-xl-0">
           <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
             <i class="bi bi-moon-stars"></i>
           </button>
-
-          <!-- RTL / LTR Toggle Circle -->
           <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
             <i class="bi bi-arrow-left-right"></i>
           </button>
-
-          
-
-          <!-- Primary CTA Button (Identical across all pages) -->
-          <!-- Login Button in Navbar before CTA -->
-          <a href="../auth/login.html" class="btn-nav-login" title="Parent Portal Login">Login</a>
-          <button type="button" class="btn-strat-primary" data-bs-toggle="modal" data-bs-target="#enrollmentModal">
-            <i class="bi bi-calendar2-check-fill"></i> Enroll Now
-          </button>
+          <a href="../auth/login.html" class="btn-nav-login ms-xl-1" title="Parent Portal Login">Login</a>
+          <a href="../enroll.html" class="btn-strat-primary"><i class="bi bi-calendar2-check-fill"></i> Enroll Now</a>
         </div>
       </div>
     </div>
@@ -383,7 +384,7 @@
        GLOBAL FOOTER
        ========================================================================== -->
   <footer class="stratkids-footer">
-    <div class="container">
+    <div class="container-fluid px-3 px-sm-4 px-xl-5 position-relative" style="z-index: 2;">
       <div class="row g-4 mb-5">
         <div class="col-lg-4 col-md-6">
           <a href="../index.html" class="d-inline-block mb-3">

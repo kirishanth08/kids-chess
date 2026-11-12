@@ -340,6 +340,28 @@ html, body {
   margin-bottom: 1.25rem;
 }
 
+.activity-uniform-card .activity-card-media {
+  width: 100%;
+  height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--sk-border-color);
+  background-color: var(--sk-surface-alt);
+}
+
+.activity-uniform-card .activity-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.activity-uniform-card:hover .activity-card-media img {
+  transform: scale(1.05);
+}
+
 .activity-uniform-card .activity-badge {
   font-size: 0.72rem;
   font-weight: 800;
@@ -961,9 +983,15 @@ img {
   padding: 0.45rem 0.65rem !important;
   background: rgba(255, 255, 255, 0.08) !important;
   color: #FFFFFF !important;
-  display: flex !important;
+  display: none !important;
   align-items: center !important;
   justify-content: center !important;
+}
+
+@media (max-width: 1199.98px) {
+  .stratkids-navbar .navbar-toggler {
+    display: flex !important;
+  }
 }
 
 .stratkids-navbar .navbar-toggler:focus {
@@ -982,25 +1010,58 @@ img {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.95%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-.stratkids-navbar .tool-toggle-btn {
+.stratkids-navbar .tool-toggle-btn,
+.nav-tools-item .tool-toggle-btn {
   background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.16) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   color: #FFFFFF !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  font-size: 1.05rem !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  flex-shrink: 0 !important;
 }
 
-.stratkids-navbar .tool-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.18) !important;
+.stratkids-navbar .tool-toggle-btn:hover,
+.nav-tools-item .tool-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
   color: #7FE5F5 !important;
   border-color: #7FE5F5 !important;
-  transform: translateY(-2px);
+  transform: translateY(-2px) !important;
   box-shadow: 0 4px 10px rgba(127, 229, 245, 0.3) !important;
 }
 
-.nav-tools {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  flex-shrink: 0;
+.nav-tools,
+.nav-tools-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  flex-shrink: 0 !important;
+}
+
+/* Nav Right Cluster (Theme Toggle, RTL Toggle, Login & Enroll Anchored to the Right) */
+.nav-right-cluster {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 1199.98px) {
+  .nav-right-cluster {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    padding-top: 0.75rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+    margin-top: 0.75rem !important;
+    width: 100% !important;
+  }
 }
 
 /* Navbar Login Button */
@@ -1039,17 +1100,62 @@ img {
   transform: translateX(2px);
 }
 
-/* Nav Dashboard Link (Next to Contact) */
+/* Nav Dashboard Link (With prominent Dashboard icon) */
 .nav-dashboard-link {
-  color: rgba(255, 255, 255, 0.92) !important;
-  padding: 0.35rem 0.5rem !important;
-  border-radius: var(--sk-radius-pill);
-  transition: all 0.2s ease;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  padding: 0.4rem 0.85rem !important;
+  border-radius: var(--sk-radius-pill) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  font-weight: 700 !important;
+  transition: all 0.25s ease !important;
+}
+
+.nav-dashboard-link i {
+  color: #FFE66D !important;
+  font-size: 1rem !important;
 }
 
 .nav-dashboard-link:hover {
-  color: #FFDD53 !important;
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: #7FE5F5 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Nav Tools Item (Theme & RTL Toggles Positioned After Dashboard Icon) */
+.nav-tools-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+}
+
+.nav-tools-item .tool-toggle-btn {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #FFFFFF !important;
+  font-size: 1.05rem !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.nav-tools-item .tool-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #7FE5F5 !important;
+  border-color: #7FE5F5 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 10px rgba(127, 229, 245, 0.3) !important;
 }
 
 /* Circular Tool Buttons (Matching Screenshot 1) */
@@ -2220,23 +2326,111 @@ img {
 .hero-stats-strip {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  align-items: center;
+  gap: 1.25rem;
   padding-top: 1.5rem;
-  border-top: 2px dashed var(--sk-border-color);
+  border-top: 1px solid var(--sk-border-color);
+  margin-top: 1.75rem;
 }
+
 .hero-stat-pill {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.85rem;
+  padding: 0.6rem 1.15rem 0.6rem 0.75rem;
+  background: var(--sk-surface-card);
+  border: 1px solid var(--sk-border-color);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px -3px rgba(38, 51, 58, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
+
+.hero-stat-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(38, 51, 58, 0.1);
+  border-color: rgba(158, 211, 220, 0.45);
+}
+
 .hero-stat-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--sk-radius-md);
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.35rem;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+}
+
+.hero-stat-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Elegant, Professionally Aligned Colored Number Badges */
+.hero-stat-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--sk-font-heading);
+  font-weight: 800;
+  font-size: 1.12rem;
+  line-height: 1.2;
+  padding: 0.22rem 0.7rem;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.2rem;
+  width: fit-content;
+  box-sizing: border-box;
+}
+
+/* 1. Rose Accent Badge (Happy Campers) */
+.stat-badge-rose {
+  background-color: rgba(255, 123, 149, 0.16) !important;
+  color: #9E1F3D !important;
+  border: 1px solid rgba(255, 123, 149, 0.4) !important;
+}
+[data-bs-theme="dark"] .stat-badge-rose {
+  background-color: rgba(255, 123, 149, 0.18) !important;
+  color: #FFA3BA !important;
+  border: 1px solid rgba(255, 123, 149, 0.35) !important;
+}
+
+/* 2. Blue / Aqua Accent Badge (Coach-Student Ratio) */
+.stat-badge-aqua {
+  background-color: rgba(158, 211, 220, 0.26) !important;
+  color: #074550 !important;
+  border: 1px solid rgba(158, 211, 220, 0.55) !important;
+}
+[data-bs-theme="dark"] .stat-badge-aqua {
+  background-color: rgba(127, 229, 245, 0.16) !important;
+  color: #7FE5F5 !important;
+  border: 1px solid rgba(127, 229, 245, 0.35) !important;
+}
+
+/* 3. Yellow / Gold Accent Badge (Parent Rating) */
+.stat-badge-yellow {
+  background-color: #FEFD99 !important;
+  color: #111A20 !important;
+  border: 1px solid #DFDD44 !important;
+}
+[data-bs-theme="dark"] .stat-badge-yellow {
+  background-color: rgba(254, 253, 153, 0.2) !important;
+  color: #FEFD99 !important;
+  border: 1px solid rgba(254, 253, 153, 0.45) !important;
+}
+
+.hero-stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--sk-text-muted);
+  line-height: 1.25;
+  letter-spacing: 0.2px;
+}
+[data-bs-theme="dark"] .hero-stat-label {
+  color: #9FB2BC !important;
 }
 
 .hero-visual-frame {
@@ -2515,18 +2709,34 @@ img {
   border: 1px solid #7A7016 !important;
 }
 
-/* Hero CTA Group Equal Alignment */
+/* Hero CTA Group Equal Alignment & Professional Spacing */
 .hero-cta-group {
   display: flex !important;
-  align-items: stretch;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 1rem !important;
 }
 .hero-cta-group .btn-strat-primary,
 .hero-cta-group .btn-strat-secondary,
 .hero-cta-group .btn {
-  flex: 1 1 200px;
-  max-width: 250px;
-  text-align: center;
-  justify-content: center;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.65rem !important;
+  min-height: 52px !important;
+  padding: 0.75rem 1.85rem !important;
+  font-size: 1.05rem !important;
+  line-height: 1.3 !important;
+  flex: 0 0 auto !important;
+  max-width: none !important;
+  width: auto !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+.hero-cta-group .btn-strat-primary i,
+.hero-cta-group .btn-strat-secondary i {
+  font-size: 1.15rem !important;
+  flex-shrink: 0 !important;
 }
 
 /* Move Number Badge */
@@ -4516,7 +4726,6 @@ textarea:focus-visible {
 .badge.bg-warning,
 .badge-gold,
 .badge-yellow,
-.lens-tag-yellow,
 .tag-yellow,
 .callout-badge.bg-warning,
 .activity-badge.bg-warning,
@@ -4548,7 +4757,6 @@ textarea:focus-visible {
 
 /* 4. Pink Badges and Pills MUST ALWAYS HAVE DEEP HIGH-CONTRAST TEXT */
 .badge-pink,
-.lens-tag-pink,
 .tag-pink,
 .coin-pts-badge[style*="var(--sk-pink)"],
 [style*="background: var(--sk-pink)"],
@@ -4564,7 +4772,6 @@ textarea:focus-visible {
 
 /* 5. Aqua Badges and Pills MUST ALWAYS HAVE DEEP HIGH-CONTRAST TEXT */
 .badge-aqua,
-.lens-tag-aqua,
 .tag-aqua,
 .coin-pts-badge[style*="var(--sk-aqua)"],
 [style*="background: var(--sk-aqua)"],
@@ -4669,39 +4876,85 @@ textarea:focus-visible {
 }
 
 /* 9. Interactive Telemetry Box in Dark & Light Mode (King Challenge Box Fix) */
-#visualizerStatsCard {
+#visualizerStatsCard,
+.visualizer-stats-card {
   background-color: #FFFFFF !important;
   border-color: #E2E8F0 !important;
+  color: #111A20 !important;
 }
+#visualizerStatsCard .telemetry-box,
+.visualizer-stats-card .telemetry-box,
 #visualizerStatsCard .bg-light {
   background-color: #F8FAFC !important;
   border-color: #E2E8F0 !important;
-}
-#visualizerStatsCard .text-dark,
-#visualizerStatsCard .text-body,
-#visualizerStatsCard #vCoachChallenge,
-#visualizerStatsCard #vCoachChallenge strong {
   color: #111A20 !important;
 }
-[data-bs-theme="dark"] #visualizerStatsCard {
-  background-color: #15222A !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+#visualizerStatsCard .telemetry-label {
+  color: #64748B !important;
 }
+#visualizerStatsCard .telemetry-value,
+#visualizerStatsCard .text-dark,
+#visualizerStatsCard .text-body {
+  color: #111A20 !important;
+}
+#visualizerStatsCard .telemetry-challenge-box {
+  background-color: #FEF9C3 !important;
+  border-color: #FDE047 !important;
+}
+#visualizerStatsCard .telemetry-challenge-box #vCoachChallenge,
+#visualizerStatsCard .telemetry-challenge-box strong,
+#visualizerStatsCard #vCoachChallenge,
+#visualizerStatsCard #vCoachChallenge strong {
+  color: #713F12 !important;
+  font-weight: 500 !important;
+}
+
+[data-bs-theme="dark"] #visualizerStatsCard,
+[data-bs-theme="dark"] .visualizer-stats-card {
+  background-color: #15222A !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #F8FAFC !important;
+}
+[data-bs-theme="dark"] #visualizerStatsCard .telemetry-box,
+[data-bs-theme="dark"] .visualizer-stats-card .telemetry-box,
 [data-bs-theme="dark"] #visualizerStatsCard .bg-light {
   background-color: #1C2B36 !important;
   border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #F8FAFC !important;
 }
+[data-bs-theme="dark"] #visualizerStatsCard .telemetry-label {
+  color: #94A3B8 !important;
+}
+[data-bs-theme="dark"] #visualizerStatsCard .telemetry-value,
+[data-bs-theme="dark"] #visualizerStatsCard .telemetry-square-label,
 [data-bs-theme="dark"] #visualizerStatsCard .text-dark,
 [data-bs-theme="dark"] #visualizerStatsCard .text-body,
-[data-bs-theme="dark"] #visualizerStatsCard #vCoachChallenge,
-[data-bs-theme="dark"] #visualizerStatsCard #vCoachChallenge strong,
 [data-bs-theme="dark"] #visualizerStatsCard #vMoveCounter,
 [data-bs-theme="dark"] #visualizerStatsCard #vStatCoverage,
 [data-bs-theme="dark"] #visualizerStatsCard #vStatVector {
   color: #FFFFFF !important;
 }
 [data-bs-theme="dark"] #visualizerStatsCard .text-muted {
-  color: #A0B3BD !important;
+  color: #94A3B8 !important;
+}
+[data-bs-theme="dark"] #visualizerStatsCard .telemetry-challenge-box {
+  background-color: #2D2808 !important;
+  border-color: #854D0E !important;
+}
+[data-bs-theme="dark"] #visualizerStatsCard .telemetry-challenge-box #vCoachChallenge,
+[data-bs-theme="dark"] #visualizerStatsCard .telemetry-challenge-box strong,
+[data-bs-theme="dark"] #visualizerStatsCard #vCoachChallenge,
+[data-bs-theme="dark"] #visualizerStatsCard #vCoachChallenge strong {
+  color: #FEF08A !important;
+  font-weight: 500 !important;
+}
+
+/* Headings Dark & Light Contrast Guarantee */
+.text-heading {
+  color: #111A20 !important;
+}
+[data-bs-theme="dark"] .text-heading {
+  color: #FFFFFF !important;
 }
 
 /* Header Nav Tools (Theme & RTL Toggles on Navbar) */

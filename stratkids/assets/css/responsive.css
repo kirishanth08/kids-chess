@@ -93,7 +93,8 @@ html, body {
   }
 
   /* StratKids Navbar Mobile Drawer: Floating Overlay so hero section never moves down on 360, 768, 1024px */
-  .stratkids-navbar .navbar-collapse {
+  .stratkids-navbar .navbar-collapse,
+  .stratkids-navbar .collapsing {
     background: var(--sk-surface-card) !important;
     border: 2px solid var(--sk-border-color) !important;
     border-radius: var(--sk-radius-xl) !important;
@@ -756,5 +757,80 @@ html, body {
     min-height: 5.6rem !important;
   }
 }
+
+/* Hero Feature Items on Clean Redesigned Hero */
+.hero-features-list .hero-feature-item {
+  font-size: 0.92rem;
+  color: var(--sk-dark);
+  display: inline-flex;
+  align-items: center;
+}
+[data-bs-theme="dark"] .hero-features-list .hero-feature-item {
+  color: #E2E8F0 !important;
+}
+
+/* 1024px Programs View Details Layout Fix */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .program-card-footer,
+  .program-card .mt-auto {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+  .program-card .btn-strat-secondary {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
+  }
+  .program-card .badge {
+    font-size: 0.75rem !important;
+    padding: 0.35rem 0.55rem !important;
+  }
+}
+
+/* 1024px Dashboard Skill Progress & Daily Routine Layout Fix */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .dashboard-main-area .d-flex.justify-content-between.align-items-center {
+    flex-wrap: wrap !important;
+    gap: 0.75rem !important;
+  }
+  .dashboard-main-area h5 {
+    font-size: 1.05rem !important;
+  }
+  .dashboard-main-area .col-md-4 {
+    width: 100% !important;
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+/* 360px Campus CTA & Blog CTA Layout Fixes */
+@media (max-width: 480px) {
+  .btn-strat-secondary,
+  .btn-strat-primary,
+  #submitEnrollBtn {
+    white-space: normal !important;
+    word-break: break-word !important;
+    text-align: center !important;
+    line-height: 1.35 !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Hero Stat Pills Responsive Alignment */
+@media (max-width: 575.98px) {
+  .hero-stats-strip {
+    gap: 0.75rem !important;
+    justify-content: flex-start !important;
+  }
+  .hero-stat-pill {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+}
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .hero-stat-pill {
+    flex: 1 1 auto !important;
+  }
+}
+
 
 

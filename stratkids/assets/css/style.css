@@ -5214,3 +5214,169 @@ textarea:focus-visible {
 
 
 
+
+/* ==========================================================================
+   ENHANCED COMPREHENSIVE FIXES FOR NAVBAR, CONTRAST, & RESPONSIVENESS
+   ========================================================================== */
+
+/* 1. Header & Mobile 360px Single-Line Grouping */
+.header-right-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  flex-shrink: 0 !important;
+}
+
+.tool-toggle-btn .dir-label,
+.rtl-badge-btn .dir-label {
+  display: none !important;
+}
+
+@media (max-width: 575.98px) {
+  .stratkids-navbar .container-fluid {
+    flex-wrap: nowrap !important;
+    gap: 0.25rem !important;
+  }
+  .stratkids-navbar .navbar-brand {
+    font-size: 1.05rem !important;
+  }
+  .stratkids-navbar .navbar-brand img {
+    height: 36px !important;
+    width: 36px !important;
+  }
+  .tool-toggle-btn,
+  .rtl-badge-btn {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    font-size: 0.95rem !important;
+  }
+  .stratkids-navbar .navbar-toggler {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* 2. Enroll Page Step Badges Uniform Spacing */
+.form-step-badge {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0.65rem 0 0 !important;
+  font-family: var(--sk-font-heading) !important;
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 3. Camp Life 5 Pillars Dark Mode Contrast */
+.pillar-card {
+  background: var(--sk-surface-card) !important;
+  border-color: var(--sk-border-color) !important;
+}
+.pillar-card h5 {
+  color: var(--sk-dark) !important;
+}
+.pillar-card ul,
+.pillar-card li,
+.pillar-card strong,
+.pillar-card .pillar-subcard {
+  color: var(--sk-dark) !important;
+}
+[data-bs-theme="dark"] .pillar-card {
+  background: #15222A !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+[data-bs-theme="dark"] .pillar-card h5,
+[data-bs-theme="dark"] .pillar-card ul,
+[data-bs-theme="dark"] .pillar-card li,
+[data-bs-theme="dark"] .pillar-card strong,
+[data-bs-theme="dark"] .pillar-card .text-dark,
+[data-bs-theme="dark"] .pillar-card .pillar-subcard {
+  color: #FFFFFF !important;
+}
+[data-bs-theme="dark"] .pillar-card .bg-light,
+[data-bs-theme="dark"] .pillar-card .pillar-subcard {
+  background-color: #1C2B36 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 4. Stat Badges Universal AAA Contrast (Home 1 Fix) */
+.stat-badge-yellow,
+[data-bs-theme="dark"] .stat-badge-yellow {
+  background-color: #FEFD99 !important;
+  color: #111A20 !important;
+  font-weight: 800 !important;
+  border: 1px solid #DFDD44 !important;
+}
+
+.stat-badge-aqua,
+[data-bs-theme="dark"] .stat-badge-aqua {
+  background-color: #9ED3DC !important;
+  color: #08343C !important;
+  font-weight: 800 !important;
+  border: 1px solid #7CC4D0 !important;
+}
+
+.stat-badge-rose,
+[data-bs-theme="dark"] .stat-badge-rose {
+  background-color: #FFA3BA !important;
+  color: #5C1226 !important;
+  font-weight: 800 !important;
+  border: 1px solid #F57294 !important;
+}
+
+/* 5. Coin Academy Points Badges Contrast (Home 2 Fix) */
+.coin-pts-badge.badge-coin-yellow,
+[data-bs-theme="dark"] .coin-pts-badge.badge-coin-yellow {
+  background-color: #FEFD99 !important;
+  color: #111A20 !important;
+  font-weight: 800 !important;
+}
+.coin-pts-badge.badge-coin-pink,
+[data-bs-theme="dark"] .coin-pts-badge.badge-coin-pink {
+  background-color: #FFA3BA !important;
+  color: #5C1226 !important;
+  font-weight: 800 !important;
+}
+.coin-pts-badge.badge-coin-aqua,
+[data-bs-theme="dark"] .coin-pts-badge.badge-coin-aqua {
+  background-color: #9ED3DC !important;
+  color: #08343C !important;
+  font-weight: 800 !important;
+}
+
+/* 6. Hero Age Chip High Contrast */
+#heroImageAgeChip,
+.hero-image-age-chip {
+  background-color: #FEFD99 !important;
+  color: #111A20 !important;
+  font-weight: 800 !important;
+}
+
+/* 7. Bento Card Media Uniform Height & Display */
+.bento-col-6 .bento-card-media {
+  height: 250px !important;
+}
+.bento-card .lens-view-parent.d-none,
+.bento-card .lens-view-camper.d-none {
+  display: none !important;
+}
+
+/* 8. Secondary CTA Icon Spacing */
+.hero-cta-group .btn-strat-secondary i,
+.btn-strat-secondary i {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-right: 0.25rem !important;
+  flex-shrink: 0 !important;
+}

@@ -41,9 +41,18 @@
         </div>
       </a>
 
-      <button class="navbar-toggler border-0 shadow-none ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <!-- Mobile Header Right Actions (Single-line on 360px: Theme + RTL + Menu) -->
+      <div class="header-right-actions d-flex d-xl-none align-items-center gap-1 ms-auto">
+        <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#stratkidsNavContent" aria-controls="stratkidsNavContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
 
       <div class="collapse navbar-collapse" id="stratkidsNavContent">
         <ul class="navbar-nav me-auto mb-2 mb-xl-0 align-items-xl-center gap-xl-1">
@@ -58,7 +67,7 @@
           </li>
           <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Programs
             </a>
             <ul class="dropdown-menu border-2 shadow-sm rounded-4">
@@ -66,6 +75,7 @@
               <li><a class="dropdown-item fw-bold" href="camp-life.html"><i class="bi bi-controller text-warning me-1"></i> Camp Activities &amp; Life</a></li>
             </ul>
           </li>
+          <li class="nav-item"><a class="nav-link active" href="camp-life.html">Activities</a></li>
           <li class="nav-item"><a class="nav-link " href="schedule.html">Schedule</a></li>
           <li class="nav-item"><a class="nav-link " href="pricing.html">Pricing</a></li>
           <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
@@ -77,12 +87,12 @@
           </li>
         </ul>
 
-        <!-- Right Group: Dark Toggle, RTL Toggle, Login & Enroll (Moved to Right Edge) -->
+        <!-- Right Group: Dark Toggle, RTL Toggle, Login & Enroll -->
         <div class="nav-right-cluster d-flex align-items-center gap-2 ms-xl-auto mt-3 mt-xl-0">
-          <button type="button" class="tool-toggle-btn theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+          <button type="button" class="tool-toggle-btn theme-toggle-btn d-none d-xl-inline-flex" aria-label="Toggle theme" title="Toggle theme">
             <i class="bi bi-moon-stars"></i>
           </button>
-          <button type="button" class="tool-toggle-btn rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+          <button type="button" class="tool-toggle-btn rtl-toggle-btn d-none d-xl-inline-flex" aria-label="Toggle text direction" title="Toggle RTL / LTR">
             <i class="bi bi-arrow-left-right"></i>
           </button>
           <a href="auth/login.html" class="btn-nav-login ms-xl-1" title="Parent Portal Login">Login</a>
@@ -200,7 +210,7 @@
       <div class="row g-4">
         <!-- Pillar 1: Tactical Motifs -->
         <div class="col-lg-4 col-md-6">
-          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm" style="border-top: 4px solid var(--sk-rose) !important;">
+          <div class="p-4 rounded-4 sk-card pillar-card border h-100 shadow-sm" style="border-top: 4px solid var(--sk-rose) !important;">
             <div class="d-flex align-items-center gap-3 mb-3">
               <span class="badge-emblem badge-rose mb-0" style="width: 50px; height: 50px; font-size: 1.4rem;">
                 <i class="bi bi-bullseye"></i>
@@ -222,7 +232,7 @@
 
         <!-- Pillar 2: Opening Theory -->
         <div class="col-lg-4 col-md-6">
-          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm" style="border-top: 4px solid var(--sk-aqua) !important;">
+          <div class="p-4 rounded-4 sk-card pillar-card border h-100 shadow-sm" style="border-top: 4px solid var(--sk-aqua) !important;">
             <div class="d-flex align-items-center gap-3 mb-3">
               <span class="badge-emblem badge-aqua mb-0" style="width: 50px; height: 50px; font-size: 1.4rem;">
                 <i class="bi bi-compass"></i>
@@ -244,7 +254,7 @@
 
         <!-- Pillar 3: Middlegame & Positional Planning -->
         <div class="col-lg-4 col-md-6">
-          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm" style="border-top: 4px solid var(--sk-yellow) !important;">
+          <div class="p-4 rounded-4 sk-card pillar-card border h-100 shadow-sm" style="border-top: 4px solid var(--sk-yellow) !important;">
             <div class="d-flex align-items-center gap-3 mb-3">
               <span class="badge-emblem badge-gold mb-0" style="width: 50px; height: 50px; font-size: 1.4rem;">
                 <i class="bi bi-lightbulb"></i>
@@ -266,7 +276,7 @@
 
         <!-- Pillar 4: Endgame Precision -->
         <div class="col-lg-6 col-md-6">
-          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm" style="border-top: 4px solid var(--sk-pink) !important;">
+          <div class="p-4 rounded-4 sk-card pillar-card border h-100 shadow-sm" style="border-top: 4px solid var(--sk-pink) !important;">
             <div class="d-flex align-items-center gap-3 mb-3">
               <span class="badge-emblem badge-pink mb-0" style="width: 50px; height: 50px; font-size: 1.4rem;">
                 <i class="bi bi-trophy"></i>
@@ -296,7 +306,7 @@
 
         <!-- Pillar 5: Time Control & Psychology -->
         <div class="col-lg-6 col-md-12">
-          <div class="p-4 rounded-4 bg-white border h-100 shadow-sm" style="border-top: 4px solid #10B981 !important;">
+          <div class="p-4 rounded-4 sk-card pillar-card border h-100 shadow-sm" style="border-top: 4px solid #10B981 !important;">
             <div class="d-flex align-items-center gap-3 mb-3">
               <span class="badge-emblem mb-0" style="width: 50px; height: 50px; font-size: 1.4rem; background: rgba(16, 185, 129, 0.15); color: #059669;">
                 <i class="bi bi-stopwatch"></i>

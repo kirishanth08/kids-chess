@@ -20,6 +20,8 @@ html, body {
 /* Tablet to Desktop Transition (992px - 1280px) */
 @media (min-width: 992px) and (max-width: 1280px) {
   .stratkids-navbar .nav-link {
+    font-family: 'Baloo 2', cursive, sans-serif !important;
+    font-weight: 700 !important;
     font-size: 0.88rem !important;
     padding: 0.32rem 0.42rem !important;
   }
@@ -125,16 +127,23 @@ html, body {
   }
 
   .stratkids-navbar .navbar-nav .nav-link {
+    font-family: 'Baloo 2', cursive, sans-serif !important;
+    font-weight: 700 !important;
     color: var(--sk-dark) !important;
     padding: 0.7rem 1.1rem !important;
     font-size: 1rem !important;
     border-radius: 12px !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: space-between !important;
+    justify-content: flex-start !important;
     width: 100% !important;
-    background: transparent;
+    background: transparent !important;
+    border: none !important;
     transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .stratkids-navbar .navbar-nav .nav-link.dropdown-toggle {
+    justify-content: space-between !important;
   }
 
   .stratkids-navbar .navbar-nav .nav-link:hover {
@@ -147,6 +156,30 @@ html, body {
     color: #111A20 !important;
     font-weight: 700 !important;
     box-shadow: 0 4px 12px rgba(254, 253, 153, 0.4) !important;
+  }
+
+  /* Mobile Dashboard Link: Align clean and borderless matching standard links */
+  .stratkids-navbar .nav-dashboard-link,
+  .stratkids-navbar .navbar-nav .nav-dashboard-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    font-family: 'Baloo 2', cursive, sans-serif !important;
+    font-weight: 700 !important;
+    color: var(--sk-dark) !important;
+    padding: 0.7rem 1.1rem !important;
+    border-radius: 12px !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 1rem !important;
+    width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  .stratkids-navbar .nav-dashboard-link:hover,
+  .stratkids-navbar .navbar-nav .nav-dashboard-link:hover {
+    background-color: var(--sk-surface-alt) !important;
+    color: var(--sk-rose) !important;
   }
 
   .stratkids-navbar .dropdown-menu {
@@ -172,45 +205,135 @@ html, body {
     color: var(--sk-rose) !important;
   }
 
-  .stratkids-navbar .nav-tools,
-  .stratkids-navbar .nav-cta-group {
-    margin-top: 1.25rem !important;
+  /* Hamburger Dropdown Action Cluster: Full High-Contrast in Light & Dark Mode */
+  .stratkids-navbar .nav-right-cluster {
+    margin-top: 1rem !important;
     padding-top: 1rem !important;
     border-top: 1px solid var(--sk-border-color) !important;
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: wrap !important;
     align-items: center !important;
-    justify-content: center !important;
-    gap: 0.75rem !important;
+    gap: 0.65rem !important;
     width: 100% !important;
   }
 
-  .stratkids-navbar .nav-cta-group .btn-nav-login,
-  .stratkids-navbar .nav-cta-group .btn-strat-primary,
-  .stratkids-navbar .nav-tools .btn-nav-login,
-  .stratkids-navbar .nav-tools .btn-strat-primary {
-    flex: 1 1 0 !important;
-    text-align: center !important;
+  /* LIGHT MODE (Default & [data-bs-theme="light"]): Crisp Dark Elements on Light Card */
+  .stratkids-navbar .nav-right-cluster .tool-toggle-btn,
+  .stratkids-navbar .navbar-collapse .tool-toggle-btn {
+    background: #F0F7F9 !important;
+    border: 1.5px solid rgba(38, 51, 58, 0.22) !important;
+    color: #26333A !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    font-size: 1.1rem !important;
+    border-radius: 50% !important;
     display: inline-flex !important;
-    justify-content: center !important;
     align-items: center !important;
-    white-space: nowrap !important;
-    padding: 0.65rem 0.85rem !important;
-    font-size: 0.95rem !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
   }
 
-  .stratkids-navbar .nav-tools .btn-nav-login,
-  .stratkids-navbar .nav-cta-group .btn-nav-login {
+  .stratkids-navbar .nav-right-cluster .tool-toggle-btn i,
+  .stratkids-navbar .navbar-collapse .tool-toggle-btn i {
+    color: #26333A !important;
+  }
+
+  .stratkids-navbar .nav-right-cluster .tool-toggle-btn:hover,
+  .stratkids-navbar .navbar-collapse .tool-toggle-btn:hover {
+    background: #E2F1F5 !important;
+    border-color: #08343C !important;
+    color: #08343C !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .stratkids-navbar .nav-right-cluster .btn-nav-login,
+  .stratkids-navbar .navbar-collapse .btn-nav-login {
     display: inline-flex !important;
-    color: var(--sk-dark) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #26333A !important;
+    background: #F0F7F9 !important;
+    border: 1.5px solid rgba(38, 51, 58, 0.22) !important;
+    font-family: var(--sk-font-heading) !important;
     font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    padding: 0.55rem 1.35rem !important;
+    border-radius: var(--sk-radius-pill) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
   }
 
-  .stratkids-navbar .nav-tools .tool-toggle-btn {
-    color: var(--sk-dark) !important;
-    border-color: var(--sk-border-color) !important;
-    background: var(--sk-surface-alt) !important;
+  .stratkids-navbar .nav-right-cluster .btn-nav-login:hover,
+  .stratkids-navbar .navbar-collapse .btn-nav-login:hover {
+    background: var(--sk-yellow) !important;
+    color: #111A20 !important;
+    border-color: #D4D23B !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .stratkids-navbar .nav-right-cluster .btn-strat-primary,
+  .stratkids-navbar .navbar-collapse .btn-strat-primary {
+    width: 100% !important;
+    margin-top: 0.25rem !important;
+    justify-content: center !important;
+  }
+
+  /* DARK MODE: High-Contrast Illuminated Elements on Dark Surface */
+  [data-bs-theme="dark"] .stratkids-navbar .nav-right-cluster {
+    border-top-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  [data-bs-theme="dark"] .stratkids-navbar .nav-dashboard-link,
+  [data-bs-theme="dark"] .stratkids-navbar .navbar-nav .nav-dashboard-link {
+    color: #FFFFFF !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  [data-bs-theme="dark"] .stratkids-navbar .nav-dashboard-link:hover,
+  [data-bs-theme="dark"] .stratkids-navbar .navbar-nav .nav-dashboard-link:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #7FE5F5 !important;
+  }
+
+  [data-bs-theme="dark"] .stratkids-navbar .nav-right-cluster .tool-toggle-btn,
+  [data-bs-theme="dark"] .stratkids-navbar .navbar-collapse .tool-toggle-btn {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    color: #FFFFFF !important;
+    box-shadow: none !important;
+  }
+
+  [data-bs-theme="dark"] .stratkids-navbar .nav-right-cluster .tool-toggle-btn i,
+  [data-bs-theme="dark"] .stratkids-navbar .navbar-collapse .tool-toggle-btn i {
+    color: #FFFFFF !important;
+  }
+
+  [data-bs-theme="dark"] .stratkids-navbar .nav-right-cluster .tool-toggle-btn:hover,
+  [data-bs-theme="dark"] .stratkids-navbar .navbar-collapse .tool-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #7FE5F5 !important;
+    border-color: #7FE5F5 !important;
+  }
+
+  [data-bs-theme="dark"] .stratkids-navbar .nav-right-cluster .btn-nav-login,
+  [data-bs-theme="dark"] .stratkids-navbar .navbar-collapse .btn-nav-login {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.28) !important;
+    color: #FFFFFF !important;
+    box-shadow: none !important;
+  }
+
+  [data-bs-theme="dark"] .stratkids-navbar .nav-right-cluster .btn-nav-login:hover,
+  [data-bs-theme="dark"] .stratkids-navbar .navbar-collapse .btn-nav-login:hover {
+    background: rgba(254, 253, 153, 0.2) !important;
+    color: #FEFD99 !important;
+    border-color: #FEFD99 !important;
   }
 }
 
